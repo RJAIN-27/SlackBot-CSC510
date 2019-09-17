@@ -22,13 +22,13 @@ Tagline for the bot to encompass what the bot does. ?
 2. Main Flow 
    - The user request to issue a specific book from the library [S1]
 3. SubFlow 
-   - The user specifies that they want to issue a book [E1]
+   - The user specifies that they want to issue a book
    - The bot then responds by asking the user to specify which book they are interested in issuing 
-   - The user then specifies the name of the book [E2]
-   - The bot scours through the library catalogue for the name of the book and checks if it is available and returns the book if it is available [E3]
+   - The user then specifies the name of the book
+   - The bot scours through the library catalogue for the name of the book and checks if it is available and returns the book if it is available [E1]
    - The bot then marks the book as "Issued" and hence makes it unavailable for being issued by anyone else until it has been returned. 
 4. Alternate Flows
-   - [E3] The bot is unable to locate the specified book in the library catalogue or the book has already been issued by another user and hence is available to be issued by the user,  the bot then replies to the user with the valid message stating that the book requested for is unavailable. 
+   - [E1] The bot is unable to locate the specified book in the library catalogue or the book has already been issued by another user and hence is available to be issued by the user,  the bot then replies to the user with the valid message stating that the book requested for is unavailable. 
         
 2. Return a Book 
 3. Answer simple questions instantly
