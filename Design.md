@@ -16,10 +16,10 @@ Code drone vs documentation bot. ?
 Tagline for the bot to encompass what the bot does. ?
 
 ## Use Cases 
-1. Issue a Book 
-    1.1 Preconditions 
-        A user "XYZ" has authenticated himself into the library system.
-    1.2 Main Flow 
+Use Case 1: Issue a Book 
+1. Preconditions 
+    A user "XYZ" has authenticated himself into the library system.
+2. Main Flow 
         
 2. Return a Book 
 3. Answer simple questions instantly
