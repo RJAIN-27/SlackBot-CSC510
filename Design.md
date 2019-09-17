@@ -39,7 +39,7 @@ Tagline for the bot to encompass what the bot does. ?
    - The bot then responds by aski
 #### Answer simple questions instantly
 #### Pattern matching and suggesting books from a set of queries posed by the user 
-## Design SKetches 
+## Design Sketches 
 ## Architecture Design 
 
 
