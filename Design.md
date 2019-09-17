@@ -36,7 +36,9 @@ Tagline for the bot to encompass what the bot does. ?
    - The user has issued a book from the library [Use Case 1]
 2. Main Flow 
    - The user specifies that they want to return a book 
-   - The bot then responds by aski
+   - The bot then responds by asking for the name of the book to be returned and its Book_ID [E2]
+   - The bot then locates the ID of the book and then resets the Issuer name, the status of the availablility of the book
+   - The 
 #### Answer simple questions instantly
 #### Pattern matching and suggesting books from a set of queries posed by the user 
 ## Design Sketches 
