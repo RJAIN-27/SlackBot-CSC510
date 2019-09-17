@@ -18,7 +18,7 @@ Tagline for the bot to encompass what the bot does. ?
 ## Use Cases 
 #### Use Case 1: Issue a Book 
 1. Preconditions 
-   - A user "XYZ" has authenticated himself into the library system.
+   - A user "XYZ" has authenticated himself into the library system. [UC?]
 2. Main Flow 
    - The user request to issue a specific book from the library [S1]
 3. SubFlow 
@@ -30,9 +30,15 @@ Tagline for the bot to encompass what the bot does. ?
 4. Alternate Flows
    - [E1] The bot is unable to locate the specified book in the library catalogue or the book has already been issued by another user and hence is available to be issued by the user,  the bot then replies to the user with the valid message stating that the book requested for is unavailable. 
         
-2. Return a Book 
-3. Answer simple questions instantly
-4. Pattern matching and suggesting books from a set of queries posed by the user 
+#### Use Case 2: Return a Book 
+1. Preconditions 
+   - A user "XYZ" has authenticated himself into the library system. [UC?]
+   - The user has issued a book from the library [Use Case 1]
+2. Main Flow 
+   - The user specifies that they want to return a book 
+   - The bot then responds by aski
+#### Answer simple questions instantly
+#### Pattern matching and suggesting books from a set of queries posed by the user 
 ## Design SKetches 
 ## Architecture Design 
 
