@@ -16,6 +16,10 @@ Code drone vs documentation bot. ?
 Tagline for the bot to encompass what the bot does. ?
 
 ## Use Cases 
+1. Issue a Book 
+2. Return a Book 
+3. Answer simple questions instantly
+4. Pattern matching and suggesting books from a set of queries posed by the user 
 ## Design SKetches 
 ## Architecture Design 
 
