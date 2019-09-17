@@ -16,4 +16,7 @@ Code drone vs documentation bot. ?
 Tagline for the bot to encompass what the bot does. ?
 
 ## Use Cases 
+## Design SKetches 
+## Architecture Design 
+
 
