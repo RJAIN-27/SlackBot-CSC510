@@ -17,6 +17,10 @@ Tagline for the bot to encompass what the bot does. ?
 
 ## Use Cases 
 1. Issue a Book 
+    1.1 Preconditions 
+        A user "XYZ" has authenticated himself into the library system.
+    1.2 Main Flow 
+        
 2. Return a Book 
 3. Answer simple questions instantly
 4. Pattern matching and suggesting books from a set of queries posed by the user 
