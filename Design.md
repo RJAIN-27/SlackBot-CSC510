@@ -3,24 +3,15 @@
 ## Objective 
 To develop a chat bot that assists visitors with their requests and queries pertaining to the library. 
 ## Problem Statement  
-Consider a library "ABC" which hosts several reading materials that can be accessed physically and digitally. The library also has several visitors, but has only a handful of librarians to attend to the visitors. This results in a huge load on the librarians especially during peak and late hours which might increase the wait time for the visitors as well. 
+Consider a library "ABC" which hosts several books and scholarly articles that can be accessed physically and digitally. The library also has several visitors, but has only a handful of librarians to attend to the visitors. This results in a huge load on the librarians especially during peak and late hours which might increase the wait time for the visitors as well. 
 
 There are also some cases when the visitors are not definitive of what sources they are looking for. In such cases, it becomes difficult for a librarian to manually search and suggest what might be a potential source.
 
 ## Bot Description
 
-This situation can be eased by the introduction of a bot system that interacts with the vistors and caters to their interests in the same way that a librarian does. Having a bot system to chat with at any hour of the day without having to wait for the librarian also might be an optimal solution for the visitors. Adding the feature of being able to understand the visitor's query
-The bot designed to assist the users in their requests can perform all the tasks that a human librarian would do. The user can chat with the bot in the same way that they would with a human librarian and pose their queries or requests. 
+This situation presented in the previous section can be eased by the introduction of a bot system that interacts with the vistors and caters to their interests in the same way that a librarian does, in other words has a chat with the visitors to understand their requests. Having a bot system to chat with at any hour of the day without having to wait for the librarian also might be an optimal solution for the visitors. Adding the feature of being able to understand the visitor's query and suggesting a list of sources that the visitor might find useful is a bonus to using a bot system for library management.  
 
-The bot should be able to issue books, accept the returned books and organize them back, accordingly, answer frequently asked questions about the facilities available in the library and other services, and perform text mining that enables to render suggestions of sources or materials to the user when they are not aware of what specific source they are looking for. 
-
-The bot is developed to have a chat with the user and extract the requests and hence respond to them accordingly. 
-
-This bot is essentially a chat bot with the features of an EventBot. ?
-
-Code drone vs documentation bot. ?
-
-Tagline for the bot to encompass what the bot does. ?
+The bot is developed to handle issuing books to visitors, accepting returned books, answering simple queries regarding facilities and services offered by the library, and additionally suggesting top 5 sources that closely match a query posed by the visitor on what kind of source they are looking for, by performing text mining on such a query. Therefore, this bot is designed to both, chat with the users as well as respond to events.
 
 ## Use Cases 
 #### Use Case 1: Issue a Book 
