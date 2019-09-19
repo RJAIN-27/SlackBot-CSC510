@@ -31,7 +31,7 @@ The bot is developed to handle issuing books to visitors, accepting returned boo
 #### Use Case 2: Return a Book 
 1. Preconditions 
    - A user "XYZ" has authenticated himself into the library system. [UC?]
-   - The user has issued a book from the library [Use Case 1]
+   - The user must have been issued a book from the library [Use Case 1]
 2. Main Flow 
    - The user specifies that they want to return a book 
    - The bot then responds by asking for the name of the book to be returned and its Book_ID [E2]
