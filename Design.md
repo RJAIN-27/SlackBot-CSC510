@@ -1,7 +1,7 @@
 # Initial Draft 
 
 ## Objective 
-To develop a chat bot that assists visitors with their requests and queries pertaining to the library. 
+To develop a bot system that assists visitors with their requests and queries pertaining to the library. 
 ## Problem Statement  
 Consider a library "ABC" which hosts several books and scholarly articles that can be accessed physically and digitally. The library also has several visitors, but has only a handful of librarians to attend to the visitors. This results in a huge load on the librarians especially during peak and late hours which might increase the wait time for the visitors as well. 
 
