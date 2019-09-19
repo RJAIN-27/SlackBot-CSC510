@@ -9,9 +9,9 @@ There are also some cases when the visitors are not definitive of what sources t
 
 ## Bot Description
 
-This situation presented in the previous section can be eased by the introduction of a bot system that interacts with the vistors and caters to their interests in the same way that a librarian does, in other words has a chat with the visitors to understand their requests. Having a bot system to chat with at any hour of the day without having to wait for the librarian also might be an optimal solution for the visitors. Adding the feature of being able to understand the visitor's query and suggesting a list of sources that the visitor might find useful is a bonus to using a bot system for library management.  
+This situation presented in the previous section can be eased by introducing a bot system that interacts with the vistors and caters to their interests in the same way that a librarian does, in other words has a chat with the visitors to understand their requests. Having a bot system to chat with at any hour of the day without having to wait for the librarian also might be an optimal solution for the visitors. Adding the feature of being able to understand the visitor's query and suggesting a list of sources that the visitor might find useful is a bonus to using a bot system for library management.  
 
-The bot is developed to handle issuing books to visitors, accepting returned books, answering simple queries regarding facilities and services offered by the library, and additionally suggesting top 5 sources that closely match a query posed by the visitor on what kind of source they are looking for, by performing text mining on such a query. Therefore, this bot is designed to both, chat with the users as well as respond to events.
+The bot is developed to handle issuing books to visitors, accepting returned books, answering simple queries regarding facilities and services offered by the library, and additionally suggesting top 5 sources that closely match a query posed by the visitor on what kind of source they are looking for, by performing text mining on such a query. This also makes it a Documentation bot as it is equipped to answer users in a human-like manner. Therefore, this is a reactor bot which is designed to both, chat with the users as well as respond to events.
 
 ## Use Cases 
 #### Use Case 1: Issue a Book 
