@@ -1,5 +1,5 @@
-# CSC510 - Team 23 - LibraryBot: L.I.B.R.R.A.
-## (Library-Intensive Bot for Resource and Recommendation Assistance)
+# CSC510 - Team 23 - LibraryBot: L.I.B.R.A.
+## (Library-Intensive Bot for Resource Assistance)
 ### Team Members
 1. Sandeep Kundala - skundal 
 2. Nita Radhakrishnan - nradhak2 
