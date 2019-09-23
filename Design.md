@@ -1,7 +1,7 @@
 # Initial Draft 
 
 ## Objective 
-To develop a bot system that assists software engineers/developers with their requests or queries pertaining to a Machine Learning  libraries in Python.
+To develop a bot system that assists software engineers/developers with their requests or queries pertaining to Machine Learning  libraries/APIs in Python.
 
 ## Problem Statement  
 Machine Learning APIs are flourishing in the developer world, and the web is becoming a mashup of interconnected APIs, the popular ones in Python being Scikit-Learn, TensorFlow, Keras, MxNet. But the usage of these APIs are still unclear to many, which makes it complex for users who are not experts, to use. 
