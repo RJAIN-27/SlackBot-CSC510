@@ -16,7 +16,7 @@ The bot is developed to handle four cases. First, when the user wishes to search
 
 ## Use Cases 
 #### Use Case 1: Bot suggests the library/API call to be used, in answer to a user's question
-#### Use Case 2: Render description for library/function 
+#### Use Case 2: Bot renders description for library/API call 
 #### Use Case 3: User posts a question in event of there existing no other similar question 
 #### Use Case 4: User posts an answer to an already existing question 
 #### Use Case 5: User posts an answer to a question posted by the user itself 
