@@ -16,6 +16,7 @@ The bot is developed to handle four cases. First, when the user wishes to search
 
 ## Use Cases 
 #### Use Case 1: Library/API call Suggestion <!-- Bot suggests the library/API call to be used, in answer to a user's question -->
+```bash
 1 Preconditions: User must have LIBBRA Access Token in System<!--User must have a data set to know about the library to be used.-->
 2 Main Flow: 
   User requests library/API call suggestion by uploading the dataset. Bot provides the best library/API call to be used for the uploaded   dataset.
@@ -26,8 +27,10 @@ The bot is developed to handle four cases. First, when the user wishes to search
   [s4] Bot provides the best library/API call to be used for the uploaded dataset.
 4 Alternate Flow:
   [E1] Dataset is not provided by the User.
+```
 
 #### Use Case 2: Bot renders description for library/API call
+```bash
 1 Preconditions: User must have LIBBRA Access Token in System
 2 Main Flow: 
   User requests information about a library/API call. Bot provides the information about the library/API call and the relevant links.
@@ -36,8 +39,10 @@ The bot is developed to handle four cases. First, when the user wishes to search
   [s2] Bot provides the information about the library/API call and the relevant links.
 4 Alternate Flow:
   [E1] No known library/API call is provided by the user.
+```
  
 #### Use Case 3: User posts a question in event of there existing no other similar question 
+```bash
 1 Preconditions:
 2 Main Flow:
 3 Sub Flow:
@@ -46,8 +51,10 @@ The bot is developed to handle four cases. First, when the user wishes to search
   [s3]
   [s4]
 4 Alternate Flow:
+```
  
 #### Use Case 4: User posts an answer to an already existing question 
+```bash
 1 Preconditions:
 2 Main Flow:
 3 Sub Flow:
@@ -56,12 +63,13 @@ The bot is developed to handle four cases. First, when the user wishes to search
   [s3]
   [s4]
 4 Alternate Flow:
+```
  
-#### Use Case 5: User posts an answer to a question posted by the user itself 
+<!--#### Use Case 5: User posts an answer to a question posted by the user itself 
 1 Preconditions:
 2 Main Flow:
 3 Sub Flow:
-4 Alternate Flow:
+4 Alternate Flow:-->
  
 ## Design Sketches 
 ## Architecture Design 
