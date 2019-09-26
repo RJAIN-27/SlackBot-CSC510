@@ -15,28 +15,41 @@ The situation presented in the previous section can be eased by introducing our 
 The bot is developed to handle four cases. First, when the user wishes to search for description of a library/function, the user sends a query request to the bot with the question, the bot responds by giving information about the libraries, API or functions related to keywords in the query. The second case is when the user wishes to only post a question when there exists no similar question and thereby no definite answer. The third case is when the user wishes to post an answer to an existing question.The fourth case is when the user wishes to post an answer to a question posted by the user itself. This makes it a Documentation Bot as it is equipped to answer users' questions in a human-like manner. This bot follows the "reactor" design pattern which chats with the users when they ask their questions as well as responds to cases, but has no memory of who the user is.
 
 ## Use Cases 
-#### Use Case 1: Library/API call Suggestion <!-- Bot suggests the library/API call to be used, in answer to a user's question -->
+#### Use Case 1: Library/API call Suggestion for a dataset <!-- Bot suggests the library/API call to be used, in answer to a user's question -->
 ```bash
 1 Preconditions: User must have LIBBRA Access Token in System<!--User must have a data set to know about the library to be used.-->
 2 Main Flow: 
   User requests library/API call suggestion by uploading the dataset. Bot provides the best library/API call to be used for the uploaded   dataset.
-3 Sub Flow:
-  [s1] User requests for Library/API call Suggestion.
-  [s2] Bot asks for the dataset to be used for the Library/API call Suggestion.
-  [s3] User uploads the dataset.
-  [s4] Bot provides the best library/API call to be used for the uploaded dataset.
-4 Alternate Flow:
+3 Sub Flow 1:
+  [s1] User requests for Library/API call Suggestion for a dataset.
+  [s2] Bot asks whether it is image or numerical dataset.
+  [s3] User responds by selecting image dataset.
+  [s4] Bot asks whether it is for phone or Workstation.
+  [s5] User responds by selecting his preference.
+  [s6] Bot provides the best library/API call to be used for the given User's preferences.
+4 Alternate Flow 1:
+  [E1] Dataset is not provided by the User.  
+5 Sub Flow 2: 
+  [s1] User requests for Library/API call Suggestion for a dataset.
+  [s2] Bot asks whether it is image or numerical dataset.
+  [s3] User responds by selecting numerical dataset.
+  [s4] Bot asks for the dataset to be used for the Library/API call Suggestion.
+  [s5] User uploads the dataset.
+  [s6] Bot provides the best library/API call to be used for the uploaded dataset.
+6 Alternate Flow 2:
   [E1] Dataset is not provided by the User.
 ```
 
-#### Use Case 2: Bot renders description for library/API call
+#### Use Case 2: Know about a Library/API call <!--Bot renders description for library/API call-->
 ```bash
 1 Preconditions: User must have LIBBRA Access Token in System
 2 Main Flow: 
-  User requests information about a library/API call. Bot provides the information about the library/API call and the relevant links.
+  User requests information about a Library/API call. Bot provides the information about the library/API call and the relevant links.
 3 Sub Flow:
-  [s1] User requests information about a particular library/API call.
-  [s2] Bot provides the information about the library/API call and the relevant links.
+  [s1] User requests information about a Library/API call.
+  [s2] Bot asks the User to enter the name of Library/API call
+  [s3] User enters the name of the Library/API call.
+  [s4] Bot provides information about the given Library/API call and relevant links to it.
 4 Alternate Flow:
   [E1] No known library/API call is provided by the user.
 ```
