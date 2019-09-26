@@ -69,12 +69,8 @@ The bot is developed to handle four cases. First, when the user wishes to search
   [s7] User selects Post.
   [s8] Bot asks User to enter the Question by providing all the context.
   [s9] Bot posts the Question in the repository.
-3 Sub Flow 2:
-  [s1] 
-  [s2]
-  [s3]
-  [s4]
 4 Alternate Flow:
+  [E1] User finds the answers helpful.
 ```
  
 #### Use Case 4: User posts an answer to an already existing question 
