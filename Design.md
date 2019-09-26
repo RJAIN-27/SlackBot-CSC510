@@ -54,11 +54,22 @@ The bot is developed to handle four cases. First, when the user wishes to search
   [E1] No known library/API call is provided by the user.
 ```
  
-#### Use Case 3: User posts a question in event of there existing no other similar question 
+#### Use Case 3: Have a Question?<!--User posts a question in event of there existing no other similar question-->
 ```bash
-1 Preconditions:
+1 Preconditions: User must have LIBBRA Access Token in System
 2 Main Flow:
+  User searches for a question. Bot lists the existing Questions matching with User's Question. Bot lets User to post a question incase   User don't find relevant Questions.
 3 Sub Flow:
+  [s1] User selects Have a Question? Option from the bot's welcome message.
+  [s2] Bot asks the Category of the Question. 
+  [s3] User enters the Category of the Question.
+  [s4] Bot asks User to enter the Question.
+  [s5] User enters the Question.
+  [s6] Bot displays Questions and their answers matching with User's Question and asks User to post Question if he didn't find the              answers helpful.
+  [s7] User selects Post.
+  [s8] Bot asks User to enter the Question by providing all the context.
+  [s9] Bot posts the Question in the repository.
+3 Sub Flow 2:
   [s1] 
   [s2]
   [s3]
@@ -68,9 +79,9 @@ The bot is developed to handle four cases. First, when the user wishes to search
  
 #### Use Case 4: User posts an answer to an already existing question 
 ```bash
-1 Preconditions:
+1 Preconditions: User must have LIBBRA Access Token in System
 2 Main Flow:
-3 Sub Flow:
+3 Sub Flow 1:
   [s1] 
   [s2]
   [s3]
