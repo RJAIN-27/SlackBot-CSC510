@@ -20,7 +20,7 @@ The bot is developed to handle four cases. First case is when the user wishes to
 ```
 1 Preconditions: User must have LIBRA Access Token in the System. User must know the type of dataset for which he wants suggestion. <!--User must have a data set to know about the library to be used.-->
 2 Main Flow: 
-  User requests library/API suggestion for a dataset/image. Bot provides the best suitable library/API to be used for the       selected dataset.
+  User requests library/API suggestion for a dataset/image. Bot provides the best suitable library/API to be used for the selected dataset.
 3 Sub Flow 1:
   [s1] User requests for Library/API suggestion.
   [s2] Bot asks whether it is image or numerical dataset.
