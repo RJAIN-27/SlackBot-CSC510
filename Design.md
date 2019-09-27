@@ -78,7 +78,7 @@ The bot is developed to handle four cases. First case is when the user wishes to
   
 ```
  
-#### Use Case 4: User posts an answer to an already existing question 
+#### Use Case 4: Post an answer 
 ```
 1 Preconditions: User must have LIBRA Access Token in System
 2 Main Flow:  User wants to answer a question. Bot lists the questions for the user and option to answer them.
