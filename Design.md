@@ -89,7 +89,7 @@ The bot is developed to handle four cases. First, when the user wishes to search
   [s9] User enters the Answer.
   [s10] Bot posts the Answer to the Question in repository. 
 4 Alternate Flow:
-  [E1] User may not have answer the listed Questions.
+  [E1] User may not have answer for the listed Questions.
 ```
  
 <!--#### Use Case 5: User posts an answer to a question posted by the user itself 
