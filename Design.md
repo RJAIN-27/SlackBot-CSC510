@@ -130,6 +130,7 @@ The bot is developed to handle four cases. First case is when the user wishes to
 <img src="https://github.ncsu.edu/csc510-fall2019/CSC510-23/blob/master/resources/images/wireframes/wire11.png" height="540" width="350"> <img src="https://github.ncsu.edu/csc510-fall2019/CSC510-23/blob/master/resources/images/wireframes/wire12.png" height="540" width="350"> <img src="https://github.ncsu.edu/csc510-fall2019/CSC510-23/blob/master/resources/images/wireframes/wire13.png" height="540" width="350">
 
 **User feedback: The bot asks user's feedback regarding the task it performed and also asks if the user would like to perform any other tasks:**
+
 <img src="https://github.ncsu.edu/csc510-fall2019/CSC510-23/blob/master/resources/images/wireframes/wire14.png" height="540" width="350"> <img src="https://github.ncsu.edu/csc510-fall2019/CSC510-23/blob/master/resources/images/wireframes/wire15.png" height="540" width="350">
 
 
