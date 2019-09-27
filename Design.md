@@ -143,7 +143,7 @@ The bot is developed to handle four cases. First case is when the user wishes to
 ### Architecture Diagram and component details:
 
 **The architecture diagram:**
-![](https://github.ncsu.edu/csc510-fall2019/CSC510-23/blob/architecture_new/resources/images/Architecture%20Diagram.png)
+![](https://github.ncsu.edu/csc510-fall2019/CSC510-23/blob/master/resources/images/Architecture%20Diagram.png)
 
 The architecture consists of three major components:-
 1. Mattermost bot as a client for interacting with the user.
