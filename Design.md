@@ -78,11 +78,18 @@ The bot is developed to handle four cases. First, when the user wishes to search
 1 Preconditions: User must have LIBBRA Access Token in System
 2 Main Flow:  User wants to answer a question. Bot lists the questions for the user and option to answer them.
 3 Sub Flow 1:
-  [s1] 
-  [s2]
-  [s3]
-  [s4]
+  [s1] User selects Q/A option to go to the Question and Answer section.
+  [s2] Bot asks the User about the Library name to list Questions and Answers related to that Library.
+  [s3] User enters the Library name.
+  [s4] Bot asks the User whether he is looking for an answer or he wants to post an answer.
+  [s5] User selects post an answer.
+  [s6] Bot provides the list of Questions.
+  [s7] User selects a Question.
+  [s8] Bot asks to share the Answer for that Question.
+  [s9] User enters the Answer.
+  [s10] Bot posts the Answer to the Question in repository. 
 4 Alternate Flow:
+  [E1] User may not have answer the listed Questions.
 ```
  
 <!--#### Use Case 5: User posts an answer to a question posted by the user itself 
