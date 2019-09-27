@@ -111,19 +111,23 @@ The bot is developed to handle four cases. First, when the user wishes to search
 
 ![](https://github.ncsu.edu/csc510-fall2019/CSC510-23/blob/master/resources/images/storyboard/sb_c_1_3.png)
 
-#### Case 2:
+#### Case 2: When the user wants to know about a library or function
+
 ![](https://github.ncsu.edu/csc510-fall2019/CSC510-23/blob/master/resources/images/storyboard/sb_c_2_1.png)
 ![](https://github.ncsu.edu/csc510-fall2019/CSC510-23/blob/master/resources/images/storyboard/sb_c_2_2.png)
 
-#### Case 3:
+#### Case 3: When user wants to search for an answer to the question. If the question is not available, the user can post the question
+
 ![](https://github.ncsu.edu/csc510-fall2019/CSC510-23/blob/master/resources/images/storyboard/sb_c_3_1.png)
 ![](https://github.ncsu.edu/csc510-fall2019/CSC510-23/blob/master/resources/images/storyboard/sb_c_3_2.png)
 
-#### Case 4:
+#### Case 4: When user wants to answer an asked question. If the question is not present, the user can post both question and answer
+
 ![](https://github.ncsu.edu/csc510-fall2019/CSC510-23/blob/master/resources/images/storyboard/sb_c_4_1.png)
 ![](https://github.ncsu.edu/csc510-fall2019/CSC510-23/blob/master/resources/images/storyboard/sb_c_4_2.png)
 
-#### User feedback:
+#### User feedback: The bot asks user's feedback regarding the task it performed and also asks if the user would like to perform any other tasks
+
 ![](https://github.ncsu.edu/csc510-fall2019/CSC510-23/blob/master/resources/images/storyboard/sb_c_5.png)
 
 
