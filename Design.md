@@ -16,43 +16,43 @@ The bot is developed to handle four cases. First case is when the user wishes to
 
 
 ## Use Cases 
-#### Use Case 1: Library/API call Suggestion for a dataset <!-- Bot suggests the library/API call to be used, in answer to a user's question -->
+#### Use Case 1: Library/API Suggestion for a dataset <!-- Bot suggests the library/API to be used, in answer to a user's question -->
 ```
 1 Preconditions: User must have LIBBRA Access Token in System<!--User must have a data set to know about the library to be used.-->
 2 Main Flow: 
-  User requests library/API call suggestion by uploading the dataset. Bot provides the best library/API call to be used for the uploaded   dataset.
+  User requests library/API suggestion by uploading the dataset. Bot provides the best library/API to be used for the uploaded   dataset.
 3 Sub Flow 1:
-  [s1] User requests for Library/API call Suggestion for a dataset.
+  [s1] User requests for Library/API Suggestion for a dataset.
   [s2] Bot asks whether it is image or numerical dataset.
   [s3] User responds by selecting image dataset.
   [s4] Bot asks whether it is for phone or Workstation.
   [s5] User responds by selecting his preference.
-  [s6] Bot provides the best library/API call to be used for the given User's preferences.
+  [s6] Bot provides the best library/API to be used for the given User's preferences.
 4 Alternate Flow 1:
   [E1] Dataset is not provided by the User.  
 5 Sub Flow 2: 
-  [s1] User requests for Library/API call Suggestion for a dataset.
+  [s1] User requests for Library/API suggestion for a dataset.
   [s2] Bot asks whether it is image or numerical dataset.
   [s3] User responds by selecting numerical dataset.
-  [s4] Bot asks for the dataset to be used for the Library/API call Suggestion.
+  [s4] Bot asks for the dataset to be used for the Library/API suggestion.
   [s5] User uploads the dataset.
-  [s6] Bot provides the best library/API call to be used for the uploaded dataset.
+  [s6] Bot provides the best library/API to be used for the uploaded dataset.
 6 Alternate Flow 2:
   [E1] Dataset is not provided by the User.
 ```
 
-#### Use Case 2: Know about a Library/API call <!--Bot renders description for library/API call-->
+#### Use Case 2: Know about a Library/API <!--Bot renders description for library/API  -->
 ```
 1 Preconditions: User must have LIBBRA Access Token in System
 2 Main Flow: 
-  User requests information about a Library/API call. Bot provides the information about the library/API call and the relevant links.
+  User requests information about a Library/API. Bot provides the information about the library/API and the relevant links.
 3 Sub Flow:
-  [s1] User requests information about a Library/API call.
-  [s2] Bot asks the User to enter the name of Library/API call
-  [s3] User enters the name of the Library/API call.
-  [s4] Bot provides information about the given Library/API call and relevant links to it.
+  [s1] User requests information about a Library/API.
+  [s2] Bot asks the User to enter the name of Library/API
+  [s3] User enters the name of the Library/API.
+  [s4] Bot provides information about the given Library/API and relevant links to it.
 4 Alternate Flow:
-  [E1] No known library/API call is provided by the user.
+  [E1] No known library/API is provided by the user.
 ```
  
 #### Use Case 3: Have a Question?<!--User posts a question in event of there existing no other similar question-->
