@@ -27,17 +27,15 @@ The bot is developed to handle four cases. First, when the user wishes to search
   [s4] Bot asks whether it is for phone or Workstation.
   [s5] User responds by selecting his preference.
   [s6] Bot provides the best library/API call to be used for the given User's preferences.
-4 Alternate Flow 1:
-  [E1] Dataset is not provided by the User.  
-5 Sub Flow 2: 
+4 Sub Flow 2: 
   [s1] User requests for Library/API call Suggestion for a dataset.
   [s2] Bot asks whether it is image or numerical dataset.
   [s3] User responds by selecting numerical dataset.
   [s4] Bot asks for the dataset to be used for the Library/API call Suggestion.
   [s5] User uploads the dataset.
   [s6] Bot provides the best library/API call to be used for the uploaded dataset.
-6 Alternate Flow 2:
-  [E1] Dataset is not provided by the User.
+5 Alternate Flow 1:
+  [E1] Dataset is neither image or numerical.
 ```
 
 #### Use Case 2: Know about a Library/API call <!--Bot renders description for library/API call-->
@@ -68,7 +66,7 @@ The bot is developed to handle four cases. First, when the user wishes to search
   [s6] Bot displays Questions and their answers matching with User's Question and asks User to post Question if he didn't find the              answers helpful.
   [s7] User selects Post.
   [s8] Bot asks User to enter the Question by providing all the context.
-  [s9] Bot posts the Question in the repository.
+  [s9] Bot posts the Question in the database.
 4 Alternate Flow:
   [E1] User finds the answers helpful.
 ```
@@ -87,7 +85,7 @@ The bot is developed to handle four cases. First, when the user wishes to search
   [s7] User selects a Question.
   [s8] Bot asks to share the Answer for that Question.
   [s9] User enters the Answer.
-  [s10] Bot posts the Answer to the Question in repository. 
+  [s10] Bot posts the Answer to the Question in database. 
 4 Alternate Flow:
   [E1] User may not have answer for the listed Questions.
 ```
