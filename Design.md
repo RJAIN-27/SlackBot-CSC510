@@ -76,7 +76,7 @@ The bot is developed to handle four cases. First, when the user wishes to search
 #### Use Case 4: User posts an answer to an already existing question 
 ```bash
 1 Preconditions: User must have LIBBRA Access Token in System
-2 Main Flow:
+2 Main Flow:  User wants to answer a question. Bot lists the questions for the user and option to answer them.
 3 Sub Flow 1:
   [s1] 
   [s2]
