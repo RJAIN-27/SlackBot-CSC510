@@ -59,14 +59,14 @@ The bot is developed to handle four cases. First case is when the user wishes to
 ```
 1 Preconditions: User must have LIBBRA Access Token in System
 2 Main Flow:
-  User searches for a question. Bot lists the existing Questions matching with User's Question. Bot lets User to post a question incase   User don't find relevant Questions.
+  User searches for a question. Bot lists the existing Questions matching with User's Question. Bot lets User to post a question incase user doesn't find relevant Questions.
 3 Sub Flow:
   [s1] User selects Have a Question? Option from the bot's welcome message.
   [s2] Bot asks the Category of the Question. 
   [s3] User enters the Category of the Question.
   [s4] Bot asks User to enter the Question.
   [s5] User enters the Question.
-  [s6] Bot displays Questions and their answers matching with User's Question and asks User to post Question if he didn't find the              answers helpful.
+  [s6] Bot displays Questions and their answers matching with User's Question and asks user to post Question if he didn't find the answers helpful.
   [s7] User selects Post.
   [s8] Bot asks User to enter the Question by providing all the context.
   [s9] Bot posts the Question in the repository.
@@ -103,28 +103,38 @@ The bot is developed to handle four cases. First case is when the user wishes to
 ### Wireframe
 ### Story board
 #### Case 1:
-##### Case 1a:
+
+##### Case 1a: When user would like to choose best library for image dataset
+
 ![](https://github.ncsu.edu/csc510-fall2019/CSC510-23/blob/master/resources/images/storyboard/sb_c_1_1_1.png)
 ![](https://github.ncsu.edu/csc510-fall2019/CSC510-23/blob/master/resources/images/storyboard/sb_c_1_1_2.png)
-##### Case 1b:
+
+##### Case 1b: When user would like to choose best model for Numerical dataset
+
 ![](https://github.ncsu.edu/csc510-fall2019/CSC510-23/blob/master/resources/images/storyboard/sb_c_1_2_1.png)
 ![](https://github.ncsu.edu/csc510-fall2019/CSC510-23/blob/master/resources/images/storyboard/sb_c_1_2_2.png)
-##### Case 1c:
+
+##### Case 1c: When user has dataset which is none of the above
+
 ![](https://github.ncsu.edu/csc510-fall2019/CSC510-23/blob/master/resources/images/storyboard/sb_c_1_3.png)
 
-#### Case 2:
+#### Case 2: When the user wants to know about a library or function
+
 ![](https://github.ncsu.edu/csc510-fall2019/CSC510-23/blob/master/resources/images/storyboard/sb_c_2_1.png)
 ![](https://github.ncsu.edu/csc510-fall2019/CSC510-23/blob/master/resources/images/storyboard/sb_c_2_2.png)
 
-#### Case 3:
+#### Case 3: When user wants to search for an answer to the question. If the question is not available, the user can post the question
+
 ![](https://github.ncsu.edu/csc510-fall2019/CSC510-23/blob/master/resources/images/storyboard/sb_c_3_1.png)
 ![](https://github.ncsu.edu/csc510-fall2019/CSC510-23/blob/master/resources/images/storyboard/sb_c_3_2.png)
 
-#### Case 4:
+#### Case 4: When user wants to answer an asked question. If the question is not present, the user can post both question and answer
+
 ![](https://github.ncsu.edu/csc510-fall2019/CSC510-23/blob/master/resources/images/storyboard/sb_c_4_1.png)
 ![](https://github.ncsu.edu/csc510-fall2019/CSC510-23/blob/master/resources/images/storyboard/sb_c_4_2.png)
 
-#### User feedback:
+#### User feedback: The bot asks user's feedback regarding the task it performed and also asks if the user would like to perform any other tasks
+
 ![](https://github.ncsu.edu/csc510-fall2019/CSC510-23/blob/master/resources/images/storyboard/sb_c_5.png)
 
 
