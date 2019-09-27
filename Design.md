@@ -122,7 +122,7 @@ The bot is developed to handle four cases. First, when the user wishes to search
 
 ## Architecture Design 
 
-###Architecture Diagram and component details:
+### Architecture Diagram and component details:
 
 The architecture diagram is given here [Architecture Diagram.png](https://github.ncsu.edu/csc510-fall2019/CSC510-23/blob/architecture_new/resources/images/Architecture%20Diagram.png)
 
@@ -155,13 +155,13 @@ Within these 3 main components the function of the sub components are as follows
    - ML Library/API Information Bank:
       - This consists of the various libraries available and their corresponding descriptions.
 
-###Architecture constraints and guidelines:
+### Architecture constraints and guidelines:
 The following are the constraints of the bot:-
 1. For the first case, when the user wishes to understand what model to apply on a dataset, the bot can only suggest models for image or a numerical data set. 
 2. The bot has limited number of functionality and focuses only on machine learning APIs and is equipped to handle only the use cases specified.
 3. Since the bot follows a reactor design pattern, the user cannot follow up on any of the operations.  
 
-###Additional design patterns:
+### Additional design patterns:
 The following are the design patterns that are to be implemented in the project.
 1. Builder Pattern- This bot separates object construction from its representation and hence follows the builder pattern
 2. Object-Pool Pattern - This bot is developed to avoid expensive acquisition and release of resources by recycling objects that are no longer in use 
