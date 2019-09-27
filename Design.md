@@ -17,7 +17,7 @@ The bot is developed to handle four cases. First, when the user wishes to search
 ## Use Cases 
 #### Use Case 1: Library/API call Suggestion for a dataset <!-- Bot suggests the library/API call to be used, in answer to a user's question -->
 ```
-1 Preconditions: User must have LIBRA Access Token in the System.<!--User must have a data set to know about the library to be used.-->
+1 Preconditions: User must have LIBRA Access Token in the System. User must know the type of dataset for which he wants suggestion. <!--User must have a data set to know about the library to be used.-->
 2 Main Flow: 
   User requests library/API call suggestion for a dataset/image. Bot provides the best suitable library/API call to be used for the       selected dataset.
 3 Sub Flow 1:
@@ -35,22 +35,23 @@ The bot is developed to handle four cases. First, when the user wishes to search
   [s5] User uploads the dataset.
   [s6] Bot suggests the best library/API call to be used for the uploaded dataset.
 5 Alternate Flow 1:
-  [E1] User's dataset is neither image or numerical.
-  [E2] Bot responds by giving some generic suggestion.
+  [E1] User's dataset is neither image or numerical. Bot responds by giving some generic suggestion.
 ```
 
 #### Use Case 2: Know about a Library/API call <!--Bot renders description for library/API call-->
 ```
-1 Preconditions: User must have LIBBRA Access Token in the System.
+1 Preconditions: User must have LIBRA Access Token in the System.
 2 Main Flow: 
   User requests information about a Library/API call. Bot provides the information about the library/API call and the relevant links.
 3 Sub Flow:
   [s1] User requests information about a Library/API call.
-  [s2] Bot asks the User to enter the name of Library/API call
-  [s3] User enters the name of the Library/API call.
-  [s4] Bot provides information about the given Library/API call and relevant links to it.
+  [s2] Bot lists the Machine Learning Libraries in python asking User to select a Library.
+  [s3] User selects the Library.
+  [s4] Bot provides information about the selected Library and relevant links to it and asks User whether he wants a specific                  information about a method/function.
+  [s5] User responds by selecting his preference and enters the name of the method/function.
+  [s6] Bot gives description and relevant links about the given method/function.
 4 Alternate Flow:
-  [E1] No known library/API call is provided by the user.
+  [E1] No known method/function is provided by the user. Bot gives a message that method/function is not found.
 ```
  
 #### Use Case 3: Have a Question?<!--User posts a question in event of there existing no other similar question-->
