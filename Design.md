@@ -47,7 +47,7 @@ The bot is developed to handle four cases. First, when the user wishes to search
   [s1] User requests information about a Library/API call.
   [s2] Bot lists the Machine Learning Libraries in python asking User to select a Library.
   [s3] User selects the Library.
-  [s4] Bot provides information about the selected Library and relevant links to it and asks User whether he wants a specific                  information about a method/function.
+  [s4] Bot provides information about the selected Library and relevant links to it and asks User whether he wants a specific        information about a method/function.
   [s5] User responds by selecting his preference and enters the name of the method/function.
   [s6] Bot gives description and relevant links about the given method/function.
 4 Alternate Flow:
@@ -56,38 +56,43 @@ The bot is developed to handle four cases. First, when the user wishes to search
  
 #### Use Case 3: Have a Question?<!--User posts a question in event of there existing no other similar question-->
 ```
-1 Preconditions: User must have LIBBRA Access Token in System
+1 Preconditions: User must have LIBRA Access Token in the System
 2 Main Flow:
-  User searches for a question. Bot lists the existing Questions matching with User's Question. Bot lets User to post a question incase   User don't find relevant Questions.
+  User requests for the Q/A section and Bot directs User to the Q/A section for the selected Library.
 3 Sub Flow:
-  [s1] User selects Have a Question? Option from the bot's welcome message.
-  [s2] Bot asks the Category of the Question. 
-  [s3] User enters the Category of the Question.
-  [s4] Bot asks User to enter the Question.
-  [s5] User enters the Question.
-  [s6] Bot displays Questions and their answers matching with User's Question and asks User to post Question if he didn't find the              answers helpful.
-  [s7] User selects Post.
-  [s8] Bot asks User to enter the Question by providing all the context.
-  [s9] Bot posts the Question in the database.
+  [s1] User requests the Q/A section from the Welcome message.
+  [s2] Bot lists the Machine Learning Libraries in python asking User to select a Library.
+  [s3] User selects the Library.
+  [s4] Bot asks whether the User is looking for an answer or wants to post an answer.
+  [s5] User selects that he is looking for an answer. 
+  [s6] Bot asks whether the question is related to a specific function or is general.
+  [s7] User enters an input according to his preference.
+  [s8] Bot presents the pool of questions those match with User's preference.
+  [s9] User selects a question to see the answer.
+  [s10] Bot displays the answer and asks to post a question if the user doesn't find the answer helpful. 
+  [s11] User proceeds to type the question.
 4 Alternate Flow:
-  [E1] User finds the answers helpful.
+  [E1] User finds the question but there is no answer available.
+  [E2] User finds the answer helpful and does not post the question.
+  
 ```
  
 #### Use Case 4: User posts an answer to an already existing question 
 ```
-1 Preconditions: User must have LIBBRA Access Token in System
+1 Preconditions: User must have LIBRA Access Token in System
 2 Main Flow:  User wants to answer a question. Bot lists the questions for the user and option to answer them.
 3 Sub Flow 1:
-  [s1] User selects Q/A option to go to the Question and Answer section.
-  [s2] Bot asks the User about the Library name to list Questions and Answers related to that Library.
-  [s3] User enters the Library name.
-  [s4] Bot asks the User whether he is looking for an answer or he wants to post an answer.
-  [s5] User selects post an answer.
-  [s6] Bot provides the list of Questions.
-  [s7] User selects a Question.
-  [s8] Bot asks to share the Answer for that Question.
-  [s9] User enters the Answer.
-  [s10] Bot posts the Answer to the Question in database. 
+  [s1] User requests the Q/A section from the Welcome message.
+  [s2] Bot lists the Machine Learning Libraries in python asking User to select a Library.
+  [s3] User selects the Library.
+  [s4] Bot asks whether the User is looking for an answer or wants to post an answer.
+  [s5] User selects that he wants to post an answer.
+  [s6] Bot asks whether the user wants to answer related to a specific function or is general.
+  [s7] User enters an input according to his preference.
+  [s8] Bot presents the unanswered pool of questions those match with User's preference.
+  [s9] User selects a question and enters the answer.
+  [s10] Bot asks if the question is not available then post both the question and answer.
+  [s11] User enters both the question and answer.
 4 Alternate Flow:
   [E1] User may not have answer for the listed Questions.
 ```
