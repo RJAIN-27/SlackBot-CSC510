@@ -16,79 +16,84 @@ The bot is developed to handle four cases. First case is when the user wishes to
 
 
 ## Use Cases 
-#### Use Case 1: Library/API Suggestion for a dataset <!-- Bot suggests the library/API to be used, in answer to a user's question -->
+#### Use Case 1: Library/API call Suggestion for a dataset <!-- Bot suggests the library/API call to be used, in answer to a user's question -->
 ```
-1 Preconditions: User must have LIBBRA Access Token in System<!--User must have a data set to know about the library to be used.-->
+1 Preconditions: User must have LIBRA Access Token in the System. User must know the type of dataset for which he wants suggestion. <!--User must have a data set to know about the library to be used.-->
 2 Main Flow: 
-  User requests library/API suggestion by uploading the dataset. Bot provides the best library/API to be used for the uploaded   dataset.
+  User requests library/API call suggestion for a dataset/image. Bot provides the best suitable library/API call to be used for the       selected dataset.
 3 Sub Flow 1:
-  [s1] User requests for Library/API Suggestion for a dataset.
+  [s1] User requests for Library/API call suggestion.
   [s2] Bot asks whether it is image or numerical dataset.
   [s3] User responds by selecting image dataset.
-  [s4] Bot asks whether it is for phone or Workstation.
+  [s4] Bot asks whether it is for phone or PC/Server.
   [s5] User responds by selecting his preference.
-  [s6] Bot provides the best library/API to be used for the given User's preferences.
-4 Alternate Flow 1:
-  [E1] Dataset is not provided by the User.  
-5 Sub Flow 2: 
-  [s1] User requests for Library/API suggestion for a dataset.
+  [s6] Bot suggests the best library/API call to be used for the given User's preferences.
+4 Sub Flow 2: 
+  [s1] User requests for Library/API call suggestion.
   [s2] Bot asks whether it is image or numerical dataset.
   [s3] User responds by selecting numerical dataset.
-  [s4] Bot asks for the dataset to be used for the Library/API suggestion.
+  [s4] Bot asks to provide the dataset to be used for the Library/API call Suggestion.
   [s5] User uploads the dataset.
-  [s6] Bot provides the best library/API to be used for the uploaded dataset.
-6 Alternate Flow 2:
-  [E1] Dataset is not provided by the User.
+  [s6] Bot suggests the best library/API call to be used for the uploaded dataset.
+5 Alternate Flow 1:
+  [E1] User's dataset is neither image or numerical. Bot responds by giving some generic suggestion.
 ```
 
-#### Use Case 2: Know about a Library/API <!--Bot renders description for library/API  -->
+#### Use Case 2: Know about a Library/API call <!--Bot renders description for library/API call-->
 ```
-1 Preconditions: User must have LIBBRA Access Token in System
+1 Preconditions: User must have LIBRA Access Token in the System.
 2 Main Flow: 
-  User requests information about a Library/API. Bot provides the information about the library/API and the relevant links.
+  User requests information about a Library/API call. Bot provides the information about the library/API call and the relevant links.
 3 Sub Flow:
-  [s1] User requests information about a Library/API.
-  [s2] Bot asks the User to enter the name of Library/API
-  [s3] User enters the name of the Library/API.
-  [s4] Bot provides information about the given Library/API and relevant links to it.
+  [s1] User requests information about a Library/API call.
+  [s2] Bot lists the Machine Learning Libraries in python asking User to select a Library.
+  [s3] User selects the Library.
+  [s4] Bot provides information about the selected Library and relevant links to it and asks User whether he wants a specific        information about a method/function.
+  [s5] User responds by selecting his preference and enters the name of the method/function.
+  [s6] Bot gives description and relevant links about the given method/function.
 4 Alternate Flow:
-  [E1] No known library/API is provided by the user.
+  [E1] No known method/function is provided by the user. Bot gives a message that method/function is not found.
 ```
  
 #### Use Case 3: Have a Question?<!--User posts a question in event of there existing no other similar question-->
 ```
-1 Preconditions: User must have LIBBRA Access Token in System
+1 Preconditions: User must have LIBRA Access Token in the System
 2 Main Flow:
-  User searches for a question. Bot lists the existing Questions matching with User's Question. Bot lets User to post a question incase user doesn't find relevant Questions.
+  User requests for the Q/A section and Bot directs User to the Q/A section for the selected Library.
 3 Sub Flow:
-  [s1] User selects Have a Question? Option from the bot's welcome message.
-  [s2] Bot asks the Category of the Question. 
-  [s3] User enters the Category of the Question.
-  [s4] Bot asks User to enter the Question.
-  [s5] User enters the Question.
-  [s6] Bot displays Questions and their answers matching with User's Question and asks user to post Question if he didn't find the answers helpful.
-  [s7] User selects Post.
-  [s8] Bot asks User to enter the Question by providing all the context.
-  [s9] Bot posts the Question in the repository.
+  [s1] User requests the Q/A section from the Welcome message.
+  [s2] Bot lists the Machine Learning Libraries in python asking User to select a Library.
+  [s3] User selects the Library.
+  [s4] Bot asks whether the User is looking for an answer or wants to post an answer.
+  [s5] User selects that he is looking for an answer. 
+  [s6] Bot asks whether the question is related to a specific function or is general.
+  [s7] User enters an input according to his preference.
+  [s8] Bot presents the pool of questions those match with User's preference.
+  [s9] User selects a question to see the answer.
+  [s10] Bot displays the answer and asks to post a question if the user doesn't find the answer helpful. 
+  [s11] User proceeds to type the question.
 4 Alternate Flow:
-  [E1] User finds the answers helpful.
+  [E1] User finds the question but there is no answer available.
+  [E2] User finds the answer helpful and does not post the question.
+  
 ```
  
 #### Use Case 4: User posts an answer to an already existing question 
 ```
-1 Preconditions: User must have LIBBRA Access Token in System
+1 Preconditions: User must have LIBRA Access Token in System
 2 Main Flow:  User wants to answer a question. Bot lists the questions for the user and option to answer them.
 3 Sub Flow 1:
-  [s1] User selects Q/A option to go to the Question and Answer section.
-  [s2] Bot asks the User about the Library name to list Questions and Answers related to that Library.
-  [s3] User enters the Library name.
-  [s4] Bot asks the User whether he is looking for an answer or he wants to post an answer.
-  [s5] User selects post an answer.
-  [s6] Bot provides the list of Questions.
-  [s7] User selects a Question.
-  [s8] Bot asks to share the Answer for that Question.
-  [s9] User enters the Answer.
-  [s10] Bot posts the Answer to the Question in repository. 
+  [s1] User requests the Q/A section from the Welcome message.
+  [s2] Bot lists the Machine Learning Libraries in python asking User to select a Library.
+  [s3] User selects the Library.
+  [s4] Bot asks whether the User is looking for an answer or wants to post an answer.
+  [s5] User selects that he wants to post an answer.
+  [s6] Bot asks whether the user wants to answer related to a specific function or is general.
+  [s7] User enters an input according to his preference.
+  [s8] Bot presents the unanswered pool of questions those match with User's preference.
+  [s9] User selects a question and enters the answer.
+  [s10] Bot asks if the question is not available then post both the question and answer.
+  [s11] User enters both the question and answer.
 4 Alternate Flow:
   [E1] User may not have answer for the listed Questions.
 ```
@@ -98,6 +103,7 @@ The bot is developed to handle four cases. First case is when the user wishes to
 2 Main Flow:
 3 Sub Flow:
 4 Alternate Flow:-->
+ 
  
 ## Design Sketches
 
