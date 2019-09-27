@@ -96,13 +96,19 @@ The bot is developed to handle four cases. First, when the user wishes to search
 ### Wireframe
 ### Story board
 #### Case 1:
-##### Case 1a:
+
+##### Case 1a: When user would like to choose best library for image dataset
+
 ![](https://github.ncsu.edu/csc510-fall2019/CSC510-23/blob/master/resources/images/storyboard/sb_c_1_1_1.png)
 ![](https://github.ncsu.edu/csc510-fall2019/CSC510-23/blob/master/resources/images/storyboard/sb_c_1_1_2.png)
-##### Case 1b:
+
+##### Case 1b: When user would like to choose best model for Numerical dataset
+
 ![](https://github.ncsu.edu/csc510-fall2019/CSC510-23/blob/master/resources/images/storyboard/sb_c_1_2_1.png)
 ![](https://github.ncsu.edu/csc510-fall2019/CSC510-23/blob/master/resources/images/storyboard/sb_c_1_2_2.png)
-##### Case 1c:
+
+##### Case 1c: When user has dataset which is none of the above
+
 ![](https://github.ncsu.edu/csc510-fall2019/CSC510-23/blob/master/resources/images/storyboard/sb_c_1_3.png)
 
 #### Case 2:
