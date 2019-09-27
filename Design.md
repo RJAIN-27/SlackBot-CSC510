@@ -17,7 +17,7 @@ The bot is developed to handle four cases. First, when the user wishes to search
 
 ## Use Cases 
 #### Use Case 1: Library/API call Suggestion for a dataset <!-- Bot suggests the library/API call to be used, in answer to a user's question -->
-```bash
+```
 1 Preconditions: User must have LIBBRA Access Token in System<!--User must have a data set to know about the library to be used.-->
 2 Main Flow: 
   User requests library/API call suggestion by uploading the dataset. Bot provides the best library/API call to be used for the uploaded   dataset.
@@ -42,7 +42,7 @@ The bot is developed to handle four cases. First, when the user wishes to search
 ```
 
 #### Use Case 2: Know about a Library/API call <!--Bot renders description for library/API call-->
-```bash
+```
 1 Preconditions: User must have LIBBRA Access Token in System
 2 Main Flow: 
   User requests information about a Library/API call. Bot provides the information about the library/API call and the relevant links.
@@ -56,7 +56,7 @@ The bot is developed to handle four cases. First, when the user wishes to search
 ```
  
 #### Use Case 3: Have a Question?<!--User posts a question in event of there existing no other similar question-->
-```bash
+```
 1 Preconditions: User must have LIBBRA Access Token in System
 2 Main Flow:
   User searches for a question. Bot lists the existing Questions matching with User's Question. Bot lets User to post a question incase   User don't find relevant Questions.
@@ -75,15 +75,22 @@ The bot is developed to handle four cases. First, when the user wishes to search
 ```
  
 #### Use Case 4: User posts an answer to an already existing question 
-```bash
+```
 1 Preconditions: User must have LIBBRA Access Token in System
-2 Main Flow:
+2 Main Flow:  User wants to answer a question. Bot lists the questions for the user and option to answer them.
 3 Sub Flow 1:
-  [s1] 
-  [s2]
-  [s3]
-  [s4]
+  [s1] User selects Q/A option to go to the Question and Answer section.
+  [s2] Bot asks the User about the Library name to list Questions and Answers related to that Library.
+  [s3] User enters the Library name.
+  [s4] Bot asks the User whether he is looking for an answer or he wants to post an answer.
+  [s5] User selects post an answer.
+  [s6] Bot provides the list of Questions.
+  [s7] User selects a Question.
+  [s8] Bot asks to share the Answer for that Question.
+  [s9] User enters the Answer.
+  [s10] Bot posts the Answer to the Question in repository. 
 4 Alternate Flow:
+  [E1] User may not have answer for the listed Questions.
 ```
  
 <!--#### Use Case 5: User posts an answer to a question posted by the user itself 
