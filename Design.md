@@ -125,7 +125,7 @@ The bot is developed to handle four cases. First, when the user wishes to search
 
 ### Architecture Diagram and component details:
 
-**The architecture diagram: **
+**The architecture diagram:**
 ![](https://github.ncsu.edu/csc510-fall2019/CSC510-23/blob/architecture_new/resources/images/Architecture%20Diagram.png)
 
 The architecture consists of three major components:-
@@ -135,40 +135,40 @@ The architecture consists of three major components:-
 
 Within these 3 main components the function of the sub components are as follows: 
 
-**1. Front end of the bot **
+**1. Front end of the bot**
 
-   *- Suggest an ML model for a given dataset: *
+   *- Suggest an ML model for a given dataset:*
    
      - The user specifies that they wish to know what the best model is to apply on their dataset(numerical/image). The bot passes this request to the Extraction Component which then understands the intent of the user and passes the intent and the corresponding entities to the respective components, i.e. Message Generator for image data set, and Model Suggestion Component for numerical data set. The result is then passed back to the user through the Message Generator component.  
    
-   *- Look for a description of a Library/API:
+   *- Look for a description of a Library/API:*
    
       - The user requests for information about an ML library or API in python. This request is extracted by the extraction component and then sent to the message generator which fetches the relevant information from the ML Library/API Information database and delivers the result back to the user 
    
-   *- Look for an answer: 
+   *- Look for an answer:* 
       
       - The user posts a question to the bot which is extracted by the extraction component which then sends it to the message generator in turn. The message generator then looks into the Q/A Bank for then answer to the question and returns it to the user, if there exists some answer, and an appropriate message in the case that there is no answer to the user’s question. 
-   *- Post an answer:
+   *- Post an answer:*
       
       - The extraction component extracts the user’s intent to post an answer for a question and passes it to the message generator which then looks into the Q/A bank for the question and then allows the user to post an answer to the question and then write the answer back to the Q/A database. 
 
-**2. Backend of the bot
+**2. Backend of the bot**
 
-   *- Extraction component:
+   *- Extraction component:*
       
       - This extracts the users’ intent and the corresponding inputs (entities) from the user and passes it on to the other components accordingly 
     - Message Generator: 
       - This component has a set of predefined questions which are asked to the user in order to extract the intent of the user. It also responds to the users’ requests with the content it receives from the respective components responsible for handling the request. 
-   *- Model Suggestion:
+   *- Model Suggestion:*
       
       - This component accepts the numerical data set, preprocesses it, applies a set of models from the scikitlearn package in Python and arrives at the best model for the dataset and passes on this as the result back to the user via the message generator.
 
-**3. Databases
+**3. Databases**
    
-   *- Q/A Bank:
+   *- Q/A Bank:*
       
       - This consists of a set of commonly asked questions and answers related to ML libraries in Python 
-   *- ML Library/API Information Bank:
+   *- ML Library/API Information Bank:*
       
       - This consists of the various libraries available and their corresponding descriptions.
 
