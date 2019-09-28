@@ -17,8 +17,8 @@ Deliverable | Item/Status
 Discussed the use cases for the Library Bot | Complete 
 Finalized Problem Statemenst and Bot Description | Complete
 Wireframe for Bot in action | Complete 
-Storyboard for the Bot | In Progress
+Storyboard for the Bot | Complete
 Architecture Design - Diagram | Complete
-Additional Patterns and contextual description | In Progress
+Additional Patterns and contextual description | Complete
 
 [Trello Board Week 2](https://trello.com/b/YMimrKtA/week-2)
