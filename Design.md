@@ -12,7 +12,7 @@ The information available online regarding the usage of such APIs and libraries 
 
 The situation presented in the previous section can be eased by introducing our bot system L.I.B.R.A. (Library-Intensive Bot for Resource Assistance) which helps the users in understanding the ML APIs of Python in a concise and systematic manner, by responding to the user’s requests. This way the users get the solution to their questions all under one roof.
  
-The bot is developed to handle four cases. First case is when the user wishes to understand what model to apply on a dataset , the bot interacts with the user to understand what the dataset is and where it is to be deployed, and then suggests the appropriate model to fit on the data set, thereby reducing the users' effort. The second case is when the user requests for information about an ML library or API in python, then bot renders this information. Third case is when the user wishes to look for an answer to a question. If there is no existing answer for the question then the user simply posts the question. The fourth case is when the user posts an answer to an already existing question. If no such question exists then the user posts an answer to a question that is also posted by the same user. This makes it a Documentation Bot as it is equipped to answer users' questions. This bot is developed to respond to the user’s requests which act as events, which makes this a response bot. The bot follows the "reactor" design pattern which chats with the users when they ask their questions as well as respond to cases, but has no memory of who the user is.
+The bot is developed to handle four cases. First case is when the user wishes to understand what model to apply on a dataset , the bot interacts with the user to understand what the dataset is and where it is to be deployed, and then suggests the appropriate model to fit on the data set, thereby reducing the users' effort in finding the right model. The second case is when the user requests for information about an ML library or API in python, then bot renders this information. The bot also assists the users with two other cases. It helps the users when they want to look for an answer to a question or when they want to post an answer to a question. This makes it a Documentation Bot as it is equipped to answer users' questions. This bot is developed to respond to the user’s requests which act as events, which makes this a response bot. The bot follows the "reactor" design pattern which chats with the users when they ask their questions as well as respond to cases, but has no memory of who the user is.
 
 
 ## Use Cases 
@@ -186,8 +186,8 @@ The bot is developed to handle four cases. First case is when the user wishes to
 
 The architecture consists of three major components:-
 1. Mattermost bot as a client for interacting with the user.
-2. Server which process the client request by calling appropriate Python APIs’.
-3. A datastore required for storing commonly asked questions and their corresponding answers and a datastore required to store information regarding the description for Machine Learning APIs in Python
+2. Server which processes the client request by calling appropriate Python APIs’.
+3. A database required for storing commonly asked questions and their corresponding answers and a database required to store information regarding the description for Machine Learning APIs in Python
 
 Within these 3 main components the function of the sub components are as follows: 
 
@@ -203,18 +203,19 @@ Within these 3 main components the function of the sub components are as follows
    
    *- Look for an answer:* 
       
-      - The user posts a question to the bot which is extracted by the extraction component which then sends it to the message generator in turn. The message generator then looks into the Q/A Bank for then answer to the question and returns it to the user, if there exists some answer, and an appropriate message in the case that there is no answer to the user’s question. 
+      - The user posts a question to the bot which is extracted by the extraction component which then sends it to the message generator in turn. The message generator then looks into the Q/A Bank for the answer to the question and returns it to the user, if there exists some answer, and an appropriate message in the case that there is no answer to the user’s question. 
    *- Post an answer:*
       
-      - The extraction component extracts the user’s intent to post an answer for a question and passes it to the message generator which then looks into the Q/A bank for the question and then allows the user to post an answer to the question and then write the answer back to the Q/A database. 
+      - The extraction component extracts the user’s intent to post an answer for a question and passes it to the message generator which then looks into the Q/A bank for the question and then allows the user to post an answer to the question and then write the answer to the Q/A database. 
 
 **2. Backend of the bot**
 
    *- Extraction component:*
       
       - This extracts the users’ intent and the corresponding inputs (entities) from the user and passes it on to the other components accordingly 
-    - Message Generator: 
-      - This component has a set of predefined questions which are asked to the user in order to extract the intent of the user. It also responds to the users’ requests with the content it receives from the respective components responsible for handling the request. 
+   *- Message Generator:*
+   
+      - This component has a set of predefined questions which are asked to the user in order to extract the intent of the user. It also responds to the users’ requests with the content it receives from the respective components responsible for handling the users' request. 
    *- Model Suggestion:*
       
       - This component accepts the numerical data set, preprocesses it, applies a set of models from the scikitlearn package in Python and arrives at the best model for the dataset and passes on this as the result back to the user via the message generator.
