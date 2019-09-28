@@ -48,7 +48,7 @@ The bot is developed to handle four cases. First case is when the user wishes to
   [s1] User requests information about a Library/API.
   [s2] Bot lists the Machine Learning Libraries in python asking User to select a Library.
   [s3] User selects the Library.
-  [s4] Bot provides information about the selected Library and relevant links to it and asks User whether he wants a specific        information about a method/function.
+  [s4] Bot provides information about the selected Library and relevant links to it and asks User whether he wants a specific information about a method/function.
   [s5] User responds by selecting his preference and enters the name of the method/function.
   [s6] Bot gives description and relevant links about the given method/function.
 4 Alternate Flow:
@@ -80,7 +80,7 @@ The bot is developed to handle four cases. First case is when the user wishes to
  
 #### Use Case 4: Post an answer to a Question 
 ```
-1 Preconditions: User must have LIBRA Access Token in System
+1 Preconditions: User must have LIBRA Access Token in the System
 2 Main Flow:  User wants to answer a question. Bot lists the questions for the user and option to answer them.
 3 Sub Flow 1:
   [s1] User requests the Q/A section from the Welcome message.
