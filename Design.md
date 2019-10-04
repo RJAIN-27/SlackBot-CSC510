@@ -72,35 +72,27 @@ This bot is developed to respond to the user’s requests which act as events, w
 
 ### Wireframe
 
-**Case 1: When user would like to choose best library or model depending upon the dataset and deployment environment**
+**Case 1: When user would like to choose best model for numerical dataset**
 
-*Case 1a: When user would like to choose best library for image dataset:*
+The bot takes the csv file and sends it to the server where a python program is executed with the file to determine the best model.
 
 <img src="https://github.ncsu.edu/csc510-fall2019/CSC510-23/blob/master/resources/images/wireframes/wire1.png" height="540" width="350"> <img src="https://github.ncsu.edu/csc510-fall2019/CSC510-23/blob/master/resources/images/wireframes/wire2.png" height="540" width="350">
 
-*Case 1B: When user would like to choose best model for numerical dataset:*
-
+**Case 2: When user would like to choose best model for alphanumerical dataset:**
+The bot takes the csv file and sends it to the server where a python program is executed with the file to determine the best model by complex preprocessing like factoring, n-gram keywork extraction etc.
 <img src="https://github.ncsu.edu/csc510-fall2019/CSC510-23/blob/master/resources/images/wireframes/wire3.png" height="540" width="350"> <img src="https://github.ncsu.edu/csc510-fall2019/CSC510-23/blob/master/resources/images/wireframes/wire4.png" height="540" width="350">
 
-*Case 1C: When user has dataset which is neither image dataset nor numerical dataset:*
+**Alternate flow if the dataset neither belongs to numerical dataset nor alphanumerical dataset:*
 
 <img src="https://github.ncsu.edu/csc510-fall2019/CSC510-23/blob/master/resources/images/wireframes/wire5.png" height="540" width="350">
 
-**Case 2: When the user wants to know about a library or function:**
+**Case 3: When the user wants to know about a library or function:**
 
 <img src="https://github.ncsu.edu/csc510-fall2019/CSC510-23/blob/master/resources/images/wireframes/wire6.png" height="540" width="350"> <img src="https://github.ncsu.edu/csc510-fall2019/CSC510-23/blob/master/resources/images/wireframes/wire7.png" height="540" width="350">
 
-**Case 3: When user wants to search for an answer to the question. If the question is not available, the user can post the question:**
-
-<img src="https://github.ncsu.edu/csc510-fall2019/CSC510-23/blob/master/resources/images/wireframes/wire8.png" height="540" width="350"> <img src="https://github.ncsu.edu/csc510-fall2019/CSC510-23/blob/master/resources/images/wireframes/wire9.png" height="540" width="350"> <img src="https://github.ncsu.edu/csc510-fall2019/CSC510-23/blob/master/resources/images/wireframes/wire10.png" height="540" width="350">
-
-**Case 4: When user wants to answer an asked question. If the question is not present, the user can post both question and answer:**
-
-<img src="https://github.ncsu.edu/csc510-fall2019/CSC510-23/blob/master/resources/images/wireframes/wire11.png" height="540" width="350"> <img src="https://github.ncsu.edu/csc510-fall2019/CSC510-23/blob/master/resources/images/wireframes/wire12.png" height="540" width="350"> <img src="https://github.ncsu.edu/csc510-fall2019/CSC510-23/blob/master/resources/images/wireframes/wire13.png" height="540" width="350">
-
 **User feedback: The bot asks user's feedback regarding the task it performed and also asks if the user would like to perform any other tasks:**
 
-<img src="https://github.ncsu.edu/csc510-fall2019/CSC510-23/blob/master/resources/images/wireframes/wire14.png" height="540" width="350"> <img src="https://github.ncsu.edu/csc510-fall2019/CSC510-23/blob/master/resources/images/wireframes/wire15.png" height="540" width="350">
+<img src="https://github.ncsu.edu/csc510-fall2019/CSC510-23/blob/master/resources/images/wireframes/wire8.png" height="540" width="350"> <img src="https://github.ncsu.edu/csc510-fall2019/CSC510-23/blob/master/resources/images/wireframes/wire9.png" height="540" width="350">
 
 
 ### Story board
