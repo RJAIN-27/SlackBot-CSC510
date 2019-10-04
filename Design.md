@@ -14,7 +14,7 @@ The situation presented in the previous section can be eased by introducing our 
  
 **The bot is developed to handle the following operations** 
 
-- The user wishes to understand what model to apply on a dataset , the bot interacts with the user to understand what the dataset is and where it is to be deployed, and then suggests the appropriate model to fit on the data set, by running Machine Learning techniques in Python in the background, thereby reducing the users' effort in finding the right model. This feature is applicable when the users' data set is either a numerical one or a combination of numeric and text content. 
+- The user wishes to understand what model to apply on a dataset. The bot interacts with the user to understand what the dataset is and where it is to be deployed. It then performs the standard machine learning techniques in python, on the dataset and arrives at the best suited model for the users' dataset and suggests it to the user. This reduces the user's effort in trying to understand from a myriad of sources on what has to be done with the dataset. This feature is applicable when the users' data set is either a numerical one or a combination of numeric and alphanumeric content. 
 
 - The user requests for information about an ML library or API in python, then bot renders this information. 
 
