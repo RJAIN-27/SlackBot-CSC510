@@ -79,7 +79,9 @@ The bot takes the csv file and sends it to the server where a python program is 
 <img src="https://github.ncsu.edu/csc510-fall2019/CSC510-23/blob/master/resources/images/wireframes/wire1.png" height="540" width="350"> <img src="https://github.ncsu.edu/csc510-fall2019/CSC510-23/blob/master/resources/images/wireframes/wire2.png" height="540" width="350">
 
 **Case 2: When user would like to choose best model for alphanumerical dataset:**
+
 The bot takes the csv file and sends it to the server where a python program is executed with the file to determine the best model by complex preprocessing like factoring, n-gram keywork extraction etc.
+
 <img src="https://github.ncsu.edu/csc510-fall2019/CSC510-23/blob/master/resources/images/wireframes/wire3.png" height="540" width="350"> <img src="https://github.ncsu.edu/csc510-fall2019/CSC510-23/blob/master/resources/images/wireframes/wire4.png" height="540" width="350">
 
 **Alternate flow if the dataset neither belongs to numerical dataset nor alphanumerical dataset:*
@@ -96,36 +98,21 @@ The bot takes the csv file and sends it to the server where a python program is 
 
 
 ### Story board
-#### Case 1: When user would like to choose best library or model depending upon the dataset and deployment environment
-
-##### Case 1a: When user would like to choose best library for image dataset
-
-![](https://github.ncsu.edu/csc510-fall2019/CSC510-23/blob/master/resources/images/storyboard/sb_c_1_1_1.png)
-![](https://github.ncsu.edu/csc510-fall2019/CSC510-23/blob/master/resources/images/storyboard/sb_c_1_1_2.png)
-
-##### Case 1b: When user would like to choose best model for Numerical dataset
+#### Case 1: When user would like to choose best model for numerical dataset
 
 ![](https://github.ncsu.edu/csc510-fall2019/CSC510-23/blob/master/resources/images/storyboard/sb_c_1_2_1.png)
 ![](https://github.ncsu.edu/csc510-fall2019/CSC510-23/blob/master/resources/images/storyboard/sb_c_1_2_2.png)
 
-##### Case 1c: When user has dataset which is none of the above
+#### Case 2: When user would like to choose best model for Alphaumerical dataset
+
+#### Alternate flow if the dataset neither belongs to numerical dataset nor alphanumerical dataset:
 
 ![](https://github.ncsu.edu/csc510-fall2019/CSC510-23/blob/master/resources/images/storyboard/sb_c_1_3.png)
 
-#### Case 2: When the user wants to know about a library or function
+#### Case 3: When the user wants to know about a library or function
 
 ![](https://github.ncsu.edu/csc510-fall2019/CSC510-23/blob/master/resources/images/storyboard/sb_c_2_1.png)
 ![](https://github.ncsu.edu/csc510-fall2019/CSC510-23/blob/master/resources/images/storyboard/sb_c_2_2.png)
-
-#### Case 3: When user wants to search for an answer to the question. If the question is not available, the user can post the question
-
-![](https://github.ncsu.edu/csc510-fall2019/CSC510-23/blob/master/resources/images/storyboard/sb_c_3_1.png)
-![](https://github.ncsu.edu/csc510-fall2019/CSC510-23/blob/master/resources/images/storyboard/sb_c_3_2.png)
-
-#### Case 4: When user wants to answer an asked question. If the question is not present, the user can post both question and answer
-
-![](https://github.ncsu.edu/csc510-fall2019/CSC510-23/blob/master/resources/images/storyboard/sb_c_4_1.png)
-![](https://github.ncsu.edu/csc510-fall2019/CSC510-23/blob/master/resources/images/storyboard/sb_c_4_2.png)
 
 #### User feedback: The bot asks user's feedback regarding the task it performed and also asks if the user would like to perform any other tasks
 
