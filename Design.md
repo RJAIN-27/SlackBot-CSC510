@@ -129,7 +129,7 @@ The bot takes the csv file and sends it to the server where a python program is 
 The architecture consists of three major components:-
 1. Mattermost bot as a client for interacting with the user.
 2. Server which processes the client request by calling appropriate Python APIs’.
-3. A database required for storing commonly asked questions and their corresponding answers and a database required to store information regarding the description for Machine Learning APIs in Python
+3. A database required to store information regarding the description for Machine Learning APIs in Python
 
 Within these 3 main components the function of the sub components are as follows: 
 
@@ -143,37 +143,29 @@ Within these 3 main components the function of the sub components are as follows
    
       - The user requests for information about an ML library or API in python. This request is extracted by the extraction component and then sent to the message generator which fetches the relevant information from the ML Library/API Information database and delivers the result back to the user 
    
-   *- Look for an answer:* 
-      
-      - The user posts a question to the bot which is extracted by the extraction component which then sends it to the message generator in turn. The message generator then looks into the Q/A Bank for the answer to the question and returns it to the user, if there exists some answer, and an appropriate message in the case that there is no answer to the user’s question. 
-   *- Post an answer:*
-      
-      - The extraction component extracts the user’s intent to post an answer for a question and passes it to the message generator which then looks into the Q/A bank for the question and then allows the user to post an answer to the question and then write the answer to the Q/A database. 
-
 **2. Backend of the bot**
 
    *- Extraction component:*
       
       - This extracts the users’ intent and the corresponding inputs (entities) from the user and passes it on to the other components accordingly 
+   
    *- Message Generator:*
    
       - This component has a set of predefined questions which are asked to the user in order to extract the intent of the user. It also responds to the users’ requests with the content it receives from the respective components responsible for handling the users' request. 
-   *- Model Suggestion:*
+  
+  *- Model Suggestion:*
       
-      - This component accepts the numerical data set, preprocesses it, applies a set of models from the scikitlearn package in Python and arrives at the best model for the dataset and passes on this as the result back to the user via the message generator.
+      - This component accepts the numerical data set, preprocesses it, applies a set of models from the SciKit-Learn package in Python and arrives at the best model for the dataset and passes on this as the result back to the user via the message generator.
 
-**3. Databases**
+**3. Database**
    
-   *- Q/A Bank:*
-      
-      - This consists of a set of commonly asked questions and answers related to ML libraries in Python 
    *- ML Library/API Information Bank:*
       
-      - This consists of the various libraries available and their corresponding descriptions.
+      - This consists of the various libraries and functions available and their corresponding descriptions.
 
 ### Architecture constraints and guidelines:
 The following are the constraints of the bot:-
-1. For the first case, when the user wishes to understand what model to apply on a dataset, the bot can only suggest models for image or a numerical data set. 
+1. For the first case, when the user wishes to understand what model to apply on a dataset, the bot can only suggest models for a numerical data set and alphanumerical dataset. 
 2. The bot has limited number of functionality and focuses only on machine learning APIs and is equipped to handle only the use cases specified.
 3. Since the bot follows a reactor design pattern, the user cannot follow up on any of the operations.  
 
