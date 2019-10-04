@@ -6,11 +6,11 @@ To develop a bot system that assists software engineers/developers with their re
 ## Problem Statement  
 Machine Learning APIs are flourishing in the developer world, and the web is becoming a mashup of interconnected APIs, the popular ones in Python being Scikit-Learn, TensorFlow, Keras, MxNet. But the usage of these APIs are still unclear to many, which makes it complex for users who are not experts, to use. 
 
-The information available online regarding the usage of such APIs and libraries is vast and diverse. It is tedious to scout around a multitude of these sources and nail down on a satisfying answer and proceed with the implementation. Therefore, it will certainly be beneficial to have a solution that will answer questions regarding these libraries and the implementation, posed by users of these APIs, in a concise and satisfying manner, all under the same roof.   
+The information available online regarding the usage of such APIs and libraries is vast and diverse. It is tedious to scout around a multitude of these sources and nail down on a satisfying answer and proceed with the implementation. Therefore, it will certainly be beneficial to have a solution that will answer questions regarding these libraries and the implementation on datasets, posed by users of these APIs, in a concise and satisfying manner, all under the same roof, especially when the users are unclear about what has to be done with a dataset.  
 
 ## Bot Description
 
-The situation presented in the previous section can be eased by introducing our bot system L.I.B.R.A. (Library-Intensive Bot for Resource Assistance) which helps the users in understanding the ML APIs of Python in a concise and systematic manner, by responding to the user’s requests. This way the users get the solution to their questions all under one roof.
+The situation presented in the previous section can be eased by introducing our bot system L.I.B.R.A. (Library-Intensive Bot for Resource Assistance) which helps the users in understanding the ML APIs of Python in a concise and systematic manner, by responding to the user’s requests. The bot is also primarily developed to aid the users in understanding what model has to be applied on the users' dataset, by applying a series of elegant machine learning techniques internally on the dataset. This way the users get the solution to their questions all under one roof.
  
 **The bot is developed to handle the following operations** 
 
