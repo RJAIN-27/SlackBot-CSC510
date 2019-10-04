@@ -12,34 +12,46 @@ The information available online regarding the usage of such APIs and libraries 
 
 The situation presented in the previous section can be eased by introducing our bot system L.I.B.R.A. (Library-Intensive Bot for Resource Assistance) which helps the users in understanding the ML APIs of Python in a concise and systematic manner, by responding to the user’s requests. This way the users get the solution to their questions all under one roof.
  
-The bot is developed to handle four cases. First case is when the user wishes to understand what model to apply on a dataset , the bot interacts with the user to understand what the dataset is and where it is to be deployed, and then suggests the appropriate model to fit on the data set, thereby reducing the users' effort in finding the right model. The second case is when the user requests for information about an ML library or API in python, then bot renders this information. The bot also assists the users with two other cases. It helps the users when they want to look for an answer to a question or when they want to post an answer to a question. This makes it a Documentation Bot as it is equipped to answer users' questions. This bot is developed to respond to the user’s requests which act as events, which makes this a response bot. The bot follows the "reactor" design pattern which chats with the users when they ask their questions as well as respond to cases, but has no memory of who the user is.
+**The bot is developed to handle the following operations** 
+
+- The user wishes to understand what model to apply on a dataset , the bot interacts with the user to understand what the dataset is and where it is to be deployed, and then suggests the appropriate model to fit on the data set, by running Machine Learning techniques in Python in the background, thereby reducing the users' effort in finding the right model. This feature is applicable when the users' data set is either a numerical one or a combination of numeric and text content. 
+
+- The user requests for information about an ML library or API in python, then bot renders this information. 
+
+This bot is developed to respond to the user’s requests which act as events, which makes this a response bot. The bot follows the "reactor" design pattern which chats with the users when they ask their questions as well as respond to cases, but has no memory of who the user is.
 
 
 ## Use Cases 
-#### Use Case 1: Library/API Suggestion for a dataset <!-- Bot suggests the library/API to be used, in answer to a user's question --> <!-- User must have a data set to know about the library to be used -->
+#### Use Case 1: Model Suggestion for a numeric dataset <!-- Bot suggests the model to be used, in answer to a user's request about not having a clarity about what to do with the dataset --> <!-- User must have a data set to know about the library to be used -->
 ```
 1 Preconditions: User must have LIBRA Access Token in the System. User must know the type of dataset for which he wants suggestion.
 2 Main Flow: 
-  User requests library/API suggestion for a dataset/image. Bot provides the best suitable library/API to be used for the selected dataset.
+  User requests library/API suggestion for a numeric dataset. Bot runs the Machine Learning techiniques(preprocessing, model building, model selection, etc.) in python on the dataset in the background and arrives at the best suitable model to be used for the dataset.
 3 Sub Flow 1:
-  [s1] User requests for Library/API suggestion.
-  [s2] Bot asks whether it is image or numerical dataset.
-  [s3] User responds by selecting image dataset.
-  [s4] Bot asks whether it is for phone or PC/Server.
-  [s5] User responds by selecting his preference.
-  [s6] Bot suggests the best library/API to be used for the given User's preferences.
-4 Sub Flow 2: 
-  [s1] User requests for Library/API suggestion.
-  [s2] Bot asks whether it is image or numerical dataset.
-  [s3] User responds by selecting numerical dataset.
-  [s4] Bot asks to provide the dataset to be used for the Library/API Suggestion.
-  [s5] User uploads the dataset.
-  [s6] Bot suggests the best library/API to be used for the uploaded dataset.
-5 Alternate Flow 1:
-  [E1] User's dataset is neither image or numerical. Bot responds by giving some generic suggestion.
+  [s1] User requests for model suggestion for a dataset.
+  [s2] Bot asks whether it is numerical dataset or a assorted (numeric+alphanumeric) dataset.
+  [s3] User responds by selecting numeric dataset.
+  [s4] Bot sends the dataset to the backend where a series of Machine Learning techiniques in Python are applied to the dataset to find the best model for the dataset
+  [s5] The result from the procedure in [s4] is then passed back to the user
+4 Alternate FLow:
+  [E1] User's dataset is neither numerical nor a combination of numeric and alphanumeric. The bot responds with a relevant message indicating an invalid selection.
+```
+#### Use Case 2: Model Suggestion for alphanumeric+numeric dataset<!-- Bot suggests the model to be used, in answer to a user's request about not having a clarity about what to do with the dataset --> <!-- User must have a data set to know about the library to be used -->
+```
+1 Preconditions: User must have LIBRA Access Token in the System. User must know the type of dataset for which he wants suggestion.
+2 Main Flow: 
+  User requests model suggestion for an assorted (numeric+alphanumeric) dataset. Bot runs the Machine Learning techiniques (Preprocessing, model building, model selection, etc.) in python on the dataset in the background and arrives at the best suitable model to be used for the dataset.
+3 Sub Flow 1:
+  [s1] User requests for model suggestion for a dataset.
+  [s2] Bot asks whether it is numerical dataset or a assorted (numeric+alphanumeric) dataset.
+  [s3] User responds by selecting assorted dataset.
+  [s4] Bot sends the dataset to the backend where a series of Machine Learning techiniques in Python are applied to find the best model for the dataset by appropriately handling the categorical and continuous values in the dataset.
+  [s5] The result from the procedure in [s4] is then passed back to the user
+4 Alternate FLow:
+  [E1] User's dataset is neither numerical nor a combination of numeric and alphanumeric. The bot responds with a relevant message indicating an invalid selection.
 ```
 
-#### Use Case 2: Know about a Library/API <!--Bot renders description for library/API-->
+#### Use Case 3: Know about a Library/API <!--Bot renders description for library/API that is requested by the user-->
 ```
 1 Preconditions: User must have LIBRA Access Token in the System.
 2 Main Flow: 
@@ -54,55 +66,6 @@ The bot is developed to handle four cases. First case is when the user wishes to
 4 Alternate Flow:
   [E1] No known method/function is provided by the user. Bot gives a message that method/function is not found.
 ```
- 
-#### Use Case 3: Have a Question?<!--User posts a question in event of there existing no other similar question-->
-```
-1 Preconditions: User must have LIBRA Access Token in the System
-2 Main Flow:
-  User requests for the Q/A section and Bot directs User to the Q/A section for the selected Library.
-3 Sub Flow:
-  [s1] User requests the Q/A section from the Welcome message.
-  [s2] Bot lists the Machine Learning Libraries in python asking User to select a Library.
-  [s3] User selects the Library.
-  [s4] Bot asks whether the User is looking for an answer or wants to post an answer.
-  [s5] User selects that he is looking for an answer. 
-  [s6] Bot asks whether the question is related to a specific function or is general.
-  [s7] User enters an input according to his preference.
-  [s8] Bot presents the pool of questions those match with User's preference.
-  [s9] User selects a question to see the answer.
-  [s10] Bot displays the answer and asks to post a question if the user doesn't find the answer helpful. 
-  [s11] User proceeds to type the question.
-4 Alternate Flow:
-  [E1] User finds the question but there is no answer available.
-  [E2] User finds the answer helpful and does not post the question.
-  
-```
- 
-#### Use Case 4: Post an answer to a Question 
-```
-1 Preconditions: User must have LIBRA Access Token in the System
-2 Main Flow:  User wants to answer a question. Bot lists the questions for the user and option to answer them.
-3 Sub Flow 1:
-  [s1] User requests the Q/A section from the Welcome message.
-  [s2] Bot lists the Machine Learning Libraries in python asking User to select a Library.
-  [s3] User selects the Library.
-  [s4] Bot asks whether the User is looking for an answer or wants to post an answer.
-  [s5] User selects that he wants to post an answer.
-  [s6] Bot asks whether the user wants to answer related to a specific function or is general.
-  [s7] User enters an input according to his preference.
-  [s8] Bot presents the unanswered pool of questions those match with User's preference.
-  [s9] User selects a question and enters the answer.
-  [s10] Bot asks if the question is not available then post both the question and answer.
-  [s11] User enters both the question and answer.
-4 Alternate Flow:
-  [E1] User may not have answer for the listed Questions.
-```
- 
-<!--#### Use Case 5: User posts an answer to a question posted by the user itself 
-1 Preconditions:
-2 Main Flow:
-3 Sub Flow:
-4 Alternate Flow:-->
  
  
 ## Design Sketches
