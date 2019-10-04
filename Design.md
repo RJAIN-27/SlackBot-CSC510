@@ -100,10 +100,10 @@ The bot takes the csv file and sends it to the server where a python program is 
 ### Story board
 #### Case 1: When user would like to choose best model for numerical dataset
 
-![](https://github.ncsu.edu/csc510-fall2019/CSC510-23/blob/master/resources/images/storyboard/sb_c_1_2_1.png)
-![](https://github.ncsu.edu/csc510-fall2019/CSC510-23/blob/master/resources/images/storyboard/sb_c_1_2_2.png)
+![](https://github.ncsu.edu/csc510-fall2019/CSC510-23/blob/master/resources/images/storyboard/sb_c_1_1_1.png)
 
 #### Case 2: When user would like to choose best model for Alphaumerical dataset
+![](https://github.ncsu.edu/csc510-fall2019/CSC510-23/blob/master/resources/images/storyboard/sb_c_1_2_1.png)
 
 #### Alternate flow if the dataset neither belongs to numerical dataset nor alphanumerical dataset:
 
