@@ -40,15 +40,15 @@ This bot is developed to respond to the user’s requests which act as events, w
 ```
 1 Preconditions: User must have LIBRA Access Token in the System. User must know the type of dataset for which he wants suggestion.
 2 Main Flow: 
-  User requests model suggestion for an assorted (numeric+alphanumeric) dataset. Bot runs the Machine Learning techiniques (Preprocessing, model building, model selection, etc.) in python on the dataset in the background and arrives at the best suitable model to be used for the dataset.
+  User requests model suggestion for an assorted (alphanumeric) dataset. Bot runs the Machine Learning techiniques (Preprocessing, model building, model selection, etc.) in python on the dataset in the background and arrives at the best suitable model to be used for the dataset.
 3 Sub Flow 1:
   [s1] User requests for model suggestion for a dataset.
-  [s2] Bot asks whether it is numerical dataset or a assorted (numeric+alphanumeric) dataset.
+  [s2] Bot asks whether it is numerical dataset or a assorted (alphanumeric) dataset.
   [s3] User responds by selecting assorted dataset.
   [s4] Bot sends the dataset to the backend where a series of Machine Learning techiniques in Python are applied to find the best model for the dataset by appropriately handling the categorical and continuous values in the dataset.
   [s5] The result from the procedure in [s4] is then passed back to the user
 4 Alternate FLow:
-  [E1] User's dataset is neither numerical nor a combination of numeric and alphanumeric. The bot responds with a relevant message indicating an invalid selection.
+  [E1] User's dataset is neither numerical nor alphanumerical. The bot responds with a relevant message indicating an invalid selection.
 ```
 
 #### Use Case 3: Know about a Library/API <!--Bot renders description for library/API that is requested by the user-->
