@@ -36,7 +36,7 @@ This bot is developed to respond to the user’s requests which act as events, w
 4 Alternate FLow:
   [E1] User's dataset is neither numerical nor a combination of numeric and alphanumeric. The bot responds with a relevant message indicating an invalid selection.
 ```
-#### Use Case 2: Model Suggestion for alphanumeric+numeric dataset<!-- Bot suggests the model to be used, in answer to a user's request about not having a clarity about what to do with the dataset --> <!-- User must have a data set to know about the library to be used -->
+#### Use Case 2: Model Suggestion for alphanumeric dataset<!-- Bot suggests the model to be used, in answer to a user's request about not having a clarity about what to do with the dataset --> <!-- User must have a data set to know about the library to be used -->
 ```
 1 Preconditions: User must have LIBRA Access Token in the System. User must know the type of dataset for which he wants suggestion.
 2 Main Flow: 
