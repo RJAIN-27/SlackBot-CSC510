@@ -16,7 +16,7 @@ The situation presented in the previous section can be eased by introducing our 
 
 - The user wishes to understand what model to apply on a dataset. The bot interacts with the user to get the dataset. It then performs the standard machine learning techniques in python, on the dataset and suggests the best suited model for the same. This reduces the user's effort in trying to understand from a myriad of sources on what has to be done with the dataset. This feature is applicable when the users' data set is either a numerical one or a combination of numeric and alphanumeric content. 
 
-- The user would like to understand the dataset better. The bot interacts with the user to get the dataset. The bot would then perform various statistical tests like Normality Tests, Coefficient tests, Parametric Statistical Hypothesis Tests and Nonparametric Statistical Hypothesis Tests 
+- The user would like to understand the dataset better. The bot interacts with the user to get the dataset. The bot would then perform various statistical tests like Normality Tests, Coefficient tests, Parametric Statistical Hypothesis Tests and Nonparametric Statistical Hypothesis Tests and give the results to the user.
 
 - The user requests for information about an ML library or API in python, then bot renders this information. 
 
@@ -24,22 +24,37 @@ This bot is developed to respond to the user’s requests which act as events, w
 
 
 ## Use Cases 
-#### Use Case 1: Model Suggestion for a dataset <!-- Bot suggests the model to be used, in answer to a user's request about not having a clarity about what to do with the dataset --> <!-- User must have a data set to know about the library to be used -->
+#### Use Case 1: Model Suggestion for a dataset <!-- Bot suggests the model to be used, in answer to a user's request about not having a clarity about what to do with the dataset --> <!-- User must have a dataset to know about the library to be used -->
 ```
 1 Preconditions: User must have LIBRA Access Token in the System. User must provide a dataset for suggestion.
 2 Main Flow: 
   User provides a dataset and requests Model suggestion for the given dataset. Bot runs the Machine Learning techiniques(preprocessing, model building, model selection, etc.) in python on the dataset in the background and arrives at the best suitable model to be used for the dataset.
 3 Sub Flow 1:
   [s1] User requests bot for model suggestion for a dataset.
-  [s2] Bot asks User to upload a dataset for which he needs suggestion.
+  [s2] Bot asks User to upload a dataset for which he/she needs suggestion.
   [s3] User uploads the dataset.
-  [s4] Bot analyses the type of dataset(Eg: Numeric or Alphanumeric) and then sends it to the backend where a series of Machine Learning techiniques in Python are applied to find the best model for the dataset.
+  [s4] Bot analyses sends the dataset to the backend where the type of dataset(Eg: Numeric or Alphanumeric) is determined and a series of Machine Learning techiniques in Python are applied to find the best model for the dataset.
   [s5] The result from the procedure in [s4] is then passed back to the User.
 4 Alternate FLow:
   [E1] User's dataset is neither numerical nor alphanumeric. The bot responds by asking User to provide numeric or alphanumeric dataset.
 ```
 
-#### Use Case 2: Know about a Library/API <!--Bot renders description for library/API that is requested by the user-->
+#### Use Case 2: Data Analysis on a dataset <!-- Bot performs Exploratory Data Analysis (EDA) and Statistical Hypothesis Tests so that the user can understand the data before he/she can make any assumptions about it --> <!-- User must have a dataset to gain insights about the dataset -->
+```
+1 Preconditions: User must have LIBRA Access Token in the System. User must provide a dataset to gain insight.
+2 Main Flow: 
+  User provides a dataset and requests analysis on the given dataset. Bot performs the various statistical hypothesis tests and exploratory data analysis in python on the dataset in the background and returns the result to the user.
+3 Sub Flow:
+  [s1] User requests bot for data analysis on the dataset.
+  [s2] Bot asks User to upload a dataset for which he/she wants to perform analysis on.
+  [s3] User uploads the dataset.
+  [s4] Bot performs series of statistical hypothesis tests and exporatory data analysis on the dataset in python at the backend.
+  [s5] The results from the procedure in [s4] is then passed back to the User.
+4 Alternate FLow:
+  [E1] User's dataset is neither numerical nor alphanumeric. The bot responds by asking User to provide numeric or alphanumeric dataset. 
+```
+
+#### Use Case 3: Know about a Library/API <!--Bot renders description for library/API that is requested by the user-->
 ```
 1 Preconditions: User must have LIBRA Access Token in the System.
 2 Main Flow: 
