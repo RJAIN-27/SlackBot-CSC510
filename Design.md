@@ -22,19 +22,19 @@ This bot is developed to respond to the user’s requests which act as events, w
 
 
 ## Use Cases 
-#### Use Case 1: Model Suggestion for a numeric dataset <!-- Bot suggests the model to be used, in answer to a user's request about not having a clarity about what to do with the dataset --> <!-- User must have a data set to know about the library to be used -->
+#### Use Case 1: Model Suggestion for a dataset <!-- Bot suggests the model to be used, in answer to a user's request about not having a clarity about what to do with the dataset --> <!-- User must have a data set to know about the library to be used -->
 ```
-1 Preconditions: User must have LIBRA Access Token in the System. User must know the type of dataset for which he wants suggestion.
+1 Preconditions: User must have LIBRA Access Token in the System. User must provide a dataset for suggestion.
 2 Main Flow: 
-  User requests library/API suggestion for a numeric dataset. Bot runs the Machine Learning techiniques(preprocessing, model building, model selection, etc.) in python on the dataset in the background and arrives at the best suitable model to be used for the dataset.
+  User provides a dataset and requests Model suggestion for the given dataset. Bot runs the Machine Learning techiniques(preprocessing, model building, model selection, etc.) in python on the dataset in the background and arrives at the best suitable model to be used for the dataset.
 3 Sub Flow 1:
-  [s1] User requests for model suggestion for a dataset.
-  [s2] Bot asks whether it is numerical dataset or a assorted (numeric+alphanumeric) dataset.
-  [s3] User responds by selecting numeric dataset.
-  [s4] Bot sends the dataset to the backend where a series of Machine Learning techiniques in Python are applied to the dataset to find the best model for the dataset
-  [s5] The result from the procedure in [s4] is then passed back to the user
+  [s1] User requests bot for model suggestion for a dataset.
+  [s2] Bot asks User to upload a dataset for which he needs suggestion.
+  [s3] User uploads the dataset.
+  [s4] Bot analyses the type of dataset(Eg: Numeric or Alphanumeric) and then sends it to the backend where a series of Machine Learning techiniques in Python are applied to find the best model for the dataset.
+  [s5] The result from the procedure in [s4] is then passed back to the User.
 4 Alternate FLow:
-  [E1] User's dataset is neither numerical nor a combination of numeric and alphanumeric. The bot responds with a relevant message indicating an invalid selection.
+  [E1] User's dataset is neither numerical nor alphanumeric. The bot responds by asking User to provide numeric or alphanumeric dataset.
 ```
 #### Use Case 2: Model Suggestion for alphanumeric dataset<!-- Bot suggests the model to be used, in answer to a user's request about not having a clarity about what to do with the dataset --> <!-- User must have a data set to know about the library to be used -->
 ```
