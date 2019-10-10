@@ -80,11 +80,19 @@ The bot takes the csv file and sends it to the server where a python program is 
 
 <img src="https://github.ncsu.edu/csc510-fall2019/CSC510-23/blob/master/resources/images/wireframes/wire1.png" height="540" width="350"> 
 
+***Alternate flow:***
+
+<img src="https://github.ncsu.edu/csc510-fall2019/CSC510-23/blob/master/resources/images/wireframes/wire1a.png" height="540" width="350"> 
+
 **Case 2: When user would like to analyze a dataset:**
 
 The bot takes the csv file and sends it to the server where a python program is executed with the file to perform various statistical tests and exploratory data analysis.
 
 <img src="https://github.ncsu.edu/csc510-fall2019/CSC510-23/blob/master/resources/images/wireframes/wire2.png" height="540" width="350"> 
+
+***Alternate flow:***
+
+<img src="https://github.ncsu.edu/csc510-fall2019/CSC510-23/blob/master/resources/images/wireframes/wire2a.png" height="540" width="350"> 
 
 **Case 3: When the user wants to know about a library or function:**
 
