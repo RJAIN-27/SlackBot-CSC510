@@ -98,7 +98,7 @@ The bot takes the csv file and sends it to the server where a python program is 
 
 <img src="https://github.ncsu.edu/csc510-fall2019/CSC510-23/blob/master/resources/images/wireframes/wire3.png" height="540" width="350"> 
 
-**If bot doesn't understand the user's query/request:*
+**If bot doesn't understand the user's query/request:**
 
 <img src="https://github.ncsu.edu/csc510-fall2019/CSC510-23/blob/master/resources/images/wireframes/wire4.png" height="540" width="350">
 
