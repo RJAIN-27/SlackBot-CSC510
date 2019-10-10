@@ -36,32 +36,17 @@ This bot is developed to respond to the user’s requests which act as events, w
 4 Alternate FLow:
   [E1] User's dataset is neither numerical nor alphanumeric. The bot responds by asking User to provide numeric or alphanumeric dataset.
 ```
-#### Use Case 2: Model Suggestion for alphanumeric dataset<!-- Bot suggests the model to be used, in answer to a user's request about not having a clarity about what to do with the dataset --> <!-- User must have a data set to know about the library to be used -->
-```
-1 Preconditions: User must have LIBRA Access Token in the System. User must know the type of dataset for which he wants suggestion.
-2 Main Flow: 
-  User requests model suggestion for an assorted (alphanumeric) dataset. Bot runs the Machine Learning techiniques (Preprocessing, model building, model selection, etc.) in python on the dataset in the background and arrives at the best suitable model to be used for the dataset.
-3 Sub Flow 1:
-  [s1] User requests for model suggestion for a dataset.
-  [s2] Bot asks whether it is numerical dataset or a assorted (alphanumeric) dataset.
-  [s3] User responds by selecting assorted dataset.
-  [s4] Bot sends the dataset to the backend where a series of Machine Learning techiniques in Python are applied to find the best model for the dataset by appropriately handling the categorical and continuous values in the dataset.
-  [s5] The result from the procedure in [s4] is then passed back to the user
-4 Alternate FLow:
-  [E1] User's dataset is neither numerical nor alphanumerical. The bot responds with a relevant message indicating an invalid selection.
-```
 
-#### Use Case 3: Know about a Library/API <!--Bot renders description for library/API that is requested by the user-->
+#### Use Case 2: Know about a Library/API <!--Bot renders description for library/API that is requested by the user-->
 ```
 1 Preconditions: User must have LIBRA Access Token in the System.
 2 Main Flow: 
   User requests information about a Library/API. Bot provides the information about the library/API and the relevant links.
 3 Sub Flow:
-  [s1] User requests information about a Library/API.
-  [s2] Bot lists the Machine Learning Libraries in python asking User to select a Library.
-  [s3] User selects the Library.
-  [s4] Bot provides information about the selected Library and relevant links to it and asks User whether he wants a specific information about a method/function.
-  [s5] User responds by selecting his preference and enters the name of the method/function.
+  [s1] User asks a question about particular Library/API. (Eg: "Hey, I want to know about Scikit Learn Library")
+  [s2] Bot answers User's question with information about the Library/API and provides relevant links.
+  [s4] Bot asks whether User wants to know about any specific method/function in the above Library/API.
+  [s5] User responds by giving a name of the method/function he wants to explore.
   [s6] Bot gives description and relevant links about the given method/function.
 4 Alternate Flow:
   [E1] No known method/function is provided by the user. Bot gives a message that method/function is not found.
