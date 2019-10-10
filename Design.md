@@ -74,47 +74,55 @@ This bot is developed to respond to the user’s requests which act as events, w
 
 ### Wireframe
 
-**Case 1: When user would like to choose best model for numerical dataset**
+**Case 1: When user would like to choose best model for a dataset**
 
-The bot takes the csv file and sends it to the server where a python program is executed with the file to determine the best model.
+The bot takes the csv file and sends it to the server where a python program is executed with the file to determine the best model by preprocessing and normalization, complex preprocessing like factoring, n-gram keywork extraction etc.
 
-<img src="https://github.ncsu.edu/csc510-fall2019/CSC510-23/blob/master/resources/images/wireframes/wire1.png" height="540" width="350"> <img src="https://github.ncsu.edu/csc510-fall2019/CSC510-23/blob/master/resources/images/wireframes/wire2.png" height="540" width="350">
+<img src="https://github.ncsu.edu/csc510-fall2019/CSC510-23/blob/master/resources/images/wireframes/wire1.png" height="540" width="350"> 
 
-**Case 2: When user would like to choose best model for alphanumerical dataset:**
+**Case 2: When user would like to analyze a dataset:**
 
-The bot takes the csv file and sends it to the server where a python program is executed with the file to determine the best model by complex preprocessing like factoring, n-gram keywork extraction etc.
+The bot takes the csv file and sends it to the server where a python program is executed with the file to perform various statistical tests and exploratory data analysis.
 
-<img src="https://github.ncsu.edu/csc510-fall2019/CSC510-23/blob/master/resources/images/wireframes/wire3.png" height="540" width="350"> <img src="https://github.ncsu.edu/csc510-fall2019/CSC510-23/blob/master/resources/images/wireframes/wire4.png" height="540" width="350">
-
-**Alternate flow if the dataset neither belongs to numerical dataset nor alphanumerical dataset:*
-
-<img src="https://github.ncsu.edu/csc510-fall2019/CSC510-23/blob/master/resources/images/wireframes/wire5.png" height="540" width="350">
+<img src="https://github.ncsu.edu/csc510-fall2019/CSC510-23/blob/master/resources/images/wireframes/wire2.png" height="540" width="350"> 
 
 **Case 3: When the user wants to know about a library or function:**
 
-<img src="https://github.ncsu.edu/csc510-fall2019/CSC510-23/blob/master/resources/images/wireframes/wire6.png" height="540" width="350"> <img src="https://github.ncsu.edu/csc510-fall2019/CSC510-23/blob/master/resources/images/wireframes/wire7.png" height="540" width="350">
+<img src="https://github.ncsu.edu/csc510-fall2019/CSC510-23/blob/master/resources/images/wireframes/wire3.png" height="540" width="350"> 
+
+**If bot doesn't understand the user's query/request:*
+
+<img src="https://github.ncsu.edu/csc510-fall2019/CSC510-23/blob/master/resources/images/wireframes/wire4.png" height="540" width="350">
 
 **User feedback: The bot asks user's feedback regarding the task it performed and also asks if the user would like to perform any other tasks:**
 
-<img src="https://github.ncsu.edu/csc510-fall2019/CSC510-23/blob/master/resources/images/wireframes/wire8.png" height="540" width="350"> <img src="https://github.ncsu.edu/csc510-fall2019/CSC510-23/blob/master/resources/images/wireframes/wire9.png" height="540" width="350">
+<img src="https://github.ncsu.edu/csc510-fall2019/CSC510-23/blob/master/resources/images/wireframes/wire5.png" height="540" width="350"> <img src="https://github.ncsu.edu/csc510-fall2019/CSC510-23/blob/master/resources/images/wireframes/wire6.png" height="540" width="350">
 
 
 ### Story board
-#### Case 1: When user would like to choose best model for numerical dataset
+#### Case 1: When user would like to choose best model for a dataset
 
-![](https://github.ncsu.edu/csc510-fall2019/CSC510-23/blob/master/resources/images/storyboard/sb_c_1_1_1.png)
+![](https://github.ncsu.edu/csc510-fall2019/CSC510-23/blob/master/resources/images/storyboard/sb_c_1.png)
 
-#### Case 2: When user would like to choose best model for Alphaumerical dataset
-![](https://github.ncsu.edu/csc510-fall2019/CSC510-23/blob/master/resources/images/storyboard/sb_c_1_2_1.png)
+##### Alternate flow if the dataset is not in .csv format:
 
-#### Alternate flow if the dataset neither belongs to numerical dataset nor alphanumerical dataset:
+![](https://github.ncsu.edu/csc510-fall2019/CSC510-23/blob/master/resources/images/storyboard/sb_c_1a.png)
 
-![](https://github.ncsu.edu/csc510-fall2019/CSC510-23/blob/master/resources/images/storyboard/sb_c_1_3.png)
+#### Case 2: When user would like to analyze a dataset
+![](https://github.ncsu.edu/csc510-fall2019/CSC510-23/blob/master/resources/images/storyboard/sb_c_2.png)
+
+##### Alternate flow if the dataset is not in .csv format:
+
+![](https://github.ncsu.edu/csc510-fall2019/CSC510-23/blob/master/resources/images/storyboard/sb_c_2a.png)
+
 
 #### Case 3: When the user wants to know about a library or function
 
-![](https://github.ncsu.edu/csc510-fall2019/CSC510-23/blob/master/resources/images/storyboard/sb_c_2_1.png)
-![](https://github.ncsu.edu/csc510-fall2019/CSC510-23/blob/master/resources/images/storyboard/sb_c_2_2.png)
+![](https://github.ncsu.edu/csc510-fall2019/CSC510-23/blob/master/resources/images/storyboard/sb_c_3.png)
+
+#### If bot doesn't understand the user's query/request:
+
+![](https://github.ncsu.edu/csc510-fall2019/CSC510-23/blob/master/resources/images/storyboard/sb_c_4.png)
 
 #### User feedback: The bot asks user's feedback regarding the task it performed and also asks if the user would like to perform any other tasks
 
