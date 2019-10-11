@@ -168,7 +168,7 @@ The bot takes the csv file and sends it to the server where a python program is 
 ### Architecture Diagram and component details:
 
 **The architecture diagram:**
-![](https://github.ncsu.edu/csc510-fall2019/CSC510-23/blob/master/resources/images/Architecture%20Diagram.png)
+![](https://github.ncsu.edu/csc510-fall2019/CSC510-23/blob/master/resources/images/Architecture%20Diagram%20new.png)
 
 The architecture consists of three major components:-
 1. Mattermost bot as a client for interacting with the user.
