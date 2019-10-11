@@ -4,7 +4,7 @@
 To develop a bot system that assists software engineers/developers with their requests or queries pertaining to Machine Learning  libraries/APIs in Python and datasets.
 
 ## Problem Statement  
-Machine Learning applications are flourishing in every field. With data becoming the new oil, it is important for any organization to use data to enhance their business. For this purpose, many organizations us Machine Learning APIs, the popular ones  being Scikit-Learn, TensorFlow, Keras, MxNet, from Python. But the process of Machine Learning and usage of these APIs are still unclear to many which makes it complex for users who are not experts, to use.
+Machine Learning applications are flourishing in every field. With data becoming the new oil, it is important for any organization to use data to enhance their business. For this purpose, many organizations use Machine Learning APIs, the popular ones being Scikit-Learn, TensorFlow, Keras, MxNet, from Python. But the process of Machine Learning and usage of these APIs are still unclear to many which makes it complex for users who are not experts, to use.
 
 The information available online regarding the usage of such APIs and libraries is vast and diverse. It is tedious to scout around a multitude of these sources and nail down on a satisfying answer and proceed with the implementation. Therefore, it will certainly be beneficial to have a solution that will answer questions regarding these libraries and the implementation on datasets, posed by users of these APIs, in a concise and satisfying manner, all under the same roof, especially when the users are unclear about what has to be done with a dataset.  
 
@@ -16,7 +16,7 @@ The situation presented in the previous section can be eased by introducing our 
 
 - The user wishes to understand what model to apply on a dataset. The bot interacts with the user to get the dataset. It then performs the standard machine learning techniques in python, on the dataset and suggests the best suited model for the same. This reduces the user's effort in trying to understand from a myriad of sources on what has to be done with the dataset. This feature is applicable when the users' data set is either a numerical one or a combination of numeric and alphanumeric content. 
 
-- The user wishes to understand the dataset better. The bot interacts with the user to get the dataset. The bot then performs basic Exploratory Analysis on the dataset and yields the results to the user. It also performs various statistical tests like Normality Tests, Coefficient tests, Parametric Statistical Hypothesis Tests and Nonparametric Statistical Hypothesis Tests and give the results to the user.
+- The user wishes to understand the dataset better. The bot interacts with the user to get the dataset. The bot then performs basic Exploratory Analysis on the dataset and yields the resulting information to the user. It also performs various statistical tests like Normality Tests, Coefficient tests, Parametric Statistical Hypothesis Tests and Nonparametric Statistical Hypothesis Tests and give the results to the user.
 
 - The user requests for information about an ML library or API in python, then bot renders this information. 
 
