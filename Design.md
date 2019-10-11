@@ -33,7 +33,7 @@ This bot is developed to respond to the user’s requests which act as events, w
   [s1] User requests bot for model suggestion for a dataset.
   [s2] Bot asks User to upload a dataset for which he/she needs suggestion.
   [s3] User uploads the dataset.
-  [s4] Bot analyses sends the dataset to the backend where the type of dataset(Eg: Numeric or Alphanumeric) is determined and a series of Machine Learning techiniques in Python are applied to find the best model for the dataset.
+  [s4] Bot sends the dataset to the backend where the type of dataset(Eg: Numeric or Alphanumeric) is determined and a series of Machine Learning techiniques in Python are applied to find the best model for the dataset.
   [s5] The result from the procedure in [s4] is then passed back to the User.
 4 Alternate FLow:
   [E1] User's dataset is neither numerical nor alphanumeric. The bot responds by asking User to provide numeric or alphanumeric dataset.
