@@ -181,8 +181,11 @@ Within these 3 main components the function of the sub components are as follows
 
    *- Suggest an ML model for a given dataset:*
    
-     - The user specifies that they wish to know what the best model is to apply on their dataset(numerical/image). The bot passes this request to the Extraction Component which then understands the intent of the user and passes the intent and the corresponding entities to the respective components, i.e. Message Generator for image data set, and Model Suggestion Component for numerical data set. The result is then passed back to the user through the Message Generator component.  
+     - The user specifies that they wish to know what the best model is to apply on their dataset(numerical/image). The bot passes this request to the Extraction Component which then understands the intent of the user and passes the intent and the corresponding entities to the ML Component. In the ML Component a series of Machine Learning techniques are applied to arrive at the best model for a dataset. This result is passed to the Message Generator which then passes the appropriate messages. 
    
+   *- User wants to understand the dataset:*
+   
+      - The user specifies that they wish to understand a dataset(numerical/alphanumeric). The bot passes this request to the Extraction Component which then understands the intent of the user and passes the intent and the corresponding entities to the ML Component. The ML component performs basic Exploratory Analysis on the dataset and yields the results to the Message Generator. It also performs various statistical tests like Normality Tests, Coefficient tests, Parametric Statistical Hypothesis Tests and Nonparametric Statistical Hypothesis Tests and give the results to the Message Generator. The Message Generator passes the appropriate messages to the user.
    *- Look for a description of a Library/API:*
    
       - The user requests for information about an ML library or API in python. This request is extracted by the extraction component and then sent to the message generator which fetches the relevant information from the ML Library/API Information database and delivers the result back to the user 
@@ -197,9 +200,9 @@ Within these 3 main components the function of the sub components are as follows
    
       - This component has a set of predefined questions which are asked to the user in order to extract the intent of the user. It also responds to the users’ requests with the content it receives from the respective components responsible for handling the users' request. 
   
-  *- Model Suggestion:*
+  *- ML Component:*
       
-      - This component accepts the numerical data set, preprocesses it, applies a set of models from the SciKit-Learn package in Python and arrives at the best model for the dataset and passes on this as the result back to the user via the message generator.
+      - This component accepts the numerical/alphanumeric data set, and applies a set of ML techniques to analyse the data set and perform model selection. This result is passed to the Message Generator.
 
 **3. Database**
    
