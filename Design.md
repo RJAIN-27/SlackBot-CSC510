@@ -169,7 +169,6 @@ The bot takes the csv file and sends it to the server where a python program is 
 
 **The architecture diagram:**
 ![](https://github.ncsu.edu/csc510-fall2019/CSC510-23/blob/master/resources/images/Architecture%20Diagram%20new.png)
-
 The architecture consists of three major components:-
 1. Mattermost bot as a client for interacting with the user.
 2. Server which processes the client request by calling appropriate Python APIs’.
@@ -202,7 +201,7 @@ Within these 3 main components the function of the sub components are as follows
   
   *- ML Component:*
       
-      - This component accepts the numerical/alphanumeric data set, and applies a set of ML techniques to analyse the data set and perform model selection. This result is passed to the Message Generator.
+      - This component accepts the numerical/alphanumeric data set, and applies a set of ML techniques to perform Exploratory Data Analysis on the data set and perform Model Selection as well based on the user's intent. This result is passed to the Message Generator.
 
 **3. Database**
    
