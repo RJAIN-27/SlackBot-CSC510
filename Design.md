@@ -181,7 +181,7 @@ Within these 3 main components the function of the sub components are as follows
 
    *- Suggest an ML model for a given dataset:*
    
-     - The user specifies that they wish to know what the best model is to apply on their dataset(numerical/image). The bot passes this request to the Extraction Component which then understands the intent of the user and passes the intent and the corresponding entities to the ML Component. In the ML Component a series of Machine Learning techniques are applied to arrive at the best model for a dataset. This result is passed to the Message Generator which then passes the appropriate messages. 
+     - The user specifies that they wish to know what the best model is to apply on their dataset(numerical/alphanumeric). The bot passes this request to the Extraction Component which then understands the intent of the user and passes the intent and the corresponding entities to the ML Component. In the ML Component a series of Machine Learning techniques are applied to arrive at the best model for a dataset. This result is passed to the Message Generator which then passes the appropriate messages. 
    
    *- User wants to understand the dataset:*
    
