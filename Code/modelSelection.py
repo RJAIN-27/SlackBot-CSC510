@@ -116,7 +116,3 @@ def modelSelection(path, target):
     model_dict = dict(sorted(model_dict.items(), key=operator.itemgetter(1), reverse=True))
 
     return list(model_dict.keys())[0]
-
-path = "C:/Users/Sandi/OneDrive/Documents/python/Wine.csv"
-target = "Class"
-print(modelSelection(path,target))
