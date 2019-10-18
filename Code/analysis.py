@@ -10,9 +10,9 @@ def correlations(data, method,columns,f):
     for i in range(len(columns) - 1):
         for j in range(i + 1, len(columns)):
             if abs(correlations[columns[i]][columns[j]]) < 0.5:
-                f.writelines("\nColumns " + columns[i] + " and " + columns[
-                    j] + " have low correlation between them. The correlation value is " + str(
-                    correlations[columns[i]][columns[j]]))
+                f.writelines("\nColumns " + columns[i] + " and " + columns[j] + 
+                             " have low correlation between them. The correlation value is " + 
+                             str(correlations[columns[i]][columns[j]]))
             elif abs(correlations[columns[i]][columns[j]]) > 0.98:
                 f.writelines("\nColumns " + columns[i] + " and " + columns[j] +
                              " have very high correlation between them. The correlation value is " +
@@ -37,9 +37,17 @@ def analysis(path, target):
     f.writelines("\n\nNo. of nulls in the columns:\n")
     f.write(str(data.isnull().sum()))
 
+    # Mean, median and mode of each column:
+    f.writelines("\n\nMEAN, MEDIAN AND MODE:")
+    for col in columns:
+        f.writelines("\n"+col)
+        f.writelines("\nMean= "+str(data[col].mean()))
+        f.writelines("     Median= "+str(data[col].median()))
+        f.writelines("     Mode= "+ str(mode) for mode in data[col].mode())
+
     # Correlation
     f.writelines("\n\nCorrelation:\n")
-    f.writelines("\n\nPearson Correlation test:")
+    f.writelines("\nPearson Correlation test:")
     correlations(data,'pearson',columns,f)
 
     f.writelines("\n\nSpearman's rank Correlation test:")
