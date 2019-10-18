@@ -5,6 +5,22 @@ from scipy.stats import anderson
 from tabulate import tabulate
 from datetime import datetime
 
+def correlations(data, method,columns,f):
+    correlations = data[data.columns].corr(method=method)
+    for i in range(len(columns) - 1):
+        for j in range(i + 1, len(columns)):
+            if abs(correlations[columns[i]][columns[j]]) < 0.5:
+                f.writelines("\nColumns " + columns[i] + " and " + columns[
+                    j] + " have low correlation between them. The correlation value is " + str(
+                    correlations[columns[i]][columns[j]]))
+            elif abs(correlations[columns[i]][columns[j]]) > 0.98:
+                f.writelines("\nColumns " + columns[i] + " and " + columns[j] +
+                             " have very high correlation between them. The correlation value is " +
+                             str(correlations[columns[i]][columns[j]]))
+            else:
+                f.writelines("\nColumns " + columns[i] + " and " + columns[j] +
+                             " have strong correlation between them. The correlation value is "
+                             + str(correlations[columns[i]][columns[j]]))
 
 def analysis(path, target):
     # create file
@@ -23,25 +39,17 @@ def analysis(path, target):
 
     # Correlation
     f.writelines("\n\nCorrelation:\n")
-    correlations = data[data.columns].corr(method='pearson')
-    for i in range(len(columns) - 1):
-        for j in range(i + 1, len(columns)):
-            if abs(correlations[columns[i]][columns[j]]) < 0.5:
-                f.writelines("\nColumns " + columns[i] + " and " + columns[
-                    j] + " have low correlation between them. The correlation value is " + str(
-                    correlations[columns[i]][columns[j]]))
-            elif abs(correlations[columns[i]][columns[j]]) > 0.98:
-                f.writelines("\nColumns " + columns[i] + " and " + columns[
-                    j] + " have very high correlation between them. The correlation value is " + str(
-                    correlations[columns[i]][columns[j]]))
-            else:
-                f.writelines("\nColumns " + columns[i] + " and " + columns[
-                    j] + " have strong correlation between them. The correlation value is " + str(
-                    correlations[columns[i]][columns[j]]))
+    f.writelines("\n\nPearson Correlation test:")
+    correlations(data,'pearson',columns,f)
 
-    # STATISTICS TEST
+    f.writelines("\n\nSpearman's rank Correlation test:")
+    correlations(data,'spearman',columns,f)
+
+    f.writelines("\n\nKendall's rank Correlation test:")
+    correlations(data, 'kendall', columns, f)
+
     # Normality Test
-    f.writelines("\n\nSTATISTICS TEST:\n\nNormality Tests:")
+    f.writelines("\n\nNormality Tests:")
     # Shapiro-Wilk test
     f.writelines("\nShapiro-Wilk test - Gaussian distribution test\n")
     f.writelines("Tests whether a data sample has a Gaussian distribution.\n")
@@ -67,7 +75,7 @@ def analysis(path, target):
     for i in columns:
         if i == target:
             continue
-        stat, p = shapiro(data[i])
+        stat, p = normaltest(data[i])
         if p > 0.05:
             result = "Accepted"
         else:
