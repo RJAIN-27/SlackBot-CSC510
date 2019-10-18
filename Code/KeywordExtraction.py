@@ -181,4 +181,3 @@ print("\nKeywords:")
 for k in keywords:
     print(k,keywords[k])
 
-print(' '.join(corpus))
