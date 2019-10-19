@@ -12,7 +12,10 @@ class Command(object):
             list=kwx.keywordExtraction(command)
             #list = command.split(' ')
             return list
-
+        elif "no" in command:
+            return "Sorry about that :("
+        elif "yes" in command:
+            return "Thankyou for the feedback"
         elif flag==1:
             analyses_file=analysis.analysis(path, command)
             return analyses_file
