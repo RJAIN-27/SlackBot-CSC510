@@ -1,10 +1,9 @@
+import kwx
+
 class Command(object):
  
     def handlecommand(self, user, command):
-        response = "<@" + user + ">: "
-        response += "Welcome Boss" 
-        return response
-
-        
-         
-    
+        if "know" in command:
+            list=kwx.keywordExtraction(command)
+            #list = command.split(' ')
+            return list
