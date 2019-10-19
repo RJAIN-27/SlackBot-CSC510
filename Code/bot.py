@@ -3,7 +3,6 @@ import event
 import command
 from slackclient import SlackClient
 
- 
 class Bot(object):
     def __init__(self):
         self.slack_client = SlackClient("xoxb-795814705207-788531806065-9dWeyIRqj2t1LSbICYnDkB01")
