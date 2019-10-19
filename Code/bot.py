@@ -1,5 +1,6 @@
 import time
 import event
+import command
 from slackclient import SlackClient
 
  
@@ -7,12 +8,14 @@ class Bot(object):
     def __init__(self):
         self.slack_client = SlackClient("xoxb-795814705207-788531806065-9dWeyIRqj2t1LSbICYnDkB01")
         self.botname = "libbot"
-        self.bot_id = self.getbotid()
+        self.botid = self.getbotid()
          
-        if self.bot_id is None:
+        if self.botid is None:
             exit("Error, could not find " + self.botname)
      
         self.event = event.Event(self)
+        self.command=command.Command()
+
         self.listen()
      
     def getbotid(self):
