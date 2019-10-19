@@ -24,6 +24,7 @@ from nltk.stem.wordnet import WordNetLemmatizer
 #msg="i want help about numpy and scipy and numpy and keras"
 
 def keywordExtraction(msg):
+    print "The message is",msg
     keyword_list=[]
 
     wb = xl.load_workbook('libraryFile.xlsx')
@@ -55,10 +56,10 @@ def keywordExtraction(msg):
     text = text.lower()
 
     #remove tags
-    text=re.sub("&lt;/?.*?&gt;"," &lt;&gt; ",text)
+    #text=re.sub("&lt;/?.*?&gt;"," &lt;&gt; ",text)
 
     #remove special characters and digits
-    text=re.sub("(\\d|\\W)+"," ",text)
+    #text=re.sub("(\\d|\\W)+"," ",text)
 
     #Convert to list from string
     text = text.split()
