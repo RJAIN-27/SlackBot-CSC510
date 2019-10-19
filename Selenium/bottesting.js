@@ -18,15 +18,13 @@ async function login(browser, slackURL) {
     await page.type('input[id=email]', loginEmail);
     await page.type('input[id=password]', loginPassword);
     await page.click('button[id=signin_btn]');
+    
+    //selecting channel
   
     // Wait for redirect
     await page.waitForNavigation();
     return page;
   }
-  async function libraryInfo(message) {
-    
-  }
-
   (async () => {
 
     const browser = await puppeteer.launch({headless: false, args: ["--no-sandbox", "--disable-web-security"]});
