@@ -80,7 +80,7 @@ def analysis(path, target):
     f.write(tabulate(dataf, tablefmt="grid", headers="keys", showindex=False))
     f.writelines("\n---------------------------------------------------------------------------------------------------------------------------------------")
 
-    # D’Agostino’s K^2 test
+    
     f.writelines("\n\nD'Agostino's K^2 Test - Gaussian distribution test\n")
     f.writelines("Tests whether a data sample has a Gaussian distribution.\n")
     f.writelines("Hypothesis: the sample has a Gaussian distribution\n")
@@ -117,3 +117,4 @@ def analysis(path, target):
                 f.writelines(str(sl)+':'+str(cv) +' Null Hypothesis - Rejected\n')
 
     f.writelines("\n---------------------------------------------------------------------------------------------------------------------------------------")
+    return dt_string
