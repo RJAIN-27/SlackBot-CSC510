@@ -117,7 +117,6 @@ def modelSelection(path, target):
         # Train Adaboost Classifer
         y_pred =adb.fit(X_train, y_train).predict(X_test)
         model_accr = metrics.accuracy_score(y_test, y_pred) * 100
-        print ":",model_accr
         if model_accr > best_accr:
             best_accr = model_accr
             best_model = "AdaBoost Classifier"
@@ -129,7 +128,6 @@ def modelSelection(path, target):
         xgb = XGBClassifier()
         y_pred = xgb.fit(X_train, y_train).predict(X_test)
         model_accr = metrics.accuracy_score(y_test, y_pred) * 100
-        print "XGB:",model_accr
         if model_accr > best_accr:
             best_accr = model_accr
             best_model = "XGB Classifier"
@@ -141,7 +139,6 @@ def modelSelection(path, target):
         rfc = RandomForestClassifier(n_estimators=100)
         y_pred = rfc.fit(X_train, y_train).predict(X_test)
         model_accr = metrics.accuracy_score(y_test, y_pred) * 100
-        print "RFC:",model_accr
         if model_accr > best_accr:
             best_accr = model_accr
             best_model = "Random Forest Classifier"
