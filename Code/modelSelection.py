@@ -10,7 +10,7 @@ from sklearn.naive_bayes import MultinomialNB
 from sklearn.naive_bayes import BernoulliNB
 from sklearn.naive_bayes import GaussianNB
 from sklearn.ensemble import AdaBoostClassifier
-#from xgboost import XGBClassifier
+from xgboost import XGBClassifier
 from sklearn.ensemble import RandomForestClassifier
 
 def modelSelection(path, target):
@@ -20,6 +20,8 @@ def modelSelection(path, target):
     # remove the columns which have no unique elements
     data = data[[col for col in data if data[col].nunique() > 1]]
     column_names = list(data.columns)
+    if target not in column_names:
+        return "The target column is not present in the file. Please upload the file again and give the correct target column name. Remember, target column is case sensitive."
     column_names.pop(column_names.index(target))
     X = data.reindex(columns = column_names)
     X = preprocessing.StandardScaler().fit(X).transform(X.astype(float))
