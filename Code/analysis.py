@@ -31,6 +31,8 @@ def analysis(path, target):
     f = open(dt_string, "w")
     data = pd.read_csv(path, sep=',', header=0)
     columns = list(data.columns)
+    if target not in columns:
+        return "The target column is not present in the file. Please upload the file again and give the correct target column name. Remember, target column is case sensitive."
 
     # Exploratory data analysis:
     f.writelines("\nEXPLORATORY DATA ANALYSIS:")
