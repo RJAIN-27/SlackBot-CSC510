@@ -6,6 +6,7 @@ from tabulate import tabulate
 from datetime import datetime
 from scipy.stats import f_oneway
 
+
 def correlations(data, method,columns,f):
     correlations = data[data.columns].corr(method=method)
     for i in range(len(columns) - 1):
