@@ -162,6 +162,9 @@ def keywordExtraction(msg):
         for r in (libInfo):
             if k in r: 
                 listdict.append({r : libInfo[r]})
+    
+    if len(listdict)==0:
+        return([{"Library not found":"Sorry the library information is not in our database. We are still building our database. Thanks for understanding."}])
 
     
     return(listdict)
