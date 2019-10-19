@@ -11,13 +11,13 @@ import re
 import nltk
 import openpyxl as xl
 import json
-
-#nltk.download('stopwords')
+from sklearn.feature_extraction.text import CountVectorizer
+from sklearn.feature_extraction.text import TfidfTransformer
+from scipy.sparse import coo_matrix
 from nltk.corpus import stopwords
 nltk.download('stopwords')
 from nltk.stem.porter import PorterStemmer
 from nltk.tokenize import RegexpTokenizer
-#nltk.download('wordnet') 
 nltk.download('wordnet')
 from nltk.stem.wordnet import WordNetLemmatizer
 
@@ -76,12 +76,8 @@ def keywordExtraction(msg):
     #Text Preparation (Convert the words in the corpus to Tokens or vectors - Tokenization/Vectorization)
 
     #Creating a vector of word counts 
-    from sklearn.feature_extraction.text import CountVectorizer
-    import re
     cv=CountVectorizer(min_df=0.8,stop_words=stop_words, max_features=10000, ngram_range=(1,1))
     X=cv.fit_transform(corpus)
-
-
 
     list(cv.vocabulary_.keys())[:10]
 
@@ -106,9 +102,6 @@ def keywordExtraction(msg):
     g = sns.barplot(x="Word", y="Freq", data=top_df)
     g.set_xticklabels(g.get_xticklabels(), rotation=30)
 
-
-    from sklearn.feature_extraction.text import TfidfTransformer
-
     tfidf_transformer=TfidfTransformer(smooth_idf=True,use_idf=True)
     tfidf_transformer.fit(X)
     # get feature names
@@ -122,7 +115,6 @@ def keywordExtraction(msg):
       tf_idf_vector=tfidf_transformer.transform(cv.transform([doc]))
 
     #Function for sorting tf_idf in descending order
-    from scipy.sparse import coo_matrix
     def sort_coo(coo_matrix):
         tuples = zip(coo_matrix.col, coo_matrix.data)
         return sorted(tuples, key=lambda x: (x[1], x[0]), reverse=True)
@@ -163,7 +155,6 @@ def keywordExtraction(msg):
     for k in keywords:
         keyword_list.append(str(k))
         print(k,keywords[k])
-
 
     print(keyword_list)
 
