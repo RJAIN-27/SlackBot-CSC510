@@ -4,10 +4,11 @@ from scipy.stats import normaltest
 from scipy.stats import anderson
 from tabulate import tabulate
 from datetime import datetime
-from scipy.stats import f_oneway
 
+def targetCheck(target, columnNames):
+    return 1 if target in columnNames else "The target column is not present in the file. Please upload the file again and give the correct target column name. Remember, target column is case sensitive."
 
-def correlations(data, method,columns,f):
+def correlations(data, method, columns, f):
     correlations = data[data.columns].corr(method=method)
     for i in range(len(columns) - 1):
         for j in range(i + 1, len(columns)):
@@ -23,17 +24,10 @@ def correlations(data, method,columns,f):
                 f.writelines("\nColumns " + columns[i] + " and " + columns[j] +
                              " have strong correlation between them. The correlation value is "
                              + str(correlations[columns[i]][columns[j]]))
-    f.writelines("\n---------------------------------------------------------------------------------------------------------------------------------------")
+    f.writelines(
+        "\n---------------------------------------------------------------------------------------------------------------------------------------")
 
-def analysis(path, target):
-    # create file
-    now = datetime.now()
-    dt_string = "analysis_" + now.strftime("%d_%m_%Y_%H_%M_%S") + ".txt"
-    f = open(dt_string, "w")
-    data = pd.read_csv(path, sep=',', header=0)
-    columns = list(data.columns)
-    if target not in columns:
-        return "The target column is not present in the file. Please upload the file again and give the correct target column name. Remember, target column is case sensitive."
+def analysis(f, data, target, columns, dt_string):
 
     # Exploratory data analysis:
     f.writelines("\nEXPLORATORY DATA ANALYSIS:")
@@ -41,24 +35,26 @@ def analysis(path, target):
     # number of null values per column
     f.writelines("\n\nNo. of nulls in the columns:\n")
     f.write(str(data.isnull().sum()))
-    f.writelines("\n---------------------------------------------------------------------------------------------------------------------------------------")
+    f.writelines(
+        "\n---------------------------------------------------------------------------------------------------------------------------------------")
 
     # Mean, median and mode of each column:
     f.writelines("\n\nMEAN, MEDIAN AND MODE:")
     for col in columns:
-        f.writelines("\n"+col)
-        f.writelines("\nMean= "+str(data[col].mean()))
-        f.writelines("     Median= "+str(data[col].median()))
-        f.writelines("     Mode= "+ str(mode) for mode in data[col].mode())
-    f.writelines("\n---------------------------------------------------------------------------------------------------------------------------------------")
+        f.writelines("\n" + col)
+        f.writelines("\nMean= " + str(data[col].mean()))
+        f.writelines("     Median= " + str(data[col].median()))
+        f.writelines("     Mode= " + str(mode) for mode in data[col].mode())
+    f.writelines(
+        "\n---------------------------------------------------------------------------------------------------------------------------------------")
 
     # Correlation
     f.writelines("\n\nCorrelation:\n")
     f.writelines("\nPearson Correlation test:")
-    correlations(data,'pearson',columns,f)
+    correlations(data, 'pearson', columns, f)
 
     f.writelines("\n\nSpearman's rank Correlation test:")
-    correlations(data,'spearman',columns,f)
+    correlations(data, 'spearman', columns, f)
 
     f.writelines("\n\nKendall's rank Correlation test:")
     correlations(data, 'kendall', columns, f)
@@ -81,9 +77,9 @@ def analysis(path, target):
         ls.append([i, stat, p, result])
     dataf = pd.DataFrame(ls, columns=["Column", "Test Statistics", "p-Value", "Null Hypothesis"])
     f.write(tabulate(dataf, tablefmt="grid", headers="keys", showindex=False))
-    f.writelines("\n---------------------------------------------------------------------------------------------------------------------------------------")
+    f.writelines(
+        "\n---------------------------------------------------------------------------------------------------------------------------------------")
 
-    
     f.writelines("\n\nD'Agostino's K^2 Test - Gaussian distribution test\n")
     f.writelines("Tests whether a data sample has a Gaussian distribution.\n")
     f.writelines("Hypothesis: the sample has a Gaussian distribution\n")
@@ -99,25 +95,38 @@ def analysis(path, target):
         ls.append([i, stat, p, result])
     dataf = pd.DataFrame(ls, columns=["Column", "Test Statistics", "p-Value", "Null Hypothesis"])
     f.write(tabulate(dataf, tablefmt="grid", headers="keys", showindex=False))
-    f.writelines("\n---------------------------------------------------------------------------------------------------------------------------------------")
+    f.writelines(
+        "\n---------------------------------------------------------------------------------------------------------------------------------------")
 
     # Anderson-Darling Test
     f.writelines("\n\nAnderson-Darling Test - Gaussian distribution test\n")
     f.writelines("Tests whether a data sample has a Gaussian distribution.\n")
     f.writelines("Hypothesis: the sample has a Gaussian distribution\n")
-    ls = []
     for i in columns:
         if i == target:
             continue
         result = anderson(data[i])
-        f.writelines('\n'+i+':\nStatistic: '+ str(result.statistic)+'\n')
-        p = 0
+        f.writelines('\n' + i + ':\nStatistic: ' + str(result.statistic) + '\n')
         for j in range(len(result.critical_values)):
             sl, cv = result.significance_level[j], result.critical_values[j]
             if result.statistic < result.critical_values[j]:
-                f.writelines(str(sl)+':'+str(cv) +' Null Hypothesis - Accepted\n')
+                f.writelines(str(sl) + ':' + str(cv) + ' Null Hypothesis - Accepted\n')
             else:
-                f.writelines(str(sl)+':'+str(cv) +' Null Hypothesis - Rejected\n')
+                f.writelines(str(sl) + ':' + str(cv) + ' Null Hypothesis - Rejected\n')
 
-    f.writelines("\n---------------------------------------------------------------------------------------------------------------------------------------")
+    f.writelines(
+        "\n---------------------------------------------------------------------------------------------------------------------------------------")
     return dt_string
+
+def analysisInteraction(path,target):
+    now = datetime.now()
+    dt_string = "analysis_" + now.strftime("%d_%m_%Y_%H_%M_%S") + ".txt"
+    f = open(dt_string, "w")
+    data = pd.read_csv(path, sep=',', header=0)
+    columns = list(data.columns)
+    flag = targetCheck(target,columns)
+    if flag != 1:
+        return flag
+    filename = analysis(f,data,target,columns,dt_string)
+    f.close()
+    return filename
