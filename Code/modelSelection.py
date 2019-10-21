@@ -14,22 +14,16 @@ from sklearn.ensemble import AdaBoostClassifier
 from xgboost import XGBClassifier
 from sklearn.ensemble import RandomForestClassifier
 
-# returns the best model from dictionary of models with accuracy
 def bestModel(modelDict):
     sorted_x = sorted(modelDict.items(), key=operator.itemgetter(1))
     return(sorted_x[len(sorted_x)-1][0])
 
-# trains different ML models and calls bestModel to return the best model depending upon accuracy
-def modelTraining(path, target):
-    # read data
-    data = pd.read_csv(path, sep=',', header=0)
-    models={}
+def targetCheck(target, columnNames):
+    return 1 if target in columnNames else "The target column is not present in the file. Please upload the file again and give the correct target column name. Remember, target column is case sensitive."
 
-    # remove the columns which have no unique elements
-    data = data[[col for col in data if data[col].nunique() > 1]]
-    column_names = list(data.columns)
-    if target not in column_names:
-        return "The target column is not present in the file. Please upload the file again and give the correct target column name. Remember, target column is case sensitive."
+def modelTraining(data, target, column_names):
+    # read data
+    models={}
     column_names.pop(column_names.index(target))
     X = data.reindex(columns = column_names)
     X = preprocessing.StandardScaler().fit(X).transform(X.astype(float))
@@ -112,7 +106,7 @@ def modelTraining(path, target):
     except:
         logging.info("AdaBoost Classifier is throwing exception")
 
-    # XGB
+    #XGB
     try:
         xgb = XGBClassifier()
         y_pred = xgb.fit(X_train, y_train).predict(X_test)
@@ -130,4 +124,16 @@ def modelTraining(path, target):
     except:
         logging.info("Random Forest Classifier is throwing exception")
 
-    return(bestModel(models))
+    return(models)
+
+def interactionModelSel(path,target):
+    data = pd.read_csv(path, sep=',', header=0)
+
+    # remove the columns which have no unique elements
+    data = data[[col for col in data if data[col].nunique() > 1]]
+    column_names = list(data.columns)
+    flag = targetCheck(target, column_names)
+    if flag != 1:
+        return flag
+    models = modelTraining(data,target,column_names)
+    return bestModel(models)
