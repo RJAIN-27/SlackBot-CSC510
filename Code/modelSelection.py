@@ -11,7 +11,7 @@ from sklearn.naive_bayes import MultinomialNB
 from sklearn.naive_bayes import BernoulliNB
 from sklearn.naive_bayes import GaussianNB
 from sklearn.ensemble import AdaBoostClassifier
-from xgboost import XGBClassifier
+#from xgboost import XGBClassifier
 from sklearn.ensemble import RandomForestClassifier
 
 def bestModel(modelDict):
@@ -126,7 +126,7 @@ def modelTraining(data, target, column_names):
 
     return(models)
 
-def interactionModelSel(path,target):
+def modelSelInteraction(path,target):
     data = pd.read_csv(path, sep=',', header=0)
 
     # remove the columns which have no unique elements
@@ -137,3 +137,4 @@ def interactionModelSel(path,target):
         return flag
     models = modelTraining(data,target,column_names)
     return bestModel(models)
+
