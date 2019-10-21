@@ -30,20 +30,11 @@ from nltk.tokenize import RegexpTokenizer
 nltk.download('wordnet')
 from nltk.stem.wordnet import WordNetLemmatizer
 
+msg = "know numpy and scipy and numpy"
+
 
 def keywordExtraction(msg):
  
-
-    keyword_list=[]
-
-    wb = xl.load_workbook('libraryFile.xlsx')
-    sheet = wb['Sheet1']
-    libInfo = {}
-    listdict=[]
-    for row in range(2 , sheet.max_row + 1):
-        #print(sheet.cell(row, 1).value)
-        libInfo[sheet.cell(row, 1).value] = sheet.cell(row, 2).value
-
 
     text = msg
 
@@ -90,40 +81,16 @@ def keywordExtraction(msg):
 
     #fetch document for which keywords needs to be extracted
     for text1 in corpus:
-      doc=text1
+        doc=text1
 
-      #generate tf-idf for the given document
-      tf_idf_vector=tfidf_transformer.transform(cv.transform([doc]))
+        #generate tf-idf for the given document
+        tf_idf_vector=tfidf_transformer.transform(cv.transform([doc]))
 
-    #Function for sorting tf_idf in descending order
     
-    def sort_coo(coo_matrix):
-        tuples = zip(coo_matrix.col, coo_matrix.data)
-        return sorted(tuples, key=lambda x: (x[1], x[0]), reverse=True)
+    
 
-    def extract_topn_from_vector(feature_names, sorted_items, topn=10):
-       """get the feature names and tf-idf score of top n items"""
 
-       #use only topn items from vector
-       sorted_items = sorted_items[:topn]
 
-       score_vals = []
-       feature_vals = []
-
-       # word index and corresponding tf-idf score
-       for idx, score in sorted_items:
-
-           #keep track of feature name and its corresponding score
-           score_vals.append(round(score, 3))
-           feature_vals.append(feature_names[idx])
-
-       #create a tuples of feature,score
-       #results = zip(feature_vals,score_vals)
-       results= {}
-       for idx in range(len(feature_vals)):
-           results[feature_vals[idx]]=score_vals[idx]
-
-       return results
     #sort the tf-idf vectors by descending order of scores
     sorted_items=sort_coo(tf_idf_vector.tocoo())
     #extract only the top n; n here is 10
@@ -132,7 +99,45 @@ def keywordExtraction(msg):
     # now print the results
     print("\nAbstract:")
     print(doc)
+    keywordlist(keywords)
+    
+#Function for sorting tf_idf in descending order    
+def sort_coo(coo_matrix):
+    tuples = zip(coo_matrix.col, coo_matrix.data)
+    return sorted(tuples, key=lambda x: (x[1], x[0]), reverse=True)   
+def extract_topn_from_vector(feature_names, sorted_items, topn=10):
+    """get the feature names and tf-idf score of top n items"""
 
+    #use only topn items from vector
+    sorted_items = sorted_items[:topn]
+
+    score_vals = []
+    feature_vals = []
+
+    # word index and corresponding tf-idf score
+    for idx, score in sorted_items:
+        #keep track of feature name and its corresponding score
+        score_vals.append(round(score, 3))
+        feature_vals.append(feature_names[idx])
+
+        #create a tuples of feature,score
+        #results = zip(feature_vals,score_vals)
+        results= {}
+        for idx in range(len(feature_vals)):
+            results[feature_vals[idx]]=score_vals[idx]
+
+        return results
+    
+def keywordlist(keywords):
+    keyword_list=[]
+
+    wb = xl.load_workbook('libraryFile (2).xlsx')
+    sheet = wb['Sheet1']
+    libInfo = {}
+    listdict=[]
+    for row in range(2 , sheet.max_row + 1):
+        #print(sheet.cell(row, 1).value)
+        libInfo[sheet.cell(row, 1).value] = sheet.cell(row, 2).value
     print("\nKeywords:")
     for k in keywords:
         keyword_list.append(str(k))
@@ -147,4 +152,6 @@ def keywordExtraction(msg):
                 listdict.append({r : libInfo[r]})
 
     
-    return(listdict)
+    print(listdict)
+
+keywordExtraction(msg)
