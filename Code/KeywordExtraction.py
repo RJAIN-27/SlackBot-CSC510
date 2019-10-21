@@ -30,7 +30,7 @@ nltk.download('wordnet')
 from nltk.stem.wordnet import WordNetLemmatizer
 
 
-msg = "know scipy"
+
 # Function for extracting keywords from user's message 
 def keywordExtraction(msg):
     text = msg
@@ -133,7 +133,7 @@ def keywordlist(keywords):
         print(k,keywords[k])
 
 
-    wb = xl.load_workbook('libraryFile (2).xlsx')
+    wb = xl.load_workbook('libraryFile.xlsx')
     sheet = wb['Sheet1']
     libInfo = {}
     listdict=[]
@@ -146,7 +146,6 @@ def keywordlist(keywords):
             if k in r: 
                 listdict.append({r : libInfo[r]})
 
-    
     print(listdict)
 
-keywordExtraction(msg)
+
