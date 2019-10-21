@@ -57,7 +57,7 @@ def keywordExtraction(msg):
     text = " ".join(text)
     corpus.append(text)
 
-    print(corpus)
+    
     #Text Preparation (Convert the words in the corpus to Tokens or vectors - Tokenization/Vectorization)
 
     #Creating a vector of word counts 
@@ -85,9 +85,7 @@ def keywordExtraction(msg):
     #extract only the top n; n here is 10
     keywords=extract_topn_from_vector(feature_names,sorted_items,5)
 
-    # now print the results
-    print("\nAbstract:")
-    print(doc)
+    
 
     #print(keyword_list)
     keywordlist(keywords)
@@ -127,10 +125,10 @@ def keywordlist(keywords):
     
     keyword_list=[]
     
-    print("\nKeywords:")
+    
     for k in keywords:
         keyword_list.append(str(k))
-        print(k,keywords[k])
+        
 
 
     wb = xl.load_workbook('libraryFile.xlsx')
@@ -146,6 +144,6 @@ def keywordlist(keywords):
             if k in r: 
                 listdict.append({r : libInfo[r]})
 
-    print(listdict)
+    return(listdict)
 
 
