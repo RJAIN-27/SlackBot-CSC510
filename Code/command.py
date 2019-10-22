@@ -2,6 +2,7 @@ import KeywordExtraction
 import modelSelection
 import analysis
 import mocking_infrastructure
+import json
 
 with open("data.json") as json_file:
     jsonData = json.load(json_file)
