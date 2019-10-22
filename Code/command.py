@@ -35,12 +35,12 @@ class Command(object):
         
     def handlecommands(self, user, command):
         global flag
-        if any(word in command for word in dataJson["model_sel_words"]):
+        if any(word in command for word in jsonData["model_sel_words"]):
             flag=0
             response="Please provide the target column"
             return response
 
-        if any(word in command for word in dataJson["analysis_words"]):
+        if any(word in command for word in jsonData["analysis_words"]):
             flag=1
             response="Please provide the target column"
             return response
