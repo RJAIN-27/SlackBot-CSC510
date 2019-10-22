@@ -123,6 +123,7 @@ public class UseCase1AltFlow {
 			//System.out.println(messages.get(messages.size()-1).getText());
 		
 			//System.out.println(messages.get(messages.size()-1).getText());
+			System.out.println("UseCase1AltFlowVerification:");
 			try {
 				Assert.assertEquals("Please provide the target column", messages.get(messages.size()-1).getText());
 				System.out.println("Target Column request is verified successfully");
