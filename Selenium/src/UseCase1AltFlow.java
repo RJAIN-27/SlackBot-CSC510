@@ -27,8 +27,8 @@ public class UseCase1AltFlow {
 		System.setProperty("webdriver.chrome.driver", "chromedriver.exe");
         WebDriver driver = new ChromeDriver();
      		
-		String workspace = System.getenv("SLACK_WORKSPACE");
-		String Slack_url= System.getenv("SLACK_URL");
+        String workspace = System.getenv("LIBRA_WORKSPACE");
+		String Slack_url= System.getenv("LIBRA_URL");
 		String loginEmail = System.getenv("SLACK_EMAIL");
 		String loginPass = System.getenv("SLACK_PASSWORD");
 		driver.get(Slack_url);
@@ -90,7 +90,7 @@ public class UseCase1AltFlow {
 		  robot.setAutoDelay(2000);
 		  
 		//UPLOADING THE FILE 
-		  StringSelection stringSelection = new StringSelection("C:\\Users\\nitar\\Downloads\\ordergroups.csv");
+		  StringSelection stringSelection = new StringSelection("C:\\Users\\mouni\\eclipse-workspace\\Selenium\\Wine.csv");
 		  Toolkit.getDefaultToolkit().getSystemClipboard().setContents(stringSelection, null);
 		  
 		  robot.setAutoDelay(1000);
