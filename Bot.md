@@ -15,7 +15,10 @@
   [s5] The result from the procedure in [s4] is then passed back to the User.
 4 Alternate FLow:
   [E1] User's dataset is neither numerical nor alphanumeric. The bot responds by asking User to provide numeric or alphanumeric dataset.
+  [E2] The target variable specified by the user is not present in the dataset. 
 ```
+#####Refinement in Use Case 1: 
+The precondition for this use case has been changed from user requiring a LIBRA token to User needing a valid slack authorization. Another alternate flow has been added to account for the specified target variable not being present in the user's dataset. 
 
 ### Use Case 2: Data Analysis on a dataset <!-- Bot performs Exploratory Data Analysis (EDA) and Statistical Hypothesis Tests so that the user can understand the data before he/she can make any assumptions about it --> <!-- User must have a dataset to gain insights about the dataset -->
 ```
@@ -29,8 +32,11 @@
   [s4] Bot performs series of statistical hypothesis tests and exporatory data analysis on the dataset in python at the backend.
   [s5] The results from the procedure in [s4] is then passed back to the User.
 4 Alternate FLow:
-  [E1] User's dataset is neither numerical nor alphanumeric. The bot responds by asking User to provide numeric or alphanumeric dataset. 
+  [E1] User's dataset is neither numerical nor alphanumeric. The bot responds by asking User to provide numeric or alphanumeric dataset.
+  [E2] The target variable specified by the user is not present in the dataset. 
 ```
+#####Refinement in Use Case 2: 
+The precondition for this use case has been changed from user requiring a LIBRA token to User needing a valid slack authorization. Another alternate flow has been added to account for the specified target variable not being present in the user's dataset. 
 
 ### Use Case 3: Know about a Library/API <!--Bot renders description for library/API that is requested by the user-->
 ```
@@ -46,6 +52,10 @@
 4 Alternate Flow:
   [E1] No known method/function is provided by the user. Bot gives a message that method/function is not found.
 ```
+
+#####Refinement in Use Case 3: 
+The precondition for this use case has been changed from user requiring a LIBRA token to User needing a valid slack authorization. 
+
 
 ## Mocking Service Component 
 
