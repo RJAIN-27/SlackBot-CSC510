@@ -46,7 +46,9 @@ public class UseCase3HappyPath {
 		WebElement password = driver.findElement(By.id("password"));
 
 		// Enter slack email and password
+		email.click();
 		email.sendKeys(loginEmail);
+		password.click();
 		password.sendKeys(loginPassword);
 
 		// Click to go into library bot channel
