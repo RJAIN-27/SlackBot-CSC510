@@ -19,8 +19,7 @@ public class UseCase3AltFlow {
 	@SuppressWarnings("deprecation")
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-        System.setProperty("webdriver.chrome.driver", "C:\\ProgramData\\chocoportable\\lib\\chromedriver\\tools\\chromedriver.exe");
-
+		System.setProperty("webdriver.chrome.driver", "chromedriver.exe");
         WebDriver driver = new ChromeDriver();
 
         
@@ -95,9 +94,9 @@ public class UseCase3AltFlow {
 		//Assert.assertEquals("I am sorry, we are still working and building our database!");
 		try {
 		Assert.assertEquals("I am sorry, we are still working and building our database!", messages.get(messages.size()-1).getText());
-		System.out.println("Test for alternate path is verified");
+		System.out.println("Test for happy path is verified");
 		}catch(AssertionError e) {
-			System.out.println("Test for alternate path has failed");
+			System.out.println("Test for happy path has failed");
 		}
 
 }
