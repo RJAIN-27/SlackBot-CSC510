@@ -135,13 +135,13 @@ public class UseCase1AltFlow {
 		  
 		  //Here , we need to wait for the bot's response
 			try {
-				Thread.sleep(3000);
+				Thread.sleep(5000);
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
 			
 			List<WebElement> messages1= driver.findElements(By.className("c-message__body"));
-			//System.out.println(messages1.get(messages1.size()-1).getText());
+			System.out.println(messages1.get(messages1.size()-1).getText());
 			//asserting error column message
 			try {
 				Assert.assertEquals("The target column is not present in the file. Please upload the file again and give the correct target column name. Remember, target column is case sensitive.", messages1.get(messages1.size()-1).getText());
