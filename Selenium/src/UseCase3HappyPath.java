@@ -21,10 +21,10 @@ public class UseCase3HappyPath {
 	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		String workspace = "rajshreegroup";
-		String botURL = "https://app.slack.com/client/TPDPYLR63/CPDPYM023";
-		String loginEmail = "vnukala2@ncsu.edu";
-		String loginPassword = "Mani@1234";
+		String workspace = System.getenv("LIBRA_WORKSPACE");//"rajshreegroup";
+		String botURL = System.getenv("LIBRA_URL");//"https://app.slack.com/client/TPDPYLR63/CPDPYM023";
+		String loginEmail = System.getenv("SLACK_EMAIL");
+		String loginPassword = System.getenv("SLACK_PASSWORD");
 		
 		System.setProperty("webdriver.chrome.driver","chromedriver.exe");
 		WebDriver driver = new ChromeDriver();
@@ -67,6 +67,8 @@ public class UseCase3HappyPath {
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
+		
+		System.out.println("UseCase3HappyPathVerification:");
 		
 		List<WebElement> messages= driver.findElements(By.className("c-message__body"));
 		//System.out.println(messages.get(messages.size()-2).getText());
