@@ -1,6 +1,6 @@
 {
    "path_for_usecase2":"analysis_19_10_2019_14_09_55.txt",
-   "model_sel_words" : ["select","suggest","best","model"],
+   "model_sel_words" : ["select","suggest","best","model","suggestion"],
    "analysis_words" : ["analyze","analyse","analysis","dataset", "data set","data"],
    "path_to_csv_file_case1_case2":"wine.csv",
    "target":"Class",
