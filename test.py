@@ -76,8 +76,8 @@ def mock_keyword_extraction(a):
     while i < length:
         for r in (libInfo):
             if list[i] in r:
-                ans_list.append(list[i])
-        i = i + 1
+                ans_list.append({r : libraries[r]})
+        i = i + 1    
     return  ans_list
 
 def read_from_json_and_test(a):
@@ -89,8 +89,8 @@ def read_from_json_and_test(a):
     while i < length:
         for r in (libraries):
             if list[i] in r:
-                ans_list.append(list[i])
-        i = i + 1         
+                ans_list.append({r : libraries[r]})  
+        i = i + 1        
     return ans_list 
 
 class TestStringMethods(unittest.TestCase):
