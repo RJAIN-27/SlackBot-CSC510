@@ -1,6 +1,12 @@
 {
    "path_for_usecase2":"analysis_19_10_2019_14_09_55.txt"
    ,
+   "path_to_csv_file_case1_case2":"wine.csv"
+   ,
+   "target":"Class"
+   ,
+   "wrong_target":"class"
+   ,
    "parameters_to_be_counted":"5"
    ,
    "libraries": {
