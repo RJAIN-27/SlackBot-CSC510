@@ -7,6 +7,7 @@ import java.awt.Toolkit;
 import java.awt.datatransfer.StringSelection;
 import java.awt.event.KeyEvent;
 
+import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
@@ -116,8 +117,44 @@ public class UseCase1AltFlow {
 			
 			List<WebElement> messages= driver.findElements(By.className("c-message__body"));
 			
-			System.out.println(messages.get(messages.size()-1).getText());
+			//System.out.println(messages.get(messages.size()-1).getText());
 		
+			//System.out.println(messages.get(messages.size()-1).getText());
+			try {
+				Assert.assertEquals("Please provide the target column", messages.get(messages.size()-1).getText());
+				System.out.println("Target Column request is verified successfully");
+			} catch (AssertionError e) {
+			    System.out.println("Target Column request verification is failed");
+			}
+		  
+		  //sending the target column
+		  WebElement targetColumn =  driver.findElement(By.id("undefined"));
+		  targetColumn.sendKeys("ClassNotPresent");
+		  targetColumn.sendKeys(Keys.RETURN);
+		  
+		  //Here , we need to wait for the bot's response
+			try {
+				Thread.sleep(4000);
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+			
+			
+			
+			//receive bot's response about model
+			messages= driver.findElements(By.className("c-message__body"));
+			try {
+				Assert.assertEquals("The target column is not present in the file. Please upload the file again and give the correct target column name. Remember, target column is case sensitive.", messages.get(messages.size()-2).getText());
+				System.out.println("Model Name is verified successfully");
+			} catch (AssertionError e) {
+			    System.out.println("ModelName verification is failed.");
+			}
+			try {
+				Assert.assertEquals("Were you satisfied with the recommendation?", messages.get(messages.size()-1).getText());
+				System.out.println("Bot Question is verified successfully");
+			} catch (AssertionError e) {
+			    System.out.println("Bot Question request verification is failed");
+			}
 		
 		/*
 		 * try { driver.manage().timeouts().wait(3000); } catch (InterruptedException e)
@@ -158,6 +195,9 @@ public class UseCase1AltFlow {
 	}
 
 }
+
+
+
 
 
 
