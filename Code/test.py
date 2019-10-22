@@ -19,6 +19,24 @@ wrong_target = data["wrong_target"]
 path_to_csv_file_case1_case2 = data["path_to_csv_file_case1_case2"]
 filename = data["path_for_usecase2"]
 
+# USECASE 1
+def mockbestModel(path, target):
+    # for mocking the main and alternate flow
+    flag = targetCheck(target, columnNames)
+    if flag != 1:
+        return flag
+    sorted_x = sorted(modelDict.items(), key=operator.itemgetter(1))
+    return (sorted_x[len(sorted_x) - 1][0])
+
+def max_val_fun():
+    ls = []
+    for i in modelDict:
+        ls.append(modelDict[i])
+    return max(ls)
+
+# USECASE 1 & 2
+def targetCheck(target, columnNames):
+    return 1 if target in columnNames else "The target column is not present in the file. Please upload the file again and give the correct target column name. Remember, target column is case sensitive."
 
 # USECASE 2
 def mock_analysis_interaction(path, target):
@@ -44,28 +62,6 @@ def mock_analysis_interaction(path, target):
         return filename
     return 0
 
-
-# USECASE 1
-def mockbestModel(path, target):
-    # for mocking the main and alternate flow
-    flag = targetCheck(target, columnNames)
-    if flag != 1:
-        return flag
-    sorted_x = sorted(modelDict.items(), key=operator.itemgetter(1))
-    return (sorted_x[len(sorted_x) - 1][0])
-
-
-def max_val_fun():
-    ls = []
-    for i in modelDict:
-        ls.append(modelDict[i])
-    return max(ls)
-
-# USECASE 1 & 2
-def targetCheck(target, columnNames):
-    return 1 if target in columnNames else "The target column is not present in the file. Please upload the file again and give the correct target column name. Remember, target column is case sensitive."
-
-
 # USECASE 3
 def mock_keyword_extraction(a):
     list = a.split(' ')
@@ -84,7 +80,6 @@ def mock_keyword_extraction(a):
         i = i + 1
     return ans_list
 
-
 def read_from_json_and_test(a):
     list = a.split(' ')
     i = 0
@@ -98,39 +93,33 @@ def read_from_json_and_test(a):
         i = i + 1
     return ans_list
 
-
 class TestStringMethods(unittest.TestCase):
     # usecase 1 - happy flow
     @patch('modelSelection.modelSelInteraction', side_effect=mockbestModel)
     def test_modelsel(self, modelSelInteraction):
         self.assertEqual(modelDict[modelSelInteraction(path_to_csv_file_case1_case2, target)], max_val_fun())
-
     # usecase 1 - alternate flow
     @patch('modelSelection.modelSelInteraction', side_effect=mockbestModel)
     def test_modelsel2(self, modelSelInteraction):
         self.assertEqual(modelSelInteraction(path_to_csv_file_case1_case2, wrong_target), wrngColEx)
 
-    # usecase 3 - happy flow
-    @patch('KeywordExtraction.keywordExtraction', side_effect=mock_keyword_extraction)
-    def test_strings_a(self, keywordExtraction):
-        self.assertEqual(keywordExtraction("know numpy pandas"), read_from_json_and_test("know numpy pandas"))
-
-    # usecase 3 - alternate flow
-    @patch('KeywordExtraction.keywordExtraction', side_effect=mock_keyword_extraction)
-    def test_strings_b(self, keywordExtraction):
-        self.assertEqual(keywordExtraction("jon snow knows nothing"), [])
-
     # usecase2 - happy flow
     @patch('analysis.analysisInteraction', side_effect=mock_analysis_interaction)
     def test_analysis1(self, analysisInteraction):
         self.assertEqual(analysisInteraction(path_to_csv_file_case1_case2, target), filename)
-
-        # usecase2 - alternate flow
-
+    # usecase2 - alternate flow
     @patch('analysis.analysisInteraction', side_effect=mock_analysis_interaction)
     def test_analysis2(self, analysisInteraction):
         self.assertEqual(analysisInteraction(path_to_csv_file_case1_case2, wrong_target), wrngColEx)
-
+    
+    # usecase 3 - happy flow
+    @patch('KeywordExtraction.keywordExtraction', side_effect=mock_keyword_extraction)
+    def test_strings_a(self, keywordExtraction):
+        self.assertEqual(keywordExtraction("know numpy pandas"), read_from_json_and_test("know numpy pandas"))
+    # usecase 3 - alternate flow
+    @patch('KeywordExtraction.keywordExtraction', side_effect=mock_keyword_extraction)
+    def test_strings_b(self, keywordExtraction):
+        self.assertEqual(keywordExtraction("jon snow knows nothing"), [])
 
 if __name__ == '__main__':
     unittest.main()
