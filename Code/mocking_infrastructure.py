@@ -29,7 +29,7 @@ def max_val_fun():
     return max(ls)
 
 def targetCheck(target, columnNames):
-    return 1 if target in columnNames else wrngColEx
+    return 1 if target in columnNames else "The target column is not present in the file. Please upload the file again and give the correct target column name. Remember, target column is case sensitive."
 
 # USECASE 2
 def mock_analysis_interaction(path, target):
@@ -57,18 +57,18 @@ def mock_analysis_interaction(path, target):
 
 # USECASE 3
 def mock_keyword_extraction(a):
-    list = a.split(' ')
+    list1 = str(a).split(' ')
     ans_list = []
-    length = len(list)
+    length = len(list1)
     i = 0
-    wb = xl.load_workbook(data["xlsx_file"])
+    wb = xl.load_workbook('libraryFile.xlsx')
     sheet = wb['Sheet1']
     libInfo = {}
     for row in range(2, sheet.max_row + 1):
         libInfo[sheet.cell(row, 1).value] = sheet.cell(row, 2).value
     while i < length:
         for r in (libInfo):
-            if list[i].lower() in r:
+            if list1[i].lower() == r:
                 ans_list.append({r: libraries[r]})
         i = i + 1
     return ans_list
