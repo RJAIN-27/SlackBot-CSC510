@@ -165,7 +165,7 @@ public class UseCase1HappyPath {
 				Assert.assertEquals("Thankyou for the feedback", messages.get(messages.size()-1).getText());
 				System.out.println("Feedback message is verified");
 			} catch (AssertionError e) {
-			    System.out.println("Feedback message is verification failed");
+			    System.out.println("Feedback message verification failed");
 			}
 		  
 		  //yourComputer.sendKeys("C:\\Users\\mouni\\Downloads\\Spectrum.pdf");
