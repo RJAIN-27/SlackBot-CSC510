@@ -24,8 +24,8 @@ public class UseCase3AltFlow {
 
         
 		
-        String workspace = System.getenv("SLACK_WORKSPACE");
-		String Slack_url= System.getenv("SLACK_URL");
+        String workspace = System.getenv("LIBRA_WORKSPACE");
+		String Slack_url= System.getenv("LIBRA_URL");
 		String loginEmail = System.getenv("SLACK_EMAIL");
 		String loginPass = System.getenv("SLACK_PASSWORD");
 		driver.get(Slack_url);
@@ -94,9 +94,9 @@ public class UseCase3AltFlow {
 		//Assert.assertEquals("I am sorry, we are still working and building our database!");
 		try {
 		Assert.assertEquals("I am sorry, we are still working and building our database!", messages.get(messages.size()-1).getText());
-		System.out.println("Test for happy path is verified");
+		System.out.println("Test for alternate path is verified");
 		}catch(AssertionError e) {
-			System.out.println("Test for happy path has failed");
+			System.out.println("Test for alternate path has failed");
 		}
 
 }
