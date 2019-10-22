@@ -67,9 +67,9 @@ The code for the Bot Implementation is given [here](https://github.ncsu.edu/csc5
 
 The major files implementing the functionality of the three use cases are 
 
-1. KeywordExtraction.py 
-2. Analysis.py 
-3. ModelSelection.py 
+1. [KeywordExtraction.py](https://github.ncsu.edu/csc510-fall2019/CSC510-23/blob/master/Code/KeywordExtraction.py) 
+2. [Analysis.py](https://github.ncsu.edu/csc510-fall2019/CSC510-23/blob/master/Code/analysis.py) 
+3. [ModelSelection.py](https://github.ncsu.edu/csc510-fall2019/CSC510-23/blob/master/Code/modelSelection.py) 
 
 ## Selenium Testing 
 
