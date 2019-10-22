@@ -1,5 +1,4 @@
 
-
 import command
 import requests
 import io
@@ -18,9 +17,7 @@ class Event:
                  
     def parseevent(self, event):
         if event and 'text' in event and 'files' not in event and event['user']!="UP6FMPQ1X":   
-            print("******")
-            print(event)
-            print("*****")
+            
             self.handleevent(event['user'], event['text'], event['channel'])
         if event and 'files' in event and 'text' in event and event['user']!="UP6FMPQ1X" and event['upload']==True:
             print(event['files'][0]['filetype'])   
@@ -40,8 +37,7 @@ class Event:
         if command and channel:
             print ("Received command: " + command + " in channel: " + channel + " from user: " + user)
             response = self.command.handlecommand(user, command)
-
-
+           
             if type(response) is str:
                 
                 if(".txt" in response):
@@ -50,8 +46,8 @@ class Event:
                     print(content)
                     f1.close()
                     #print(type(content))
-                    self.bot.slack_client.api_call("chat.postMessage", channel=channel, text="The information you asked is:\n", as_user=True)
-                    self.bot.slack_client.api_call("files.upload", channels=channel, file=content)
+                    self.bot.slack_client.api_call("chat.postMessage", channel=channel, text="The analysis of your dataset is:\n", as_user=True)
+                    self.bot.slack_client.api_call("files.upload", channels=channel, file=content, filename="analysis.txt")
                     self.bot.slack_client.api_call("chat.postMessage", channel=channel, text="Were you satisfied with the analysis?", as_user=True)
                 elif(response == "The target column is not present in the file. Please upload the file again and give the correct target column name. Remember, target column is case sensitive."):
                     self.bot.slack_client.api_call("chat.postMessage", channel=channel, text=response, as_user=True)
@@ -62,11 +58,12 @@ class Event:
                 elif (response == "error"):
                     print ("fine")    
                 else:  
-                    self.bot.slack_client.api_call("chat.postMessage", channel=channel, text="The information you asked is:\n", as_user=True)  
+                    self.bot.slack_client.api_call("chat.postMessage", channel=channel, text="The best model suggestion for your dataset is:\n", as_user=True)  
                     self.bot.slack_client.api_call("chat.postMessage", channel=channel, text=response, as_user=True)
                     self.bot.slack_client.api_call("chat.postMessage", channel=channel, text="Were you satisfied with the recommendation?", as_user=True)
 
             elif type(response) is list and len(response)!=0:
+                self.bot.slack_client.api_call("chat.postMessage", channel=channel, text="The details of the libraries you asked are:\n", as_user=True)
                 for i in response:
                     for j in i:
                         self.bot.slack_client.api_call("chat.postMessage", channel=channel, text=i[j], as_user=True)
