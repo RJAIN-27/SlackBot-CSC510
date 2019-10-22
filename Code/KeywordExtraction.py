@@ -60,7 +60,7 @@ def keywordExtraction(msg):
     #extract only the top n; n here is 10
     keywords=extract_topn_from_vector(feature_names,sorted_items,5)
     #print(keyword_list)
-    keywordlist(keywords)
+    return(keywordlist(keywords))
     
 #Function for sorting tf_idf in descending order    
 def sort_coo(coo_matrix):
