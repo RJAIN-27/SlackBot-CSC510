@@ -59,10 +59,16 @@ The precondition for this use case has been changed from user requiring a LIBRA 
 
 ## Mocking Service Component 
 
+The programs are written in python.
+
 The mocking program used for this milestone is [mocking_infrastructure.py](https://github.ncsu.edu/csc510-fall2019/CSC510-23/blob/master/Code/mocking_infrastructure.py) which mocks [KeywordExtraction.py](https://github.ncsu.edu/csc510-fall2019/CSC510-23/blob/master/Code/KeywordExtraction.py), [analysis.py](https://github.ncsu.edu/csc510-fall2019/CSC510-23/blob/master/Code/analysis.py) and [modelSelection.py](https://github.ncsu.edu/csc510-fall2019/CSC510-23/blob/master/Code/modelSelection.py). 
 
 The program [test.py](https://github.ncsu.edu/csc510-fall2019/CSC510-23/blob/master/Code/test.py) is used to perform mock unittests for all the 3 usecases. The output is given here:
 ![](https://github.ncsu.edu/csc510-fall2019/CSC510-23/blob/master/running_test_cases.png)
+
+To run the bot, the user is required to install mock package and openpyxl package.
+``` pip install mock 
+    pip install openpyxl```
 
 ## Bot Implementation 
 
