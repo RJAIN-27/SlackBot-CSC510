@@ -114,7 +114,7 @@ public class UseCase2HappyPath {
 		  
 		//Here , we need to wait for the bot's response
 			try {
-				Thread.sleep(3000);
+				Thread.sleep(5000);
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
