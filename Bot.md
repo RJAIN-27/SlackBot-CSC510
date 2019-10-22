@@ -67,8 +67,10 @@ The program [test.py](https://github.ncsu.edu/csc510-fall2019/CSC510-23/blob/mas
 ![](https://github.ncsu.edu/csc510-fall2019/CSC510-23/blob/master/running_test_cases.png)
 
 To run the bot, the user is required to install mock package and openpyxl package.
-``` pip install mock 
-    pip install openpyxl```
+
+` pip install mock `
+
+` pip install openpyxl `
 
 ## Bot Implementation 
 
@@ -88,15 +90,15 @@ The Selenium Testing files are given [here](https://github.ncsu.edu/csc510-fall2
 
 1. **Use Case 1 Happy Path:**
     - Here we are uploading a csv file and specifying the target variable automatically and asserting if the output from the bot is as expected
-2. **Use Case 1 Sad Path: **
+2. **Use Case 1 Sad Path:**
     - Here we are uploading the .csv file and specifying a target variable that is not present in the dataset, automatically, and we are asserting if the bot responds as expected by identifying that the target variable is not present in the dataset
-3. **Use Case 2 Happy Path: **
+3. **Use Case 2 Happy Path:**
     - Here we are uploading a csv file and specifying the target variable automatically and asserting if the output from the bot is as expected
-4. **Use Case 2 Sad Path: **
+4. **Use Case 2 Sad Path:**
     - Here we are uploading the .csv file and specifying a target variable that is not present in the dataset, automatically, and we are asserting if the bot responds as expected by identifying that the target variable is not present in the dataset
-5. **Use Case 3 Happy Path: **
+5. **Use Case 3 Happy Path:**
     - Here we post a message with the keywords present in the library information database and we assert if the bot responds with the corresponding description of those keywords. 
-6. **Use Case 3 Sad Path: **
+6. **Use Case 3 Sad Path:**
     - Here we post a message with the keywords that are not present in the library information database and we assert if the bot responds as expected with an appropriate error message. 
 
 ## Task Tracking 
