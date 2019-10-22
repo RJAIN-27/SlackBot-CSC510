@@ -1,14 +1,12 @@
 {
-   "path_for_usecase2":"analysis_19_10_2019_14_09_55.txt"
-   ,
-   "path_to_csv_file_case1_case2":"wine.csv"
-   ,
-   "target":"Class"
-   ,
-   "wrong_target":"class"
-   ,
-   "parameters_to_be_counted":"5"
-   ,
+   "path_for_usecase2":"analysis_19_10_2019_14_09_55.txt",
+   "model_sel_words" : ["select","suggest","best","model"],
+   "analysis_words" : ["analyze","analyse","analysis","dataset", "data set","data"],
+   "path_to_csv_file_case1_case2":"wine.csv",
+   "target":"Class",
+   "wrong_target":"class",
+   "parameters_to_be_counted":"5",
+   "xlsx_file": "libraryFile.xlsx",
    "libraries": {
      "numpy": "NumPy is a very popular python library for large multi-dimensional array and matrix processing, with the help of a large collection of high-level mathematical functions. It is very useful for fundamental scientific computations in Machine Learning. It is particularly useful for linear algebra, Fourier transform, and random number capabilities. High-end libraries like TensorFlow uses NumPy internally for manipulation of Tensors. https://numpy.org/ https://docs.scipy.org/doc/numpy/reference/ http://cs231n.github.io/python-numpy-tutorial/",
      "scipy": "SciPy is a very popular library among Machine Learning enthusiasts as it contains different modules for optimization, linear algebra, integration and statistics. There is a difference between the SciPy library and the SciPy stack. The SciPy is one of the core packages that make up the SciPy stack. SciPy is also very useful for image manipulation. https://docs.scipy.org/doc/scipy/reference/ https://www.tutorialspoint.com/scipy/index.htm",
@@ -29,7 +27,6 @@
      "Random Forest Classifier": 100.0
    },
    "columnNames": ["Class", "Alcohol", "Malic acid", "Ash", "Alcalinity of ash", "Magnesium", "Total phenols", "Flavanoids", "Nonflavanoid phenols", "Proanthocyanins", "Color intensity", "Hue", "OD280/OD315 of diluted wines", "Proline"],
-
-   "wrongTargetColumnException": "The target column is not present in the file. Please upload the file again and give the correct target column name. Remember, target column is case sensitive."
-
+   "wrongTargetColumnException": "The target column is not present in the file. Please upload the file again and give the correct target column name. Remember, target column is case sensitive.",
+   "newStopWords": ["using", "show", "result", "large", "also", "iv", "one", "two", "new", "previously", "shown"]
 }
