@@ -17,6 +17,7 @@ parameters_to_be_counted = int(data["parameters_to_be_counted"])
 target = data["target"]
 wrong_target = data["wrong_target"]
 path_to_csv_file_case1_case2 = data["path_to_csv_file_case1_case2"]
+filename = data["path_for_usecase2"]
 
 
 # USECASE 2
@@ -24,7 +25,7 @@ def mock_analysis_interaction(path, target):
     flag = targetCheck(target, columnNames)
     if flag != 1:
         return flag
-    filename = data["path_for_usecase2"]
+
     a = ""
     count = 0
     for line in open(filename, 'r'):
@@ -39,7 +40,9 @@ def mock_analysis_interaction(path, target):
         count = count + 1
     if "Normality Tests" in a:
         count = count + 1
-    return count
+    if count == parameters_to_be_counted:
+        return filename
+    return 0
 
 
 # USECASE 1
@@ -57,9 +60,6 @@ def max_val_fun():
     for i in modelDict:
         ls.append(modelDict[i])
     return max(ls)
-
-
-# USECASE 2
 
 # USECASE 1 & 2
 def targetCheck(target, columnNames):
@@ -123,7 +123,7 @@ class TestStringMethods(unittest.TestCase):
     # usecase2 - happy flow
     @patch('analysis.analysisInteraction', side_effect=mock_analysis_interaction)
     def test_analysis1(self, analysisInteraction):
-        self.assertEqual(analysisInteraction(path_to_csv_file_case1_case2, target), parameters_to_be_counted)
+        self.assertEqual(analysisInteraction(path_to_csv_file_case1_case2, target), filename)
 
         # usecase2 - alternate flow
 
