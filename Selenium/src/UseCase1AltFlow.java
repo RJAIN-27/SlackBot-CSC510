@@ -63,7 +63,7 @@ public class UseCase1AltFlow {
 		//POST A MESSAGE TO ANALYZE THE DATA SET 
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("undefined")));
 		WebElement postMessage =  driver.findElement(By.id("undefined"));
-		postMessage.sendKeys("I want model suggestion for my dataset");
+		postMessage.sendKeys("I want model suggest for my dataset");
 		
 		//Upload dataset 
 		WebElement uploadImage = driver.findElement(By.className("p-message_input_file_button"));
@@ -140,11 +140,11 @@ public class UseCase1AltFlow {
 				e.printStackTrace();
 			}
 			
-			messages= driver.findElements(By.className("c-message__body"));
-			
+			List<WebElement> messages1= driver.findElements(By.className("c-message__body"));
+			//System.out.println(messages1.get(messages1.size()-1).getText());
 			//asserting error column message
 			try {
-				Assert.assertEquals("The target column is not present in the file. Please upload the file again and give the correct target column name. Remember, target column is case sensitive.", messages.get(messages.size()-1).getText());
+				Assert.assertEquals("The target column is not present in the file. Please upload the file again and give the correct target column name. Remember, target column is case sensitive.", messages1.get(messages1.size()-1).getText());
 				System.out.println("Target column not found error message is verfied successfully");
 			} catch (AssertionError e) {
 			    System.out.println("Target column not found error message verification failed");
