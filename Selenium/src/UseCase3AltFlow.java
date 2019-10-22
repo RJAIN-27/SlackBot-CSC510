@@ -92,6 +92,7 @@ public class UseCase3AltFlow {
 		List<WebElement> messages= driver.findElements(By.className("c-message__body"));
 		System.out.println(messages.get(messages.size()-1).getText());
 		//Assert.assertEquals("I am sorry, we are still working and building our database!");
+		System.out.println("UseCase3AltFlowVerification:");
 		try {
 		Assert.assertEquals("I am sorry, we are still working and building our database!", messages.get(messages.size()-1).getText());
 		System.out.println("Test for alternate path is verified");
