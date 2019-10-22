@@ -12,9 +12,33 @@ with open("data.json") as json_file:
 columnNames = data["columnNames"]
 modelDict = data["listModels"]
 wrngColEx = data["wrongTargetColumnException"]
+parameters_to_be_counted=int(data["parameters_to_be_counted"])
+
+# USECASE 2
+def mock_analysis_interaction(path, target):
+    flag = targetCheck(target,columnNames)
+    if flag !=1:
+        return flag
+    filename=data["path_for_usecase2"]
+    a=""
+    count=0
+    for line in open(filename, 'r'):
+        a=a+line
+    if "MEAN" in a:
+        count=count+1
+    if "MEDIAN" in a:
+        count=count+1
+    if "MODE" in a:
+        count=count+1
+    if "Correlation" in a:
+        count=count+1
+    if "Normality Tests" in a:
+        count=count+1
+    return count
+
 
 # USECASE 1
-def mockbestModel(modelDict,target,columnNames):
+def mockbestModel(path,target):
     # for mocking the main and alternate flow
     flag = targetCheck(target,columnNames)
     if flag !=1:
@@ -65,11 +89,11 @@ class TestStringMethods(unittest.TestCase):
     # usecase 1 - happy flow
     @patch('modelSelection.modelSelInteraction', side_effect=mockbestModel)
     def test_modelsel(self,modelSelInteraction):
-        self.assertEqual(modelDict[modelSelInteraction(modelDict,"Class",columnNames)],max_val_fun())
+        self.assertEqual(modelDict[modelSelInteraction("wine.csv","Class")],max_val_fun())
     # usecase 1 - alternate flow
     @patch('modelSelection.modelSelInteraction', side_effect=mockbestModel)
     def test_modelsel2(self, modelSelInteraction):
-        self.assertEqual(modelSelInteraction(modelDict, "class", columnNames), wrngColEx)
+        self.assertEqual(modelSelInteraction("wine.csv", "class"), wrngColEx)
 
     # usecase 3 - happy flow
     @patch('KeywordExtraction.keywordExtraction', side_effect=mock_keyword_extraction)
@@ -79,3 +103,16 @@ class TestStringMethods(unittest.TestCase):
     @patch('KeywordExtraction.keywordExtraction', side_effect=mock_keyword_extraction)
     def test_strings_b(self, keywordExtraction):
         self.assertEqual(keywordExtraction("jon snow knows nothing"), None)
+
+    #usecase2 - happy flow
+    @patch('analysis.analysisInteraction', side_effect=mock_analysis_interaction)
+    def test_analysis1(self,analysisInteraction):
+        self.assertEqual(analysisInteraction("wine.csv","Class"),parameters_to_be_counted)   
+
+    #usecase2 - alternate flow
+    @patch('analysis.analysisInteraction', side_effect=mock_analysis_interaction)
+    def test_analysis2(self,analysisInteraction):
+        self.assertEqual(analysisInteraction("wine.csv","class"),wrngColEx)  
+
+if __name__ == '__main__': 
+	unittest.main() 
