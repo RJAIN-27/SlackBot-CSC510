@@ -1,4 +1,4 @@
-import kwx
+import KeywordExtraction
 import modelSelection
 import analysis
 
