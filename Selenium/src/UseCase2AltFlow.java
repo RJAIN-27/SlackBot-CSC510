@@ -125,12 +125,13 @@ public class UseCase2AltFlow {
 		  
 		  //Here , we need to wait for the bot's response
 			try {
-				Thread.sleep(3000);
+				Thread.sleep(8000);
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
 			
 			messages= driver.findElements(By.className("c-message__body"));
+			//System.out.println(messages.get(messages.size()-1).getText());
 			
 			//asserting error column message
 			try {
