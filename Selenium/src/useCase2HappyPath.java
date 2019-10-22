@@ -7,6 +7,7 @@ import java.awt.Toolkit;
 import java.awt.datatransfer.StringSelection;
 import java.awt.event.KeyEvent;
 
+import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
@@ -18,16 +19,19 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 
-public class useCase2HappyPath {
+public class UseCase2HappyPath {
 	
 	@SuppressWarnings("deprecation")
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-        System.setProperty("webdriver.chrome.driver", "C:\\ProgramData\\chocoportable\\lib\\chromedriver\\tools\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "chromedriver.exe");
         WebDriver driver = new ChromeDriver();
      		
-		String workspace = "rajshreegroup";
-		driver.get("https://app.slack.com/client/TPDPYLR63/CPDPYM023");
+        String workspace = System.getenv("SLACK_WORKSPACE");
+		String Slack_url= System.getenv("SLACK_URL");
+		String loginEmail = System.getenv("SLACK_EMAIL");
+		String loginPass = System.getenv("SLACK_PASSWORD");
+		driver.get(Slack_url);
 
 		// Wait until page loads and we can see a sign in button.
 		
@@ -51,12 +55,13 @@ public class useCase2HappyPath {
 		WebElement password = driver.findElement(By.id("password"));
 
 		// Enter slack email and password
-		email.sendKeys("nradhak2@ncsu.edu");
-		password.sendKeys("Angelsanddemons5@");
+		email.sendKeys(loginEmail);
+		password.sendKeys(loginPass);
 
 		// Click
 		WebElement signIn = driver.findElement(By.id("signin_btn"));
 		signIn.click();
+
 		
 		
 		//POST A MESSAGE TO ANALYZE THE DATA SET 
@@ -116,48 +121,70 @@ public class useCase2HappyPath {
 			
 			List<WebElement> messages= driver.findElements(By.className("c-message__body"));
 			
-			System.out.println(messages.get(messages.size()-1).getText());
+			//System.out.println(messages.get(messages.size()-1).getText());
 		
-		
-		/*
-		 * try { driver.manage().timeouts().wait(3000); } catch (InterruptedException e)
-		 * { // TODO Auto-generated catch block e.printStackTrace(); }
-		 */
-		
-		
-		//wait.withTimeout(3, TimeUnit.SECONDS).ignoring(StaleElementReferenceException.class);
-		//wait.withTimeout(2, TimeUnit.SECONDS).ignoring(StaleElementReferenceException.class);
-		//wait.until(ExpectedConditions.visibilityOfElementLocated(By.linkText("https://numpy.org/")));
-		//driver.manage().timeouts().implicitlyWait( 10, TimeUnit.SECONDS );
-		
-		//driver.manage().timeouts().implicitlyWait( 10, TimeUnit.SECONDS );
-		
-		
-		//assertequals here for bot asking for user dataset 
-		
-
-		
-		//Fetch the messages from the bot for the return dataset 
-
-		
-		//System.out.println(js.executeScript("return Date()"));
-		/*
-		 * if(js.executeScript("document.").toString().equals("complete")) {
-		 * 
-		 * 
-		 * }
-		 */
-		//List<WebElement> messages1= driver.findElements(By.className("c-message__body"));
-
-		
-		
-		//assertequals for the response from the bot 
+			try {
+				Assert.assertEquals("Please provide the target column", messages.get(messages.size()-1).getText());
+				System.out.println("Target Column request is verified successfully");
+			} catch (AssertionError e) {
+			    System.out.println("Target Column request verification is failed");
+			}
+		  
+		  //sending the target column
+		  WebElement targetColumn =  driver.findElement(By.id("undefined"));
+		  //targetColumn.getAttribute("oncopy");
+		  targetColumn.sendKeys("Class");
+		  targetColumn.sendKeys(Keys.RETURN);
+		  
+		//Here , we need to wait for the bot's response
+			try {
+				Thread.sleep(8000);
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+			
+			
+			List<WebElement> messages1= driver.findElements(By.className("c-message__body"));
+			//System.out.println(messages1.get(messages1.size()-2).getText());
+			//asserting error column message
+			try {
+				Assert.assertEquals("The information you asked is:", messages1.get(messages1.size()-2).getText());
+				System.out.println("Test for happy path verfied successfully");
+			} catch (AssertionError e) {
+			    System.out.println("Test for happy path verification failed");
+			}
+		  
+			try {
+				Assert.assertEquals("Were you satisfied with the analysis?", messages1.get(messages1.size()-1).getText());
+				System.out.println("Feedback verfied successfully");
+			} catch (AssertionError e) {
+			    System.out.println("Feedback verification failed");
+			}
+		  
+			WebElement feedback =  driver.findElement(By.id("undefined"));
+			feedback.sendKeys("yes");
+			feedback.sendKeys(Keys.RETURN);
+			
+			//Here , we need to wait for the bot's response
+					try {
+						Thread.sleep(10000);
+					} catch (InterruptedException e) {
+						e.printStackTrace();
+					}
+					
+			messages= driver.findElements(By.className("c-message__body"));
+			
+			//asserting feedback message
+			try {
+				Assert.assertEquals("Thankyou for the feedback", messages.get(messages.size()-1).getText());
+				System.out.println("Feedback message is verified");
+			} catch (AssertionError e) {
+			    System.out.println("Feedback message verification failed");
+			}
+		  
 		
 
 
 	}
 
 }
-
-
-
