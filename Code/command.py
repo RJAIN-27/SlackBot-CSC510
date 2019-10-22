@@ -3,6 +3,9 @@ import modelSelection
 import analysis
 import mocking_infrastructure
 import json
+import unittest
+import test
+from mock import Mock
 
 with open("data.json") as json_file:
     jsonData = json.load(json_file)
@@ -10,12 +13,16 @@ with open("data.json") as json_file:
 path = "my.csv"
 flag=0
 
+KeywordExtraction.keywordExtraction = Mock(side_effect=mocking_infrastructure.mock_keyword_extraction)
+modelSelection.modelSelInteraction = Mock(side_effect=mocking_infrastructure.mockbestModel)
+analysis.analysisInteraction = Mock(side_effect = mocking_infrastructure.mock_analysis_interaction)
+
 class Command(object):
- 
+   
     def handlecommand(self, user, command):
         if "know" in command:
-            #list=KeywordExtraction.keywordExtraction(command)
-            list=mocking_infrastructure.mock_keyword_extraction(command)
+            list=KeywordExtraction.keywordExtraction(command)
+            #list=mocking_infrastructure.mock_keyword_extraction(command)
             print (list) 
             return list
         elif "Pssst" in command:
@@ -25,12 +32,12 @@ class Command(object):
         elif "yes" in command:
             return "Thankyou for the feedback"
         elif flag==0:
-            #model_Selection=modelSelection.modelSelInteraction(path, command)
-            model_Selection=mocking_infrastructure.mockbestModel(path,command)
+            model_Selection=modelSelection.modelSelInteraction(path, command)
+            #model_Selection=mocking_infrastructure.mockbestModel(path,command)
             return model_Selection
         elif flag==1:
-            #analysis_file=analysis.analysisInteraction(path, command)
-            analysis_file=mocking_infrastructure.mock_analysis_interaction(path,command)
+            analysis_file=analysis.analysisInteraction(path, command)
+            #analysis_file=mocking_infrastructure.mock_analysis_interaction(path,command)
             return analysis_file
         
     def handlecommands(self, user, command):
