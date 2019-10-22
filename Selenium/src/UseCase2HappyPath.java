@@ -27,8 +27,8 @@ public class UseCase2HappyPath {
         System.setProperty("webdriver.chrome.driver", "chromedriver.exe");
         WebDriver driver = new ChromeDriver();
      		
-        String workspace = System.getenv("SLACK_WORKSPACE");
-		String Slack_url= System.getenv("SLACK_URL");
+        String workspace = System.getenv("LIBRA_WORKSPACE");
+		String Slack_url= System.getenv("LIBRA_URL");
 		String loginEmail = System.getenv("SLACK_EMAIL");
 		String loginPass = System.getenv("SLACK_PASSWORD");
 		driver.get(Slack_url);
@@ -91,7 +91,7 @@ public class UseCase2HappyPath {
 		  robot.setAutoDelay(2000);
 		  
 		//UPLOADING THE FILE 
-		  StringSelection stringSelection = new StringSelection("C:\\Users\\nitar\\Downloads\\ordergroups.csv");
+		  StringSelection stringSelection = new StringSelection("C:\\Users\\mouni\\eclipse-workspace\\Selenium\\Wine.csv");
 		  Toolkit.getDefaultToolkit().getSystemClipboard().setContents(stringSelection, null);
 		  
 		  robot.setAutoDelay(1000);
@@ -148,7 +148,7 @@ public class UseCase2HappyPath {
 			//System.out.println(messages1.get(messages1.size()-2).getText());
 			//asserting error column message
 			try {
-				Assert.assertEquals("The information you asked is:", messages1.get(messages1.size()-2).getText());
+				Assert.assertEquals("The analysis of your dataset is:", messages1.get(messages1.size()-2).getText());
 				System.out.println("Test for happy path verfied successfully");
 			} catch (AssertionError e) {
 			    System.out.println("Test for happy path verification failed");
@@ -177,7 +177,7 @@ public class UseCase2HappyPath {
 			//asserting feedback message
 			try {
 				Assert.assertEquals("Thankyou for the feedback", messages.get(messages.size()-1).getText());
-				System.out.println("Feedback message is verified");
+				System.out.println("Feedback message is verified successfully");
 			} catch (AssertionError e) {
 			    System.out.println("Feedback message verification failed");
 			}
