@@ -9,6 +9,7 @@ import modelSelection
 
 with open("data.json") as json_file:
     data = json.load(json_file)
+libraries=data["libraries"]    
 columnNames = data["columnNames"]
 modelDict = data["listModels"]
 wrngColEx = data["wrongTargetColumnException"]
@@ -77,17 +78,20 @@ def mock_keyword_extraction(a):
             if list[i] in r:
                 ans_list.append(list[i])
         i = i + 1
+    return  ans_list
 
 def read_from_json_and_test(a):
     list = a.split(' ')
     i = 0
     ans_list = []
+   
     length = len(list)
     while i < length:
-        for r in (data):
+        for r in (libraries):
             if list[i] in r:
                 ans_list.append(list[i])
-        i = i + 1
+        i = i + 1         
+    return ans_list 
 
 class TestStringMethods(unittest.TestCase):
     # usecase 1 - happy flow
@@ -106,7 +110,7 @@ class TestStringMethods(unittest.TestCase):
     # usecase 3 - alternate flow
     @patch('KeywordExtraction.keywordExtraction', side_effect=mock_keyword_extraction)
     def test_strings_b(self, keywordExtraction):
-        self.assertEqual(keywordExtraction("jon snow knows nothing"), None)
+        self.assertEqual(keywordExtraction("jon snow knows nothing"), [])
 
     #usecase2 - happy flow
     @patch('analysis.analysisInteraction', side_effect=mock_analysis_interaction)
