@@ -20,7 +20,7 @@ def mockbestModel(path,target):
     if flag !=1:
         return flag
     sorted_x = sorted(modelDict.items(), key=operator.itemgetter(1))
-    return(sorted_x[len(sorted_x)-1][0])
+    return(str(sorted_x[len(sorted_x)-1][0]))
 
 def max_val_fun():
     ls = []
