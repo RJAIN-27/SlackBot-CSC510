@@ -1,5 +1,10 @@
 # BOT 
 
+The library bot L.I.B.R.A. is developed in Slack Environment.
+
+For automated integration testing, we have used Selenium along with robot library in Java.
+
+
 ## Use Cases: 
 
 ### Use Case 1: Model Suggestion for a dataset <!-- Bot suggests the model to be used, in answer to a user's request about not having a clarity about what to do with the dataset --> <!-- User must have a dataset to know about the library to be used -->
