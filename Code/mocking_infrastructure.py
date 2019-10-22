@@ -20,7 +20,7 @@ def mockbestModel(path,target):
     if flag !=1:
         return flag
     sorted_x = sorted(modelDict.items(), key=operator.itemgetter(1))
-    return(str(sorted_x[len(sorted_x)-1][0]))
+    return str(sorted_x[len(sorted_x)-1][0])
 
 def max_val_fun():
     ls = []
@@ -52,7 +52,7 @@ def mock_analysis_interaction(path, target):
     if "Normality Tests" in a:
         count=count+1
     if count == parameters_count:
-        return filename
+        return str(filename)
     return 0
 
 # USECASE 3
