@@ -58,17 +58,21 @@ class Event:
                     self.bot.slack_client.api_call("chat.postMessage", channel=channel, text=response, as_user=True)
                 elif(response == "Thankyou for the feedback"):
                     self.bot.slack_client.api_call("chat.postMessage", channel=channel, text=response, as_user=True)
+                elif (response == "error"):
+                    print ("fine")    
                 else:  
                     self.bot.slack_client.api_call("chat.postMessage", channel=channel, text="The information you asked is:\n", as_user=True)  
                     self.bot.slack_client.api_call("chat.postMessage", channel=channel, text=response, as_user=True)
                     self.bot.slack_client.api_call("chat.postMessage", channel=channel, text="Were you satisfied with the recommendation?", as_user=True)
 
-            if type(response) is list:
+            elif type(response) is list and len(response)!=0:
                 for i in response:
                     for j in i:
                         self.bot.slack_client.api_call("chat.postMessage", channel=channel, text=i[j], as_user=True)
                 self.bot.slack_client.api_call("chat.postMessage", channel=channel, text="Were you satisfied with the details?", as_user=True)
             
+            elif type(response) is list and len(response)==0:
+                self.bot.slack_client.api_call("chat.postMessage", channel=channel, text="I am sorry, we are still working and building our database!", as_user=True)
 
         #    f1=open(response, "r")
         #    content=f1.read()
@@ -90,3 +94,5 @@ class Event:
             response = self.command.handlecommands(user, command)   
             self.bot.slack_client.api_call("chat.postMessage", channel=channel, text=response, as_user=True)
             
+
+
