@@ -15,6 +15,9 @@ from nltk.tokenize import RegexpTokenizer
 nltk.download('wordnet')
 from nltk.stem.wordnet import WordNetLemmatizer
 
+with open("data.json") as json_file:
+    jsonData = json.load(json_file)
+
 # Function for extracting keywords from user's message 
 def keywordExtraction(msg):
     text = msg
@@ -22,7 +25,7 @@ def keywordExtraction(msg):
     ##Creating a list of stop words and adding custom stopwords
     stop_words = set(stopwords.words("english"))
     ##Creating a list of custom stopwords
-    new_words = ["using", "show", "result", "large", "also", "iv", "one", "two", "new", "previously", "shown"]
+    new_words = jsonData["newStopWords"]
     stop_words = stop_words.union(new_words)
 
     corpus = []
@@ -93,7 +96,7 @@ def keywordlist(keywords):
     keyword_list=[]
     for k in keywords:
         keyword_list.append(str(k))
-    wb = xl.load_workbook('libraryFile.xlsx')
+    wb = xl.load_workbook(data["xlsx_file"])
     sheet = wb['Sheet1']
     libInfo = {}
     listdict=[]
