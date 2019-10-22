@@ -27,8 +27,11 @@ public class UseCase1AltFlow {
         System.setProperty("webdriver.chrome.driver", "C:\\ProgramData\\chocoportable\\lib\\chromedriver\\tools\\chromedriver.exe");
         WebDriver driver = new ChromeDriver();
      		
-		String workspace = "rajshreegroup";
-		driver.get("https://app.slack.com/client/TPDPYLR63/CPDPYM023");
+		String workspace = System.getenv("SLACK_WORKSPACE");
+		String Slack_url= System.getenv("SLACK_URL");
+		String loginEmail = System.getenv("SLACK_EMAIL");
+		String loginPass = System.getenv("SLACK_PASSWORD");
+		driver.get(Slack_url);
 
 		// Wait until page loads and we can see a sign in button.
 		
@@ -52,8 +55,8 @@ public class UseCase1AltFlow {
 		WebElement password = driver.findElement(By.id("password"));
 
 		// Enter slack email and password
-		email.sendKeys("nradhak2@ncsu.edu");
-		password.sendKeys("Angelsanddemons5@");
+		email.sendKeys(loginEmail);
+		password.sendKeys(loginPass);
 
 		// Click
 		WebElement signIn = driver.findElement(By.id("signin_btn"));
@@ -135,13 +138,13 @@ public class UseCase1AltFlow {
 		  
 		  //Here , we need to wait for the bot's response
 			try {
-				Thread.sleep(5000);
+				Thread.sleep(6000);
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
 			
 			List<WebElement> messages1= driver.findElements(By.className("c-message__body"));
-			System.out.println(messages1.get(messages1.size()-1).getText());
+			//System.out.println(messages1.get(messages1.size()-1).getText());
 			//asserting error column message
 			try {
 				Assert.assertEquals("The target column is not present in the file. Please upload the file again and give the correct target column name. Remember, target column is case sensitive.", messages1.get(messages1.size()-1).getText());
