@@ -14,13 +14,15 @@ from sklearn.ensemble import AdaBoostClassifier
 from xgboost import XGBClassifier
 from sklearn.ensemble import RandomForestClassifier
 
+with open("data.json") as json_file:
+    data = json.load(json_file)
+
 def bestModel(modelDict):
     sorted_x = sorted(modelDict.items(), key=operator.itemgetter(1))
     return(sorted_x[len(sorted_x)-1][0])
 
 def targetCheck(target, columnNames):
-    return 1 if target in columnNames else "The target column is not present in the file. Please upload the file again and give the correct target column name. Remember, target column is case sensitive."
-
+    return 1 if target in columnNames else data["wrongTargetColumnException"]
 def modelTraining(data, target, column_names):
     # read data
     models={}
