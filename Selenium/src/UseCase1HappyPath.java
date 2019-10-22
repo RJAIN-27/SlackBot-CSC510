@@ -127,7 +127,7 @@ public class UseCase1HappyPath {
 		  
 		  //Here , we need to wait for the bot's response
 			try {
-				Thread.sleep(4000);
+				Thread.sleep(8000);
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
@@ -151,9 +151,10 @@ public class UseCase1HappyPath {
 			feedback.sendKeys("yes");
 			feedback.sendKeys(Keys.RETURN);
 			
-			//Here , we need to wait for the bot's response
+			//Here , we need to wait for the bot's responseC:\Users\mouni\eclipse-workspace\Selenium\Wine.csv
+			
 					try {
-						Thread.sleep(3000);
+						Thread.sleep(4000);
 					} catch (InterruptedException e) {
 						e.printStackTrace();
 					}
@@ -163,7 +164,7 @@ public class UseCase1HappyPath {
 			//asserting feedback message
 			try {
 				Assert.assertEquals("Thankyou for the feedback", messages.get(messages.size()-1).getText());
-				System.out.println("Feedback message is verified");
+				System.out.println("Feedback message is verified successfully");
 			} catch (AssertionError e) {
 			    System.out.println("Feedback message verification failed");
 			}
