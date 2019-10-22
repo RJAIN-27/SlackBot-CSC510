@@ -25,8 +25,11 @@ public class UseCase3AltFlow {
 
         
 		
-		String workspace = "rajshreegroup";
-		driver.get("https://app.slack.com/client/TPDPYLR63/CPDPYM023");
+        String workspace = System.getenv("SLACK_WORKSPACE");
+		String Slack_url= System.getenv("SLACK_URL");
+		String loginEmail = System.getenv("SLACK_EMAIL");
+		String loginPass = System.getenv("SLACK_PASSWORD");
+		driver.get(Slack_url);
 
 		// Wait until page loads and we can see a sign in button.
 		
@@ -43,19 +46,20 @@ public class UseCase3AltFlow {
 		WebElement continuebtn =  driver.findElement(By.id("submit_team_domain"));	
 		continuebtn.click();
 		 
-
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("email")));
 		// Find email and password fields.
 		WebElement email = driver.findElement(By.id("email"));
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("password")));
 		WebElement password = driver.findElement(By.id("password"));
-		
 
 		// Enter slack email and password
-		email.sendKeys("nradhak2@ncsu.edu");
-		password.sendKeys("Angelsanddemons5@");
+		email.sendKeys(loginEmail);
+		password.sendKeys(loginPass);
 
 		// Click
 		WebElement signIn = driver.findElement(By.id("signin_btn"));
 		signIn.click();
+
 		
 		WebElement postMessage2 =  driver.findElement(By.id("undefined"));
 		postMessage2.sendKeys("I want know about hululu");
@@ -91,9 +95,9 @@ public class UseCase3AltFlow {
 		//Assert.assertEquals("I am sorry, we are still working and building our database!");
 		try {
 		Assert.assertEquals("I am sorry, we are still working and building our database!", messages.get(messages.size()-1).getText());
-		System.out.println("Test for happy path is verified");
+		System.out.println("Test for alternate path is verified");
 		}catch(AssertionError e) {
-			System.out.println("Test for happy path has failed");
+			System.out.println("Test for alternate path has failed");
 		}
 
 }
