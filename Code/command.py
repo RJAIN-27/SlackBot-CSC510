@@ -9,7 +9,7 @@ class Command(object):
  
     def handlecommand(self, user, command):
         if "know" in command:
-            list=kwx.keywordExtraction(command)
+            list=KeywordExtraction.keywordExtraction(command)
             print (list)
             #list = command.split(' ') 
             return list
