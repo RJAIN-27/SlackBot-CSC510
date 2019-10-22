@@ -1,4 +1,5 @@
 
+
 import command
 import requests
 import io
@@ -39,7 +40,7 @@ class Event:
         if command and channel:
             print ("Received command: " + command + " in channel: " + channel + " from user: " + user)
             response = self.command.handlecommand(user, command)
-            print(response)
+
 
             if type(response) is str:
                 
