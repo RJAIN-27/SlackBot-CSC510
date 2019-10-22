@@ -63,7 +63,7 @@ The mocking files used for this milestone are given "here". Our bot mocks all th
 
 ## Bot Implementation 
 
-The code for the Bot Implementation is given "here"
+The code for the Bot Implementation is given [here](https://github.ncsu.edu/csc510-fall2019/CSC510-23/tree/master/Code)
 
 The major files implementing the functionality of the three use cases are 
 
