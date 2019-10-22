@@ -13,6 +13,10 @@ columnNames = data["columnNames"]
 modelDict = data["listModels"]
 wrngColEx = data["wrongTargetColumnException"]
 parameters_to_be_counted=int(data["parameters_to_be_counted"])
+target=data["target"]
+wrong_target=data["wrong_target"]
+path_to_csv_file_case1_case2=data["path_to_csv_file_case1_case2"]
+
 
 # USECASE 2
 def mock_analysis_interaction(path, target):
@@ -89,11 +93,11 @@ class TestStringMethods(unittest.TestCase):
     # usecase 1 - happy flow
     @patch('modelSelection.modelSelInteraction', side_effect=mockbestModel)
     def test_modelsel(self,modelSelInteraction):
-        self.assertEqual(modelDict[modelSelInteraction("wine.csv","Class")],max_val_fun())
+        self.assertEqual(modelDict[modelSelInteraction(path_to_csv_file_case1_case2,target)],max_val_fun())
     # usecase 1 - alternate flow
     @patch('modelSelection.modelSelInteraction', side_effect=mockbestModel)
     def test_modelsel2(self, modelSelInteraction):
-        self.assertEqual(modelSelInteraction("wine.csv", "class"), wrngColEx)
+        self.assertEqual(modelSelInteraction(path_to_csv_file_case1_case2, wrong_target), wrngColEx)
 
     # usecase 3 - happy flow
     @patch('KeywordExtraction.keywordExtraction', side_effect=mock_keyword_extraction)
@@ -107,12 +111,12 @@ class TestStringMethods(unittest.TestCase):
     #usecase2 - happy flow
     @patch('analysis.analysisInteraction', side_effect=mock_analysis_interaction)
     def test_analysis1(self,analysisInteraction):
-        self.assertEqual(analysisInteraction("wine.csv","Class"),parameters_to_be_counted)   
+        self.assertEqual(analysisInteraction(path_to_csv_file_case1_case2,target),parameters_to_be_counted)   
 
     #usecase2 - alternate flow
     @patch('analysis.analysisInteraction', side_effect=mock_analysis_interaction)
     def test_analysis2(self,analysisInteraction):
-        self.assertEqual(analysisInteraction("wine.csv","class"),wrngColEx)  
+        self.assertEqual(analysisInteraction(path_to_csv_file_case1_case2,wrong_target),wrngColEx)  
 
 if __name__ == '__main__': 
 	unittest.main() 
