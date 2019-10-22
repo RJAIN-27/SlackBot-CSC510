@@ -129,75 +129,26 @@ public class UseCase1AltFlow {
 		  
 		  //sending the target column
 		  WebElement targetColumn =  driver.findElement(By.id("undefined"));
+		  //targetColumn.getAttribute("oncopy");
 		  targetColumn.sendKeys("ClassNotPresent");
 		  targetColumn.sendKeys(Keys.RETURN);
 		  
 		  //Here , we need to wait for the bot's response
 			try {
-				Thread.sleep(4000);
+				Thread.sleep(3000);
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
 			
-			
-			
-			//receive bot's response about model
 			messages= driver.findElements(By.className("c-message__body"));
+			
+			//asserting error column message
 			try {
-				Assert.assertEquals("The target column is not present in the file. Please upload the file again and give the correct target column name. Remember, target column is case sensitive.", messages.get(messages.size()-2).getText());
-				System.out.println("Model Name is verified successfully");
+				Assert.assertEquals("The target column is not present in the file. Please upload the file again and give the correct target column name. Remember, target column is case sensitive.", messages.get(messages.size()-1).getText());
+				System.out.println("Target column not found error message is verfied successfully");
 			} catch (AssertionError e) {
-			    System.out.println("ModelName verification is failed.");
+			    System.out.println("Target column not found error message verification failed");
 			}
-			try {
-				Assert.assertEquals("Were you satisfied with the recommendation?", messages.get(messages.size()-1).getText());
-				System.out.println("Bot Question is verified successfully");
-			} catch (AssertionError e) {
-			    System.out.println("Bot Question request verification is failed");
-			}
-		
-		/*
-		 * try { driver.manage().timeouts().wait(3000); } catch (InterruptedException e)
-		 * { // TODO Auto-generated catch block e.printStackTrace(); }
-		 */
-		
-		
-		//wait.withTimeout(3, TimeUnit.SECONDS).ignoring(StaleElementReferenceException.class);
-		//wait.withTimeout(2, TimeUnit.SECONDS).ignoring(StaleElementReferenceException.class);
-		//wait.until(ExpectedConditions.visibilityOfElementLocated(By.linkText("https://numpy.org/")));
-		//driver.manage().timeouts().implicitlyWait( 10, TimeUnit.SECONDS );
-		
-		//driver.manage().timeouts().implicitlyWait( 10, TimeUnit.SECONDS );
-		
-		
-		//assertequals here for bot asking for user dataset 
-		
-
-		
-		//Fetch the messages from the bot for the return dataset 
-
-		
-		//System.out.println(js.executeScript("return Date()"));
-		/*
-		 * if(js.executeScript("document.").toString().equals("complete")) {
-		 * 
-		 * 
-		 * }
-		 */
-		//List<WebElement> messages1= driver.findElements(By.className("c-message__body"));
-
-		
-		
-		//assertequals for the response from the bot 
-		
-
-
 	}
 
 }
-
-
-
-
-
-
