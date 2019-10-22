@@ -20,10 +20,12 @@ class Command(object):
         elif "yes" in command:
             return "Thankyou for the feedback"
         elif flag==1:
-            analyses_file=analysis.analysis(path, command) #analysis.analysisInteraction()
+            #analyses_file=analysis.analysis(path, command) #analysis.analysisInteraction()
+            analyses_file=analysis.analysisInteraction(path, command)
             return analyses_file
         elif flag==0:
-            model_Selection=modelSelection.modelSelection(path, command) #modelSelInteraction()
+            #model_Selection=modelSelection.modelSelection(path, command) #modelSelInteraction()
+            model_Selection=modelSelection.modelSelInteraction(path, command)
             return model_Selection
 
     def handlecommands(self, user, command):
