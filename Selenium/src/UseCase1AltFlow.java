@@ -1,6 +1,12 @@
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
+import java.awt.AWTException;
+import java.awt.Robot;
+import java.awt.Toolkit;
+import java.awt.datatransfer.StringSelection;
+import java.awt.event.KeyEvent;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
@@ -18,11 +24,8 @@ public class UseCase1AltFlow {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
         System.setProperty("webdriver.chrome.driver", "C:\\ProgramData\\chocoportable\\lib\\chromedriver\\tools\\chromedriver.exe");
-
         WebDriver driver = new ChromeDriver();
-
-        
-		
+     		
 		String workspace = "rajshreegroup";
 		driver.get("https://app.slack.com/client/TPDPYLR63/CPDPYM023");
 
@@ -55,10 +58,12 @@ public class UseCase1AltFlow {
 		WebElement signIn = driver.findElement(By.id("signin_btn"));
 		signIn.click();
 		
-		//wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("undefined")));
-		//WebElement postMessage =  driver.findElement(By.id("undefined"));
-		//postMessage.sendKeys("I want to analyze my dataset");
-		//postMessage.sendKeys(Keys.RETURN);
+		
+		//POST A MESSAGE TO ANALYZE THE DATA SET 
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("undefined")));
+		WebElement postMessage =  driver.findElement(By.id("undefined"));
+		postMessage.sendKeys("I want model suggestion for my dataset");
+		
 		//Upload dataset 
 		WebElement uploadImage = driver.findElement(By.className("p-message_input_file_button"));
 		uploadImage.click();
@@ -68,53 +73,50 @@ public class UseCase1AltFlow {
 			e.printStackTrace();
 		}
 		List<WebElement> dropdowns = driver.findElements(By.className("c-menu_item__button"));
-		WebElement createNew = dropdowns.get(dropdowns.size()-2);
-		createNew.click();
+		WebElement yourComputer = dropdowns.get(dropdowns.size()-1);
+		yourComputer.click();
 		
-		List<WebElement> dropdowns1 = driver.findElements(By.className("c-menu_item__button"));
-		//System.out.println(dropdowns1.get(dropdowns1.size()-1).getText());
-		//System.out.println(dropdowns1.get(dropdowns1.size()-2).getText());
-		//System.out.println(dropdowns1.get(dropdowns1.size()-3).getText());
-		//System.out.println(dropdowns1.get(dropdowns1.size()-4).getText());
-		//System.out.println(dropdowns1.get(dropdowns1.size()-5).getText());
-		WebElement codeOrTextSnippet = dropdowns1.get(dropdowns1.size()-2);
-		codeOrTextSnippet.click();
-		
-		//wait.until(ExpectedConditions.visibilityOfElementLocated(By.className("CodeMirror-scroll")));
-		
-		//POST DUMMY MESSAGE IN TITLE BOX(WHERE THE NAME OF THE FILE SHOULD ACTUALLY BE) 
-		WebElement postMessage1 = driver.findElement(By.id("snippet-name11"));
-		//WebElement postMessages = postMessage1.get(postMessage1.size()-1);
-		postMessage1.sendKeys("ordergroups");
-		
-		
-		
-		//postMessage1.sendKeys(Keys.RETURN);
-		//WebElement uploadButton = driver.findElement(By.className("c-menu_item__icon"));
-		//System.out.println(uploadButton.getText());
-		//uploadButton.sendKeys("C:\\Users\\nitar\\Downloads\\ordergroups.csv");
-		//uploadImage.click();
-		
-		
-		//POST MESSAGE IN CONTENT BOX 
-		//WebElement postMessage2 = driver.findElement(By.xpath("//pre[contains(@class,'CodeMirror-line')]"));
-		//WebElement postMessages = postMessage1.get(postMessage1.size()-1);
-		//System.out.println(postMessage2.get(postMessage2.size()-1).getText());
-		//System.out.println(postMessage2.get(postMessage2.size()-2).getText());
-		//System.out.println(postMessage2.get(postMessage2.size()-3).getText());
-		//System.out.println(postMessage2.get(postMessage2.size()-4).getText());
-		//System.out.println(postMessage2.get(postMessage2.size()-5).getText());
-		//System.out.println(postMessage2.get(postMessage2.size()-6).getText());
-		//WebElement pm = postMessage2.get(postMessage2.size()-1);
-		//postMessage2.sendKeys("ordergroups");
-		//postMessage2.sendKeys(Keys.RETURN);
-		
-		By preTagXpath = By.xpath("//pre[contains(@class,'CodeMirror-line')]");
-        	JavascriptExecutor js = (JavascriptExecutor) driver;
-        	String preValue = "This should be the new value";
-        	js.executeScript("document.getElementsByTagName('pre')[1].innerText='" + preValue + "';");
-        	System.out.println(driver.findElement(preTagXpath).getText());
-		
+		Robot robot = null;
+		  try {
+			robot = new Robot();
+		} catch (AWTException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		  robot.setAutoDelay(2000);
+		  
+		//UPLOADING THE FILE 
+		  StringSelection stringSelection = new StringSelection("C:\\Users\\nitar\\Downloads\\ordergroups.csv");
+		  Toolkit.getDefaultToolkit().getSystemClipboard().setContents(stringSelection, null);
+		  
+		  robot.setAutoDelay(1000);
+		  
+		  //Ctrl+v
+		  robot.keyPress(KeyEvent.VK_CONTROL);
+		  robot.keyPress(KeyEvent.VK_V);
+		  
+		  robot.keyRelease(KeyEvent.VK_CONTROL);
+		  robot.keyRelease(KeyEvent.VK_V);
+		  
+		  robot.setAutoDelay(1000);
+		  robot.keyPress(KeyEvent.VK_ENTER);
+		  robot.keyRelease(KeyEvent.VK_ENTER);
+		  
+		  List<WebElement> buttons = driver.findElements(By.className("c-button")); 
+		  WebElement uploadButton = buttons.get(buttons.size()-1);
+		  uploadButton.click();
+		  
+		  
+		//Here , we need to wait for the bot's response
+			try {
+				Thread.sleep(3000);
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+			
+			List<WebElement> messages= driver.findElements(By.className("c-message__body"));
+			
+			System.out.println(messages.get(messages.size()-1).getText());
 		
 		
 		/*
@@ -129,13 +131,6 @@ public class UseCase1AltFlow {
 		//driver.manage().timeouts().implicitlyWait( 10, TimeUnit.SECONDS );
 		
 		//driver.manage().timeouts().implicitlyWait( 10, TimeUnit.SECONDS );
-		
-		
-		
-		
-		
-		
-		
 		
 		
 		//assertequals here for bot asking for user dataset 
