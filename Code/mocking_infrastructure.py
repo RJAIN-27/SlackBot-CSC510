@@ -7,7 +7,7 @@ with open("data.json") as json_file:
 columnNames = data["columnNames"]
 modelDict = data["listModels"]
 wrngColEx = data["wrongTargetColumnException"]
-parameters_to_be_counted=int(data["parameters_to_be_counted"])
+parameters_count=int(data["parameters_to_be_counted"])
 target=data["target"]
 wrong_target=data["wrong_target"]
 path=data["path_to_csv_file_case1_case2"]
@@ -51,11 +51,13 @@ def mock_analysis_interaction(path, target):
         count=count+1
     if "Normality Tests" in a:
         count=count+1
-    return count
+    if count == parameters_count:
+        return filename
+    return 0
 
 # USECASE 3
-def mock_keyword_extraction(msg):
-    list = msg.split(' ')
+def mock_keyword_extraction(a):
+    list = a.split(' ')
     ans_list = []
     length = len(list)
     i = 0
@@ -72,8 +74,8 @@ def mock_keyword_extraction(msg):
     return ans_list
 
 
-def read_from_json_and_test(msg):
-    list = msg.split(' ')
+def read_from_json_and_test(a):
+    list = a.split(' ')
     i = 0
     ans_list = []
 
