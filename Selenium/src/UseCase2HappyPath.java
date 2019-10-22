@@ -122,6 +122,7 @@ public class UseCase2HappyPath {
 			List<WebElement> messages= driver.findElements(By.className("c-message__body"));
 			
 			//System.out.println(messages.get(messages.size()-1).getText());
+			System.out.println("UseCase2HappyPathVerification:");
 		
 			try {
 				Assert.assertEquals("Please provide the target column", messages.get(messages.size()-1).getText());
