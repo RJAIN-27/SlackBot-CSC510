@@ -24,6 +24,8 @@ For automated integration testing, we have used Selenium along with robot librar
 ```
 ##### Refinement in Use Case 1: 
 The precondition for this use case has been changed from user requiring a LIBRA token to User needing a valid slack authorization. Another alternate flow has been added to account for the specified target variable not being present in the user's dataset. 
+##### Future Implementation 
+We will develop the use case to preprocess the input and support categorical datasets as well, and also normalize the dataset depending on the normality of the dataset. 
 
 ### Use Case 2: Data Analysis on a dataset <!-- Bot performs Exploratory Data Analysis (EDA) (includes statistical analysis) so that the user can understand the data before he/she can make any assumptions about it --> <!-- User must have a dataset to gain insights about the dataset -->
 ```
@@ -43,6 +45,9 @@ The precondition for this use case has been changed from user requiring a LIBRA 
 ##### Refinement in Use Case 2: 
 The precondition for this use case has been changed from user requiring a LIBRA token to User needing a valid slack authorization. Another alternate flow has been added to account for the specified target variable not being present in the user's dataset. 
 
+##### Future Implementation 
+We will develop the use case to process the data for statistical tests as well. 
+
 ### Use Case 3: Know about a Library/API <!--Bot renders description for library/API that is requested by the user-->
 ```
 1 Preconditions: User must have valid authorization to use the slack channel.
@@ -60,6 +65,9 @@ The precondition for this use case has been changed from user requiring a LIBRA 
 
 ##### Refinement in Use Case 3: 
 The precondition for this use case has been changed from user requiring a LIBRA token to User needing a valid slack authorization. 
+
+##### Future Implementation 
+We will increase the size of the database and develop the use case to also provide information about specific methods or functions in a given Library/API. 
 
 
 ## Mocking Service Component 
