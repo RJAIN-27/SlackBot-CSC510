@@ -5,9 +5,11 @@ import io
 import os
 import mocking_infrastructure
 from mock import Mock
+import bot
 
 
 TOKEN = os.environ.get('SLACK_BOT_TOKEN')
+BOT_ID= os.environ.get('BOT_ID')
 
 class Event:
     def __init__(self, bot):
@@ -22,10 +24,10 @@ class Event:
                  
     def parseevent(self, event):
         
-        if event and 'text' in event and 'files' not in event and event['user']!="UP6FMPQ1X":   
+        if event and 'text' in event and 'files' not in event and event['user']!=BOT_ID:   
             
             self.handleevent(event['user'], event['text'], event['channel'])
-        if event and 'files' in event and 'text' in event and event['user']!="UP6FMPQ1X" and event['upload']==True:
+        if event and 'files' in event and 'text' in event and event['user']!=BOT_ID and event['upload']==True:
             print(event['files'][0]['filetype'])   
             print(event['files'][0]['url_private'])
             if(event['files'][0]['filetype'] == "csv"):
@@ -103,5 +105,3 @@ class Event:
             response = self.command.handlecommands(user, command)   
             self.bot.slack_client.api_call("chat.postMessage", channel=channel, text=response, as_user=True)
             
-
-
