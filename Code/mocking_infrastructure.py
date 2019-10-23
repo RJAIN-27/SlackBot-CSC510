@@ -1,81 +1,107 @@
-import json
-import operator
-import openpyxl as xl
+
+import command
 import requests
+import io
+import os
+import mocking_infrastructure
 from mock import Mock
 
 
-def GET(url):
-    if url=="http://localhost:3000/":
-        global data, columnNames, modelDict, wrngColEx, parameters_count, target, wrong_target, path, libraries
-        with open("data.json") as json_file:
-            data = json.load(json_file)
-        return data
+TOKEN = os.environ.get('SLACK_BOT_TOKEN')
 
-# USECASE 1
-def mockbestModel(path, target):
-    requests.get = Mock(side_effect=GET)
-    data = requests.get(url = "http://localhost:3000/")
-    columnNames = data["columnNames"]
-    modelDict = data["listModels"]
-    # for mocking the main and alternate flow
-    flag = targetCheck(target, columnNames)
-    if flag != 1:
-        return flag
-    sorted_x = sorted(modelDict.items(), key=operator.itemgetter(1))
-    return str(sorted_x[len(sorted_x) - 1][0])
+class Event:
+    def __init__(self, bot):
+        self.bot = bot
+        self.command = command.Command()
+     
+    def waitforevent(self):
+        events = self.bot.slack_client.rtm_read()
+        if events and len(events) > 0:
+            for event in events:
+                self.parseevent(event)
+                 
+    def parseevent(self, event):
+        
+        if event and 'text' in event and 'files' not in event and event['user']!="UP6FMPQ1X":   
+            
+            self.handleevent(event['user'], event['text'], event['channel'])
+        if event and 'files' in event and 'text' in event and event['user']!="UP6FMPQ1X" and event['upload']==True:
+            print(event['files'][0]['filetype'])   
+            print(event['files'][0]['url_private'])
+            if(event['files'][0]['filetype'] == "csv"):
+                #response = requests.get(event['files'][0]['url_private'], headers={'Authorization': 'Bearer xoxb-795814705207-788531806065-9dWeyIRqj2t1LSbICYnDkB01'})
+                
+                response = requests.get(event['files'][0]['url_private'], headers={'Authorization': 'Bearer TOKEN'})
 
-def targetCheck(target, columnNames):
-    return 1 if target in columnNames else "The target column is not present in the file. Please upload the file again and give the correct target column name. Remember, target column is case sensitive."
+                with open("my.csv",'wb') as f: 
+                    f.write(response.content) 
+                f.close()    
+                self.handleevent1(event['user'], event['text'], event['channel']) 
+            else:
+                self.bot.slack_client.api_call("chat.postMessage", channel=event['channel'], text="I am sorry can you please give me a csv file\n", as_user=True)
+
+     
+    def handleevent(self, user, command, channel):
+        
+        if command and channel:
+            print ("Received command: " + command + " in channel: " + channel + " from user: " + user)
+            response = self.command.handlecommand(user, command)
+           
+            if type(response) is str:
+                
+                if(".txt" in response):
+                    f1=open(response, "r")
+                    content=f1.read()
+                    print(content)
+                    f1.close()
+                    #print(type(content))
+                    self.bot.slack_client.api_call("chat.postMessage", channel=channel, text="The analysis of your dataset is:\n", as_user=True)
+                    self.bot.slack_client.api_call("files.upload", channels=channel, file=content, filename="analysis.txt")
+                    self.bot.slack_client.api_call("chat.postMessage", channel=channel, text="Were you satisfied with the analysis?", as_user=True)
+                elif(response == "The target column is not present in the file. Please upload the file again and give the correct target column name. Remember, target column is case sensitive."):
+                    self.bot.slack_client.api_call("chat.postMessage", channel=channel, text=response, as_user=True)
+                elif(response == "Sorry about that :("):
+                    self.bot.slack_client.api_call("chat.postMessage", channel=channel, text=response, as_user=True)
+                elif(response == "Thankyou for the feedback"):
+                    self.bot.slack_client.api_call("chat.postMessage", channel=channel, text=response, as_user=True)
+                elif (response == "error"):
+                    print ("fine")   
+                elif(response == "Sorry I did not get you"):
+                    self.bot.slack_client.api_call("chat.postMessage", channel=channel, text=response, as_user=True)
+                else:  
+                    self.bot.slack_client.api_call("chat.postMessage", channel=channel, text="The best model suggestion for your dataset is:\n", as_user=True)  
+                    self.bot.slack_client.api_call("chat.postMessage", channel=channel, text=response, as_user=True)
+                    self.bot.slack_client.api_call("chat.postMessage", channel=channel, text="Were you satisfied with the recommendation?", as_user=True)
+
+            elif type(response) is list and len(response)!=0:
+                self.bot.slack_client.api_call("chat.postMessage", channel=channel, text="The details of the libraries you asked are:\n", as_user=True)
+                for i in response:
+                    for j in i:
+                        self.bot.slack_client.api_call("chat.postMessage", channel=channel, text=i[j], as_user=True)
+                self.bot.slack_client.api_call("chat.postMessage", channel=channel, text="Were you satisfied with the details?", as_user=True)
+            
+            elif type(response) is list and len(response)==0:
+                self.bot.slack_client.api_call("chat.postMessage", channel=channel, text="I am sorry, we are still working and building our database!", as_user=True)
+
+        #    f1=open(response, "r")
+        #    content=f1.read()
+        #    print(content)
+        #    print(type(content))
+        #    self.bot.slack_client.api_call("files.upload", channels=channel, file=content)
+            
+        #   You have to use this    
+        #    self.bot.slack_client.api_call("chat.postMessage", channel=channel, text=response, as_user=True)
+       
+        # You have to use this
+        #    for i in response:
+        #        for j in i:
+        #            self.bot.slack_client.api_call("chat.postMessage", channel=channel, text=i[j], as_user=True)
+
+    def handleevent1(self, user, command, channel):
+         if command and channel:
+            print ("Received command: " + command + " in channel: " + channel + " from user: " + user)
+            response = self.command.handlecommands(user, command)   
+            self.bot.slack_client.api_call("chat.postMessage", channel=channel, text=response, as_user=True)
+            
 
 
-# USECASE 2
-def mock_analysis_interaction(path, target):
-    requests.get = Mock(side_effect=GET)
-    data = requests.get(url="http://localhost:3000/")
-    columnNames = data["columnNames"]
-    parameters_count = int(data["parameters_to_be_counted"])
-    flag = targetCheck(target, columnNames)
-    if flag != 1:
-        return flag
-    filename = data["path_for_usecase2"]
-    a = ""
-    count = 0
-    for line in open(filename, 'r'):
-        a = a + line
-    if "MEAN" in a:
-        count = count + 1
-    if "MEDIAN" in a:
-        count = count + 1
-    if "MODE" in a:
-        count = count + 1
-    if "Correlation" in a:
-        count = count + 1
-    if "Normality Tests" in a:
-        count = count + 1
-    if count == parameters_count:
-        return str(filename)
-    return 0
-
-
-# USECASE 3
-def mock_keyword_extraction(a):
-    requests.get = Mock(side_effect=GET)
-    data = requests.get(url="http://localhost:3000/")
-    libraries = data["libraries"]
-
-    list1 = str(a).split(' ')
-    ans_list = []
-    length = len(list1)
-    i = 0
-    wb = xl.load_workbook(data["xlsx_file"])
-    sheet = wb['Sheet1']
-    libInfo = {}
-    for row in range(2, sheet.max_row + 1):
-        libInfo[sheet.cell(row, 1).value] = sheet.cell(row, 2).value
-    while i < length:
-        for r in (libInfo):
-            if list1[i].lower() == r:
-                ans_list.append({r: libraries[r]})
-        i = i + 1
-    return ans_list
