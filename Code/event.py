@@ -2,8 +2,13 @@
 import command
 import requests
 import io
+import os
+import mocking_infrastructure
+from mock import Mock
 
- 
+
+TOKEN = os.environ.get('SLACK_BOT_TOKEN')
+
 class Event:
     def __init__(self, bot):
         self.bot = bot
@@ -16,6 +21,7 @@ class Event:
                 self.parseevent(event)
                  
     def parseevent(self, event):
+        
         if event and 'text' in event and 'files' not in event and event['user']!="UP6FMPQ1X":   
             
             self.handleevent(event['user'], event['text'], event['channel'])
@@ -23,7 +29,10 @@ class Event:
             print(event['files'][0]['filetype'])   
             print(event['files'][0]['url_private'])
             if(event['files'][0]['filetype'] == "csv"):
-                response = requests.get(event['files'][0]['url_private'], headers={'Authorization': 'Bearer xoxb-795814705207-788531806065-9dWeyIRqj2t1LSbICYnDkB01'})
+                #response = requests.get(event['files'][0]['url_private'], headers={'Authorization': 'Bearer xoxb-795814705207-788531806065-9dWeyIRqj2t1LSbICYnDkB01'})
+                
+                response = requests.get(event['files'][0]['url_private'], headers={'Authorization': 'Bearer TOKEN'})
+
                 with open("my.csv",'wb') as f: 
                     f.write(response.content) 
                 f.close()    
@@ -56,7 +65,9 @@ class Event:
                 elif(response == "Thankyou for the feedback"):
                     self.bot.slack_client.api_call("chat.postMessage", channel=channel, text=response, as_user=True)
                 elif (response == "error"):
-                    print ("fine")    
+                    print ("fine")   
+                elif(response == "Sorry I did not get you"):
+                    self.bot.slack_client.api_call("chat.postMessage", channel=channel, text=response, as_user=True)
                 else:  
                     self.bot.slack_client.api_call("chat.postMessage", channel=channel, text="The best model suggestion for your dataset is:\n", as_user=True)  
                     self.bot.slack_client.api_call("chat.postMessage", channel=channel, text=response, as_user=True)
