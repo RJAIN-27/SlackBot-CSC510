@@ -85,6 +85,8 @@ To run the bot, the user is required to install mock package and openpyxl packag
 
 ` pip install openpyxl `
 
+ ` pip install SlackClient`
+
 
 ## Mock Unit testing
 
