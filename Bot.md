@@ -2,8 +2,6 @@
 
 The library bot L.I.B.R.A. is developed in Slack Environment.
 
-For automated integration testing, we have used Selenium along with robot library in Java.
-
 
 ## Use Cases: 
 
