@@ -2,9 +2,18 @@
 
 The library bot L.I.B.R.A. is developed in Slack Environment.
 
+Set environment variables for slack bot token and bot id using the command:
+
+`export SLACK_BOT_TOKEN=<TOKEN>`
+
+`export BOT_ID=<ID>`
+
 ## Bot Implementation 
 
 The code for the Bot Implementation and mock unittest is given [here](https://github.ncsu.edu/csc510-fall2019/CSC510-23/tree/master/Code)
+
+After you have all the required packages installed for running the code, you will have to run slackbot.py code using the command '$python slackbot.py'
+
 
 ## Use Cases Refinement: 
 
