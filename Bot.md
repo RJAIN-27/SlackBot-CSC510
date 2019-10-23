@@ -109,4 +109,4 @@ The Selenium Testing files are given [here](https://github.ncsu.edu/csc510-fall2
 ## Task Tracking 
 
 ## Screencast 
-[Screencast video](https://drive.google.com/file/d/10fMjVP0apT3TCHHXmkwVSOpa8-kdXrMB/view?usp=sharing) of demonstration of use cases using Selenium testing 
+Screencast video of demonstration of use cases using Selenium testing given [here](https://drive.google.com/file/d/10fMjVP0apT3TCHHXmkwVSOpa8-kdXrMB/view?usp=sharing)
