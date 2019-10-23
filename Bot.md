@@ -114,7 +114,17 @@ The Selenium Testing files are given [here](https://github.ncsu.edu/csc510-fall2
 6. **Use Case 3 Sad Path:**
     - Here we post a message with the keywords that are not present in the library information database and we assert if the bot responds as expected with an appropriate error message. 
 
-## Task Tracking 
+## Assumptions and Constraints 
+#### System and Execution 
+1. We have developed the backend to work for Python 2 
+#### Use Cases 
+1. **Use case 1**: For this milestone we have developed the first use case to handle only numerical datasets 
+2. **Use case 2**: For this milestone we have developed the use case to perform simple exploratory data analytics 
+3. **Use case 3**: For this milestone we are using a small database with limited number of keywords, to store the description 
+#### Testing 
+1. For use cases 1 and 2 we are using a sample CSV file called Wine.csv
+2. For use case 3 we are using a small database with limited keywords to compare with the keywords given in the user's message
+
 
 ## Screencast 
 Screencast video of demonstration of use cases using Selenium testing given [here](https://drive.google.com/file/d/10fMjVP0apT3TCHHXmkwVSOpa8-kdXrMB/view?usp=sharing)
