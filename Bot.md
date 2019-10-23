@@ -66,10 +66,9 @@ The precondition for this use case has been changed from user requiring a LIBRA 
 
 The programs are written in python.
 
-The mocking program used for this milestone is [mocking_infrastructure.py](https://github.ncsu.edu/csc510-fall2019/CSC510-23/blob/master/Code/mocking_infrastructure.py) which mocks [KeywordExtraction.py](https://github.ncsu.edu/csc510-fall2019/CSC510-23/blob/master/Code/KeywordExtraction.py), [analysis.py](https://github.ncsu.edu/csc510-fall2019/CSC510-23/blob/master/Code/analysis.py) and [modelSelection.py](https://github.ncsu.edu/csc510-fall2019/CSC510-23/blob/master/Code/modelSelection.py). 
+The mocking program used for this milestone is [mocking_infrastructure.py](https://github.ncsu.edu/csc510-fall2019/CSC510-23/blob/master/Code/mocking_infrastructure.py) which mocks the basic log [KeywordExtraction.py](https://github.ncsu.edu/csc510-fall2019/CSC510-23/blob/master/Code/KeywordExtraction.py), [analysis.py](https://github.ncsu.edu/csc510-fall2019/CSC510-23/blob/master/Code/analysis.py) and [modelSelection.py](https://github.ncsu.edu/csc510-fall2019/CSC510-23/blob/master/Code/modelSelection.py). 
 
-The program [test.py](https://github.ncsu.edu/csc510-fall2019/CSC510-23/blob/master/Code/test.py) is used to perform mock unittests for all the 3 usecases. The output is given here:
-![](https://github.ncsu.edu/csc510-fall2019/CSC510-23/blob/master/running_test_cases.png)
+The program [mocking_infrastructure.py](https://github.ncsu.edu/csc510-fall2019/CSC510-23/blob/master/Code/mocking_infrastructure.py) also mocks the REST API calls i.e., instead of fetching the json file from the server, using python Mock function, the get() API call is mocked with locally present json file which is used to fetch details and paths.
 
 To run the bot, the user is required to install mock package and openpyxl package.
 
@@ -77,17 +76,18 @@ To run the bot, the user is required to install mock package and openpyxl packag
 
 ` pip install openpyxl `
 
+
 ## Bot Implementation 
 
-The code for the Bot Implementation and mock test is given [here](https://github.ncsu.edu/csc510-fall2019/CSC510-23/tree/master/Code)
+The code for the Bot Implementation and mock unittest is given [here](https://github.ncsu.edu/csc510-fall2019/CSC510-23/tree/master/Code)
 
-The major files implementing the functionality of the three use cases are 
+## Mock Unit testing
 
-1. [modelSelection.py](https://github.ncsu.edu/csc510-fall2019/CSC510-23/blob/master/Code/modelSelection.py) 
-2. [analysis.py](https://github.ncsu.edu/csc510-fall2019/CSC510-23/blob/master/Code/analysis.py) 
-3. [KeywordExtraction.py](https://github.ncsu.edu/csc510-fall2019/CSC510-23/blob/master/Code/KeywordExtraction.py) 
+The mock unittest of the program is given [here](https://github.ncsu.edu/csc510-fall2019/CSC510-23/blob/master/Code/test.py). This program performs 6 unittests (2 for each usecase).
 
+To run the unittest : `python test.py`
 
+![](https://github.ncsu.edu/csc510-fall2019/CSC510-23/blob/master/running_test_cases.png)
 
 ## Selenium Testing 
 
