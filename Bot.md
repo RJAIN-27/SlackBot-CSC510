@@ -2,8 +2,11 @@
 
 The library bot L.I.B.R.A. is developed in Slack Environment.
 
+## Bot Implementation 
 
-## Use Cases: 
+The code for the Bot Implementation and mock unittest is given [here](https://github.ncsu.edu/csc510-fall2019/CSC510-23/tree/master/Code)
+
+## Use Cases Refinement: 
 
 ### Use Case 1: Model Suggestion for a dataset <!-- Bot suggests the model to be used, in answer to a user's request about not having a clarity about what to do with the dataset --> <!-- User must have a dataset to know about the library to be used -->
 ```
@@ -68,7 +71,7 @@ The precondition for this use case has been changed from user requiring a LIBRA 
 We will increase the size of the database and develop the use case to also provide information about specific methods or functions in a given Library/API. 
 
 
-## Mocking Service Component 
+## Mocking infrastructure
 
 The programs are written in python.
 
@@ -83,10 +86,6 @@ To run the bot, the user is required to install mock package and openpyxl packag
 ` pip install openpyxl `
 
 
-## Bot Implementation 
-
-The code for the Bot Implementation and mock unittest is given [here](https://github.ncsu.edu/csc510-fall2019/CSC510-23/tree/master/Code)
-
 ## Mock Unit testing
 
 The mock unittest of the program is given [here](https://github.ncsu.edu/csc510-fall2019/CSC510-23/blob/master/Code/test.py). This program performs 6 unittests (2 for each usecase).
@@ -95,7 +94,7 @@ To run the unittest : `python test.py`
 
 ![](https://github.ncsu.edu/csc510-fall2019/CSC510-23/blob/master/running_test_cases.png)
 
-## Selenium Testing 
+## Selenium testing of each use case 
 
 The Selenium Testing files are given [here](https://github.ncsu.edu/csc510-fall2019/CSC510-23/tree/master/Selenium). 
 
@@ -112,6 +111,9 @@ The Selenium Testing files are given [here](https://github.ncsu.edu/csc510-fall2
 6. **Use Case 3 Sad Path:**
     - Here we post a message with the keywords that are not present in the library information database and we assert if the bot responds as expected with an appropriate error message. 
 
+## Screencast 
+Screencast video of demonstration of use cases using Selenium testing given [here](https://drive.google.com/file/d/10fMjVP0apT3TCHHXmkwVSOpa8-kdXrMB/view?usp=sharing)
+
 ## Assumptions and Constraints 
 #### System and Execution 
 1. We have developed the backend to work for Python 2 
@@ -123,6 +125,3 @@ The Selenium Testing files are given [here](https://github.ncsu.edu/csc510-fall2
 1. For use cases 1 and 2 we are using a sample CSV file called Wine.csv
 2. For use case 3 we are using a small database with limited keywords to compare with the keywords given in the user's message
 
-
-## Screencast 
-Screencast video of demonstration of use cases using Selenium testing given [here](https://drive.google.com/file/d/10fMjVP0apT3TCHHXmkwVSOpa8-kdXrMB/view?usp=sharing)
