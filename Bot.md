@@ -99,17 +99,17 @@ To run the unittest : `python test.py`
 The Selenium Testing files are given [here](https://github.ncsu.edu/csc510-fall2019/CSC510-23/tree/master/Selenium). 
 
 1. **Use Case 1 Happy Path:**
-    - Here we are uploading a csv file and specifying the target variable automatically and asserting if the output from the bot is as expected
-2. **Use Case 1 Sad Path:**
-    - Here we are uploading the .csv file and specifying a target variable that is not present in the dataset, automatically, and we are asserting if the bot responds as expected by identifying that the target variable is not present in the dataset
+    - [Here](https://github.ncsu.edu/csc510-fall2019/CSC510-23/blob/master/Selenium/src/UseCase1HappyPath.java) we are uploading a csv file and specifying the target variable automatically and asserting if the output from the bot is as expected
+2. **Use Case 1 Alternate Path:**
+    - [Here](https://github.ncsu.edu/csc510-fall2019/CSC510-23/blob/master/Selenium/src/UseCase1AltFlow.java) we are uploading the .csv file and specifying a target variable that is not present in the dataset, automatically, and we are asserting if the bot responds as expected by identifying that the target variable is not present in the dataset
 3. **Use Case 2 Happy Path:**
-    - Here we are uploading a csv file and specifying the target variable automatically and asserting if the output from the bot is as expected
-4. **Use Case 2 Sad Path:**
-    - Here we are uploading the .csv file and specifying a target variable that is not present in the dataset, automatically, and we are asserting if the bot responds as expected by identifying that the target variable is not present in the dataset
+    - [Here](https://github.ncsu.edu/csc510-fall2019/CSC510-23/blob/master/Selenium/src/UseCase2HappyPath.java) we are uploading a csv file and specifying the target variable automatically and asserting if the output from the bot is as expected
+4. **Use Case 2 Alternate Path:**
+    - [Here](https://github.ncsu.edu/csc510-fall2019/CSC510-23/blob/master/Selenium/src/UseCase2AltFlow.java) we are uploading the .csv file and specifying a target variable that is not present in the dataset, automatically, and we are asserting if the bot responds as expected by identifying that the target variable is not present in the dataset
 5. **Use Case 3 Happy Path:**
-    - Here we post a message with the keywords present in the library information database and we assert if the bot responds with the corresponding description of those keywords. 
-6. **Use Case 3 Sad Path:**
-    - Here we post a message with the keywords that are not present in the library information database and we assert if the bot responds as expected with an appropriate error message. 
+    - [Here](https://github.ncsu.edu/csc510-fall2019/CSC510-23/blob/master/Selenium/src/UseCase3HappyPath.java) we post a message with the keywords present in the library information database and we assert if the bot responds with the corresponding description of those keywords. 
+6. **Use Case 3 Alternate Path:**
+    - [Here](https://github.ncsu.edu/csc510-fall2019/CSC510-23/blob/master/Selenium/src/UseCase3AltFlow.java) we post a message with the keywords that are not present in the library information database and we assert if the bot responds as expected with an appropriate error message. 
 
 ## Screencast 
 Screencast video of demonstration of use cases using Selenium testing given [here](https://drive.google.com/file/d/10fMjVP0apT3TCHHXmkwVSOpa8-kdXrMB/view?usp=sharing)
