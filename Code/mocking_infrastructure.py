@@ -1,11 +1,8 @@
-
 import json
 import operator
 import openpyxl as xl
 import requests
 from mock import Mock
-
-
 
 def GET(url):
     if url=="http://localhost:3000/":
@@ -13,8 +10,6 @@ def GET(url):
         with open("data.json") as json_file:
             data = json.load(json_file)
         return data
-
-    
 
 # USECASE 1
 def mockbestModel(path, target):
@@ -33,8 +28,7 @@ def mockbestModel(path, target):
     return str(sorted_x[len(sorted_x) - 1][0])
 
 def targetCheck(target, columnNames):
-    return 1 if target in columnNames else "The target column is not present in the file. Please upload the file again and give the correct target column name. Remember, target column is case sensitive."
-
+    return 1 if target in columnNames else wrngColEx
 
 # USECASE 2
 def mock_analysis_interaction(path, target):
@@ -68,14 +62,12 @@ def mock_analysis_interaction(path, target):
     requests.get = temp_get
     return 0
 
-
 # USECASE 3
 def mock_keyword_extraction(msg):
     temp_get = requests.get
     requests.get = Mock(side_effect=GET)
     data = requests.get(url="http://localhost:3000/")
     libraries = data["libraries"]
-
     list1 = str(msg).split(' ')
     ans_list = []
     length = len(list1)
