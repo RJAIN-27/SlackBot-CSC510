@@ -11,8 +11,10 @@ from sklearn.naive_bayes import MultinomialNB
 from sklearn.naive_bayes import BernoulliNB
 from sklearn.naive_bayes import GaussianNB
 from sklearn.ensemble import AdaBoostClassifier
-from xgboost import XGBClassifier
+# from xgboost import XGBClassifier
 from sklearn.ensemble import RandomForestClassifier
+from commonFunctions import targetCheck
+import json
 
 with open("data.json") as json_file:
     data = json.load(json_file)
@@ -21,8 +23,6 @@ def bestModel(modelDict):
     sorted_x = sorted(modelDict.items(), key=operator.itemgetter(1))
     return(sorted_x[len(sorted_x)-1][0])
 
-def targetCheck(target, columnNames):
-    return 1 if target in columnNames else data["wrongTargetColumnException"]
 def modelTraining(data, target, column_names):
     # read data
     models={}
@@ -34,8 +34,7 @@ def modelTraining(data, target, column_names):
     Y = data[target]
 
     # Split the datase into training and testing dataset
-    X_train, X_test, y_train, y_test, indices_train, indices_test = train_test_split(X, Y, data.index, test_size=0.2,
-                                                                                     random_state=0)
+    X_train, X_test, y_train, y_test, indices_train, indices_test = train_test_split(X, Y, data.index, test_size=0.2, random_state=0)
     # Linear SVC
     try:
         lsvc = LinearSVC()
