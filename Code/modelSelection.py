@@ -16,12 +16,6 @@ from sklearn.ensemble import RandomForestClassifier
 import commonFunctions as cf
 import json
 
-try:
-    with open("data.json") as json_file:
-        data = json.load(json_file)
-except:
-    logging.info("Cannot open the JSON File")
-
 def bestModel(modelDict):
     sorted_x = sorted(modelDict.items(), key=operator.itemgetter(1))
     return(sorted_x[len(sorted_x)-1][0])
