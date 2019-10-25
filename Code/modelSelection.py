@@ -11,13 +11,16 @@ from sklearn.naive_bayes import MultinomialNB
 from sklearn.naive_bayes import BernoulliNB
 from sklearn.naive_bayes import GaussianNB
 from sklearn.ensemble import AdaBoostClassifier
-# from xgboost import XGBClassifier
+from xgboost import XGBClassifier
 from sklearn.ensemble import RandomForestClassifier
-from commonFunctions import targetCheck
+import commonFunctions as cf
 import json
 
-with open("data.json") as json_file:
-    data = json.load(json_file)
+try:
+    with open("data.json") as json_file:
+        data = json.load(json_file)
+except:
+    logging.info("Cannot open the JSON File")
 
 def bestModel(modelDict):
     sorted_x = sorted(modelDict.items(), key=operator.itemgetter(1))
@@ -133,9 +136,8 @@ def modelSelInteraction(path,target):
     # remove the columns which have no unique elements
     data = data[[col for col in data if data[col].nunique() > 1]]
     column_names = list(data.columns)
-    flag = targetCheck(target, column_names)
+    flag = cf.targetCheck(target, column_names)
     if flag != 1:
         return flag
     models = modelTraining(data,target,column_names)
     return bestModel(models)
-
