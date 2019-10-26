@@ -21,6 +21,7 @@ flag=0
 
 class Command(object):
    
+    def handlecommand(self, user, command):
         if "know" in command:
             list=KeywordExtraction.keywordExtraction(command)
             #list=mocking_infrastructure.mock_keyword_extraction(command)
