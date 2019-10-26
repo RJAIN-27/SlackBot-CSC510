@@ -25,7 +25,7 @@ def bestModel(modelDict):
     for model in modelDict:
         if accr == modelDict[model]:
             models.append(model)
-    return models if len(models)>0 else return ["No decent model to satisfy this dataset"]
+    return models if len(models)>0 else ["No decent model to satisfy this dataset"]
 
 def modelTraining(data, target, column_names):
     # read data
@@ -133,5 +133,7 @@ def modelTraining(data, target, column_names):
 
 def modelSelInteraction(path,target):
     data, column_names = cf.preprocessS1(path,target)
+    if column_names==[]:
+        return data
     models = modelTraining(data,target,column_names)
     return bestModel(models)
