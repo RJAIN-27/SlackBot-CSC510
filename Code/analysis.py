@@ -7,6 +7,7 @@ from tabulate import tabulate
 from datetime import datetime
 
 import json
+import commonFunctions
     
 #FUNCTION TO FIND CORRELATION BETWEEN ALL VARIABLES IN THE DATASET     
 def correlations(data, method, columns, f):
