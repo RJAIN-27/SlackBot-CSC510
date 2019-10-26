@@ -16,7 +16,7 @@ import json
 
 def bestModel(modelDict):
     if len(modelDict)==0:
-        return ["No models satisfy this dataset"]
+        return ["No model to satisfy this dataset"]
     accr = 70
     models = []
     for model in modelDict:
@@ -25,6 +25,7 @@ def bestModel(modelDict):
     for model in modelDict:
         if accr == modelDict[model]:
             models.append(model)
+    return models if len(models)>0 else return ["No decent model to satisfy this dataset"]
 
 def modelTraining(data, target, column_names):
     # read data
