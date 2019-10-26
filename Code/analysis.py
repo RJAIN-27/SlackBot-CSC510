@@ -2,12 +2,13 @@ import pandas as pd
 from scipy.stats import shapiro
 from scipy.stats import normaltest
 from scipy.stats import anderson
+
 from tabulate import tabulate
 from datetime import datetime
 
-def targetCheck(target, columnNames):
-    return 1 if target in columnNames else "The target column is not present in the file. Please upload the file again and give the correct target column name. Remember, target column is case sensitive."
-
+import json
+    
+#FUNCTION TO FIND CORRELATION BETWEEN ALL VARIABLES IN THE DATASET     
 def correlations(data, method, columns, f):
     correlations = data[data.columns].corr(method=method)
     for i in range(len(columns) - 1):
@@ -27,6 +28,8 @@ def correlations(data, method, columns, f):
     f.writelines(
         "\n---------------------------------------------------------------------------------------------------------------------------------------")
 
+    
+#FUNCTION TO WRITE ALL EDA RESULTS TO FILE AND RETURN FILE  
 def analysis(f, data, target, columns, dt_string):
 
     # Exploratory data analysis:
@@ -37,17 +40,10 @@ def analysis(f, data, target, columns, dt_string):
     f.write(str(data.isnull().sum()))
     f.writelines(
         "\n---------------------------------------------------------------------------------------------------------------------------------------")
-
-    # Mean, median and mode of each column:
-    f.writelines("\n\nMEAN, MEDIAN AND MODE:")
-    for col in columns:
-        f.writelines("\n" + col)
-        f.writelines("\nMean= " + str(data[col].mean()))
-        f.writelines("     Median= " + str(data[col].median()))
-        f.writelines("     Mode= " + str(mode) for mode in data[col].mode())
-    f.writelines(
-        "\n---------------------------------------------------------------------------------------------------------------------------------------")
-
+    
+    #Mean, Median and Mode
+    MeanMedianMode(f, data, target, columns, dt_string)
+    
     # Correlation
     f.writelines("\n\nCorrelation:\n")
     f.writelines("\nPearson Correlation test:")
@@ -58,10 +54,38 @@ def analysis(f, data, target, columns, dt_string):
 
     f.writelines("\n\nKendall's rank Correlation test:")
     correlations(data, 'kendall', columns, f)
+    
+    #Normality Tests
+    Normality(f, data, target, columns, dt_string)
+    
+    return dt_string
 
+    
+    
+def MeanMedianMode(f, data, target, columns, dt_string):
+    # Mean, median and mode of each column:
+    f.writelines("\n\nMEAN, MEDIAN AND MODE:")
+    for col in columns:
+        f.writelines("\n" + col)
+        f.writelines("\nMean= " + str(data[col].mean()))
+        f.writelines("     Median= " + str(data[col].median()))
+        f.writelines("     Mode= " + str(mode) for mode in data[col].mode())
+    f.writelines(
+        "\n---------------------------------------------------------------------------------------------------------------------------------------")
+    #return dt_string
+
+
+def Normality(f, data, target, columns, dt_string):    
     # Normality Test
     f.writelines("\n\nNormality Tests:")
     # Shapiro-Wilk test
+    ShapiroWilkTest(f, data, target, columns, dt_string)
+    #D'Agostino's K^2 Test 
+    Agostino(f, data, target, columns, dt_string)
+    #Anderson-Darling Test
+    AndersonDarlingTest(f, data, target, columns, dt_string)
+    
+def ShapiroWilkTest(f, data, target, columns, dt_string):
     f.writelines("\nShapiro-Wilk test - Gaussian distribution test\n")
     f.writelines("Tests whether a data sample has a Gaussian distribution.\n")
     f.writelines("Hypothesis: the sample has a Gaussian distribution\n")
@@ -79,7 +103,9 @@ def analysis(f, data, target, columns, dt_string):
     f.write(tabulate(dataf, tablefmt="grid", headers="keys", showindex=False))
     f.writelines(
         "\n---------------------------------------------------------------------------------------------------------------------------------------")
-
+    #return dt_string
+    
+def Agostino(f, data, target, columns, dt_string):    
     f.writelines("\n\nD'Agostino's K^2 Test - Gaussian distribution test\n")
     f.writelines("Tests whether a data sample has a Gaussian distribution.\n")
     f.writelines("Hypothesis: the sample has a Gaussian distribution\n")
@@ -97,8 +123,10 @@ def analysis(f, data, target, columns, dt_string):
     f.write(tabulate(dataf, tablefmt="grid", headers="keys", showindex=False))
     f.writelines(
         "\n---------------------------------------------------------------------------------------------------------------------------------------")
+    #return dt_string
 
-    # Anderson-Darling Test
+
+def AndersonDarlingTest(f, data, target, columns, dt_string):
     f.writelines("\n\nAnderson-Darling Test - Gaussian distribution test\n")
     f.writelines("Tests whether a data sample has a Gaussian distribution.\n")
     f.writelines("Hypothesis: the sample has a Gaussian distribution\n")
@@ -116,7 +144,7 @@ def analysis(f, data, target, columns, dt_string):
 
     f.writelines(
         "\n---------------------------------------------------------------------------------------------------------------------------------------")
-    return dt_string
+    #return dt_string
 
 def analysisInteraction(path,target):
     now = datetime.now()
@@ -130,3 +158,4 @@ def analysisInteraction(path,target):
     filename = analysis(f,data,target,columns,dt_string)
     f.close()
     return filename
+
