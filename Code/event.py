@@ -24,16 +24,16 @@ class Event:
                  
     def parseevent(self, event):
         
-        if event and 'text' in event and 'files' not in event and event['user']!=BOT_ID:   
+        if event and 'text' in event and 'files' not in event and event['user']!="UP6FMPQ1X":   
             
             self.handleevent(event['user'], event['text'], event['channel'])
-        if event and 'files' in event and 'text' in event and event['user']!=BOT_ID and event['upload']==True:
+        if event and 'files' in event and 'text' in event and event['user']!="UP6FMPQ1X" and event['upload']==True:
             print(event['files'][0]['filetype'])   
             print(event['files'][0]['url_private'])
             if(event['files'][0]['filetype'] == "csv"):
-                #response = requests.get(event['files'][0]['url_private'], headers={'Authorization': 'Bearer xoxb-795814705207-788531806065-9dWeyIRqj2t1LSbICYnDkB01'})
+                response = requests.get(event['files'][0]['url_private'], headers={'Authorization': 'Bearer xoxb-795814705207-788531806065-9dWeyIRqj2t1LSbICYnDkB01'})
                 
-                response = requests.get(event['files'][0]['url_private'], headers={'Authorization': 'Bearer TOKEN'})
+                #response = requests.get(event['files'][0]['url_private'], headers={'Authorization': 'Bearer TOKEN'})
 
                 with open("my.csv",'wb') as f: 
                     f.write(response.content) 
@@ -98,7 +98,6 @@ class Event:
         #    for i in response:
         #        for j in i:
         #            self.bot.slack_client.api_call("chat.postMessage", channel=channel, text=i[j], as_user=True)
-        # test comment
 
     def handleevent1(self, user, command, channel):
          if command and channel:
