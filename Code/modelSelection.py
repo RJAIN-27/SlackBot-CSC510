@@ -17,8 +17,16 @@ import commonFunctions as cf
 import json
 
 def bestModel(modelDict):
-    sorted_x = sorted(modelDict.items(), key=operator.itemgetter(1))
-    return(sorted_x[len(sorted_x)-1][0])
+    if len(modelDict)==0:
+        return ["No models satisfy this dataset"]
+    accr = 70
+    models = []
+    for model in modelDict:
+        if accr<=modelDict[model]:
+            accr = modelDict[model]
+    for model in modelDict:
+        if accr == modelDict[model]:
+            models.append(model)
 
 def modelTraining(data, target, column_names):
     # read data
@@ -133,5 +141,6 @@ def modelSelInteraction(path,target):
     flag = cf.targetCheck(target, column_names)
     if flag != 1:
         return flag
+    data = cf.checkAndConvertIfCategorical(data,target)
     models = modelTraining(data,target,column_names)
     return bestModel(models)
