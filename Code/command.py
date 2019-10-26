@@ -14,14 +14,13 @@ with open("data.json") as json_file:
 path = "my.csv"
 flag=0
 
-KeywordExtraction.keywordExtraction = Mock(side_effect=mocking_infrastructure.mock_keyword_extraction)
-modelSelection.modelSelInteraction = Mock(side_effect=mocking_infrastructure.mockbestModel)
-analysis.analysisInteraction = Mock(side_effect = mocking_infrastructure.mock_analysis_interaction)
+# KeywordExtraction.keywordExtraction = Mock(side_effect=mocking_infrastructure.mock_keyword_extraction)
+# modelSelection.modelSelInteraction = Mock(side_effect=mocking_infrastructure.mockbestModel)
+# analysis.analysisInteraction = Mock(side_effect = mocking_infrastructure.mock_analysis_interaction)
 
 
 class Command(object):
    
-    def handlecommand(self, user, command):
         if "know" in command:
             list=KeywordExtraction.keywordExtraction(command)
             #list=mocking_infrastructure.mock_keyword_extraction(command)
