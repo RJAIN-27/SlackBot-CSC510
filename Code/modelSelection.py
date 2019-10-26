@@ -1,6 +1,4 @@
-import pandas as pd  # data processing, CSV file I/O (e.g. pd.read_csv)
 import logging
-import operator
 from sklearn.model_selection import train_test_split
 from sklearn import metrics
 from sklearn import preprocessing
@@ -133,14 +131,6 @@ def modelTraining(data, target, column_names):
     return(models)
 
 def modelSelInteraction(path,target):
-    data = pd.read_csv(path, sep=',', header=0)
-
-    # remove the columns which have no unique elements
-    data = data[[col for col in data if data[col].nunique() > 1]]
-    column_names = list(data.columns)
-    flag = cf.targetCheck(target, column_names)
-    if flag != 1:
-        return flag
-    data = cf.checkAndConvertIfCategorical(data,target)
+    data, column_names = cf.preprocessS1(path,target)
     models = modelTraining(data,target,column_names)
     return bestModel(models)
