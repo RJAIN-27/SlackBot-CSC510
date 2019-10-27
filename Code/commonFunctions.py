@@ -8,9 +8,16 @@ def targetCheck(target, columnNames):
     return 1 if target in columnNames else data["wrongTargetColumnException"]
 
 def checkAndConvertIfCategorical(df,target):
-    '''
-    convert categorical to numerical
-    '''
+    cols = list(df.columns)
+    newcols = []
+    for col in cols:
+        if not(df[col].dtypes=='float64' or df[col].dtypes=='int64'):
+            newCol = col+"id" if col!=target else col
+            df[newCol]=df[col].factorize()[0]
+            newcols.append(newCol)
+        else:
+            newcols.append(col)
+    df = df.reindex(columns = newcols)
     return df
 
 def preprocessS1(path,target):
