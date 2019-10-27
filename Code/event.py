@@ -84,15 +84,6 @@ class Event:
             
             elif type(response) is list and len(response)==0:
                 self.bot.slack_client.api_call("chat.postMessage", channel=channel, text="I am sorry, we are still working and building our database!", as_user=True)
-
-        #    f1=open(response, "r")
-        #    content=f1.read()
-        #    print(content)
-        #    print(type(content))
-        #    self.bot.slack_client.api_call("files.upload", channels=channel, file=content)
-            
-        #   You have to use this    
-        #    self.bot.slack_client.api_call("chat.postMessage", channel=channel, text=response, as_user=True)
        
         # You have to use this
         #    for i in response:
