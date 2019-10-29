@@ -98,10 +98,7 @@ class Event:
        
         
 
-        # You have to use this
-        #    for i in response:
-        #        for j in i:
-        #            self.bot.slack_client.api_call("chat.postMessage", channel=channel, text=i[j], as_user=True)
+        
 
     def handleevent1(self, user, command, channel):
         if command and channel:
