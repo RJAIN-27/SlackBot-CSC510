@@ -96,8 +96,7 @@ class Event:
                                                as_user=True)
 
        
-        #   You have to use this    
-        #    self.bot.slack_client.api_call("chat.postMessage", channel=channel, text=response, as_user=True)
+        
 
         # You have to use this
         #    for i in response:
