@@ -6,10 +6,14 @@ from scipy.stats import anderson
 from tabulate import tabulate
 from datetime import datetime
 
+import numpy as np 
+import seaborn as sns 
+from scipy.stats import trim_mean
+
 import json
 import commonFunctions
     
-#FUNCTION TO FIND CORRELATION BETWEEN ALL VARIABLES IN THE DATASET     
+# FUNCTION TO FIND CORRELATION BETWEEN ALL VARIABLES IN THE DATASET     
 def correlations(data, method, columns, f):
     correlations = data[data.columns].corr(method=method)
     for i in range(len(columns) - 1):
@@ -35,12 +39,9 @@ def analysis(f, data, target, columns, dt_string):
 
     # Exploratory data analysis:
     f.writelines("\nEXPLORATORY DATA ANALYSIS:")
-
-    # number of null values per column
-    f.writelines("\n\nNo. of nulls in the columns:\n")
-    f.write(str(data.isnull().sum()))
-    f.writelines(
-        "\n---------------------------------------------------------------------------------------------------------------------------------------")
+    
+    # Details about the datset
+    dataInfo(f, data, target, columns, dt_string)
     
     #Mean, Median and Mode
     MeanMedianMode(f, data, target, columns, dt_string)
@@ -61,8 +62,22 @@ def analysis(f, data, target, columns, dt_string):
     
     return dt_string
 
-    
-    
+
+#FUNCTION TO DISPLAY INFORMATION ABOUT DATASET 
+def dataInfo(f, data, target, columns, dt_string):
+    # number of null values per column
+    f.writelines("\n\nNo. of nulls in the columns:\n")
+    f.write(str(data.isnull().sum()))
+    # Information about the data: 
+    f.writelines("\nInformation about the data:")
+    f.writelines("\n\nType of the data: "+str(type(data)))
+    f.writelines("\n\nSummary statistics of the data\n\n")
+    f.writelines(str(data.describe()))
+    f.writelines(
+        "\n---------------------------------------------------------------------------------------------------------------------------------------")
+     
+
+#FUNCTION TO FIND MEAN, MEDIAN, MODE OF EVERY COLUMN
 def MeanMedianMode(f, data, target, columns, dt_string):
     # Mean, median and mode of each column:
     f.writelines("\n\nMEAN, MEDIAN AND MODE:")
@@ -75,7 +90,7 @@ def MeanMedianMode(f, data, target, columns, dt_string):
         "\n---------------------------------------------------------------------------------------------------------------------------------------")
     #return dt_string
 
-
+#FUNCTION TO TEST NORMALITY OF THE DATASET
 def Normality(f, data, target, columns, dt_string):    
     # Normality Test
     f.writelines("\n\nNormality Tests:")
@@ -147,6 +162,7 @@ def AndersonDarlingTest(f, data, target, columns, dt_string):
         "\n---------------------------------------------------------------------------------------------------------------------------------------")
     #return dt_string
 
+
 def analysisInteraction(path,target):
     now = datetime.now()
     dt_string = "analysis_" + now.strftime("%d_%m_%Y_%H_%M_%S") + ".txt"
@@ -159,4 +175,3 @@ def analysisInteraction(path,target):
     filename = analysis(f,data,target,columns,dt_string)
     f.close()
     return filename
-
