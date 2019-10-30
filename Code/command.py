@@ -13,7 +13,7 @@ with open("data.json") as json_file:
 path = "my.csv"
 flag = 0
 
-
+# These were used while mocking however, there is no use now
 # KeywordExtraction.keywordExtraction = Mock(side_effect=mocking_infrastructure.mock_keyword_extraction)
 # modelSelection.modelSelInteraction = Mock(side_effect=mocking_infrastructure.mockbestModel)
 # analysis.analysisInteraction = Mock(side_effect = mocking_infrastructure.mock_analysis_interaction)
