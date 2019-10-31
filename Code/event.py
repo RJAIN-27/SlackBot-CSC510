@@ -33,7 +33,6 @@ class Event:
                     'Authorization': 'Bearer xoxb-795814705207-788531806065-9dWeyIRqj2t1LSbICYnDkB01'})
 
                 # response = requests.get(event['files'][0]['url_private'], headers={'Authorization': 'Bearer TOKEN'})
-
                 with open("my.csv", 'wb') as f:
                     f.write(response.content)
                 f.close()
