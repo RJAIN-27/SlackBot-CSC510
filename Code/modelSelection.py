@@ -9,7 +9,7 @@ from sklearn.naive_bayes import MultinomialNB
 from sklearn.naive_bayes import BernoulliNB
 from sklearn.naive_bayes import GaussianNB
 from sklearn.ensemble import AdaBoostClassifier
-from xgboost import XGBClassifier
+#from xgboost import XGBClassifier
 from sklearn.ensemble import RandomForestClassifier
 import commonFunctions as cf
 import json
@@ -26,7 +26,7 @@ def bestModel(modelDict,f):
     for model in modelDict:
         if accr == modelDict[model]:
             models.append(model)
-    
+
     return models if len(models)>0 else ["No decent model to satisfy this dataset"]
 
 def modelTraining(data, target, column_names, f):
@@ -53,7 +53,7 @@ def modelTraining(data, target, column_names, f):
         y_pred = lsvc.fit(X_train, y_train).predict(X_test)
         model_accr = metrics.accuracy_score(y_test, y_pred) * 100
         models["Linear Support Vector Classifier"] = model_accr
-        f.writelines("      Accuracy of Linear Support Vector Classifier is ", model_accr)
+        f.writelines("      Accuracy of Linear Support Vector Classifier is "+str(model_accr))
     except:
         logging.info("LSVC is throwing exception")
         f.writelines("      LSVC is throwing exception")
@@ -64,7 +64,7 @@ def modelTraining(data, target, column_names, f):
         y_pred = knn.fit(X_train, y_train).predict(X_test)
         model_accr = metrics.accuracy_score(y_test, y_pred) * 100
         models["KNN Classifier"] = model_accr
-        f.writelines("      Accuracy of KNN Classifier is ", model_accr)
+        f.writelines("      Accuracy of KNN Classifier is "+str(model_accr))
     except:
         logging.info("KNN is throwing exception")
         f.writelines("      KNN is throwing exception")
@@ -75,7 +75,7 @@ def modelTraining(data, target, column_names, f):
         y_pred = clf_gini.fit(X_train, y_train).predict(X_test)
         model_accr = metrics.accuracy_score(y_test, y_pred) * 100
         models["Decision Tree Classifier - GINI"] = model_accr
-        f.writelines("      Accuracy of Decision Tree Classifier - GINI is ", model_accr)
+        f.writelines("      Accuracy of Decision Tree Classifier - GINI is "+str(model_accr))
     except:
         logging.info("DTC GINI is throwing exception")
         f.writelines("      DTC GINI is throwing exception")
@@ -85,7 +85,7 @@ def modelTraining(data, target, column_names, f):
         y_pred = clf_entropy.fit(X_train, y_train).predict(X_test)
         model_accr = metrics.accuracy_score(y_test, y_pred) * 100
         models["Decision Tree Classifier - ENTROPY"] = model_accr
-        f.writelines("      Accuracy of Decision Tree Classifier - ENTROPY is ", model_accr)
+        f.writelines("      Accuracy of Decision Tree Classifier - ENTROPY is "+str(model_accr))
     except:
         logging.info("DTC ENTROPY is throwing exception")
         f.writelines("      DTC ENTROPY is throwing exception")
@@ -96,7 +96,7 @@ def modelTraining(data, target, column_names, f):
         y_pred = mnb_model.fit(X_train, y_train).predict(X_test)
         model_accr = metrics.accuracy_score(y_test, y_pred) * 100
         models["Multinomial Naive Bayes"]=model_accr
-        f.writelines("      Accuracy of Multinomial NB is ", model_accr)
+        f.writelines("      Accuracy of Multinomial NB is "+str(model_accr))
     except:
         logging.info("Multinomial NB is throwing exception")
         f.writelines("      Multinomial NB is throwing exception")
@@ -107,7 +107,7 @@ def modelTraining(data, target, column_names, f):
         y_pred = bnb_model.fit(X_train, y_train).predict(X_test)
         model_accr = metrics.accuracy_score(y_test, y_pred) * 100
         models["Bernoulli Naive Bayes"] = model_accr
-        f.writelines("      Accuracy of Bernoulli NB is ", model_accr)
+        f.writelines("      Accuracy of Bernoulli NB is "+str(model_accr))
     except:
         logging.info("Bernoulli NB is throwing exception")
         f.writelines("      Bernoulli NB is throwing exception")
@@ -118,7 +118,7 @@ def modelTraining(data, target, column_names, f):
         y_pred = gnb_model.fit(X_train, y_train).predict(X_test)
         model_accr = metrics.accuracy_score(y_test, y_pred) * 100
         models["Gaussian Naive Bayes"] = model_accr
-        f.writelines("      Accuracy of GaussianNB is ", model_accr)
+        f.writelines("      Accuracy of GaussianNB is "+str(model_accr))
     except:
         logging.info("GaussianNB is throwing exception")
         f.writelines("      GaussianNB is throwing exception")
@@ -130,7 +130,7 @@ def modelTraining(data, target, column_names, f):
         y_pred =adb.fit(X_train, y_train).predict(X_test)
         model_accr = metrics.accuracy_score(y_test, y_pred) * 100
         models["AdaBoost Classifier"] = model_accr
-        f.writelines("      Accuracy of AdaBoost Classifier is ", model_accr)
+        f.writelines("      Accuracy of AdaBoost Classifier is "+str(model_accr))
     except:
         logging.info("AdaBoost Classifier is throwing exception")
         f.writelines("      AdaBoost Classifier is throwing exception")
@@ -141,7 +141,7 @@ def modelTraining(data, target, column_names, f):
         y_pred = xgb.fit(X_train, y_train).predict(X_test)
         model_accr = metrics.accuracy_score(y_test, y_pred) * 100
         models["XGB Classifier"] = model_accr
-        f.writelines("      Accuracy of XGB Classifier is ", model_accr)
+        f.writelines("      Accuracy of XGB Classifier is "+str(model_accr))
     except:
         logging.info("XGB Classifier is throwing exception")
         f.writelines("      XGB Classifier is throwing exception")
@@ -152,7 +152,7 @@ def modelTraining(data, target, column_names, f):
         y_pred = rfc.fit(X_train, y_train).predict(X_test)
         model_accr = metrics.accuracy_score(y_test, y_pred) * 100
         models["Random Forest Classifier"]=model_accr
-        f.writelines("      Accuracy of Random Forest Classifier is ", model_accr)
+        f.writelines("      Accuracy of Random Forest Classifier is "+ str(model_accr))
     except:
         logging.info("Random Forest Classifier is throwing exception")
         f.writelines("      Random Forest Classifier is throwing exception")
@@ -167,11 +167,11 @@ def modelSelInteraction(path,target):
     f.writelines(
         "The following is the process the bot performed to arrived at the best model for the provided dataset.")
     f.writelines("\n***************************MODEL SELECTION PROCESS**********************")
-    f.writelines("\nThe file name is: ",path.split("/")[-1])
+    f.writelines("\nThe file name is: "+str(path.split("/")[-1]))
     f.writelines("\nStep 1: Checked if the target is present in the column names of the dataset")
     f.writelines("\nStep 2: Check if the columns are numerical or categorical. If categorical, factorize.")
-    f.writelines("      The dataset contains: ","Numerical" if cat_flag==0 else "Categorical")
-    f.writelines("      The dataset contains column names (after pre-processing stage 1): ",column_names)
+    f.writelines("      The dataset contains: "+"Numerical" if cat_flag==0 else "Categorical")
+    f.writelines("      The dataset contains column names (after pre-processing stage 1): "+str(column_names))
     f.writelines("      The dataset's first 5 entries is as follows:")
     f.writelines(data.head())
     models = modelTraining(data,target,column_names,f)
@@ -185,3 +185,6 @@ def modelSelInteraction(path,target):
             f.writelines(i)
     f.close()
     return bestMod
+
+best = modelSelInteraction("Wine.csv","Class")
+print(best)
