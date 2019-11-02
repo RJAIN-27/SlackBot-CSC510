@@ -184,6 +184,3 @@ def modelSelInteraction(path,target):
             f.writelines("\n          "+str(i))
     f.close()
     return bestMod
-
-best = modelSelInteraction("Wine.csv","Class")
-print(best)
