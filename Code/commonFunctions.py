@@ -1,8 +1,24 @@
 import json
 import pandas as pd
+from sklearn.feature_extraction.text import TfidfVectorizer
 
 with open("data.json") as json_file:
     data = json.load(json_file)
+
+def ngram(data, target):
+    cols = list(data.columns)
+    newcols = []
+    tfidf = TfidfVectorizer(sublinear_tf=True, min_df=5, norm='l2', encoding='latin-1', ngram_range=(1, 2),
+                            stop_words='english')
+    for col in cols:
+        if not(data[col].dtypes=='float64' or data[col].dtypes=='int64'):
+            newCol = col+"ConvertedFeatures" if col!=target else col
+            newcols.append(newCol)
+            data[newCol] = tfidf.fit_transform(data['col']).toarray()
+    data = data.reindex(columns=newcols)
+    return data
+
+
 
 def targetCheck(target, columnNames):
     return 1 if target in columnNames else data["wrongTargetColumnException"]
@@ -28,6 +44,6 @@ def preprocessS1(path,target):
     column_names = list(data.columns)
     flag = targetCheck(target, column_names)
     if flag != 1:
-        return flag,[]
+        return flag,[],0
     data,cat_flag = checkAndConvertIfCategorical(data, target)
     return data,column_names,cat_flag
