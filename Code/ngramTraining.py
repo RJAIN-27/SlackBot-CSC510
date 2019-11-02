@@ -7,8 +7,9 @@ def ngram(data, target, f):
     cols = list(data.columns)
     tfidf = TfidfVectorizer(sublinear_tf=True, min_df=5, norm='l2', encoding='latin-1', ngram_range=(1, 2),
                             stop_words='english')
+    col_mod_dict = {}
     for col in cols:
-        col_mod_dict = {}
+
         if not(data[col].dtypes=='float64' or data[col].dtypes=='int64') and col!=target:
             try:
                 features = tfidf.fit_transform(data[col]).toarray()
@@ -25,5 +26,6 @@ def ngram(data, target, f):
                 f.writelines("\n")
 
             except Exception as e:
+                print(e)
                 f.writelines("\n        Cannot transform  " +str(col ) +" to array.")
     return col_mod_dict
