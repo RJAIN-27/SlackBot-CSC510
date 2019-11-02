@@ -22,6 +22,7 @@ def prepAndSplit1(data, target, column_names, f):
                                                                                      random_state=0)
     return X_train,X_test,y_train,y_test
 
+
 def modelSelInteraction(path,target):
     data = pd.read_csv(path, sep=',', header=0)
     data2, column_names, cat_flag = cf.preprocessS1(data,target)
@@ -53,7 +54,7 @@ def modelSelInteraction(path,target):
             f.writelines("\n          "+str(i))
     if cat_flag == 1:
         f.writelines("\n***Performing n-gram feature classification on each Categorical column to check if there is scope of better accuracy model***")
-        ng.ngram(data,target,f)
+        col_mod_dict = ng.ngram(data,target,f)
 
     f.close()
     return bestMod
