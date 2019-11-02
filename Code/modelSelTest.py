@@ -17,20 +17,6 @@ path_to_csv_file_case1_case2 = data["path_to_csv_file_case1_case2"]
 filename = data["path_for_usecase2"]
 
 # USECASE 1
-def mockbestModel(path, target):
-    # for mocking the main and alternate flow
-    flag = targetCheck(target, columnNames)
-    if flag != 1:
-        return flag
-    sorted_x = sorted(modelDict.items(), key=operator.itemgetter(1))
-    return (sorted_x[len(sorted_x) - 1][0])
-
-def max_val_fun():
-    ls = []
-    for i in modelDict:
-        ls.append(modelDict[i])
-    return max(ls)
-
 def best_models():
     ls = []
     accr = 0
@@ -42,20 +28,24 @@ def best_models():
             ls.append(model)
     return ls
 
-# USECASE 1
-def targetCheck(target, columnNames):
-    return 1 if target in columnNames else wrngColEx
-
 class TestStringMethods(unittest.TestCase):
     # usecase 1 - happy flow
     def test_modelsel(self):
         ls = best_models()
+        bestMod = modelSelection.modelSelInteraction(path_to_csv_file_case1_case2, target)
+        flag = 0
         for model in ls:
-            self.assertEqual(modelDict[model],max_val_fun())
+            if model not in bestMod:
+                flag = 1
+                break
+        self.assertEquals(flag,0) and self.assertEquals(len(ls),len(bestMod))
 
     # usecase 1 - alternate flow
     def test_modelsel2(self):
-        self.assertEqual(modelSelection.modelSelInteraction(path_to_csv_file_case1_case2, wrong_target), wrngColEx)
+       self.assertEqual(modelSelection.modelSelInteraction(path_to_csv_file_case1_case2, wrong_target), wrngColEx)
+
+    def test_modelsel3(self):
+        self.assertIsNotNone(modelSelection.modelSelInteraction("Crime1.csv","Category"))
 
 if __name__ == '__main__':
     unittest.main()
