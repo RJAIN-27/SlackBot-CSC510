@@ -3,21 +3,7 @@ from sklearn import preprocessing
 import pandas as pd
 import modelTraining as mt
 import commonFunctions as cf
-
-def bestModel(modelDict,f):
-    if len(modelDict)==0:
-        f.writelines("\n      No model to satisfy this dataset")
-        return ["No model to satisfy this dataset"]
-    accr = 70
-    models = []
-    for model in modelDict:
-        if accr<=modelDict[model]:
-            accr = modelDict[model]
-    for model in modelDict:
-        if accr == modelDict[model]:
-            models.append(model)
-
-    return models if len(models)>0 else ["No decent model to satisfy this dataset"]
+import ngramTraining as ng
 
 def prepAndSplit1(data, target, column_names, f):
     # read data
@@ -35,14 +21,6 @@ def prepAndSplit1(data, target, column_names, f):
     X_train, X_test, y_train, y_test, indices_train, indices_test = train_test_split(X, Y, data.index, test_size=0.2,
                                                                                      random_state=0)
     return X_train,X_test,y_train,y_test
-
-def prepAndSplit2(data,target,column_names,f):
-    column_names.pop(column_names.index(target))
-    X = data.reindex(columns=column_names)
-    Y = data[target]
-    X_train, X_test, y_train, y_test, indices_train, indices_test = train_test_split(X, Y, data.index, test_size=0.2,
-                                                                                     random_state=0)
-    return X_train, X_test, y_train, y_test
 
 def modelSelInteraction(path,target):
     data = pd.read_csv(path, sep=',', header=0)
@@ -66,7 +44,7 @@ def modelSelInteraction(path,target):
     f.writelines("\nStep 6: Training and testing with various models")
     models = mt.modelTraining(X_train, X_test, y_train, y_test, f);
     f.writelines("\nStep 7: Finding the best model:")
-    bestMod = bestModel(models, f)
+    bestMod = cf.bestModel(models, f)
     if bestMod == ["No decent model to satisfy this dataset"]:
         f.writelines("\n      No decent model to satisfy this dataset. All the accuracies are below 70%")
     else:
@@ -75,7 +53,7 @@ def modelSelInteraction(path,target):
             f.writelines("\n          "+str(i))
     if cat_flag == 1:
         f.writelines("\n***Performing n-gram feature classification on each Categorical column to check if there is scope of better accuracy model***")
-        cf.ngram(data,target,f)
+        ng.ngram(data,target,f)
 
     f.close()
     return bestMod
