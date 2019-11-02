@@ -10,15 +10,17 @@ def targetCheck(target, columnNames):
 def checkAndConvertIfCategorical(df,target):
     cols = list(df.columns)
     newcols = []
+    flag = 0
     for col in cols:
         if not(df[col].dtypes=='float64' or df[col].dtypes=='int64'):
+            flag = 1
             newCol = col+"id" if col!=target else col
             df[newCol]=df[col].factorize()[0]
             newcols.append(newCol)
         else:
             newcols.append(col)
     df = df.reindex(columns = newcols)
-    return df
+    return df,flag
 
 def preprocessS1(path,target):
     data = pd.read_csv(path, sep=',', header=0)
@@ -27,5 +29,5 @@ def preprocessS1(path,target):
     flag = targetCheck(target, column_names)
     if flag != 1:
         return flag,[]
-    data = checkAndConvertIfCategorical(data, target)
-    return data,column_names
+    data,cat_flag = checkAndConvertIfCategorical(data, target)
+    return data,column_names,cat_flag
