@@ -9,7 +9,7 @@ from sklearn.naive_bayes import MultinomialNB
 from sklearn.naive_bayes import BernoulliNB
 from sklearn.naive_bayes import GaussianNB
 from sklearn.ensemble import AdaBoostClassifier
-#from xgboost import XGBClassifier
+from xgboost import XGBClassifier
 from sklearn.ensemble import RandomForestClassifier
 import commonFunctions as cf
 import json
