@@ -27,12 +27,14 @@ def bestModel(modelDict):
             models.append(model)
     return models if len(models)>0 else ["No decent model to satisfy this dataset"]
 
-def modelTraining(data, target, column_names):
+def modelTraining(data, target, column_names, f):
     # read data
     models={}
     column_names.pop(column_names.index(target))
+    f.writelines("Spliting the target column from the dataset")
     X = data.reindex(columns = column_names)
     X = preprocessing.StandardScaler().fit(X).transform(X.astype(float))
+    f.writelines("Preprocessing using sklearn package")
 
     # Assign the target column to a variable
     Y = data[target]
@@ -132,8 +134,21 @@ def modelTraining(data, target, column_names):
     return(models)
 
 def modelSelInteraction(path,target):
-    data, column_names = cf.preprocessS1(path,target)
+    data, column_names, cat_flag = cf.preprocessS1(path,target)
     if column_names==[]:
         return data
-    models = modelTraining(data,target,column_names)
+    f = open("modelSelectionProcess.txt", "w")
+    f.writelines(
+        "The following is the process the bot performed to arrived at the best model for the provided dataset.")
+    f.writelines("\n***************************MODEL SELECTION PROCESS**********************")
+    f.writelines("\nThe file name is: ",path.split("/")[-1])
+    f.writelines("\nStep 1: Checked if the target is present in the column names of the dataset")
+    f.writelines("\nStep 2: Check if the columns are numerical or categorical. If categorical, factorize.")
+    f.writelines("      The dataset contains: ","Numerical" if cat_flag==0 else "Categorical")
+    f.writelines("      The dataset contains column names (after pre-processing stage 1): ",column_names)
+    f.writelines("      The dataset's first 5 entries is as follows:")
+    f.writelines(data.head())
+    f.writelines("\nStep 3: Finding the best model:")
+    models = modelTraining(data,target,column_names,f)
+    f.close()
     return bestModel(models)
