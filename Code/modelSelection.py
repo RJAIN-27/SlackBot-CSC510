@@ -57,7 +57,7 @@ def modelSelInteraction(path,target):
         col_mod_dict = ng.ngram(data,target,f)
         for col in col_mod_dict:
             if col_mod_dict[col][0]!="No decent model to satisfy this dataset":
-                f.writelines("\n        On column "+col+" perform "+col_mod_dict[col][0])
-                bestMod.append("Using n-gram feature classification on column "+col+" perform "+col_mod_dict[col][0])
+                f.writelines("\n        Using n-gram feature classification on column "+col+" use "+col_mod_dict[col][0]+" to get the best accuracy")
+                bestMod.append("Using n-gram feature classification on column "+col+" use "+col_mod_dict[col][0]+" to get the best accuracy")
     f.close()
     return bestMod

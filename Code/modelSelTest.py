@@ -57,8 +57,7 @@ class TestStringMethods(unittest.TestCase):
             if not (df[col].dtypes == 'float64' or df[col].dtypes == 'int64'):
                 cflag = 1
                 break
-        self.assertEquals(flag,1)
-        self.assertEquals(cflag,0)
+        self.assertEquals(flag,1) and self.assertEquals(cflag,0)
 
     def test_fileCreation(self):
         self.assertIsNotNone(open("modelSelectionProcess.txt","r"))
