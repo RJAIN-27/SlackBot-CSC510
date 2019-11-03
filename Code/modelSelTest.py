@@ -3,6 +3,8 @@ import operator
 import unittest
 import json
 import modelSelection
+import commonFunctions as cf
+import pandas as pd
 
 with open("data.json") as json_file:
     data = json.load(json_file)
@@ -46,6 +48,20 @@ class TestStringMethods(unittest.TestCase):
 
     def test_modelsel3(self):
         self.assertIsNotNone(modelSelection.modelSelInteraction("Crime1.csv","Category"))
+
+    def test_categorical(self):
+        data = pd.read_csv("Crime1.csv", sep=',', header=0)
+        df,newcols,flag = cf.checkAndConvertIfCategorical(data,"Category")
+        cflag=0
+        for col in newcols:
+            if not (df[col].dtypes == 'float64' or df[col].dtypes == 'int64'):
+                cflag = 1
+                break
+        self.assertEquals(flag,1)
+        self.assertEquals(cflag,0)
+
+    def test_fileCreation(self):
+        self.assertIsNotNone(open("modelSelectionProcess.txt","r"))
 
 if __name__ == '__main__':
     unittest.main()
