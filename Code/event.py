@@ -94,11 +94,6 @@ class Event:
                                                text="I am sorry, we are still working and building our database!",
                                                as_user=True)
 
-       
-        
-
-        
-
     def handleevent1(self, user, command, channel):
         if command and channel:
             print ("Received command: " + command + " in channel: " + channel + " from user: " + user)
