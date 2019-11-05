@@ -12,7 +12,7 @@ from scipy.stats import trim_mean
 
 import json
 import commonFunctions
-    
+       
 # FUNCTION TO FIND CORRELATION BETWEEN ALL VARIABLES IN THE DATASET     
 def correlations(data, method, columns, f):
     correlations = data[data.columns].corr(method=method)
@@ -163,15 +163,50 @@ def AndersonDarlingTest(f, data, target, columns, dt_string):
     #return dt_string
 
 
+#FUNCTION TO DISPLAY INFORMATION ABOUT DATASET 
+def dataInfo(f, data, target, columns, dt_string):
+    # number of null values per column
+    f.writelines("\n\nNo. of nulls in the columns:\n")
+    f.write(str(data.isnull().sum()))
+    # Information about the data: 
+    f.writelines("\nInformation about the data:")
+    f.writelines("\n\nType of the data: "+str(type(data)))
+    f.writelines("\n\nSummary statistics of the data\n\n")
+    f.writelines(str(data.describe()))
+    f.writelines(
+        "\n---------------------------------------------------------------------------------------------------------------------------------------")
+     
+
+#FUNCTION TO FIND MEAN, MEDIAN, MODE OF EVERY COLUMN
+def MeanMedianMode(f, data, target, columns, dt_string):
+    # Mean, median and mode of each column:
+    f.writelines("\n\nMEAN, MEDIAN AND MODE:")
+    for col in columns:
+        f.writelines("\n" + col)
+        f.writelines("\nMean= " + str(data[col].mean()))
+        f.writelines("     Median= " + str(data[col].median()))
+        f.writelines("     Mode= " + str(mode) for mode in data[col].mode())
+    f.writelines(
+        "\n---------------------------------------------------------------------------------------------------------------------------------------")
+    #return dt_string
+
 def analysisInteraction(path,target):
     now = datetime.now()
     dt_string = "analysis_" + now.strftime("%d_%m_%Y_%H_%M_%S") + ".txt"
     f = open(dt_string, "w")
     data = pd.read_csv(path, sep=',', header=0)
     columns = list(data.columns)
-    flag = targetCheck(target,columns)
+    data = data[[col for col in data if data[col].nunique() > 1]]
+    columns = list(data.columns)
+    flag = commonFunctions.targetCheck(target, columns)
     if flag != 1:
-        return flag
+        return flag,[],0
+    data,columns,cat_flag = commonFunctions.checkAndConvertIfCategorical(data, target)
+    if cat_flag == 0:
+        f.writelines("\n      The dataset is of type - Numerical")
+    else:
+        f.writelines("\n      The dataset is of type - Categorical")
+    
     filename = analysis(f,data,target,columns,dt_string)
     f.close()
     return filename
