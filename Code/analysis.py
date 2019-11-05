@@ -44,6 +44,11 @@ def analysis(f, data, target, columns, dt_string):
     for col in columns:
         if not(data[col].dtypes=='float64' or data[col].dtypes=='int64'):
             ValueCounts(f, data, col, columns, dt_string)
+       
+    # Checking effect of categorical variables on entire dataset 
+    for col in columns:
+        if not(data[col].dtypes=='float64' or data[col].dtypes=='int64'):
+            GroupBy(f, data, col, columns, dt_string)
     
     #Checking if the data set is numerical or categorical 
     flag = commonFunctions.targetCheck(target, columns)
@@ -103,18 +108,24 @@ def MeanMedianMode(f, data, target, columns, dt_string):
         f.writelines("     Mode= " + str(mode) for mode in data[col].mode())
     f.writelines("\n---------------------------------------------------------------------------------------------------------------------------------------")
     #return dt_string
-
+       
+# FUNCTION TO CALCULATE VALUE COUNTS OF CATEGORICAL COLUMNS 
 def ValueCounts(f, data, target, columns, dt_string):
     # To view summary aggregates 
     f.writelines("\n\nVALUE COUNTS:\n\n")
-    ls = []
-    print(data[target])
-    print (data[target].value_counts())
     dataf= pd.DataFrame(list(zip(data[target].value_counts().index,data[target].value_counts())), columns=['Column','counts'])
     f.write(tabulate(dataf, tablefmt="grid", headers="keys", showindex=False))
     f.writelines("\n---------------------------------------------------------------------------------------------------------------------------------------")
     #return dt_string
-    
+
+# FUNCTION TO CHECK EFFECT OF CATEGORICAL VARIABLES ON DATA SET 
+def GroupBy(f, data, target, columns, dt_string):
+    f.writelines("\n\nTO SEE EFFECT OF CATEGORICAL VARIABLES ON DATA SET\n\n")
+    for i in columns:
+        dataf = pd.DataFrame(data.groupby([target,i]).mean())
+        f.write(tabulate(dataf, tablefmt="grid", headers="keys", showindex=False))
+        f.writelines("\n---------------------------------------------------------------------------------------------------------------------------------------")
+    #return dt_string
     
 #FUNCTION TO TEST NORMALITY OF THE DATASET
 def Normality(f, data, target, columns, dt_string):    
@@ -201,4 +212,3 @@ def analysisInteraction(path,target):
     return filename
 
 
-analysisInteraction("C:/Users/nitar/Downloads/Crime1.csv", "Category")
