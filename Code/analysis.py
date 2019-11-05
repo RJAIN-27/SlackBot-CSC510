@@ -40,6 +40,22 @@ def analysis(f, data, target, columns, dt_string):
     # Exploratory data analysis:
     f.writelines("\nEXPLORATORY DATA ANALYSIS:")
     
+    # Checking for Value counts if dataset is categorical 
+    for col in columns:
+        if not(data[col].dtypes=='float64' or data[col].dtypes=='int64'):
+            ValueCounts(f, data, col, columns, dt_string)
+    
+    #Checking if the data set is numerical or categorical 
+    flag = commonFunctions.targetCheck(target, columns)
+    if flag != 1:
+        return flag,[],0
+    data,columns,cat_flag = commonFunctions.checkAndConvertIfCategorical(data, target)
+    if cat_flag == 0:
+        f.writelines("\n      The dataset is of type - Numerical")
+    else:
+        f.writelines("\n      The dataset is of type - Categorical")
+        
+    
     # Details about the datset
     dataInfo(f, data, target, columns, dt_string)
     
@@ -73,8 +89,7 @@ def dataInfo(f, data, target, columns, dt_string):
     f.writelines("\n\nType of the data: "+str(type(data)))
     f.writelines("\n\nSummary statistics of the data\n\n")
     f.writelines(str(data.describe()))
-    f.writelines(
-        "\n---------------------------------------------------------------------------------------------------------------------------------------")
+    f.writelines("\n---------------------------------------------------------------------------------------------------------------------------------------")
      
 
 #FUNCTION TO FIND MEAN, MEDIAN, MODE OF EVERY COLUMN
@@ -86,10 +101,21 @@ def MeanMedianMode(f, data, target, columns, dt_string):
         f.writelines("\nMean= " + str(data[col].mean()))
         f.writelines("     Median= " + str(data[col].median()))
         f.writelines("     Mode= " + str(mode) for mode in data[col].mode())
-    f.writelines(
-        "\n---------------------------------------------------------------------------------------------------------------------------------------")
+    f.writelines("\n---------------------------------------------------------------------------------------------------------------------------------------")
     #return dt_string
 
+def ValueCounts(f, data, target, columns, dt_string):
+    # To view summary aggregates 
+    f.writelines("\n\nVALUE COUNTS:\n\n")
+    ls = []
+    print(data[target])
+    print (data[target].value_counts())
+    dataf= pd.DataFrame(list(zip(data[target].value_counts().index,data[target].value_counts())), columns=['Column','counts'])
+    f.write(tabulate(dataf, tablefmt="grid", headers="keys", showindex=False))
+    f.writelines("\n---------------------------------------------------------------------------------------------------------------------------------------")
+    #return dt_string
+    
+    
 #FUNCTION TO TEST NORMALITY OF THE DATASET
 def Normality(f, data, target, columns, dt_string):    
     # Normality Test
@@ -169,17 +195,10 @@ def analysisInteraction(path,target):
     f = open(dt_string, "w")
     data = pd.read_csv(path, sep=',', header=0)
     columns = list(data.columns)
-    data = data[[col for col in data if data[col].nunique() > 1]]
-    columns = list(data.columns)
-    flag = commonFunctions.targetCheck(target, columns)
-    if flag != 1:
-        return flag,[],0
-    data,columns,cat_flag = commonFunctions.checkAndConvertIfCategorical(data, target)
-    if cat_flag == 0:
-        f.writelines("\n      The dataset is of type - Numerical")
-    else:
-        f.writelines("\n      The dataset is of type - Categorical")
     
     filename = analysis(f,data,target,columns,dt_string)
     f.close()
     return filename
+
+
+analysisInteraction("C:/Users/nitar/Downloads/Crime1.csv", "Category")
