@@ -163,33 +163,6 @@ def AndersonDarlingTest(f, data, target, columns, dt_string):
     #return dt_string
 
 
-#FUNCTION TO DISPLAY INFORMATION ABOUT DATASET 
-def dataInfo(f, data, target, columns, dt_string):
-    # number of null values per column
-    f.writelines("\n\nNo. of nulls in the columns:\n")
-    f.write(str(data.isnull().sum()))
-    # Information about the data: 
-    f.writelines("\nInformation about the data:")
-    f.writelines("\n\nType of the data: "+str(type(data)))
-    f.writelines("\n\nSummary statistics of the data\n\n")
-    f.writelines(str(data.describe()))
-    f.writelines(
-        "\n---------------------------------------------------------------------------------------------------------------------------------------")
-     
-
-#FUNCTION TO FIND MEAN, MEDIAN, MODE OF EVERY COLUMN
-def MeanMedianMode(f, data, target, columns, dt_string):
-    # Mean, median and mode of each column:
-    f.writelines("\n\nMEAN, MEDIAN AND MODE:")
-    for col in columns:
-        f.writelines("\n" + col)
-        f.writelines("\nMean= " + str(data[col].mean()))
-        f.writelines("     Median= " + str(data[col].median()))
-        f.writelines("     Mode= " + str(mode) for mode in data[col].mode())
-    f.writelines(
-        "\n---------------------------------------------------------------------------------------------------------------------------------------")
-    #return dt_string
-
 def analysisInteraction(path,target):
     now = datetime.now()
     dt_string = "analysis_" + now.strftime("%d_%m_%Y_%H_%M_%S") + ".txt"
