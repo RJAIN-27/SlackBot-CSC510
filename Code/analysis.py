@@ -2,16 +2,8 @@ import pandas as pd
 from scipy.stats import shapiro
 from scipy.stats import normaltest
 from scipy.stats import anderson
-
 from tabulate import tabulate
-from datetime import datetime
-
-import numpy as np 
-import seaborn as sns 
-from scipy.stats import trim_mean
-
-import json
-import commonFunctions
+from Code import commonFunctions
        
 # FUNCTION TO FIND CORRELATION BETWEEN ALL VARIABLES IN THE DATASET     
 def correlations(data, method, columns, f):
@@ -80,9 +72,6 @@ def analysis(f, data, target, columns):
     
     #Normality Tests
     Normality(f, data, target, columns)
-    
-    return dt_string
-
 
 #FUNCTION TO DISPLAY INFORMATION ABOUT DATASET 
 def dataInfo(f, data, target, columns):
@@ -107,8 +96,7 @@ def MeanMedianMode(f, data, target, columns):
         f.writelines("     Median= " + str(data[col].median()))
         f.writelines("     Mode= " + str(mode) for mode in data[col].mode())
     f.writelines("\n---------------------------------------------------------------------------------------------------------------------------------------")
-    #return dt_string
-       
+
 # FUNCTION TO CALCULATE VALUE COUNTS OF CATEGORICAL COLUMNS 
 def ValueCounts(f, data, target, columns):
     # To view summary aggregates 
@@ -125,8 +113,7 @@ def GroupBy(f, data, target, columns):
         dataf = pd.DataFrame(data.groupby([target,i]).mean())
         f.write(tabulate(dataf, tablefmt="grid", headers="keys", showindex=False))
         f.writelines("\n---------------------------------------------------------------------------------------------------------------------------------------")
-    #return dt_string
-    
+
 #FUNCTION TO TEST NORMALITY OF THE DATASET
 def Normality(f, data, target, columns):    
     # Normality Test
@@ -156,7 +143,7 @@ def ShapiroWilkTest(f, data, target, columns):
     f.write(tabulate(dataf, tablefmt="grid", headers="keys", showindex=False))
     f.writelines(
         "\n---------------------------------------------------------------------------------------------------------------------------------------")
-    #return dt_string
+
     
 def Agostino(f, data, target, columns):    
     f.writelines("\n\nD'Agostino's K^2 Test - Gaussian distribution test\n")
@@ -176,8 +163,6 @@ def Agostino(f, data, target, columns):
     f.write(tabulate(dataf, tablefmt="grid", headers="keys", showindex=False))
     f.writelines(
         "\n---------------------------------------------------------------------------------------------------------------------------------------")
-    #return dt_string
-
 
 def AndersonDarlingTest(f, data, target, columns):
     f.writelines("\n\nAnderson-Darling Test - Gaussian distribution test\n")
@@ -197,18 +182,15 @@ def AndersonDarlingTest(f, data, target, columns):
 
     f.writelines(
         "\n---------------------------------------------------------------------------------------------------------------------------------------")
-    #return dt_string
-
 
 def analysisInteraction(path,target):
     f = open("Analysis.txt", "w")
     
     data = pd.read_csv(path, sep=',', header=0)
     columns = list(data.columns)
-    
-    
-    filename = analysis(f,data,target,columns)
+
+    analysis(f,data,target,columns)
     f.close()
-    return filename
+    return "Analysis.txt"
 
 

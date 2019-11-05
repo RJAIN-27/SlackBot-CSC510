@@ -1,7 +1,7 @@
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.model_selection import train_test_split
-import modelTraining as mt
-import commonFunctions as cf
+from Code import modelTraining as mt
+from Code import commonFunctions as cf
 
 def ngram(data, target, f):
     cols = list(data.columns)

@@ -1,9 +1,9 @@
 from sklearn.model_selection import train_test_split
 from sklearn import preprocessing
 import pandas as pd
-import modelTraining as mt
-import commonFunctions as cf
-import ngramTraining as ng
+from Code import modelTraining as mt
+from Code import commonFunctions as cf
+from Code import ngramTraining as ng
 
 def prepAndSplit1(data, target, column_names, f):
     # read data
