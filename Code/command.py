@@ -18,7 +18,6 @@ flag = 0
 # modelSelection.modelSelInteraction = Mock(side_effect=mocking_infrastructure.mockbestModel)
 # analysis.analysisInteraction = Mock(side_effect = mocking_infrastructure.mock_analysis_interaction)
 
-
 class Command(object):
 
     def handlecommand(self, user, command):
