@@ -1,8 +1,8 @@
 # Python code to demonstrate working of unittest using mock
 import unittest
 import json
-from Code import modelSelection
-from Code import commonFunctions as cf
+import modelSelection
+import commonFunctions as cf
 import pandas as pd
 
 with open("data.json") as json_file:
