@@ -201,7 +201,7 @@ def AndersonDarlingTest(f, data, target, columns):
 
 
 def analysisInteraction(path,target):
-    f = open("modelSelectionProcess.txt", "w")
+    f = open("Analysis.txt", "w")
     
     data = pd.read_csv(path, sep=',', header=0)
     columns = list(data.columns)
