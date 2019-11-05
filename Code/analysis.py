@@ -35,7 +35,7 @@ def correlations(data, method, columns, f):
 
     
 #FUNCTION TO WRITE ALL EDA RESULTS TO FILE AND RETURN FILE  
-def analysis(f, data, target, columns, dt_string):
+def analysis(f, data, target, columns):
 
     # Exploratory data analysis:
     f.writelines("\nEXPLORATORY DATA ANALYSIS:")
@@ -43,12 +43,12 @@ def analysis(f, data, target, columns, dt_string):
     # Checking for Value counts if dataset is categorical 
     for col in columns:
         if not(data[col].dtypes=='float64' or data[col].dtypes=='int64'):
-            ValueCounts(f, data, col, columns, dt_string)
+            ValueCounts(f, data, col, columns)
        
     # Checking effect of categorical variables on entire dataset 
     for col in columns:
         if not(data[col].dtypes=='float64' or data[col].dtypes=='int64'):
-            GroupBy(f, data, col, columns, dt_string)
+            GroupBy(f, data, col, columns)
     
     #Checking if the data set is numerical or categorical 
     flag = commonFunctions.targetCheck(target, columns)
@@ -62,10 +62,10 @@ def analysis(f, data, target, columns, dt_string):
         
     
     # Details about the datset
-    dataInfo(f, data, target, columns, dt_string)
+    dataInfo(f, data, target, columns)
     
     #Mean, Median and Mode
-    MeanMedianMode(f, data, target, columns, dt_string)
+    MeanMedianMode(f, data, target, columns)
     
     # Correlation
     f.writelines("\n\nCorrelation:\n")
@@ -79,13 +79,13 @@ def analysis(f, data, target, columns, dt_string):
     correlations(data, 'kendall', columns, f)
     
     #Normality Tests
-    Normality(f, data, target, columns, dt_string)
+    Normality(f, data, target, columns)
     
     return dt_string
 
 
 #FUNCTION TO DISPLAY INFORMATION ABOUT DATASET 
-def dataInfo(f, data, target, columns, dt_string):
+def dataInfo(f, data, target, columns):
     # number of null values per column
     f.writelines("\n\nNo. of nulls in the columns:\n")
     f.write(str(data.isnull().sum()))
@@ -98,7 +98,7 @@ def dataInfo(f, data, target, columns, dt_string):
      
 
 #FUNCTION TO FIND MEAN, MEDIAN, MODE OF EVERY COLUMN
-def MeanMedianMode(f, data, target, columns, dt_string):
+def MeanMedianMode(f, data, target, columns):
     # Mean, median and mode of each column:
     f.writelines("\n\nMEAN, MEDIAN AND MODE:")
     for col in columns:
@@ -110,7 +110,7 @@ def MeanMedianMode(f, data, target, columns, dt_string):
     #return dt_string
        
 # FUNCTION TO CALCULATE VALUE COUNTS OF CATEGORICAL COLUMNS 
-def ValueCounts(f, data, target, columns, dt_string):
+def ValueCounts(f, data, target, columns):
     # To view summary aggregates 
     f.writelines("\n\nVALUE COUNTS:\n\n")
     dataf= pd.DataFrame(list(zip(data[target].value_counts().index,data[target].value_counts())), columns=['Column','counts'])
@@ -119,7 +119,7 @@ def ValueCounts(f, data, target, columns, dt_string):
     #return dt_string
 
 # FUNCTION TO CHECK EFFECT OF CATEGORICAL VARIABLES ON DATA SET 
-def GroupBy(f, data, target, columns, dt_string):
+def GroupBy(f, data, target, columns):
     f.writelines("\n\nTO SEE EFFECT OF CATEGORICAL VARIABLES ON DATA SET\n\n")
     for i in columns:
         dataf = pd.DataFrame(data.groupby([target,i]).mean())
@@ -128,17 +128,17 @@ def GroupBy(f, data, target, columns, dt_string):
     #return dt_string
     
 #FUNCTION TO TEST NORMALITY OF THE DATASET
-def Normality(f, data, target, columns, dt_string):    
+def Normality(f, data, target, columns):    
     # Normality Test
     f.writelines("\n\nNormality Tests:")
     # Shapiro-Wilk test
-    ShapiroWilkTest(f, data, target, columns, dt_string)
+    ShapiroWilkTest(f, data, target, columns)
     #D'Agostino's K^2 Test 
-    Agostino(f, data, target, columns, dt_string)
+    Agostino(f, data, target, columns)
     #Anderson-Darling Test
-    AndersonDarlingTest(f, data, target, columns, dt_string)
+    AndersonDarlingTest(f, data, target, columns)
     
-def ShapiroWilkTest(f, data, target, columns, dt_string):
+def ShapiroWilkTest(f, data, target, columns):
     f.writelines("\nShapiro-Wilk test - Gaussian distribution test\n")
     f.writelines("Tests whether a data sample has a Gaussian distribution.\n")
     f.writelines("Hypothesis: the sample has a Gaussian distribution\n")
@@ -158,7 +158,7 @@ def ShapiroWilkTest(f, data, target, columns, dt_string):
         "\n---------------------------------------------------------------------------------------------------------------------------------------")
     #return dt_string
     
-def Agostino(f, data, target, columns, dt_string):    
+def Agostino(f, data, target, columns):    
     f.writelines("\n\nD'Agostino's K^2 Test - Gaussian distribution test\n")
     f.writelines("Tests whether a data sample has a Gaussian distribution.\n")
     f.writelines("Hypothesis: the sample has a Gaussian distribution\n")
@@ -179,7 +179,7 @@ def Agostino(f, data, target, columns, dt_string):
     #return dt_string
 
 
-def AndersonDarlingTest(f, data, target, columns, dt_string):
+def AndersonDarlingTest(f, data, target, columns):
     f.writelines("\n\nAnderson-Darling Test - Gaussian distribution test\n")
     f.writelines("Tests whether a data sample has a Gaussian distribution.\n")
     f.writelines("Hypothesis: the sample has a Gaussian distribution\n")
@@ -201,13 +201,13 @@ def AndersonDarlingTest(f, data, target, columns, dt_string):
 
 
 def analysisInteraction(path,target):
-    now = datetime.now()
-    dt_string = "analysis_" + now.strftime("%d_%m_%Y_%H_%M_%S") + ".txt"
-    f = open(dt_string, "w")
+    f = open("modelSelectionProcess.txt", "w")
+    
     data = pd.read_csv(path, sep=',', header=0)
     columns = list(data.columns)
     
-    filename = analysis(f,data,target,columns,dt_string)
+    
+    filename = analysis(f,data,target,columns)
     f.close()
     return filename
 
