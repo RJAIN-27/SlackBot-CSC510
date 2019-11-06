@@ -70,6 +70,7 @@ def analysis(f, data, target, columns):
 
 #FUNCTION TO DISPLAY INFORMATION ABOUT DATASET 
 def dataInfo(f, data, target, columns):
+    f.writelines("\n\nDATA INFORMATION\n\n")   
     # number of null values per column
     f.writelines("\n\nNo. of nulls in the columns:\n")
     f.write(str(data.isnull().sum()))
