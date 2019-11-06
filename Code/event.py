@@ -25,6 +25,8 @@ class Event:
 
         if event and 'text' in event and 'files' not in event and event['user'] != "UP6FMPQ1X":
             self.handleevent(event['user'], event['text'], event['channel'])
+            
+        #add a module where only file is given as an input to the bot and no message
         if event and 'files' in event and 'text' in event and event['user'] != "UP6FMPQ1X" and event['upload'] == True:
             print(event['files'][0]['filetype'])
             print(event['files'][0]['url_private'])
