@@ -173,9 +173,11 @@ def AndersonDarlingTest(f, data, target, columns):
 
 def analysisInteraction(path,target):
     f = open("Analysis.txt", "w")
-    
     data = pd.read_csv(path, sep=',', header=0)
     columns = list(data.columns)
+    flag = commonFunctions.targetCheck(target,columns)
+    if flag!=1:
+        return flag
 
     analysis(f,data,target,columns)
     f.close()

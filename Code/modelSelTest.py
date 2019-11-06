@@ -15,7 +15,6 @@ wrngColEx = data["wrongTargetColumnException"]
 parameters_to_be_counted = int(data["parameters_to_be_counted"])
 target = data["target"]
 wrong_target = data["wrong_target"]
-filename = data["path_for_usecase2"]
 
 # USECASE 1
 def best_models():

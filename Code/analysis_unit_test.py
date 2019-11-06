@@ -15,7 +15,7 @@ parameter_count_categorical = 5
 parameter_count_numerical = 4
 
 def contentCheck_categorical():
-    filename = data["Analysis.txt"]
+    filename = "Analysis.txt"
     a = ""
     count = 0
     for line in open(filename, 'r'):
@@ -33,7 +33,7 @@ def contentCheck_categorical():
     return count 
 
 def contentCheck_numerical():
-    filename = data["Analysis.txt"]
+    filename = "Analysis.txt"
     a = ""
     count = 0
     for line in open(filename, 'r'):
