@@ -37,11 +37,6 @@ def analysis(f, data, target, columns):
         if not(data[col].dtypes=='float64' or data[col].dtypes=='int64'):
             ValueCounts(f, data, col, columns)
        
-    # Checking effect of categorical variables on entire dataset 
-    for col in columns:
-        if not(data[col].dtypes=='float64' or data[col].dtypes=='int64'):
-            GroupBy(f, data, col, columns)
-    
     #Checking if the data set is numerical or categorical 
     flag = commonFunctions.targetCheck(target, columns)
     if flag != 1:
@@ -105,14 +100,6 @@ def ValueCounts(f, data, target, columns):
     f.write(tabulate(dataf, tablefmt="grid", headers="keys", showindex=False))
     f.writelines("\n---------------------------------------------------------------------------------------------------------------------------------------")
     #return dt_string
-
-# FUNCTION TO CHECK EFFECT OF CATEGORICAL VARIABLES ON DATA SET 
-def GroupBy(f, data, target, columns):
-    f.writelines("\n\nTO SEE EFFECT OF CATEGORICAL VARIABLES ON DATA SET\n\n")
-    for i in columns:
-        dataf = pd.DataFrame(data.groupby([target,i]).mean())
-        f.write(tabulate(dataf, tablefmt="grid", headers="keys", showindex=False))
-        f.writelines("\n---------------------------------------------------------------------------------------------------------------------------------------")
 
 #FUNCTION TO TEST NORMALITY OF THE DATASET
 def Normality(f, data, target, columns):    
