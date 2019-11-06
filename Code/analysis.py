@@ -37,17 +37,12 @@ def analysis(f, data, target, columns):
         if not(data[col].dtypes=='float64' or data[col].dtypes=='int64'):
             ValueCounts(f, data, col, columns)
        
-    #Checking if the data set is numerical or categorical 
-    flag = commonFunctions.targetCheck(target, columns)
-    if flag != 1:
-        return flag,[],0
     data,columns,cat_flag = commonFunctions.checkAndConvertIfCategorical(data, target)
     if cat_flag == 0:
         f.writelines("\n      The dataset is of type - Numerical")
     else:
         f.writelines("\n      The dataset is of type - Categorical")
         
-    
     # Details about the datset
     dataInfo(f, data, target, columns)
     
@@ -100,7 +95,6 @@ def ValueCounts(f, data, target, columns):
     dataf= pd.DataFrame(list(zip(data[target].value_counts().index,data[target].value_counts())), columns=['Column','counts'])
     f.write(tabulate(dataf, tablefmt="grid", headers="keys", showindex=False))
     f.writelines("\n---------------------------------------------------------------------------------------------------------------------------------------")
-    #return dt_string
 
 #FUNCTION TO TEST NORMALITY OF THE DATASET
 def Normality(f, data, target, columns):    
