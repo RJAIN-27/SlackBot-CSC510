@@ -53,27 +53,27 @@ def contentCheck_numerical():
 class TestStringMethods(unittest.TestCase):
     # Use case 2 happy flow 
     def test_analysis_categorical(self):
-            analysis.analysisInteraction("C:/Users/nitar/Downloads/Crime1.csv","Category")
+            analysis.analysisInteraction("Datasets/Crime1.csv","Category")
             count_cat = contentCheck_categorical()
             self.assertEquals(count_cat,parameter_count_categorical)
             
     def test_analysis_numerical(self):
-            analysis.analysisInteraction("C:/Users/nitar/Downloads/ordergroups.csv","Category")
+            analysis.analysisInteraction("Datasets/Wine.csv","Class")
             count_cat = contentCheck_numerical()
             self.assertEquals(count_cat,parameter_count_numerical)
             
     # usecase 2 - alternate flow
     def test_analysis_target_cat(self):
-           self.assertEqual(analysis.analysisInteraction("C:/Users/nitar/Downloads/Crime1.csv", "Hululu"), wrngColEx)
+           self.assertEqual(analysis.analysisInteraction("Datasets/Crime1.csv", "Hululu"), wrngColEx)
     
     def test_analysis_target_num(self):
-           self.assertEqual(analysis.analysisInteraction("C:/Users/nitar/Downloads/ordergroups.csv", "Hululu"), wrngColEx) 
+           self.assertEqual(analysis.analysisInteraction("Datasets/Wine.csv", "Hululu"), wrngColEx) 
             
     def test_analysis_result_cat(self):
-        self.assertIsNotNone(analysis.analysisInteraction("C:/Users/nitar/Downloads/Crime1.csv","Category"))
+        self.assertIsNotNone(analysis.analysisInteraction("Datasets/Crime1.csv","Category"))
         
     def test_analysis_result_num(self):
-        self.assertIsNotNone(analysis.analysisInteraction("C:/Users/nitar/Downloads/ordergroups.csv","postage"))
+        self.assertIsNotNone(analysis.analysisInteraction("Datasets/Wine.csv","Class"))
         
     def test_fileCreation(self):
         self.assertIsNotNone(open("Analysis.txt","r"))
