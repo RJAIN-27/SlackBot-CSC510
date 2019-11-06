@@ -7,6 +7,7 @@ import pandas as pd
 
 with open("data.json") as json_file:
     data = json.load(json_file)
+    
 libraries = data["libraries"]
 columnNames = data["columnNames"]
 modelDict = data["listModels"]
@@ -14,7 +15,6 @@ wrngColEx = data["wrongTargetColumnException"]
 parameters_to_be_counted = int(data["parameters_to_be_counted"])
 target = data["target"]
 wrong_target = data["wrong_target"]
-path_to_csv_file_case1_case2 = data["path_to_csv_file_case1_case2"]
 filename = data["path_for_usecase2"]
 
 # USECASE 1
@@ -33,7 +33,7 @@ class TestStringMethods(unittest.TestCase):
     # usecase 1 - happy flow
     def test_modelsel(self):
         ls = best_models()
-        bestMod = modelSelection.modelSelInteraction(path_to_csv_file_case1_case2, target)
+        bestMod = modelSelection.modelSelInteraction("Datasets/Wine.csv", target)
         flag = 0
         for model in ls:
             if model not in bestMod:
@@ -43,13 +43,13 @@ class TestStringMethods(unittest.TestCase):
 
     # usecase 1 - alternate flow
     def test_modelsel2(self):
-       self.assertEqual(modelSelection.modelSelInteraction(path_to_csv_file_case1_case2, wrong_target), wrngColEx)
+       self.assertEqual(modelSelection.modelSelInteraction("Datasets/Wine.csv", wrong_target), wrngColEx)
 
     def test_modelsel3(self):
-        self.assertIsNotNone(modelSelection.modelSelInteraction("Crime1.csv","Category"))
+        self.assertIsNotNone(modelSelection.modelSelInteraction("Datasets/Crime1.csv","Category"))
 
     def test_categorical(self):
-        data = pd.read_csv("Crime1.csv", sep=',', header=0)
+        data = pd.read_csv("Datasets/Crime1.csv", sep=',', header=0)
         df,newcols,flag = cf.checkAndConvertIfCategorical(data,"Category")
         cflag=0
         for col in newcols:
