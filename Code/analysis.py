@@ -171,7 +171,7 @@ def analysisInteraction(path,target):
     columns = list(data.columns)
     flag = commonFunctions.targetCheck(target,columns)
     if flag!=1:
-        return flag
+        return str(flag)
 
     analysis(f,data,target,columns)
     f.close()
