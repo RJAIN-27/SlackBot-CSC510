@@ -30,10 +30,10 @@ def keywordExtraction(msg,sheet):
     corpus = []
     # Convert to lowercase
     text = text.lower()
-    # Convert to list from string
-    text = text.split()
     # Replace punctuations with spaces
     text = re.sub('[^a-zA-Z]', ' ', str(text))
+    # Convert to list from string
+    text = text.split()
     # Stemming
     ps = PorterStemmer()
     # Lemmatisation
