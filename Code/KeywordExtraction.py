@@ -8,6 +8,7 @@ from scipy.sparse import coo_matrix
 from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.feature_extraction.text import TfidfTransformer
 from nltk.corpus import stopwords
+import collections
 
 nltk.download('stopwords')
 from nltk.stem.porter import PorterStemmer
@@ -104,6 +105,8 @@ def keywordlist(keywords):
     sheet = wb['Sheet1']
     libInfo = {}
     listdict = []
+    
+
     for row in range(2, sheet.max_row + 1):
         libInfo[sheet.cell(row, 1).value] = sheet.cell(row, 2).value
     for k in keyword_list:
