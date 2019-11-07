@@ -38,6 +38,9 @@ def keywordExtraction(msg):
 
     # Convert to list from string
     text = text.split()
+    
+    # Replace punctuations with spaces
+    text = re.sub('[^a-zA-Z]', ' ', str(text))
 
     # Stemming
     ps = PorterStemmer()
