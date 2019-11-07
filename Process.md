@@ -4,24 +4,29 @@
 
 **Division of Tasks using kanban board:**
 ![](https://github.ncsu.edu/csc510-fall2019/CSC510-23/blob/master/resources/images/kanban1.jpg)
+
+**Meeting Notes (Thu Oct 24th 2019)** 
+  - Discussed about the tasks/stories to be finished in Iteration 1.
+  - Divided tasks/stories of Iteration 1 amongst the team members equally.
+  
+**Meeting Notes (Thu Oct 28th 2019)** 
+  - Had a discussion about the progress of tasks/stories.
+  - Discussed about the difficulties in developing the tasks and helped each other in resolving the issues.
+
 #### Use Case 1: Selecting best model for the dataset
 **Task 1:** Program to accept the csv file and check whether target column is present (2)
 - **Assigned:** @skundal
 - **Status:** Completed
-- **Start Date:** 23rd October 2019
-- **End Date:** 24th October 2019
 - **Blockers:** None
-- **Comment:** 
-      - Used Python Pandas module to read the CSV file and check the columns.
+- **Comment**:
+    * Used Python Pandas module to read the CSV file and check the columns.
 
 **Task 2:** Train the dataset using different ML Algorithms and choose the best model (8)
 - **Assigned:** @skundal
 - **Status:** Completed
-- **Start Date:** 25th October 2019
-- **End Date:** 27th October 2019
 - **Blockers:** XGBoost Classifier Installation - Incompatible with PyCharm
 - **Comment:**
- 	- Preprocess the dataset and split the dataset into training and testing dataset.
+     - Preprocess the dataset and split the dataset into training and testing dataset.
      - Used SciKit library to train the models.
      - XGBoost Classifier - The support to XGBoost Classifier is not present in PyCharm. Tested the code using terminal window (command prompt)
 
@@ -50,14 +55,14 @@
 - **Status:** Completed
 - **Blockers:** None 
 - **Comment**:
-        - Added some popular libraries in Python related to Machine Learning such as Numpy, Keras, PyTorch and their relevant links.
+    - Added some popular libraries in Python related to Machine Learning such as Numpy, Keras, PyTorch and their relevant links.
     
 **Task 2:** Develop the working service of the retrieval of information about Libraries and Functions.(5)
 - **Assigned:** Manikanta (@vnukala2)
 - **Status:** Completed
 - **Blockers:** None 
 - **Comments**:
-       - Developed the working service of the retrieval using keyword extraction and sending the database information to the bot.
+    - Developed the working service of the retrieval using keyword extraction and sending the database information to the bot.
 
 #### Integration 
 **Task 1:** Intelligently select which use case to execute depending upon user's message.(4)
@@ -72,7 +77,9 @@
 - **Blockers:** None 
 - **Comments:** 
 
-
+#### Practices
+     - We followed pair programming while developing the tasks. For example, Task 2 in Usecase 3 is implemented by @vnukala2 while @nradhak2 guides the steps.
+     - We followed Continuous Integration and Continuous Developement while developing the tasks. For example, Everytime a task is completed we did an end to end testing for that task and resolved any integration issues occurred.
 
 ### Iteration 2 (Sat Nov 2--Fri Nov 8th):
 **Use Case 1: Selecting best model for the dataset**
