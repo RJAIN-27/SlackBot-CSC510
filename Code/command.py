@@ -40,7 +40,8 @@ class Command(object):
             return "Thankyou for the feedback"
         elif flag==2:
             model_Selection=modelSelection.modelSelInteraction(path, command)
-            print model_Selection
+            print "jkkjkjkjkjkjkjk"
+            print type(model_Selection)
             #model_Selection=mocking_infrastructure.mockbestModel(path,command)
             return model_Selection
         elif flag==1:
@@ -84,3 +85,5 @@ class Command(object):
             return ans
         elif "no" in command:
             return "Please continue with either of the functionalities like knowing more about libraries, data analysis or suggestion"
+             
+        
