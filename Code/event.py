@@ -72,9 +72,10 @@ class Event:
                     self.bot.slack_client.api_call("chat.postMessage", channel=channel, text="Were you satisfied with the recommendation?", as_user=True)
 
         elif type(response) is list and len(response)!=0:
-            self.bot.slack_client.api_call("chat.postMessage", channel=channel, text="The details of the libraries you asked are:\n", as_user=True)
+            
             
             if (type(response[0]) is dict):
+                self.bot.slack_client.api_call("chat.postMessage", channel=channel, text="The details of the libraries you asked are:\n", as_user=True)
                 if flag==0:
                     for i in response:
                         for j in i:
@@ -89,6 +90,7 @@ class Event:
                     self.bot.slack_client.api_call("chat.postMessage", channel=channel, text="Were you satisfied with the above provided information", as_user=True) 
                 #self.bot.slack_client.api_call("chat.postMessage", channel=channel, text="Were you satisfied with the details?", as_user=True)
             if (type(response[0]) is str):
+                self.bot.slack_client.api_call("chat.postMessage", channel=channel, text="The best models that you can use are:\n", as_user=True)
                 for i in response:
                     self.bot.slack_client.api_call("chat.postMessage", channel=channel, text=i, as_user=True)
                 f1=open("modelSelectionProcess.txt", "r")
