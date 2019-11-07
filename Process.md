@@ -24,6 +24,12 @@
   - Had a discussion about the progress of tasks/stories.
   - Discussed about the difficulties in developing the tasks and helped each other in resolving the issues.
 
+**Attendees:**
+- Sandeep Kundala 
+- Nita Radhakrishnan 
+- Rajshree Jain 
+- Manikanta NVSR 
+
 #### Use Case 1: Selecting best model for the dataset
 **Task 1:** Program to accept the csv file and check whether target column is present (2)
 - **Assigned:** @skundal
