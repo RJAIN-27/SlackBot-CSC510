@@ -9,7 +9,8 @@
 - **Assigned:** @skundal
 - **Status:** Completed
 - **Blockers:** None
-- **Comment:** Used Python Pandas module to read the CSV file and check the columns.
+- **Comment:** 
+      - Used Python Pandas module to read the CSV file and check the columns.
 
 **Task 2:** Train the dataset using different ML Algorithms and choose the best model (8)
 - **Assigned:** @skundal
@@ -26,8 +27,8 @@
 - **Status:** Completed 
 - **Blockers**: None 
 - **Comment**: 
-     -Read the user’s .csv file using pandas library 
-     -Generated dynamic text files based on date and time, to write results of exploratory analysis into, and returned the file to user 
+     - Read the user’s .csv file using pandas library 
+     - Generated dynamic text files based on date and time, to write results of exploratory analysis into, and returned the file to user 
 
 **Task 2:** Perform descriptive exploratory data analysis on the user's dataset and write the contents of the result obtained from the analysis into a file  (8)
 - **Assigned:** Nita Radhakrishnan (@nradhak2)
@@ -40,30 +41,32 @@
     - Tested Normality of data using 3 different tests  
 
 #### Use Case 3: To provide user with description of user-requested Library/API and corresponding functions 
-**Task 1:**Develop the database CSV File which includes ML Libraries and Functions in Python
+**Task 1:** Develop the database CSV File which includes ML Libraries and Functions in Python
 - **Assigned:** Manikanta (@vnukala2)
--**Status**: Completed
--**Blockers**: None 
--**Comment**:
+- **Status:** Completed
+- **Blockers:** None 
+- **Comment**:
+        - Added some popular libraries in Python related to Machine Learning such as Numpy, Keras, PyTorch and their relevant links.
     
-**Task 2:**Develop the working service of the retrieval of information about Libraries and Functions.(5)
--**Assigned:** Manikanta (@vnukala2)
--**Status**: Completed
--**Blockers**: None 
--**Comments**: 
+**Task 2:** Develop the working service of the retrieval of information about Libraries and Functions.(5)
+- **Assigned:** Manikanta (@vnukala2)
+- **Status:** Completed
+- **Blockers:** None 
+- **Comments**:
+       - Developed the working service of the retrieval using keyword extraction and sending the database information to the bot.
 
 #### Integration 
 **Task 1:** Intelligently select which use case to execute depending upon user's message.(4)
--**Assigned:** Rajshree (rjain27)
--**Status**: Completed
--**Blockers**: None 
--**Comments**: 
+- **Assigned:** Rajshree (rjain27)
+- **Status:** Completed
+- **Blockers:** None 
+- **Comments:** 
 
 **Task 2:** Determine all the use cases and check how the bot should handle the requests and responses in all the cases.(6)
--**Assigned:** Rajshree (rjan27)
--**Status**: Completed
--**Blockers**: None 
--**Comments**: 
+- **Assigned:** Rajshree (rjan27)
+- **Status:** Completed
+- **Blockers:** None 
+- **Comments:** 
 
 
 
