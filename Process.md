@@ -94,9 +94,9 @@
 - **Blockers:** None 
 - **Comments:** 
 
-#### Practices
-     - We followed pair programming while developing the tasks. For example, Task 2 in Usecase 3 is implemented by @vnukala2 while @nradhak2 guides the steps.
-     - We followed Continuous Integration and Continuous Developement while developing the tasks. For example, Everytime a task is completed we did an end to end testing for that task and resolved any integration issues occurred.
+**Practices**:  
+  - We followed pair programming while developing the tasks. For example, Task 2 in Usecase 3 is implemented by @vnukala2 while @nradhak2 guides the steps.
+  - We followed Continuous Integration and Continuous Developement while developing the tasks. For example, Everytime a task is completed we did an end to end testing for that task and resolved any integration issues occurred.
 
 ### Iteration 2 (Sat Nov 2--Fri Nov 8th):
 **Use Case 1: Selecting best model for the dataset**
