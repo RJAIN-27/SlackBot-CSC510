@@ -4,6 +4,7 @@ import modelSelection
 import commonFunctions as cf
 import pandas as pd
 import analysis
+import KeywordExtraction as ke
 
 
 with open("data.json") as json_file:
@@ -125,6 +126,12 @@ class TestStringMethods(unittest.TestCase):
     def test_fileCreation(self):
         self.assertIsNotNone(open("Analysis.txt","r"))
 
+    # usecase 3 - happy flow
+    def test_KELib1(self):
+        self.assertIsNotNone(ke.keywordExtraction("I wanna know about numpy, scipy, keras and someLib","Sheet1"))
+
+    def test_KEFun1(self):
+        self.assertIsNotNone(ke.keywordExtraction("I wanna know about sin, cos, and tan","Sheet3"))
 
 if __name__ == '__main__':
     unittest.main()
