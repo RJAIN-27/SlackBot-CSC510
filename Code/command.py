@@ -23,10 +23,11 @@ flag=0
 
 
 class Command(object):
-   
+    
     def handlecommand(self, user, command):
+        global flag
         if "know" in command.lower():
-            list=KeywordExtraction.keywordExtraction(command,"Sheet1")
+            list=KeywordExtraction.keywordExtraction(command, "Sheet1")
             #list=mocking_infrastructure.mock_keyword_extraction(command)
             print (list) 
             return list
@@ -40,10 +41,12 @@ class Command(object):
             return "Thankyou for the feedback"
         elif flag==2:
             model_Selection=modelSelection.modelSelInteraction(path, command)
+            flag=0
             #model_Selection=mocking_infrastructure.mockbestModel(path,command)
             return model_Selection
         elif flag==1:
             analysis_file=analysis.analysisInteraction(path, command)
+            flag=0
             #analysis_file=mocking_infrastructure.mock_analysis_interaction(path,command)
             return analysis_file
         elif flag==0:
@@ -69,7 +72,7 @@ class Command(object):
         ans=[]
         command=command.lower()
         if "know" in command:
-            listi=KeywordExtraction.keywordExtraction(command,"Sheet3")
+            listi=KeywordExtraction.keywordExtraction(command, "Sheet3")
             d=collections.defaultdict(list)
             wb = xl.load_workbook(jsonData["xlsx_file"])
             sheet1= wb['Sheet2']
@@ -86,4 +89,5 @@ class Command(object):
         elif "no" in command:
             return "Please continue with either of the functionalities like knowing more about libraries, data analysis or suggestion"
              
-        
+        else:
+            return "Sorry I did not get you"
