@@ -5,11 +5,22 @@
 **Division of Tasks using kanban board:**
 ![](https://github.ncsu.edu/csc510-fall2019/CSC510-23/blob/master/resources/images/kanban1.jpg)
 
-**Meeting Notes (Thu Oct 24th 2019)** 
-  - Discussed about the tasks/stories to be finished in Iteration 1.
-  - Divided tasks/stories of Iteration 1 amongst the team members equally.
+### Meeting Notes (Thu Oct 24th 2019)** 
+
+**Key Decisions:**
+  - Decided on final use case flow for each of the three use cases.
+  - Divided the development of the use cases into two iterations and assigned tasks/stories(in the above kanban board) for the development of the use cases under the first iteration.
+  - Assigned the stories to each of the 4 team members and set deadlines to complete the story development.
+
+**Attendees:**
+- Sandeep Kundala 
+- Nita Radhakrishnan 
+- Rajshree Jain 
+- Manikanta NVSR 
+
   
-**Meeting Notes (Thu Oct 28th 2019)** 
+### Meeting Notes (Thu Oct 28th 2019)** 
+**Key Decisions:**
   - Had a discussion about the progress of tasks/stories.
   - Discussed about the difficulties in developing the tasks and helped each other in resolving the issues.
 
