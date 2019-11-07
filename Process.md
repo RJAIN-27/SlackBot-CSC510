@@ -2,38 +2,38 @@
 
 ### Iteration 1 (Wed Oct 23-- Fri Nov 1):
 
-**Division of Tasks:**
+**Division of Tasks using kanban board:**
 ![](https://github.ncsu.edu/csc510-fall2019/CSC510-23/blob/master/resources/images/kanban1.jpg)
 #### Use Case 1: Selecting best model for the dataset
-**Task 1: **Program to accept the csv file and check whether target column is present (2)
-- **Assigned: **@skundal
+**Task 1:** Program to accept the csv file and check whether target column is present (2)
+- **Assigned:** @skundal
 - **Status:** Completed
-- **Blockers: **None
-- ** Comment:** Used Python Pandas module to read the CSV file and check the columns.
+- **Blockers:** None
+- **Comment:** Used Python Pandas module to read the CSV file and check the columns.
 
 **Task 2:** Train the dataset using different ML Algorithms and choose the best model (8)
 - **Assigned:** @skundal
-- **Status: **Completed
-- **Blockers: **XGBoost Classifier Installation - Incompatible with PyCharm
-- **Comment: **
+- **Status:** Completed
+- **Blockers:** XGBoost Classifier Installation - Incompatible with PyCharm
+- **Comment:**
  	- Preprocess the dataset and split the dataset into training and testing dataset.
      - Used SciKit library to train the models.
      - XGBoost Classifier - The support to XGBoost Classifier is not present in PyCharm. Tested the code using terminal window (command prompt)
 
 #### Use Case 2: Performing Exploratory Data Analysis on user data set 
 **Task 1:** Read the user’s .csv file and generate .txt file to write results of EDA into it (2)
--**Assigned:** Nita Radhakrishnan (@nradhak2)
--**Status:**Completed 
--**Blockers**: None 
--**Comment**: 
+- **Assigned:** Nita Radhakrishnan (@nradhak2)
+- **Status:** Completed 
+- **Blockers**: None 
+- **Comment**: 
      -Read the user’s .csv file using pandas library 
      -Generated dynamic text files based on date and time, to write results of exploratory analysis into, and returned the file to user 
 
-**Task 2:**Perform descriptive exploratory data analysis on the user's dataset and write the contents of the result obtained from the analysis into a file  (8)
--**Assigned:** Nita Radhakrishnan (@nradhak2)
--**Status**: Completed
--**Blockers**: None 
--**Comment**:
+**Task 2:** Perform descriptive exploratory data analysis on the user's dataset and write the contents of the result obtained from the analysis into a file  (8)
+- **Assigned:** Nita Radhakrishnan (@nradhak2)
+- **Status**: Completed
+- **Blockers**: None 
+- **Comment**:
     - Described the data set on basis of target variable and provided summary statistics
     - Calculated descriptive statistics for data set 
     - Calculated correlation values between variables in dataset using 3 different methods
