@@ -26,7 +26,7 @@ class Command(object):
    
     def handlecommand(self, user, command):
         if "know" in command.lower():
-            list=KeywordExtraction.keywordExtraction(command)
+            list=KeywordExtraction.keywordExtraction(command,"Sheet1")
             #list=mocking_infrastructure.mock_keyword_extraction(command)
             print (list) 
             return list
@@ -69,7 +69,7 @@ class Command(object):
         ans=[]
         command=command.lower()
         if "know" in command:
-            listi=keywordex.keywordExtraction(command)
+            listi=KeywordExtraction.keywordExtraction(command,"Sheet3")
             d=collections.defaultdict(list)
             wb = xl.load_workbook(jsonData["xlsx_file"])
             sheet1= wb['Sheet2']

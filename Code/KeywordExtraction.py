@@ -16,32 +16,24 @@ from nltk.tokenize import RegexpTokenizer
 
 nltk.download('wordnet')
 from nltk.stem.wordnet import WordNetLemmatizer
-
 with open("data.json") as json_file:
     jsonData = json.load(json_file)
 
-
 # Function for extracting keywords from user's message
-def keywordExtraction(msg):
+def keywordExtraction(msg,sheet):
     text = msg
-
     ##Creating a list of stop words and adding custom stopwords
     stop_words = set(stopwords.words("english"))
     ##Creating a list of custom stopwords
     new_words = jsonData["newStopWords"]
     stop_words = stop_words.union(new_words)
-
     corpus = []
-
     # Convert to lowercase
     text = text.lower()
-
     # Convert to list from string
     text = text.split()
-    
     # Replace punctuations with spaces
     text = re.sub('[^a-zA-Z]', ' ', str(text))
-
     # Stemming
     ps = PorterStemmer()
     # Lemmatisation
@@ -69,14 +61,12 @@ def keywordExtraction(msg):
     # extract only the top n; n here is 10
     keywords = extract_topn_from_vector(feature_names, sorted_items, 5)
     # print(keyword_list)
-    return (keywordlist(keywords))
-
+    return (keywordlist(keywords,sheet))
 
 # Function for sorting tf_idf in descending order
 def sort_coo(coo_matrix):
     tuples = zip(coo_matrix.col, coo_matrix.data)
     return sorted(tuples, key=lambda x: (x[1], x[0]), reverse=True)
-
 
 # Function to extract top 10 keywords based on the TF-IDF Scores
 def extract_topn_from_vector(feature_names, sorted_items, topn=10):
@@ -99,16 +89,14 @@ def extract_topn_from_vector(feature_names, sorted_items, topn=10):
         results[feature_vals[idx]] = score_vals[idx]
     return results
 
-
-def keywordlist(keywords):
+def keywordlist(keywords,sheet):
     keyword_list = []
     for k in keywords:
         keyword_list.append(str(k))
     wb = xl.load_workbook(jsonData["xlsx_file"])
-    sheet = wb['Sheet1']
+    sheet = wb[sheet]
     libInfo = {}
     listdict = []
-    
 
     for row in range(2, sheet.max_row + 1):
         libInfo[sheet.cell(row, 1).value] = sheet.cell(row, 2).value
