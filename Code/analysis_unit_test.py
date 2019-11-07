@@ -1,9 +1,6 @@
-import operator
 import unittest
 import json
 import analysis
-import commonFunctions as cf
-import pandas as pd
 
 with open("data.json") as json_file:
     data = json.load(json_file)
@@ -50,7 +47,7 @@ def contentCheck_numerical():
     
     
 
-class TestStringMethods(unittest.TestCase):
+class TestyAnalysisMethods(unittest.TestCase):
     # Use case 2 happy flow 
     def test_analysis_categorical(self):
             analysis.analysisInteraction("Datasets/Crime1.csv","Category")

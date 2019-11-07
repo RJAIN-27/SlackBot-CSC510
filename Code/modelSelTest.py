@@ -30,7 +30,7 @@ def best_models():
     return ls
 
 
-class TestStringMethods(unittest.TestCase):
+class TestModSelMethods(unittest.TestCase):
     # usecase 1 - happy flow
     def test_modelsel(self):
         ls = best_models()
