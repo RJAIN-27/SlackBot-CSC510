@@ -32,7 +32,6 @@ def modelSelInteraction(path,target):
     f.writelines(
         "\nThe following is the process the bot performed to arrived at the best model for the provided dataset.")
     f.writelines("\n***************************MODEL SELECTION PROCESS**********************")
-    f.writelines("\nThe file name is: "+str(path.split("/")[-1]))
     f.writelines("\nStep 1: Check if the target is present in the column names of the dataset")
     f.writelines("\nStep 2: Check if the columns are numerical or categorical. If categorical, factorize.")
     if cat_flag == 0:
