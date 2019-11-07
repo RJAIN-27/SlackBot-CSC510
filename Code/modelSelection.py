@@ -27,7 +27,7 @@ def modelSelInteraction(path,target):
     data = pd.read_csv(path, sep=',', header=0)
     data2, column_names, cat_flag = cf.preprocessS1(data,target)
     if column_names==[]:
-        return data2
+        return str(data2)
     f = open("modelSelectionProcess.txt", "w")
     f.writelines(
         "\nThe following is the process the bot performed to arrived at the best model for the provided dataset.")
