@@ -25,18 +25,18 @@ flag=0
 class Command(object):
    
     def handlecommand(self, user, command):
-        if "know" in command:
+        if "know" in command.lower():
             list=KeywordExtraction.keywordExtraction(command)
             #list=mocking_infrastructure.mock_keyword_extraction(command)
             print (list) 
             return list
         elif any(word in command for word in jsonData["model_sel_words"]):
             return "Please give the csv file that you want to analyze or want a suggestion about"
-        elif "Pssst" in command:
+        elif "Pssst" in command.lower():
             return "error"    
-        elif "no" in command:
+        elif "no" in command.lower():
             return "Sorry about that :("
-        elif "yes" in command:
+        elif "yes" in command.lower():
             return "Thankyou for the feedback"
         elif flag==2:
             model_Selection=modelSelection.modelSelInteraction(path, command)
@@ -53,6 +53,7 @@ class Command(object):
         
     def handlecommands(self, user, command):
         global flag
+        command=command.lower()
         if any(word in command for word in jsonData["model_sel_words"]):
             flag=2
             response="Please provide the target column"
@@ -68,6 +69,7 @@ class Command(object):
 
     def handlecommande(self, user, command, listx):
         ans=[]
+        command=command.lower()
         if "know" in command:
             listi=keywordex.keywordExtraction(command)
             d=collections.defaultdict(list)
