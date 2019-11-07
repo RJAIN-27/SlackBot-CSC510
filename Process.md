@@ -6,12 +6,16 @@
 **Task 1:** Program to accept the csv file and check whether target column is present (2)
 - **Assigned:** @skundal
 - **Status:** Completed
+- **Start Date:** 24th October 2019
+- **End Date:** 24th October 2019
 - **Blockers:** None
 - **Comment:** Used Python Pandas module to read the CSV file and check the columns.
 
 **Task 2:** Train the dataset using different ML Algorithms and choose the best model (8)
 - **Assigned:** @skundal
 - **Status:** Completed
+- **Start Date:** 24th October 2019
+- **End Date:** 1st November 2019
 - **Blockers:** XGBoost Classifier Installation - Incompatible with PyCharm
 - **Comment:**
  	- Preprocess the dataset and split the dataset into training and testing dataset.
@@ -26,18 +30,24 @@
 **Task 1:** Log the tasks performed by the bot in the backend and give it to the user for reference (1)
 - **Assigned:** @skundal
 - **Status:** Completed
+- **Start Date:** 2nd November 2019
+- **End Date:** 3rd November 2019
 - **Blockers:** None
 - **Comment:** File handling operation - all the logs are saved in file *modelSelectionProcess.txt*
 
 **Task 2:** Factorize and update the dataset if Categorical column is present (3)
 - **Assigned:** @skundal
 - **Status:** Completed
+- **Start Date:** 2nd November 2019
+- **End Date:** 3rd November 2019
 - **Blockers:** None
 - **Comment:** Got dataframe column type and checked whether it is float and int.
 
 **Task 3:** Get n-gram of categorical variable and try different models for improving accuracy (6)
 - **Assigned:** @skundal
 - **Status:** Completed
+- **Start Date:** 2nd November 2019
+- **End Date:** 6th November 2019
 - **Blockers:** None
 - **Comment:** Used TfidfVectorizer to get ngrams and trained with different models.
 
