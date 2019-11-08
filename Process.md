@@ -103,7 +103,8 @@
   - We followed Continuous Integration and Continuous Developement while developing the tasks. For example, Everytime a task is completed we did an end to end testing for that task and resolved any integration issues occurred.
 
 ### Iteration 2 (Sat Nov 2--Fri Nov 8th):
-**Use Case 1: Selecting best model for the dataset**
+
+#### Use Case 1: Selecting best model for the dataset
 
 **Task 1:** Log the tasks performed by the bot in the backend and give it to the user for reference (1)
 - **Assigned:** Sandeep Kundala (@skundal)
@@ -129,7 +130,7 @@
 - **Blockers:** None
 - **Comment:** Used TfidfVectorizer to get ngrams and trained with different models.
 
-**Use Case 2: Performing Exploratory Data Analysis on user data set** 
+#### Use Case 2: Performing Exploratory Data Analysis on user data set 
 
 **Task 1:** Perform Exploratory data analysis for categorical columns and incorporate the results into the file and give it to the user for reference (7)
 - **Assigned:** Nita Radhakrishnan (@nradhak2)
@@ -147,7 +148,7 @@
     - Performed unit testing using one sample numerical data set and one sample categorical data set for Happy Flow and for Alternate Flow 
     - Updated use case to write results into a file with constant name to ease integration rather have dynamic file generation 
 
-**Use Case 3: To provide user with description of user-requested Library/API and corresponding functions**
+#### Use Case 3: To provide user with description of user-requested Library/API and corresponding functions
 
 **Task 1**: Improve the Usecase 3 retrieval of information about functions. (5)
 - **Assigned:** Manikanta (@vnukala2)
@@ -160,6 +161,26 @@
 - **Status**: Completed
 - **Blockers**: None 
 - **Comment**:
+
+####Integration 
+**Task 1:** Proceed with the documentation of the Milestone 2 (3)
+-**Assigned:** Rajshree (rjain27)
+-**Status**: Completed
+-**Blockers**: None 
+-**Comments**: 
+
+
+**Task 2:** Integrating the bot finally with all the backend use cases to respond without any error. (3)
+-**Assigned:** Rajshree (rjain27)
+-**Status**: Completed
+-**Blockers**: None 
+-**Comments**: 
+
+**Task 3: Understand and working on the testing of the bot in Phase 2 (4)
+-**Assigned:** Rajshree (rjain27)
+-**Status**: Completed
+-**Blockers**: None 
+-**Comments**: 
 
 
 
