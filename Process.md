@@ -209,5 +209,8 @@
 - **Blockers**: None 
 - **Comments**: 
   - Understand the full working of bot with use case 1, use case 2, and use case 3 to start building the coverage testing and unit tests.
+  
+### Testing
+![](https://github.ncsu.edu/csc510-fall2019/CSC510-23/blob/master/resources/images/Coverage_test_report.jpeg)
 
 
