@@ -104,6 +104,34 @@
 
 ### Iteration 2 (Sat Nov 2--Fri Nov 8th):
 
+**Division of Tasks using kanban board:**
+![](https://github.ncsu.edu/csc510-fall2019/CSC510-23/blob/master/resources/images/kanban2.jpg)
+
+### Meeting Notes (Thu Nov 2nd 2019)
+
+**Key Decisions:**
+  - Discussed development of use cases in second iteration and decided to perform coverage testing on completion of use cases development 
+  - Divided development of use cases in second sprint into stories 
+  - Assigned stories to each of the teammates and discussed deadlines for completion 
+
+  
+**Attendees:**
+- Sandeep Kundala 
+- Nita Radhakrishnan 
+- Rajshree Jain 
+- Manikanta NVSR 
+
+### Meeting Notes (Thu Nov 6th 2019)
+**Key Decisions:**
+  - Had a discussion about the progress of tasks/stories.
+  - Discussed about the difficulties in developing the tasks and helped each other in resolving the issues.
+
+**Attendees:**
+- Sandeep Kundala 
+- Nita Radhakrishnan 
+- Rajshree Jain 
+- Manikanta NVSR 
+
 #### Use Case 1: Selecting best model for the dataset
 
 **Task 1:** Log the tasks performed by the bot in the backend and give it to the user for reference (1)
@@ -169,7 +197,6 @@
 - **Status**: Completed
 - **Blockers**: None 
 - **Comments**: 
-
 
 **Task 2:** Integrating the bot finally with all the backend use cases to respond without any error. (3)
 - **Assigned:** Rajshree (rjain27)
