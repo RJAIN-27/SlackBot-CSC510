@@ -5,7 +5,7 @@
 **Division of Tasks using kanban board:**
 ![](https://github.ncsu.edu/csc510-fall2019/CSC510-23/blob/master/resources/images/kanban1.jpg)
 
-### Meeting Notes (Thu Oct 24th 2019)** 
+### Meeting Notes (Thu Oct 24th 2019)
 
 **Key Decisions:**
   - Decided on final use case flow for each of the three use cases.
@@ -19,7 +19,7 @@
 - Manikanta NVSR 
 
   
-### Meeting Notes (Thu Oct 28th 2019)** 
+### Meeting Notes (Thu Oct 28th 2019)
 **Key Decisions:**
   - Had a discussion about the progress of tasks/stories.
   - Discussed about the difficulties in developing the tasks and helped each other in resolving the issues.
@@ -32,14 +32,14 @@
 
 #### Use Case 1: Selecting best model for the dataset
 **Task 1:** Program to accept the csv file and check whether target column is present (2)
-- **Assigned:** @skundal
+- **Assigned:** Sandeep Kundala (@skundal)
 - **Status:** Completed
 - **Blockers:** None
 - **Comment**:
     * Used Python Pandas module to read the CSV file and check the columns.
 
 **Task 2:** Train the dataset using different ML Algorithms and choose the best model (8)
-- **Assigned:** @skundal
+- **Assigned:** Sandeep Kundala (@skundal)
 - **Status:** Completed
 - **Blockers:** XGBoost Classifier Installation - Incompatible with PyCharm
 - **Comment:**
@@ -102,7 +102,7 @@
 **Use Case 1: Selecting best model for the dataset**
 
 **Task 1:** Log the tasks performed by the bot in the backend and give it to the user for reference (1)
-- **Assigned:** @skundal
+- **Assigned:** Sandeep Kundala (@skundal)
 - **Status:** Completed
 - **Start Date:** 2nd November 2019
 - **End Date:** 3rd November 2019
@@ -110,7 +110,7 @@
 - **Comment:** File handling operation - all the logs are saved in file *modelSelectionProcess.txt*
 
 **Task 2:** Factorize and update the dataset if Categorical column is present (3)
-- **Assigned:** @skundal
+- **Assigned:** Sandeep Kundala (@skundal)
 - **Status:** Completed
 - **Start Date:** 2nd November 2019
 - **End Date:** 3rd November 2019
@@ -118,14 +118,14 @@
 - **Comment:** Got dataframe column type and checked whether it is float and int.
 
 **Task 3:** Get n-gram of categorical variable and try different models for improving accuracy (6)
-- **Assigned:** @skundal
+- **Assigned:** Sandeep Kundala (@skundal)
 - **Status:** Completed
 - **Start Date:** 2nd November 2019
 - **End Date:** 6th November 2019
 - **Blockers:** None
 - **Comment:** Used TfidfVectorizer to get ngrams and trained with different models.
 
-**Use Case 2: Performing Exploratory Data Analysis on user data set**
+**Use Case 2: Performing Exploratory Data Analysis on user data set** 
 
 **Task 1:** Perform Exploratory data analysis for categorical columns and incorporate the results into the file and give it to the user for reference (7)
 - **Assigned:** Nita Radhakrishnan (@nradhak2)
