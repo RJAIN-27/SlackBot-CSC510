@@ -170,17 +170,19 @@
 
 #### Use Case 3: To provide user with description of user-requested Library/API and corresponding functions
 
-**Task 1**: Improve the Usecase 3 retrieval of information about functions. (5)
+**Task 1**: Improve the Usecase 3 retrieval of information about functions. (4)
 - **Assigned:** Manikanta (@vnukala2)
 - **Status**: Completed
 - **Blockers**: None 
 - **Comment**:
+    - Added functionality of the retrieval of information about functions and integrated bot interaction.
 
-**Task 2:** Test all the integrated functionality works according to the Usecases and fix if any abnormalities (5)
+**Task 2:** Test all the integrated functionality works according to the Usecases and fix if any abnormalities (6)
 - **Assigned:** Manikanta (@vnukala2)
 - **Status**: Completed
 - **Blockers**: None 
 - **Comment**:
+    - Tested all the functionalities and fixed all the abnormalities occurred.
 
 #### Integration 
 
