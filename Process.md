@@ -59,8 +59,9 @@
 **Task 2:** Perform descriptive exploratory data analysis on the user's dataset and write the contents of the result obtained from the analysis into a file  (8)
 - **Assigned:** Nita Radhakrishnan (@nradhak2)
 - **Status**: Completed
-- **Blockers**: None 
+- **Blockers**: Descriptive plots which are a part of EDA cannot be written into the text file 
 - **Comment**:
+    - Performed non-graphical exploratory data analysis
     - Described the data set on basis of target variable and provided summary statistics
     - Calculated descriptive statistics for data set 
     - Calculated correlation values between variables in dataset using 3 different methods
@@ -155,8 +156,9 @@
 **Task 1:** Perform Exploratory data analysis for categorical columns and incorporate the results into the file and give it to the user for reference (7)
 - **Assigned:** Nita Radhakrishnan (@nradhak2)
 - **Status:** Completed
-- **Blockers:** None
+- **Blockers:** Descriptive plots which are a part of EDA cannot be written into the text file 
 - **Comment:** 
+    - Performed non-graphical exploratory data analysis on categorical data as well 
     - Extended EDA to performed value counts on categorical columns in dataset before factorisation as part of the EDA
     - Factorised the categorical and performed correlation count, data set description using summary statistics, descriptive  analysis and normality tests
  
