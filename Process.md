@@ -162,25 +162,26 @@
 - **Blockers**: None 
 - **Comment**:
 
-####Integration 
+#### Integration 
+
 **Task 1:** Proceed with the documentation of the Milestone 2 (3)
--**Assigned:** Rajshree (rjain27)
--**Status**: Completed
--**Blockers**: None 
--**Comments**: 
+- **Assigned:** Rajshree (rjain27)
+- **Status**: Completed
+- **Blockers**: None 
+- **Comments**: 
 
 
 **Task 2:** Integrating the bot finally with all the backend use cases to respond without any error. (3)
--**Assigned:** Rajshree (rjain27)
--**Status**: Completed
--**Blockers**: None 
--**Comments**: 
+- **Assigned:** Rajshree (rjain27)
+- **Status**: Completed
+- **Blockers**: None 
+- **Comments**: 
 
 **Task 3: Understand and working on the testing of the bot in Phase 2 (4)
--**Assigned:** Rajshree (rjain27)
--**Status**: Completed
--**Blockers**: None 
--**Comments**: 
+- **Assigned:** Rajshree (rjain27)
+- **Status**: Completed
+- **Blockers**: None 
+- **Comments**: 
 
 
 
