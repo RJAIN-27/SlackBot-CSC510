@@ -177,7 +177,7 @@
 - **Blockers**: None 
 - **Comments**: 
 
-**Task 3: Understand and working on the testing of the bot in Phase 2 (4)
+**Task 3:** Understand and working on the testing of the bot in Phase 2 (4)
 - **Assigned:** Rajshree (rjain27)
 - **Status**: Completed
 - **Blockers**: None 
