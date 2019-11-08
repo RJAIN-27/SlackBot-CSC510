@@ -9,3 +9,5 @@
 Design Draft ([Design.md](https://github.ncsu.edu/csc510-fall2019/CSC510-23/blob/master/Design.md))
 
 Milestone -1 ReadMe ([Bot.md](https://github.ncsu.edu/csc510-fall2019/CSC510-23/blob/master/Bot.md))
+
+Milestone -2 Process ([Process.md](https://github.ncsu.edu/csc510-fall2019/CSC510-23/blob/master/Process.md))
