@@ -87,12 +87,14 @@
 - **Status:** Completed
 - **Blockers:** None 
 - **Comments:** 
+   - Implement the working of bot in such a way that it intelligently selects the use cases to be selected for all types of inputs by the user. 
 
 **Task 2:** Determine all the use cases and check how the bot should handle the requests and responses in all the cases.(6)
 - **Assigned:** Rajshree (rjan27)
 - **Status:** Completed
 - **Blockers:** None 
 - **Comments:** 
+   - Analyze all the use cases and work with other team members so as to understand what type of functionality will the bot actually require.
 
 **Practices**:  
   - We followed pair programming while developing the tasks. For example, Task 2 in Usecase 3 is implemented by @vnukala2 while @nradhak2 guides the steps.
@@ -187,18 +189,21 @@
 - **Status**: Completed
 - **Blockers**: None 
 - **Comments**: 
+  - Understand the deliverables of Phase 2 and work on the documentation simultaneously.
 
 **Task 2:** Integrating the bot finally with all the backend use cases to respond without any error. (3)
 - **Assigned:** Rajshree (rjain27)
 - **Status**: Completed
 - **Blockers**: None 
 - **Comments**: 
-
+  - Handled the bot integration with the final working of use case 1, use case 2, and use case 3.
+  - Looked into how the bot should handle the requests and responses in case of both the actual flows and the alternate flows
+  
 **Task 3:** Understand and working on the testing of the bot in Phase 2 (4)
 - **Assigned:** Rajshree (rjain27)
 - **Status**: Completed
 - **Blockers**: None 
 - **Comments**: 
-
+  - Understand the full working of bot with use case 1, use case 2, and use case 3 to start building the coverage testing and unit tests.
 
 
