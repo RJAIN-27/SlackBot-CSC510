@@ -125,5 +125,17 @@
 - **Blockers:** None
 - **Comment:** Used TfidfVectorizer to get ngrams and trained with different models.
 
+**Use Case 2: Performing Exploratory Data Analysis on user data set 
+
+**Task 1:** Perform Exploratory data analysis for categorical columns and incorporate the results into the file and give it to the user for reference (7)
+- **Assigned:** Nita Radhakrishnan (@nradhak2)
+- **Status:** Completed
+- **Blockers: **None
+- **Comment:** 
+    - Extended EDA to performed value counts on categorical columns in dataset before factorisation as part of the EDA
+    - Factorised the categorical and performed correlation count, data set description using summary statistics, descriptive  analysis and normality tests
+ 
+
+
 
 
