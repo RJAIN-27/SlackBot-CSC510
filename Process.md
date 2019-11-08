@@ -1,6 +1,6 @@
 # PROCESS 
 
-### Iteration 1 (Wed Oct 23-- Fri Nov 1):
+## Iteration 1 (Wed Oct 23-- Fri Nov 1):
 
 **Division of Tasks using kanban board:**
 ![](https://github.ncsu.edu/csc510-fall2019/CSC510-23/blob/master/resources/images/kanban1.jpg)
@@ -29,6 +29,8 @@
 - Nita Radhakrishnan 
 - Rajshree Jain 
 - Manikanta NVSR 
+
+### Story Creation and Assignment 
 
 #### Use Case 1: Selecting best model for the dataset
 **Task 1:** Program to accept the csv file and check whether target column is present (2)
@@ -101,7 +103,7 @@
   - We followed pair programming while developing the tasks. For example, Task 2 in Usecase 3 is implemented by @vnukala2 while @nradhak2 guides the steps.
   - We followed Agile practices while developing the tasks. For example, Everytime a task is completed we did an end to end testing for that task and resolved any integration issues occurred.
 
-### Iteration 2 (Sat Nov 2--Fri Nov 8th):
+## Iteration 2 (Sat Nov 2--Fri Nov 8th):
 
 **Division of Tasks using kanban board:**
 ![](https://github.ncsu.edu/csc510-fall2019/CSC510-23/blob/master/resources/images/kanban2.jpg)
@@ -130,6 +132,8 @@
 - Nita Radhakrishnan 
 - Rajshree Jain 
 - Manikanta NVSR 
+
+### Story Creation and Assignment 
 
 #### Use Case 1: Selecting best model for the dataset
 
