@@ -147,7 +147,8 @@
     - Performed unit testing using one sample numerical data set and one sample categorical data set for Happy Flow and for Alternate Flow 
     - Updated use case to write results into a file with constant name to ease integration rather have dynamic file generation 
 
-####Use Case 3: To provide user with description of user-requested Library/API and corresponding functions 
+**Use Case 3: To provide user with description of user-requested Library/API and corresponding functions**
+
 **Task 1**: Improve the Usecase 3 retrieval of information about functions. (5)
 - **Assigned:** Manikanta (@vnukala2)
 - **Status**: Completed
