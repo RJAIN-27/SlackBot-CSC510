@@ -139,7 +139,13 @@
     - Extended EDA to performed value counts on categorical columns in dataset before factorisation as part of the EDA
     - Factorised the categorical and performed correlation count, data set description using summary statistics, descriptive  analysis and normality tests
  
-
+**Task 2:** Perform Unit Testing on Use case 2 (3)
+-**Assigned:** Nita Radhakrishnan (@nradhak2)
+-**Status:** Completed 	
+-**Blockers:** None
+-**Comment:** 
+    - Performed unit testing using one sample numerical data set and one sample categorical data set for Happy Flow and for Alternate Flow 
+    - Updated use case to write results into a file with constant name to ease integration rather have dynamic file generation 
 
 
 
