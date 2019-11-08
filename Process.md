@@ -19,7 +19,7 @@
 - Manikanta NVSR 
 
   
-### Meeting Notes (Thu Oct 28th 2019)
+### Meeting Notes (Mon Oct 28th 2019)
 **Key Decisions:**
   - Had a discussion about the progress of tasks/stories.
   - Discussed about the difficulties in developing the tasks and helped each other in resolving the issues.
@@ -106,7 +106,7 @@
 **Division of Tasks using kanban board:**
 ![](https://github.ncsu.edu/csc510-fall2019/CSC510-23/blob/master/resources/images/kanban2.jpg)
 
-### Meeting Notes (Thu Nov 2nd 2019)
+### Meeting Notes (Sat Nov 2nd 2019)
 
 **Key Decisions:**
   - Discussed development of use cases in second iteration and decided to perform coverage testing on completion of use cases development 
@@ -120,7 +120,7 @@
 - Rajshree Jain 
 - Manikanta NVSR 
 
-### Meeting Notes (Thu Nov 6th 2019)
+### Meeting Notes (Wed Nov 6th 2019)
 **Key Decisions:**
   - Had a discussion about the progress of tasks/stories.
   - Discussed about the difficulties in developing the tasks and helped each other in resolving the issues.
