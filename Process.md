@@ -34,6 +34,8 @@
 **Task 1:** Program to accept the csv file and check whether target column is present (2)
 - **Assigned:** Sandeep Kundala (@skundal)
 - **Status:** Completed
+- **Start Date:** 23rd October 2019
+- **End Date:** 24th October 2019
 - **Blockers:** None
 - **Comment**:
     * Used Python Pandas module to read the CSV file and check the columns.
@@ -41,6 +43,8 @@
 **Task 2:** Train the dataset using different ML Algorithms and choose the best model (8)
 - **Assigned:** Sandeep Kundala (@skundal)
 - **Status:** Completed
+- **Start Date:** 25th October 2019
+- **End Date:** 27th October 2019
 - **Blockers:** XGBoost Classifier Installation - Incompatible with PyCharm
 - **Comment:**
      - Preprocess the dataset and split the dataset into training and testing dataset.
