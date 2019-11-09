@@ -124,8 +124,8 @@
 
 ### Meeting Notes (Wed Nov 6th 2019)
 **Key Decisions:**
-  - Had a discussion about the progress of tasks/stories.
-  - Discussed about the difficulties in developing the tasks and helped each other in resolving the issues.
+  - Had a discussion about the progress of tasks/stories and if there is anything left from the iteration 1, that should be completed.
+  - Discussed how to proceed with coverage testing and if there is any issue in running the use cases or, if there is any blocker that is obstructed from further testing.
 
 **Attendees:**
 - Sandeep Kundala 
