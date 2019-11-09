@@ -86,14 +86,14 @@
 
 #### Integration 
 **Task 1:** Intelligently select which use case to execute depending upon user's message.(4)
-- **Assigned:** Rajshree (rjain27)
+- **Assigned:** Rajshree (@rjain27)
 - **Status:** Completed
 - **Blockers:** None 
 - **Comments:** 
    - Implement the working of bot in such a way that it intelligently selects the use cases to be selected for all types of inputs by the user. 
 
 **Task 2:** Determine all the use cases and check how the bot should handle the requests and responses in all the cases.(6)
-- **Assigned:** Rajshree (rjan27)
+- **Assigned:** Rajshree (@rjain27)
 - **Status:** Completed
 - **Blockers:** None 
 - **Comments:** 
@@ -192,14 +192,14 @@
 #### Integration 
 
 **Task 1:** Proceed with the documentation of the Milestone 2 (3)
-- **Assigned:** Rajshree (rjain27)
+- **Assigned:** Rajshree (@rjain27)
 - **Status**: Completed
 - **Blockers**: None 
 - **Comments**: 
   - Understand the deliverables of Phase 2 and work on the documentation simultaneously.
 
 **Task 2:** Integrating the bot finally with all the backend use cases to respond without any error. (3)
-- **Assigned:** Rajshree (rjain27)
+- **Assigned:** Rajshree (@rjain27)
 - **Status**: Completed
 - **Blockers**: None 
 - **Comments**: 
