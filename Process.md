@@ -216,11 +216,14 @@ Overall, the sprint was carried out smoothly with great co-operation from all te
 - **Comments**: 
   - Understand the full working of bot with use case 1, use case 2, and use case 3 to start building the coverage testing and unit tests.
   
- **Practices**:  
+### Practices  
   - We followed pair programming while working on usecases. For example, Task 1 in Usecase 3 is implemented by @vnukala2 while @rjain27 discussed all the steps for implementation of the use case.
   - Following the scrum methodology we could develop the project with iterative devdelopment, where short meetings ensured that important tasks are prioritized based on feedback in the scrum meetings.
   
-### Testing
+### Process Reflection 
+
+  
+## Testing
 
 **Coverage Test:**
 
