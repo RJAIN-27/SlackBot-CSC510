@@ -70,7 +70,7 @@
     - Tested Normality of data using 3 different tests  
 
 #### Use Case 3: To provide user with description of user-requested Library/API and corresponding functions 
-**Task 1:** Develop the database CSV File which includes ML Libraries and Functions in Python
+**Task 1:** Develop the database CSV File which includes ML Libraries and Functions in Python. (5)
 - **Assigned:** Manikanta (@vnukala2)
 - **Status:** Completed
 - **Blockers:** None 
