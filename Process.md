@@ -99,9 +99,12 @@
 - **Comments:** 
    - Analyze all the use cases and work with other team members so as to understand what type of functionality will the bot actually require.
 
-**Practices**:  
+### Practices  
   - We followed pair programming while developing the tasks. For example, Task 2 in Usecase 3 is implemented by @vnukala2 while @nradhak2 guides the steps.
   - We followed Agile practices while developing the tasks. For example, Everytime a task is completed we did an end to end testing for that task and resolved any integration issues occurred.
+  
+### Process Reflection 
+Overall, the sprint was carried out smoothly with great co-operation from all team-members. However, coming to a common sensus regarding the availabilty of each of the team members was a challenge since each team-member was invloved in other tasks that occupied their time.  Nevertheless, the team managed to fit regular scrum meetings in their schedule and stay updated with the activities of the team-members, for this sprint  
 
 ## Iteration 2 (Sat Nov 2--Fri Nov 8th):
 
