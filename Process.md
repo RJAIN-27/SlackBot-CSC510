@@ -102,6 +102,7 @@
 ### Practices  
   - We followed pair programming while developing the tasks. For example, Task 2 in Usecase 3 is implemented by @vnukala2 while @nradhak2 guides the steps.
   - We followed Agile practices while developing the tasks. For example, Everytime a task is completed we did an end to end testing for that task and resolved any integration issues occurred.
+  - We adhered to the Single code base Corollary practice as multiple temporary branches may result in conflicts and duplicated efforts.
   
 ### Process Reflection 
 Overall, the sprint was carried out smoothly with great co-operation from all team-members. However, coming to a common sensus regarding the availabilty of each of the team members was a challenge since each team-member was invloved in other tasks that occupied their time.  Nevertheless, the team managed to fit regular scrum meetings in their schedule and stay updated with the activities of the team-members, for this sprint  
@@ -219,6 +220,7 @@ Overall, the sprint was carried out smoothly with great co-operation from all te
 ### Practices  
   - We followed pair programming while working on usecases. For example, Task 1 in Usecase 3 is implemented by @vnukala2 while @rjain27 discussed all the steps for implementation of the use case.
   - Following the scrum methodology we could develop the project with iterative devdelopment, where short meetings ensured that important tasks are prioritized based on feedback in the scrum meetings.
+  - We adhered to the Single code base Corollary practice as multiple temporary branches may result in conflicts and duplicated efforts.
   
 ### Process Reflection 
 The activities of this sprint were carried out with relative ease compared to the previous sprint with respect to the schedule of the team-members. In regard to the codes, there was repetition in code useage among use cases with inter-dependencies. But this was reviewed and identified during peer review and was sorted by appropriate modularization.
