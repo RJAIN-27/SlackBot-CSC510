@@ -111,10 +111,9 @@
 ### Meeting Notes (Sat Nov 2nd 2019)
 
 **Key Decisions:**
-  - Discussed development of use cases in second iteration and decided to perform coverage testing on completion of use cases development 
-  - Divided development of use cases in second sprint into stories 
-  - Assigned stories to each of the teammates and discussed deadlines for completion 
-
+  - Discussed development of use cases in second iteration and decided to perform coverage testing on completion of use cases development
+  - Divided development of use cases in second sprint into stories
+  - Assigned stories to each of the teammates and discussed deadlines for completion
   
 **Attendees:**
 - Sandeep Kundala 
