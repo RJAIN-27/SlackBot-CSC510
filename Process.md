@@ -221,7 +221,7 @@ Overall, the sprint was carried out smoothly with great co-operation from all te
   - Following the scrum methodology we could develop the project with iterative devdelopment, where short meetings ensured that important tasks are prioritized based on feedback in the scrum meetings.
   
 ### Process Reflection 
-
+The activities of this sprint were carried out with relative ease compared to the previous sprint with respect to the schedule of the team-members. In regard to the codes, there was repetition in code useage among use cases with inter-dependencies. But this was reviewed and identified during peer review and was sorted by appropriate modularization.
   
 ## Testing
 
