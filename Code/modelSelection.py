@@ -24,25 +24,36 @@ def prepAndSplit1(data, target, column_names, f):
 
 
 def modelSelInteraction(path,target):
+    # read the csv file as dataframe
     data = pd.read_csv(path, sep=',', header=0)
+
+    # stage 1 preprocess - checks if the target column is present. If present preprocesses it.
     data2, column_names, cat_flag = cf.preprocessS1(data,target)
+
+    # returns the appropriate data if target is not in column
     if column_names==[]:
         return str(data2)
+
+    # creates a new file for the user
     f = open("modelSelectionProcess.txt", "w")
     f.writelines(
         "\nThe following is the process the bot performed to arrived at the best model for the provided dataset.")
     f.writelines("\n***************************MODEL SELECTION PROCESS**********************")
     f.writelines("\nStep 1: Check if the target is present in the column names of the dataset")
     f.writelines("\nStep 2: Check if the columns are numerical or categorical. If categorical, factorize.")
-    if cat_flag == 0:
-        f.writelines("\n      The dataset is of type - Numerical")
-    else:
+
+    f.writelines("\n      The dataset is of type - Numerical") if cat_flag == 0 else \
         f.writelines("\n      The dataset is of type - Categorical")
+
     f.writelines("\n      The dataset contains column names (after pre-processing stage 1): "+str(column_names))
     f.writelines(data2.head())
+
+    # Split the dataset into training and testing
     X_train, X_test, y_train, y_test = prepAndSplit1(data2,target,column_names,f)
     f.writelines("\nStep 6: Training and testing with various models")
     models = mt.modelTraining(X_train, X_test, y_train, y_test, f);
+
+    # best model
     f.writelines("\nStep 7: Finding the best model:")
     bestMod = cf.bestModel(models, f)
     if bestMod == ["No decent model to satisfy this dataset"]:
@@ -51,6 +62,8 @@ def modelSelInteraction(path,target):
         f.writelines("\n      Best Model(s):")
         for i in bestMod:
             f.writelines("\n          "+str(i))
+
+    # if categorical dataset, perform n-gram feature classification
     if cat_flag == 1:
         f.writelines("\n***Performing n-gram feature classification on each Categorical column to check if there is scope of better accuracy model***")
         col_mod_dict = ng.ngram(data,target,f)
