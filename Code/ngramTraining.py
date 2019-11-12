@@ -5,6 +5,8 @@ import commonFunctions as cf
 
 def ngram(data, target, f):
     cols = list(data.columns)
+
+    # initialize tfidvectorizer
     tfidf = TfidfVectorizer(sublinear_tf=True, min_df=5, norm='l2', encoding='latin-1', ngram_range=(1, 2),
                             stop_words='english')
     col_mod_dict = {}
@@ -12,10 +14,15 @@ def ngram(data, target, f):
 
         if not(data[col].dtypes=='float64' or data[col].dtypes=='int64') and col!=target:
             try:
+                # if not float or int type column, try obtaining features
                 features = tfidf.fit_transform(data[col]).toarray()
+
+                # Split the dataset into training and testing
                 X_train, X_test, y_train, y_test, indices_train, indices_test = train_test_split(features, data[target], data.index, test_size=0.2,
                                                                                                  random_state=0)
                 f.writelines("\n        Model accuracies when ngram based classification is performed on column " + str(col))
+
+                # train the models
                 models = mt.modelTraining(X_train, X_test, y_train, y_test,f)
                 f.writelines("\n        Best model when ngram based classification is performed on column " + str(col))
                 best = cf.bestModel(models,f)
