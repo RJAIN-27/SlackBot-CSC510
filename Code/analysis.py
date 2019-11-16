@@ -36,20 +36,21 @@ def analysis(f, data, target, columns):
     for col in columns:
         if not(data[col].dtypes=='float64' or data[col].dtypes=='int64'):
             ValueCounts(f, data, col, columns)
-       
+    
+    # Writes the type of the data set (Categorical/Numerical) in the text file    
     data,columns,cat_flag = commonFunctions.checkAndConvertIfCategorical(data, target)
     if cat_flag == 0:
         f.writelines("\n      The dataset is of type - Numerical")
     else:
         f.writelines("\n      The dataset is of type - Categorical")
         
-    # Details about the datset
+    # Details about the datset - writes summary statistics and other information about the dataset 
     dataInfo(f, data, target, columns)
     
-    #Mean, Median and Mode
+    #Mean, Median and Mode - writes the mean, median and mode for each column of the dataset
     MeanMedianMode(f, data, target, columns)
     
-    # Correlation
+    # Correlation - writes the correlation between variables 
     f.writelines("\n\nCorrelation:\n")
     f.writelines("\nPearson Correlation test:")
     correlations(data, 'pearson', columns, f)
@@ -60,7 +61,7 @@ def analysis(f, data, target, columns):
     f.writelines("\n\nKendall's rank Correlation test:")
     correlations(data, 'kendall', columns, f)
     
-    #Normality Tests
+    #Normality Tests -  checks for normality of the data set provided by the user 
     Normality(f, data, target, columns)
 
 #FUNCTION TO DISPLAY INFORMATION ABOUT DATASET 
