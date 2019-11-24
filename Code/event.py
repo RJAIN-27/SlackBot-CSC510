@@ -23,16 +23,13 @@ class Event:
             for event in events:
                 self.parseevent(event)
                  
-    def parseevent(self, event):
-         
-         if event and 'text' in event and 'files' not in event and event['user']!= BOT_ID and event['user']!="USLACKBOT":   
-        #if event and 'text' in event and 'files' not in event and event['user']!="UP6FMPQ1X" and event['user']!="USLACKBOT":   
+    def parseevent(self, event):  
+        if event and 'text' in event and 'files' not in event and event['user']!="UP6FMPQ1X" and event['user']!="USLACKBOT":   
             self.handleevent(event['user'], event['text'], event['channel'])
-         if event and 'files' in event and 'text' in event and event['user']!=BOT_ID and event['upload']==True:   
-        #if event and 'files' in event and 'text' in event and event['user']!="UP6FMPQ1X" and event['upload']==True:
+        if event and 'files' in event and 'text' in event and event['user']!="UP6FMPQ1X" and event['upload']==True:
             if(event['files'][0]['filetype'] == "csv"):
-                #response = requests.get(event['files'][0]['url_private'], headers={'Authorization': 'Bearer xoxb-795814705207-788531806065-9dWeyIRqj2t1LSbICYnDkB01'})
-                response = requests.get(event['files'][0]['url_private'], headers={'Authorization': 'Bearer TOKEN'})
+                response = requests.get(event['files'][0]['url_private'], headers={'Authorization': 'Bearer xoxb-795814705207-788531806065-9dWeyIRqj2t1LSbICYnDkB01'})
+                #response = requests.get(event['files'][0]['url_private'], headers={'Authorization': 'Bearer TOKEN'})
                 with open("my.csv",'wb') as f: 
                     f.write(response.content) 
                 f.close()    
@@ -44,7 +41,6 @@ class Event:
     def rep(self, response, user, command, channel, flag):
        
         if type(response) is str:   
-                
                 if(".txt" in response):
                     f1=open(response, "r")
                     content=f1.read()
@@ -73,17 +69,17 @@ class Event:
                     self.bot.slack_client.api_call("chat.postMessage", channel=channel, text=response, as_user=True)
                     self.bot.slack_client.api_call("chat.postMessage", channel=channel, text="Were you satisfied with the recommendation?", as_user=True)
 
-        elif type(response) is list and len(response)!=0:
-            
-            
+        elif type(response) is list and len(response)!=0:  
+
             if (type(response[0]) is dict):
-                self.bot.slack_client.api_call("chat.postMessage", channel=channel, text="The details of the libraries you asked are:\n", as_user=True)
+                self.bot.slack_client.api_call("chat.postMessage", channel=channel, text="The details of the libraries or functions you asked are:\n", as_user=True)
                 if flag==0:
                     for i in response:
                         for j in i:
                             self.bot.slack_client.api_call("chat.postMessage", channel=channel, text=i[j], as_user=True)
                             l_of_lib.append(j)
                     self.bot.slack_client.api_call("chat.postMessage", channel=channel, text="Would you like to have information about particular functions in the above library (Please enter function name)?", as_user=True)   
+               
                 if flag==1:
                     for i in response:
                         for j in i:
@@ -112,8 +108,12 @@ class Event:
 
         if command and channel:
             print ("Received command: " + command + " in channel: " + channel + " from user: " + user)
+
             if (len(l_of_lib)==0):
                 response = self.command.handlecommand(user, command)
+                if type(response) is list and response.pop()=="onlyfunction":
+                    flag=1
+
                 self.rep(response, user, command, channel, flag)
                 
                 
@@ -124,7 +124,6 @@ class Event:
                 self.rep(response, user, command, channel, flag)
 
             
-
         #    f1=open(response, "r")
         #    content=f1.read()
         #    print(content)
@@ -145,5 +144,3 @@ class Event:
             response = self.command.handlecommands(user, command)   
             self.bot.slack_client.api_call("chat.postMessage", channel=channel, text=response, as_user=True)
             
-
-
