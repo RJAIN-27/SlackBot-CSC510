@@ -26,8 +26,13 @@ class Command(object):
     
     def handlecommand(self, user, command):
         global flag
-        if "know" in command.lower():
+        if "know" in command.lower() and "from" in command.lower():
+            list=KeywordExtraction.keywordExtraction1(command, "Sheet1", "Sheet2", "Sheet3")
+            list.append("onlyfunction")
+            return list
+        elif "know" in command.lower():
             list=KeywordExtraction.keywordExtraction(command, "Sheet1")
+            list.append("onlylibrary")
             #list=mocking_infrastructure.mock_keyword_extraction(command)
             print (list) 
             return list
