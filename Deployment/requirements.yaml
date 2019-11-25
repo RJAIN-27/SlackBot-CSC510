@@ -1,0 +1,9 @@
+---
+packages:
+  - scikit-learn
+  - logging
+  - jsonlib
+  - pandas
+  - nltk
+  - openpyxl
+  - tabulate
