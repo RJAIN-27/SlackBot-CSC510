@@ -5,7 +5,6 @@ from sklearn.naive_bayes import MultinomialNB
 from sklearn.naive_bayes import BernoulliNB
 from sklearn.naive_bayes import GaussianNB
 from sklearn.ensemble import AdaBoostClassifier
-from xgboost import XGBClassifier
 from sklearn.ensemble import RandomForestClassifier
 from sklearn import metrics
 import logging
@@ -99,17 +98,6 @@ def modelTraining(X_train, X_test, y_train, y_test,f):
     except:
         logging.info("AdaBoost Classifier is throwing exception")
         f.writelines("\n            AdaBoost Classifier is throwing exception")
-
-    # XGB
-    try:
-        xgb = XGBClassifier()
-        y_pred = xgb.fit(X_train, y_train).predict(X_test)
-        model_accr = metrics.accuracy_score(y_test, y_pred) * 100
-        models["XGB Classifier"] = model_accr
-        f.writelines("\n            Accuracy of XGB Classifier is " + str(model_accr))
-    except:
-        logging.info("XGB Classifier is throwing exception")
-        f.writelines("\n            XGB Classifier is throwing exception")
 
     # Random Forest Classifier
     try:
