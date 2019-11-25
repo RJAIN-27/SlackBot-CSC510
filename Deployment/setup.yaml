@@ -1,0 +1,46 @@
+---
+- 
+  gather_facts: false
+  hosts: aws_nodes
+  vars_files:
+         - '{{file}}'
+  tasks:
+         - name: update apt
+           apt:
+                   update_cache: yes
+           become: yes
+           changed_when: 0
+           ignore_errors: true
+
+         - name: Install python
+           apt:
+                   name: python
+                   update_cache: yes
+                   state: latest
+                   install_recommends: yes
+           become: yes
+           ignore_errors: true
+
+         - name: Install pip
+           apt:
+                   name: python-pip
+                   update_cache: yes
+                   state: latest
+                   install_recommends: yes
+           become: yes
+           ignore_errors: true
+
+         - name: Install Git
+           apt:
+                   name: git
+                   state: latest
+                   update_cache: yes
+                   install_recommends: yes
+           ignore_errors: true
+           become: yes
+
+         - name: Install required packages
+           shell: 'pip install {{item}}'
+           with_items: '{{packages}}'
+           become: yes
+           ignore_errors: true
