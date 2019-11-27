@@ -3,7 +3,7 @@ import command
 import requests
 import io
 import os
-import mocking_infrastructure
+#import mocking_infrastructure
 #from mock import Mock
 import bot
 
