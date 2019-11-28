@@ -5,7 +5,7 @@ import modelSelection
 import commonFunctions as cf
 import pandas as pd
 
-with open("data.json") as json_file:
+with open("/home/ubuntu/CSC510-23/Code/data.json") as json_file:
     data = json.load(json_file)
 
 libraries = data["libraries"]
