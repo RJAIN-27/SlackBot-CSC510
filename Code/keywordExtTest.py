@@ -3,7 +3,7 @@ import unittest
 import json
 import KeywordExtraction as ke
 
-with open("/home/ubuntu/CSC510-23/Code/data.json") as json_file:
+with open("/home/CSC510-23/Code/data.json") as json_file:
     data = json.load(json_file)
 
 libraries = data["libraries"]
