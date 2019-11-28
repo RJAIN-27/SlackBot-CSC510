@@ -118,7 +118,8 @@ class Event:
 
             if (len(l_of_lib)==0):
                 response = self.command.handlecommand(user, command)
-                if type(response) is list and response.pop()=="onlyfunction":
+                if type(response) is list and response[-1]=="onlyfunction":
+                    response.pop()
                     flag=1
 
                 self.rep(response, user, command, channel, flag)
