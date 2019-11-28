@@ -76,7 +76,8 @@ class Event:
         elif type(response) is list and len(response)!=0:  
 
             if (type(response[0]) is dict):
-                response.pop()
+                if (response[-1]=="onlylibrary"):
+                    response.pop()
                 self.bot.slack_client.api_call("chat.postMessage", channel=channel, text="The details of the libraries or functions you asked are:\n", as_user=True)
                 if flag==0:
                     for i in response:
