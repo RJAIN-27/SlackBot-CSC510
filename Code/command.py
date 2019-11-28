@@ -14,7 +14,7 @@ import openpyxl as xl
 with open("/home/ubuntu/CSC510-23/Code/data.json") as json_file:
     jsonData = json.load(json_file)
 
-path = "my.csv"
+path = "/home/ubuntu/CSC510-23/Code/"
 flag=0
 
 # KeywordExtraction.keywordExtraction = Mock(side_effect=mocking_infrastructure.mock_keyword_extraction)
