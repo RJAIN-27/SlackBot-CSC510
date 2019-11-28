@@ -3,17 +3,13 @@ import command
 import requests
 import io
 import os
-#import mocking_infrastructure
-#from mock import Mock
 import bot
 import json
 
-with open("/home/ubuntu/CSC510-23/Code/data.json") as json_file:
+with open("/home/CSC510-23/Code/data.json") as json_file:
     data = json.load(json_file)
 
 TOKEN = data["SLACK_BOT_TOKEN"]
-
-#TOKEN = os.environ.get('SLACK_BOT_TOKEN')
 BOT_ID= os.environ.get('BOT_ID')
 
 l_of_lib=[]
@@ -37,7 +33,7 @@ class Event:
                 #response = requests.get(event['files'][0]['url_private'], headers={'Authorization': 'Bearer xoxb-795814705207-788531806065-9dWeyIRqj2t1LSbICYnDkB01'})
                 response = requests.get(event['files'][0]['url_private'], headers={'Authorization': 'Bearer TOKEN'})
                 print response.content
-                with open("/home/ubuntu/CSC510-23/Code/my.csv",'wb') as f: 
+                with open("my.csv",'wb') as f: 
                     f.write(response.content) 
                 f.close()    
                 self.handleevent1(event['user'], event['text'], event['channel']) 
