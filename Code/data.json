@@ -6,7 +6,7 @@
    "target":"Class",
    "wrong_target":"class",
    "parameters_to_be_counted":"5",
-   "xlsx_file": "/home/ubuntu/CSC510-23/Code/libraryFile.xlsx",
+   "xlsx_file": "/home/CSC510-23/Code/libraryFile.xlsx",
    "libraries": {
      "numpy": "NumPy is a very popular python library for large multi-dimensional array and matrix processing, with the help of a large collection of high-level mathematical functions. It is very useful for fundamental scientific computations in Machine Learning. It is particularly useful for linear algebra, Fourier transform, and random number capabilities. High-end libraries like TensorFlow uses NumPy internally for manipulation of Tensors. https://numpy.org/ https://docs.scipy.org/doc/numpy/reference/ http://cs231n.github.io/python-numpy-tutorial/",
      "scipy": "SciPy is a very popular library among Machine Learning enthusiasts as it contains different modules for optimization, linear algebra, integration and statistics. There is a difference between the SciPy library and the SciPy stack. The SciPy is one of the core packages that make up the SciPy stack. SciPy is also very useful for image manipulation. https://docs.scipy.org/doc/scipy/reference/ https://www.tutorialspoint.com/scipy/index.htm",
