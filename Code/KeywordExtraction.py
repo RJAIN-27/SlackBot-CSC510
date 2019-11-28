@@ -16,7 +16,7 @@ from nltk.tokenize import RegexpTokenizer
 
 nltk.download('wordnet')
 from nltk.stem.wordnet import WordNetLemmatizer
-with open("/home/ubuntu/CSC510-23/Code/data.json") as json_file:
+with open("/home/CSC510-23/Code/data.json") as json_file:
     jsonData = json.load(json_file)
 
 def keywordExtraction1(msg,sheet1,sheet2, sheet3):
