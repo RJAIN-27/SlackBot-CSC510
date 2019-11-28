@@ -11,7 +11,7 @@ import openpyxl as xl
 import keywordex
 
 
-with open("data.json") as json_file:
+with open("/home/ubuntu/CSC510-23/Code/data.json") as json_file:
     jsonData = json.load(json_file)
 
 path = "my.csv"
