@@ -7,7 +7,7 @@ import analysis
 import KeywordExtraction as ke
 
 
-with open("/home/ubuntu/CSC510-23/Code/data.json") as json_file:
+with open("/home/CSC510-23/Code/data.json") as json_file:
     data = json.load(json_file)
 
 libraries = data["libraries"]
@@ -70,7 +70,7 @@ class TestStringMethods(unittest.TestCase):
     # usecase 1 - happy flow
     def test_modelsel(self):
         ls = best_models()
-        bestMod = modelSelection.modelSelInteraction("Datasets/Wine.csv", target)
+        bestMod = modelSelection.modelSelInteraction("/home/CSC510-23/Code/Datasets/Wine.csv", target)
         flag = 0
         for model in ls:
             if model not in bestMod:
@@ -80,10 +80,10 @@ class TestStringMethods(unittest.TestCase):
 
     # usecase 1 - alternate flow
     def test_modelsel2(self):
-       self.assertEqual(modelSelection.modelSelInteraction("Datasets/Wine.csv", wrong_target), wrngColEx)
+       self.assertEqual(modelSelection.modelSelInteraction("/home/CSC510-23/Code/Datasets/Wine.csv", wrong_target), wrngColEx)
 
     def test_modelsel3(self):
-        self.assertIsNotNone(modelSelection.modelSelInteraction("Datasets/Crime1.csv","Category"))
+        self.assertIsNotNone(modelSelection.modelSelInteraction("/home/CSC510-23/Code/Datasets/Crime1.csv","Category"))
 
     def test_categorical(self):
         data = pd.read_csv("Datasets/Crime1.csv", sep=',', header=0)
@@ -101,27 +101,27 @@ class TestStringMethods(unittest.TestCase):
 
     # Use case 2 happy flow 
     def test_analysis_categorical(self):
-            analysis.analysisInteraction("Datasets/Crime1.csv","Category")
+            analysis.analysisInteraction("/home/CSC510-23/Code/Datasets/Crime1.csv","Category")
             count_cat = contentCheck_categorical()
             self.assertEquals(count_cat,parameter_count_categorical)
             
     def test_analysis_numerical(self):
-            analysis.analysisInteraction("Datasets/Wine.csv","Class")
+            analysis.analysisInteraction("/home/CSC510-23/Code/Datasets/Wine.csv","Class")
             count_cat = contentCheck_numerical()
             self.assertEquals(count_cat,parameter_count_numerical)
             
     # usecase 2 - alternate flow
     def test_analysis_target_cat(self):
-           self.assertEqual(analysis.analysisInteraction("Datasets/Crime1.csv", "Hululu"), wrngColEx)
+           self.assertEqual(analysis.analysisInteraction("/home/CSC510-23/Code/Datasets/Crime1.csv", "Hululu"), wrngColEx)
     
     def test_analysis_target_num(self):
-           self.assertEqual(analysis.analysisInteraction("Datasets/Wine.csv", "Hululu"), wrngColEx) 
+           self.assertEqual(analysis.analysisInteraction("/home/CSC510-23/Code/Datasets/Wine.csv", "Hululu"), wrngColEx) 
             
     def test_analysis_result_cat(self):
-        self.assertIsNotNone(analysis.analysisInteraction("Datasets/Crime1.csv","Category"))
+        self.assertIsNotNone(analysis.analysisInteraction("/home/CSC510-23/Code/Datasets/Crime1.csv","Category"))
         
     def test_analysis_result_num(self):
-        self.assertIsNotNone(analysis.analysisInteraction("Datasets/Wine.csv","Class"))
+        self.assertIsNotNone(analysis.analysisInteraction("/home/CSC510-23/Code/Datasets/Wine.csv","Class"))
         
     def test_fileCreation(self):
         self.assertIsNotNone(open("Analysis.txt","r"))
