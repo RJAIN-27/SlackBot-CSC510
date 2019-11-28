@@ -5,7 +5,7 @@ import modelSelection
 import commonFunctions as cf
 import pandas as pd
 
-with open("/home/ubuntu/CSC510-23/Code/data.json") as json_file:
+with open("/home/CSC510-23/Code/data.json") as json_file:
     data = json.load(json_file)
 
 libraries = data["libraries"]
@@ -34,7 +34,7 @@ class TestModSelMethods(unittest.TestCase):
     # usecase 1 - happy flow
     def test_modelsel(self):
         ls = best_models()
-        bestMod = modelSelection.modelSelInteraction("Datasets/Wine.csv", target)
+        bestMod = modelSelection.modelSelInteraction("/home/CSC510-23/Code/Datasets/Wine.csv", target)
         flag = 0
         for model in ls:
             if model not in bestMod:
@@ -44,10 +44,10 @@ class TestModSelMethods(unittest.TestCase):
 
     # usecase 1 - alternate flow
     def test_modelsel2(self):
-        self.assertEqual(modelSelection.modelSelInteraction("Datasets/Wine.csv", wrong_target), wrngColEx)
+        self.assertEqual(modelSelection.modelSelInteraction("/home/CSC510-23/Code/Datasets/Wine.csv", wrong_target), wrngColEx)
 
     def test_modelsel3(self):
-        self.assertIsNotNone(modelSelection.modelSelInteraction("Datasets/Crime1.csv", "Category"))
+        self.assertIsNotNone(modelSelection.modelSelInteraction("/home/CSC510-23/Code/Datasets/Crime1.csv", "Category"))
 
     def test_categorical(self):
         data = pd.read_csv("Datasets/Crime1.csv", sep=',', header=0)
