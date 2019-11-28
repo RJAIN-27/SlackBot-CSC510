@@ -7,7 +7,7 @@ import json
 
 global BOT_ID
 
-with open("/home/ubuntu/CSC510-23/Code/data.json") as json_file:
+with open("/home/CSC510-23/Code/data.json") as json_file:
     data = json.load(json_file)
 
 TOKEN = data["SLACK_BOT_TOKEN"]
@@ -15,7 +15,6 @@ TOKEN = data["SLACK_BOT_TOKEN"]
 class Bot(object):
     def __init__(self):
         self.slack_client = SlackClient(TOKEN)
-        #self.slack_client = SlackClient(os.environ.get('SLACK_BOT_TOKEN'))
         self.botname = "libbot"
         self.botid = self.getbotid()
         if self.botid is None:
