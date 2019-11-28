@@ -32,7 +32,7 @@ class Event:
             if(event['files'][0]['filetype'] == "csv"):
                 #response = requests.get(event['files'][0]['url_private'], headers={'Authorization': 'Bearer xoxb-795814705207-788531806065-9dWeyIRqj2t1LSbICYnDkB01'})
                 auth = 'Bearer '+str(TOKEN)
-                response = requests.get(event['files'][0]['url_private'], headers={'Authorization': 'Bearer TOKEN'})
+                response = requests.get(event['files'][0]['url_private'], headers={'Authorization': auth})
                 print response.content
                 with open("my.csv",'wb') as f: 
                     f.write(response.content) 
