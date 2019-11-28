@@ -1,7 +1,7 @@
 ---
 - 
   gather_facts: false
-  hosts: aws_nodes
+  hosts:  aws_nodes
   vars_files:
          - '{{file}}'
   tasks:
@@ -42,5 +42,43 @@
          - name: Install required packages
            shell: 'pip install {{item}}'
            with_items: '{{packages}}'
+           become: yes
+           ignore_errors: true
+
+         - name: Install nodeJS
+           apt:
+                   name: nodejs
+                   state: latest
+                   update_cache: yes
+           become: yes
+           ignore_errors: true
+
+         - name: Install npm
+           apt:
+                   name: npm
+                   state: latest
+                   update_cache: yes
+           become: yes
+           ignore_errors: true
+
+         - name: Install forever
+           npm:
+                   name: forever
+                   global: true
+                   state: latest
+           become: yes
+           ignore_errors: true
+
+         - name: Git Clone
+           shell: 'git clone https://{{ GIT_TOKEN }}@github.ncsu.edu/csc510-fall2019/CSC510-23.git'
+           become: yes
+           ignore_errors: true
+
+         #- name: Set slackbot token
+         #  shell: 'export SLACK_BOT_TOKEN={{ SLACK_BOT_TOKEN }}'
+         #  ignore_errors: true
+
+         - name: Start service
+           shell: 'forever start -c python CSC510-23/Code/slackbot.py'
            become: yes
            ignore_errors: true
