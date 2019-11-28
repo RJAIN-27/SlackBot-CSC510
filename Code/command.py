@@ -1,20 +1,18 @@
 import KeywordExtraction
 import modelSelection
 import analysis
-#import mocking_infrastructure
 import json
 import unittest
 import test
-#from mock import Mock
 import collections
 import openpyxl as xl
-#import keywordex
 
 
-with open("/home/ubuntu/CSC510-23/Code/data.json") as json_file:
+
+with open("/home/CSC510-23/Code/data.json") as json_file:
     jsonData = json.load(json_file)
 
-path = "/home/ubuntu/CSC510-23/Code/my.csv"
+path = "my.csv"
 flag=0
 
 # KeywordExtraction.keywordExtraction = Mock(side_effect=mocking_infrastructure.mock_keyword_extraction)
