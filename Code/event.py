@@ -8,7 +8,7 @@ import os
 import bot
 import json
 
-with open("data.json") as json_file:
+with open("/home/ubuntu/CSC510-23/Code/data.json") as json_file:
     data = json.load(json_file)
 
 TOKEN = data["SLACK_BOT_TOKEN"]
