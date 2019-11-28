@@ -31,6 +31,7 @@ class Event:
         if event and 'files' in event and 'text' in event and event['user']!="UP6FMPQ1X" and event['upload']==True:
             if(event['files'][0]['filetype'] == "csv"):
                 #response = requests.get(event['files'][0]['url_private'], headers={'Authorization': 'Bearer xoxb-795814705207-788531806065-9dWeyIRqj2t1LSbICYnDkB01'})
+                auth = 'Bearer '+str(TOKEN)
                 response = requests.get(event['files'][0]['url_private'], headers={'Authorization': 'Bearer TOKEN'})
                 print response.content
                 with open("my.csv",'wb') as f: 
