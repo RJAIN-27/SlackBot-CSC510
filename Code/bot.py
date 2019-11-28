@@ -3,13 +3,19 @@ import event
 import command
 from slackclient import SlackClient
 import os
+import json
 
 global BOT_ID
 
+with open("data.json") as json_file:
+    data = json.load(json_file)
+
+TOKEN = data["SLACK_BOT_TOKEN"]
+
 class Bot(object):
     def __init__(self):
-        #self.slack_client = SlackClient("xoxb-795814705207-788531806065-9dWeyIRqj2t1LSbICYnDkB01")
-        self.slack_client = SlackClient(os.environ.get('SLACK_BOT_TOKEN'))
+        self.slack_client = SlackClient(TOKEN)
+        #self.slack_client = SlackClient(os.environ.get('SLACK_BOT_TOKEN'))
         self.botname = "libbot"
         self.botid = self.getbotid()
         if self.botid is None:
