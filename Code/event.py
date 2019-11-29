@@ -13,7 +13,8 @@ with open("/home/CSC510-23/Code/data.json") as json_file:
     data = json.load(json_file)
 
 TOKEN = data["SLACK_BOT_TOKEN"]
-BOT_ID= os.environ.get('BOT_ID')
+#BOT_ID= os.environ.get('BOT_ID')
+BOT_ID= data["BOT_ID"]
 
 l_of_lib=[]
 
@@ -30,9 +31,9 @@ class Event:
                  
     def parseevent(self, event):  
         #print event
-        if event and 'text' in event and 'files' not in event and event['user']!="UP6FMPQ1X" and event['user']!="USLACKBOT":   
+        if event and 'text' in event and 'files' not in event and event['user']!=(BOT_ID) and event['user']!="USLACKBOT":   
             self.handleevent(event['user'], event['text'], event['channel'])
-        elif event and 'files' in event and 'text' in event and event['user']!="UP6FMPQ1X" and event['upload']==True:
+        elif event and 'files' in event and 'text' in event and event['user']!=(BOT_ID) and event['upload']==True:
             if event['text'] == '':
                 self.bot.slack_client.api_call("chat.postMessage", channel=event['channel'], text="I am sorry can you please give me a csv file with the details of what is to be done\n", as_user=True)
             elif(event['files'][0]['filetype'] == "csv"):
