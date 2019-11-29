@@ -12,9 +12,9 @@ Pre-requisite Steps:
 1. Login to https://rajshreegroup.slack.com/ with valid crendentials
 2. Click on Librarybot channel
 
-UseCase1: Model Suggestion
+### UseCase1: Model Suggestion
 
-TestCase1:
+**TestCase1:**
 1. Test User selects a dataset [Wine.csv](https://drive.google.com/open?id=1DAMCOHTMpKuizsAS_SXApEmMgOhXJQ7x) to upload using the attachments button in the Librarybot channel.
 2. Test User enters "I want to know the best model for this dataset." in the message field.
 3. Test User clicks upload button.
@@ -25,7 +25,7 @@ Expected:
 
 Bot should give one or more model suggestions with a text file describing the process to arrive at best model for the given dataset.
 
-TestCase2:
+**TestCase2:**
 1. Test User selects a dataset [Crime.csv](https://drive.google.com/open?id=1XuUWbALxOR2t9NE4ErrF_olQuWJhgbJM) to upload using the attachments button in the Librarybot channel.
 2. Test User enters "I want to know the best model for this dataset." in the message field.
 3. Test User clicks upload button.
@@ -34,9 +34,9 @@ TestCase2:
 
 Expected:
 
-Bot should give one or more model suggestions with a text file describing the process to arrive at best model for the given dataset.
+Bot should give one or more model suggestions with a text file describing the process to arrive at best model for the given dataset. Bot should also identify this as categorical dataset and perform n-gram feature classication for each column and then train the dataset.
 
-TestCase3:
+**TestCase3:**
 1. Test User selects a dataset [Wine.csv](https://drive.google.com/open?id=1DAMCOHTMpKuizsAS_SXApEmMgOhXJQ7x) to upload using the attachments button in the Librarybot channel.
 2. Test User enters "I want to know the best model for this dataset." in the message field.
 3. Test User clicks upload button.
@@ -47,7 +47,7 @@ Expected:
 
 The target column is not present in the file. Please upload the file again and give the correct target column name. Remember, target column is case sensitive.
 
-TestCase4:
+**TestCase4:**
 1. Test User doesn't upload a dataset.
 2. Test User enters "I want to know the best model for this dataset." in the message field.
 
@@ -55,7 +55,7 @@ Expected:
 
 Please upload the dataset along with your query.
 
-TestCase5:
+**TestCase5:**
 1. Test User selects a dataset [Wine.csv](https://drive.google.com/open?id=1DAMCOHTMpKuizsAS_SXApEmMgOhXJQ7x) to upload using the attachments button in the Librarybot channel.
 2. Test User clicks upload button.
 
@@ -63,8 +63,9 @@ Expected:
 
 I am sorry can you please give me a csv file with the details of what is to be done.
 
-UseCase2: Analyze the dataset.
-TestCase1: 
+### UseCase2: Analyze the dataset.
+
+**TestCase1:** 
 1. Test User selects a dataset [Wine.csv](https://drive.google.com/open?id=1DAMCOHTMpKuizsAS_SXApEmMgOhXJQ7x) to upload using the attachments button in the Librarybot channel.
 2. Test User enters "I want to analyze the dataset." in the message field.
 3. Test User clicks upload button.
@@ -75,7 +76,7 @@ Expected:
 
 Bot should give exploratory data analysis of the given dataset in txt format.
 
-TestCase2: 
+**TestCase2:** 
 1. Test User selects a dataset [Wine.csv](https://drive.google.com/open?id=1DAMCOHTMpKuizsAS_SXApEmMgOhXJQ7x) to upload using the attachments button in the Librarybot channel.
 2. Test User enters "I want to analyze the dataset." in the message field.
 3. Test User clicks upload button.
