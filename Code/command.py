@@ -27,24 +27,30 @@ class Command(object):
     def handlecommand(self, user, command):
         global flag
         if any(word in command for word in jsonData["model_sel_words"]) or any(word in command for word in jsonData["analysis_words"]):
+            flag=0
             return "Please give the csv file that you want to analyze or want a suggestion about"
         elif "know" in command.lower() and "from" in command.lower():
             list=KeywordExtraction.keywordExtraction1(command, "Sheet1", "Sheet2", "Sheet3")
             list.append("onlyfunction")
+            flag=0
             return list
         elif "know" in command.lower():
             list=KeywordExtraction.keywordExtraction(command, "Sheet1")
             list.append("onlylibrary")
             #list=mocking_infrastructure.mock_keyword_extraction(command)
             print (list) 
+            flag=0
             return list
         #elif any(word in command for word in jsonData["model_sel_words"]):
         #    return "Please give the csv file that you want to analyze or want a suggestion about"
         elif "Pssst" in command.lower():
+            flag=0
             return "error"    
         elif "no" in command.lower():
+            flag=0
             return "Sorry about that :("
         elif "yes" in command.lower():
+            flag=0
             return "Thankyou for the feedback"
         elif flag==2:
             model_Selection=modelSelection.modelSelInteraction(path, command)
