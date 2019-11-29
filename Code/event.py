@@ -3,8 +3,8 @@ import command
 import requests
 import io
 import os
-import mocking_infrastructure
-from mock import Mock
+#import mocking_infrastructure
+#from mock import Mock
 import bot
 import json
 
