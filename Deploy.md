@@ -148,7 +148,7 @@ Sorry, I didn't get you.
 TestCase6:
 1. Test User enters "I want to know about scikit library"
 2. Bot shows a brief description about scikit-learn library and the relevant links to find more information about the library. Bot asks if the Test User wants to know any specific function in the library.
-3. Test User enters "I want to know abbout sin". (sin is not available in scikit library)
+3. Test User enters "I want to know about sin". (sin is not available in scikit library)
 
 Expected:
 
