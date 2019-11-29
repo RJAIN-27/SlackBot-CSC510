@@ -26,7 +26,7 @@ Expected:
 Bot should give one or more model suggestions with a text file describing the process to arrive at best model for the given dataset.
 
 TestCase2:
-1. Test User selects a dataset(Crime.csv) to upload using the attachments button in the Librarybot channel.
+1. Test User selects a dataset [Crime.csv](https://drive.google.com/open?id=1XuUWbALxOR2t9NE4ErrF_olQuWJhgbJM) to upload using the attachments button in the Librarybot channel.
 2. Test User enters "I want to know the best model for this dataset." in the message field.
 3. Test User clicks upload button.
 4. Bot responds with a message "Please provide the target column"
