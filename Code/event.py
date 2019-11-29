@@ -28,8 +28,10 @@ class Event:
     def parseevent(self, event):  
         if event and 'text' in event and 'files' not in event and event['user']!="UP6FMPQ1X" and event['user']!="USLACKBOT":   
             self.handleevent(event['user'], event['text'], event['channel'])
-        if event and 'files' in event and 'text' in event and event['user']!="UP6FMPQ1X" and event['upload']==True:
-            if(event['files'][0]['filetype'] == "csv"):
+        elif event and 'files' in event and 'text' in event and event['user']!="UP6FMPQ1X" and event['upload']==True:
+            if event['text'] == '':
+                self.bot.slack_client.api_call("chat.postMessage", channel=event['channel'], text="I am sorry can you please give me a csv file with the details of what is to be done\n", as_user=True)
+            elif(event['files'][0]['filetype'] == "csv"):
                 #response = requests.get(event['files'][0]['url_private'], headers={'Authorization': 'Bearer xoxb-795814705207-788531806065-9dWeyIRqj2t1LSbICYnDkB01'})
                 auth = 'Bearer '+str(TOKEN)
                 response = requests.get(event['files'][0]['url_private'], headers={'Authorization': auth})
