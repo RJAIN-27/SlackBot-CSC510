@@ -26,7 +26,7 @@ class Command(object):
         global flag
         if any(word in command for word in jsonData["model_sel_words"]) or any(word in command for word in jsonData["analysis_words"]):
             flag=0
-            return "Please give the csv file that you want to analyze or want a suggestion about"
+            return "Please upload the dataset along with your query"
         elif "know" in command.lower() and "from" in command.lower():
             list=KeywordExtraction.keywordExtraction1(command, "Sheet1", "Sheet2", "Sheet3")
             list.append("onlyfunction")
