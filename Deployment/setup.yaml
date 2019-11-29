@@ -70,9 +70,13 @@
            ignore_errors: true
 
          - name: Git Clone
-           shell: 'git clone https://{{ GIT_TOKEN }}@github.ncsu.edu/csc510-fall2019/CSC510-23.git /home/'
+           git:
+                   clone: yes
+                   repo: 'https://{{ GIT_TOKEN }}@github.ncsu.edu/csc510-fall2019/CSC510-23.git'
+                   dest: '/home/CSC510-23'
            become: yes
            ignore_errors: true
+
 
          - name: Start service
            shell: 'forever start -c python CSC510-23/Code/slackbot.py'
