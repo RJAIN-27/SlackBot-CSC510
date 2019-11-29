@@ -24,7 +24,9 @@ class Command(object):
     
     def handlecommand(self, user, command):
         global flag
-        if "know" in command.lower() and "from" in command.lower():
+        if any(word in command for word in jsonData["model_sel_words"]):
+            return "Please give the csv file that you want to analyze or want a suggestion about"
+        elif "know" in command.lower() and "from" in command.lower():
             list=KeywordExtraction.keywordExtraction1(command, "Sheet1", "Sheet2", "Sheet3")
             list.append("onlyfunction")
             return list
@@ -34,8 +36,6 @@ class Command(object):
             #list=mocking_infrastructure.mock_keyword_extraction(command)
             print (list) 
             return list
-        elif any(word in command for word in jsonData["model_sel_words"]):
-            return "Please give the csv file that you want to analyze or want a suggestion about"
         elif "Pssst" in command.lower():
             return "error"    
         elif "no" in command.lower():
