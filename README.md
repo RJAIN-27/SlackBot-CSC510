@@ -6,8 +6,10 @@
 3. Rajshree Jain - rjain27 
 4. Venkata Sai Ranga Manikanta Nukala - vnukala2
 ### Design 
-Design Draft ([Design.md](https://github.ncsu.edu/csc510-fall2019/CSC510-23/blob/master/Design.md))
+Milestone -1 Design ([Design.md](https://github.ncsu.edu/csc510-fall2019/CSC510-23/blob/master/Design.md))
 
-Milestone -1 ReadMe ([Bot.md](https://github.ncsu.edu/csc510-fall2019/CSC510-23/blob/master/Bot.md))
+Milestone -2 Bot ([Bot.md](https://github.ncsu.edu/csc510-fall2019/CSC510-23/blob/master/Bot.md))
 
-Milestone -2 Process ([Process.md](https://github.ncsu.edu/csc510-fall2019/CSC510-23/blob/master/Process.md))
+Milestone -3 Process ([Process.md](https://github.ncsu.edu/csc510-fall2019/CSC510-23/blob/master/Process.md))
+
+Milestone -4 Deployment ([Deploy.md](https://github.ncsu.edu/csc510-fall2019/CSC510-23/blob/master/Deploy.md))
