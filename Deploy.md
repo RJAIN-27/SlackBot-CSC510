@@ -37,7 +37,7 @@ Expected:
 Bot should give one or more model suggestions with a text file describing the process to arrive at best model for the given dataset.
 
 TestCase3:
-1. Test User selects a dataset(Wine.csv) to upload using the attachments button in the Librarybot channel.
+1. Test User selects a dataset [Wine.csv](https://drive.google.com/open?id=1DAMCOHTMpKuizsAS_SXApEmMgOhXJQ7x) to upload using the attachments button in the Librarybot channel.
 2. Test User enters "I want to know the best model for this dataset." in the message field.
 3. Test User clicks upload button.
 4. Bot responds with a message "Please provide the target column"
@@ -56,7 +56,7 @@ Expected:
 Please upload the dataset along with your query.
 
 TestCase5:
-1. Test User selects a dataset(Wine.csv) to upload using the attachments button in the Librarybot channel.
+1. Test User selects a dataset [Wine.csv](https://drive.google.com/open?id=1DAMCOHTMpKuizsAS_SXApEmMgOhXJQ7x) to upload using the attachments button in the Librarybot channel.
 2. Test User clicks upload button.
 
 Expected:
@@ -65,7 +65,7 @@ I am sorry can you please give me a csv file with the details of what is to be d
 
 UseCase2: Analyze the dataset.
 TestCase1: 
-1. Test User selects a dataset(Wine.csv) to upload using the attachments button in the Librarybot channel.
+1. Test User selects a dataset [Wine.csv](https://drive.google.com/open?id=1DAMCOHTMpKuizsAS_SXApEmMgOhXJQ7x) to upload using the attachments button in the Librarybot channel.
 2. Test User enters "I want to analyze the dataset." in the message field.
 3. Test User clicks upload button.
 4. Bot responds with a message "Please provide the target column"
@@ -76,7 +76,7 @@ Expected:
 Bot should give exploratory data analysis of the given dataset in txt format.
 
 TestCase2: 
-1. Test User selects a dataset(Wine.csv) to upload using the attachments button in the Librarybot channel.
+1. Test User selects a dataset [Wine.csv](https://drive.google.com/open?id=1DAMCOHTMpKuizsAS_SXApEmMgOhXJQ7x) to upload using the attachments button in the Librarybot channel.
 2. Test User enters "I want to analyze the dataset." in the message field.
 3. Test User clicks upload button.
 4. Bot responds with a message "Please provide the target column"
