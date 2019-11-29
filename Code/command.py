@@ -1,12 +1,14 @@
 import KeywordExtraction
 import modelSelection
 import analysis
+import mocking_infrastructure
 import json
 import unittest
 import test
+from mock import Mock
 import collections
 import openpyxl as xl
-
+import keywordex
 
 
 with open("/home/CSC510-23/Code/data.json") as json_file:
@@ -36,6 +38,8 @@ class Command(object):
             #list=mocking_infrastructure.mock_keyword_extraction(command)
             print (list) 
             return list
+        #elif any(word in command for word in jsonData["model_sel_words"]):
+        #    return "Please give the csv file that you want to analyze or want a suggestion about"
         elif "Pssst" in command.lower():
             return "error"    
         elif "no" in command.lower():
