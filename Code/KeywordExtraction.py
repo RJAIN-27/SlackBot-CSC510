@@ -19,7 +19,7 @@ from nltk.stem.wordnet import WordNetLemmatizer
 with open("/home/CSC510-23/Code/data.json") as json_file:
     jsonData = json.load(json_file)
 
-def keywordExtraction1(msg,sheet1,sheet2, sheet3):
+def getKeywords(msg):
     text = msg
     ##Creating a list of stop words and adding custom stopwords
     stop_words = set(stopwords.words("english"))
@@ -59,50 +59,16 @@ def keywordExtraction1(msg,sheet1,sheet2, sheet3):
     sorted_items = sort_coo(tf_idf_vector.tocoo())
     # extract only the top n; n here is 10
     keywords = extract_topn_from_vector(feature_names, sorted_items, 5)
+    return(keywords)
+
+def keywordExtraction1(msg,sheet1,sheet2, sheet3):
+    keywords = getKeywords(msg)
     # print(keyword_list)
     return (keywordlist1(keywords,sheet1,sheet2, sheet3))
 
 # Function for extracting keywords from user's message
 def keywordExtraction(msg,sheet):
-    text = msg
-    ##Creating a list of stop words and adding custom stopwords
-    stop_words = set(stopwords.words("english"))
-    ##Creating a list of custom stopwords
-    new_words = jsonData["newStopWords"]
-    stop_words = stop_words.union(new_words)
-    corpus = []
-    # Convert to lowercase
-    text = text.lower()
-    # Replace punctuations with spaces
-    text = re.sub('[^a-zA-Z]', ' ', str(text))
-    # Convert to list from string
-    text = text.split()
-    # Stemming
-    ps = PorterStemmer()
-    # Lemmatisation
-    lem = WordNetLemmatizer()
-    text = [lem.lemmatize(word) for word in text if not word in stop_words]
-    text = " ".join(text)
-    corpus.append(text)
-    # Text Preparation (Convert the words in the corpus to Tokens or vectors - Tokenization/Vectorization)
-    # Creating a vector of word counts
-
-    cv = CountVectorizer(min_df=0.8, stop_words=stop_words, max_features=10000, ngram_range=(1, 1))
-    X = cv.fit_transform(corpus)
-    list(cv.vocabulary_.keys())[:10]
-    tfidf_transformer = TfidfTransformer(smooth_idf=True, use_idf=True)
-    tfidf_transformer.fit(X)
-    # get feature names
-    feature_names = cv.get_feature_names()
-    # fetch document for which keywords needs to be extracted
-    for text1 in corpus:
-        doc = text1
-        # generate tf-idf for the given document
-        tf_idf_vector = tfidf_transformer.transform(cv.transform([doc]))
-    # sort the tf-idf vectors by descending order of scores
-    sorted_items = sort_coo(tf_idf_vector.tocoo())
-    # extract only the top n; n here is 10
-    keywords = extract_topn_from_vector(feature_names, sorted_items, 5)
+    keywords = getKeywords(msg)
     # print(keyword_list)
     return (keywordlist(keywords,sheet))
 
