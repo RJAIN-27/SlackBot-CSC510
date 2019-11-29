@@ -94,7 +94,7 @@ class Event:
                         for j in i:
                             self.bot.slack_client.api_call("chat.postMessage", channel=channel, text=i[j], as_user=True)
                             l_of_lib.append(j)
-                    self.bot.slack_client.api_call("chat.postMessage", channel=channel, text="Would you like to have information about particular functions in the above library (Please enter function name)?", as_user=True)   
+                    self.bot.slack_client.api_call("chat.postMessage", channel=channel, text=" I you would like to have information about particular function in the above library, please enter the function name", as_user=True)   
                
                 if flag==1:
                     for i in response:
