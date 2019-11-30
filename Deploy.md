@@ -204,6 +204,20 @@ The final code for all 3 use cases can be found in the folder [code](https://git
 
 This folder contains the folder [Datasets](https://github.ncsu.edu/csc510-fall2019/CSC510-23/tree/master/Code/Datasets) which contains the datasets that are used to test the functionality of the use cases. It also contains the database [libraryFile.xlsx](https://github.ncsu.edu/csc510-fall2019/CSC510-23/blob/master/Code/libraryFile.xlsx) that stores the information about the libraries and the functions for the third use case. 
 
+**For Use Case 1 ** 
+
+Description of code for Use case 1 
+- Uses functions from [commonFunctions.py](https://github.ncsu.edu/csc510-fall2019/CSC510-23/blob/master/Code/commonFunctions.py) and reads the dataset as an input. 
+- It splits this  into training set and testing set and performs model selection
+- It writes the result into a file and returns this file 
+- This code handles numerical and categorical data 
+- It handles cases when the categories are a set of words or sentences, by performing n-gram extraction 
+- The code for this use case can be found here 
+  - [modelSelection.py](https://github.ncsu.edu/csc510-fall2019/CSC510-23/blob/master/Code/modelSelection.py)
+  - [modelTraining.py](https://github.ncsu.edu/csc510-fall2019/CSC510-23/blob/master/Code/modelTraining.py)
+  - [ngramTraining.py](https://github.ncsu.edu/csc510-fall2019/CSC510-23/blob/master/Code/ngramTraining.py)
+  
+
 
 ## Screencast Link 
 
