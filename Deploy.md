@@ -219,6 +219,14 @@ Description of code for Use case 1
 - The unit test for this use case can be found here 
   - [modelSelTest.py](https://github.ncsu.edu/csc510-fall2019/CSC510-23/blob/master/Code/modelSelTest.py)
   
+**For Use Case 2**
+
+Description of code for Use case 2
+- Uses functions from [commonFunctions.py](https://github.ncsu.edu/csc510-fall2019/CSC510-23/blob/master/Code/commonFunctions.py) and reads the dataset as an input. 
+- It performs exploratory data analysis on the given data set (Correlation between variables, Normality tests and descriptive analystics) 
+- It handles both numerical and categorical data 
+- The code for this use case can be found here 
+  - [analysis.py](https://github.ncsu.edu/csc510-fall2019/CSC510-23/blob/master/Code/analysis.py)
 
 
 ## Screencast Link 
