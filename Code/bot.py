@@ -15,7 +15,7 @@ TOKEN = data["SLACK_BOT_TOKEN"]
 class Bot(object):
     def __init__(self):
         self.slack_client = SlackClient(TOKEN)
-        self.botname = "libbot"
+        self.botname = "L.I.B.R.A"
         self.botid = self.getbotid()
         if self.botid is None:
             exit("Error, could not find " + self.botname)
