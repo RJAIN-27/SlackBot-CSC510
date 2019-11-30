@@ -230,5 +230,17 @@ Description of code for Use case 2
 - The unit test for this use case can be found here
   - [analysis_unit_test.py](https://github.ncsu.edu/csc510-fall2019/CSC510-23/blob/master/Code/analysis_unit_test.py)
 
+**For Use Case 3**
+
+Description of code for Use case 3
+- This code accepts the message from the user, tokenizes it and extracts the keywords through vectorization and 1-gram extraction.
+- It then compares these keywords to the list of keywords in the [libraryFile.xlsx](https://github.ncsu.edu/csc510-fall2019/CSC510-23/blob/master/Code/libraryFile.xlsx) file. 
+- If there is a match, it then returns the description against the respective keywords. 
+- The code for this use case can be found here 
+  - [KeywordExtraction.py](https://github.ncsu.edu/csc510-fall2019/CSC510-23/blob/master/Code/KeywordExtraction.py)
+- The unit test for this use case can be found here 
+  - [keywordExtTest.py](https://github.ncsu.edu/csc510-fall2019/CSC510-23/blob/master/Code/keywordExtTest.py)
+
+
 ## Screencast Link 
 
