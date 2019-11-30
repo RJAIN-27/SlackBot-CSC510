@@ -240,6 +240,13 @@ Description of code for Use case 3
   - [KeywordExtraction.py](https://github.ncsu.edu/csc510-fall2019/CSC510-23/blob/master/Code/KeywordExtraction.py)
 - The unit test for this use case can be found here 
   - [keywordExtTest.py](https://github.ncsu.edu/csc510-fall2019/CSC510-23/blob/master/Code/keywordExtTest.py)
+  
+**For mocking infrastructure** 
+
+- The code for the mocking infrastructure can be found here 
+  - [mocking_infrastructure.py](https://github.ncsu.edu/csc510-fall2019/CSC510-23/blob/master/Code/mocking_infrastructure.py)
+- The json file for the mocking infrastructure can be found here 
+  - [data.json](https://github.ncsu.edu/csc510-fall2019/CSC510-23/blob/master/Code/data.json)
 
 
 ## Screencast Link 
