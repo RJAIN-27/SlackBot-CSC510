@@ -247,6 +247,13 @@ Description of code for Use case 3
   - [mocking_infrastructure.py](https://github.ncsu.edu/csc510-fall2019/CSC510-23/blob/master/Code/mocking_infrastructure.py)
 - The json file for the mocking infrastructure can be found here 
   - [data.json](https://github.ncsu.edu/csc510-fall2019/CSC510-23/blob/master/Code/data.json)
+  
+**For connection with front end** 
+- The code for connection with the front end to enable user interaction 
+  - [command.py](https://github.ncsu.edu/csc510-fall2019/CSC510-23/blob/master/Code/command.py)
+  - [bot.py](https://github.ncsu.edu/csc510-fall2019/CSC510-23/blob/master/Code/bot.py)
+  - [event.py](https://github.ncsu.edu/csc510-fall2019/CSC510-23/blob/master/Code/event.py)
+  - [slackbot.py](https://github.ncsu.edu/csc510-fall2019/CSC510-23/blob/master/Code/slackbot.py)
 
 
 ## Screencast Link 
