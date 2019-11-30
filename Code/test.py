@@ -86,7 +86,7 @@ class TestStringMethods(unittest.TestCase):
         self.assertIsNotNone(modelSelection.modelSelInteraction("/home/CSC510-23/Code/Datasets/Crime1.csv","Category"))
 
     def test_categorical(self):
-        data = pd.read_csv("Datasets/Crime1.csv", sep=',', header=0)
+        data = pd.read_csv("/home/CSC510-23/Code/Datasets/Crime1.csv", sep=',', header=0)
         df,newcols,flag = cf.checkAndConvertIfCategorical(data,"Category")
         cflag=0
         for col in newcols:
