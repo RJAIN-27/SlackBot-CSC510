@@ -199,5 +199,9 @@ I am sorry, coudn't fetch the information. My team is working on making me bette
 ![](https://github.ncsu.edu/csc510-fall2019/CSC510-23/blob/master/resources/images/uc1_18.png)
 
 ## Final Code
+
+The final code for all 3 use cases can be found in the folder [code](https://github.ncsu.edu/csc510-fall2019/CSC510-23/tree/master/Code). 
+
+This folder contains the folder [Datasets](https://github.ncsu.edu/csc510-fall2019/CSC510-23/tree/master/Code/Datasets) which contains the datasets that are used to test the functionality of the use cases. 
 ## Screencast Link 
 
