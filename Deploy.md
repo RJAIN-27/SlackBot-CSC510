@@ -227,7 +227,8 @@ Description of code for Use case 2
 - It handles both numerical and categorical data 
 - The code for this use case can be found here 
   - [analysis.py](https://github.ncsu.edu/csc510-fall2019/CSC510-23/blob/master/Code/analysis.py)
-
+- The unit test for this use case can be found here
+  - [analysis_unit_test.py](https://github.ncsu.edu/csc510-fall2019/CSC510-23/blob/master/Code/analysis_unit_test.py)
 
 ## Screencast Link 
 
