@@ -6,7 +6,7 @@ We have deployed the bot in the AWS environment using Ansible.
 ## Deployment Scripts 
 We have used the open source configuration management tool, Ansible, to provide and configure a remote environment for our Library Bot. 
 
-The deployment scripts in Ansible are located in the folder Deployment in the repository. 
+The deployment scripts in Ansible are located in the folder [Deployment](https://github.ncsu.edu/csc510-fall2019/CSC510-23/tree/master/Deployment) in the repository. 
 The deployment folder contains two Ansible playbooks
 1. [setup.yaml](https://github.ncsu.edu/csc510-fall2019/CSC510-23/blob/master/Deployment/setup.yaml)
    - This playbook contains the setup and necessary installations for python, pip, git, nodejs, forever, npm, and other python packages required to run the code. 
