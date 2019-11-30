@@ -84,7 +84,7 @@ class Event:
                 response.pop()
                 print response
                 
-                self.bot.slack_client.api_call("chat.postMessage", channel=channel, text="I am sorry, we are still working and building our database!", as_user=True)
+                self.bot.slack_client.api_call("chat.postMessage", channel=channel, text="I am sorry, coudn't fetch the information. My team is working on making me better everyday by adding new functions and libraries in my database!", as_user=True)
             elif (type(response[0]) is dict):
                 if (response[-1]=="onlylibrary"):
                     response.pop()
@@ -115,7 +115,7 @@ class Event:
                 self.bot.slack_client.api_call("chat.postMessage", channel=channel, text="Were you satisfied with the information?", as_user=True)
 
         elif type(response) is list and len(response)==0:
-            self.bot.slack_client.api_call("chat.postMessage", channel=channel, text="I am sorry, we are still working and building our database!", as_user=True)
+            self.bot.slack_client.api_call("chat.postMessage", channel=channel, text="I am sorry, coudn't fetch the information. My team is working on making me better everyday by adding new functions and libraries in my database!", as_user=True)
 
 
     def handleevent(self, user, command, channel):
