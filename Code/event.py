@@ -72,7 +72,7 @@ class Event:
                 elif(response == "Please continue with either of the functionalities like knowing more about libraries, data analysis or suggestion"):
                     self.bot.slack_client.api_call("chat.postMessage", channel=channel, text=response, as_user=True)
                     self.bot.slack_client.api_call("chat.postMessage", channel=channel, text="Were you satisfied with the above provided information", as_user=True)
-                elif(response == "Please give the csv file that you want to analyze or want a suggestion about"):
+                elif(response == "Please upload the dataset along with your query"):
                     self.bot.slack_client.api_call("chat.postMessage", channel=channel, text=response, as_user=True)
                 else:  
                     self.bot.slack_client.api_call("chat.postMessage", channel=channel, text="The best model suggestion for your dataset is:\n", as_user=True)  
