@@ -18,15 +18,15 @@ The deployment folder contains two Ansible playbooks
    
 2. [requirement.yaml](https://github.ncsu.edu/csc510-fall2019/CSC510-23/blob/master/Deployment/requirements.yaml).<br/>
    - This playbook contains the python packages required to run the code.
-   
-![](https://github.ncsu.edu/csc510-fall2019/CSC510-23/blob/master/first.png)
-![](https://github.ncsu.edu/csc510-fall2019/CSC510-23/blob/master/requirements.png)
 
 ### Steps to run deployment 
 - In the inventory file we will have to give the public IP address of the AWS instance along with the other parameters and save the inventory file <br/>
 Command: vim etc/ansible/hosts
 - To run the deployment scripts we use the following command <br/>
 Command: ansible-playbook setup.yaml -e file=requirements.yaml -v
+
+![](https://github.ncsu.edu/csc510-fall2019/CSC510-23/blob/master/first.png)
+![](https://github.ncsu.edu/csc510-fall2019/CSC510-23/blob/master/requirements.png)
 
 ## Acceptance Tests 
 
@@ -270,6 +270,11 @@ Description of code for Use case 3
   - [slackbot.py](https://github.ncsu.edu/csc510-fall2019/CSC510-23/blob/master/Code/slackbot.py)
   
 ## Continuous Integration Service 
+
+![](https://github.ncsu.edu/csc510-fall2019/CSC510-23/blob/master/Jenkins1.png)
+![](https://github.ncsu.edu/csc510-fall2019/CSC510-23/blob/master/Jenkins2.png)
+![](https://github.ncsu.edu/csc510-fall2019/CSC510-23/blob/master/Jenkins3.png)
+![](https://github.ncsu.edu/csc510-fall2019/CSC510-23/blob/master/Jenkins4.png)
 
 
 
