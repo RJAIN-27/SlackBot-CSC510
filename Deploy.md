@@ -187,7 +187,7 @@ Bot provides a brief description about adaboostclassifier function in the scikit
 
 **Expected:**
 
-I am sorry, we are still working and building our database!
+I am sorry, coudn't fetch the information. My team is working on making me better everyday by adding new functions and libraries in my database!
 
 ![](https://github.ncsu.edu/csc510-fall2019/CSC510-23/blob/master/resources/images/uc1_16.png)
 
