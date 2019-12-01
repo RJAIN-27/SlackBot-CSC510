@@ -81,7 +81,7 @@ The target column is not present in the file. Please upload the file again and g
 
 **TestCase4:**
 1. Test User doesn't upload a dataset.
-2. Test User enters "I want to know the best model for this dataset." in the message field.
+2. Test User types "I want to know the best model for this dataset." in the message field and presses 'Enter'.
 
 **Expected:**
 
