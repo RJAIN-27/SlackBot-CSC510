@@ -36,7 +36,7 @@ class Command(object):
             list=KeywordExtraction.keywordExtraction(command, "Sheet1")
             list.append("onlylibrary")
             #list=mocking_infrastructure.mock_keyword_extraction(command)
-            print (list) 
+            #print (list) 
             flag=0
             return list
         #elif any(word in command for word in jsonData["model_sel_words"]):
