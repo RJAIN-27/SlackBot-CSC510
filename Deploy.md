@@ -130,7 +130,7 @@ The target column is not present in the file. Please upload the file again and g
 
 **TestCase3:**
 1. Test User doesn't upload a dataset.
-2. Test User enters "I want to analyze the dataset." in the message field.
+2. Test User types "I want to analyze the dataset." in the message field and presses 'Enter'
 
 **Expected:**
 
