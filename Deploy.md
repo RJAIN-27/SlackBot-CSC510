@@ -263,7 +263,10 @@ Description of code for Use case 3
   - [bot.py](https://github.ncsu.edu/csc510-fall2019/CSC510-23/blob/master/Code/bot.py)
   - [event.py](https://github.ncsu.edu/csc510-fall2019/CSC510-23/blob/master/Code/event.py)
   - [slackbot.py](https://github.ncsu.edu/csc510-fall2019/CSC510-23/blob/master/Code/slackbot.py)
+  
+## Continuous Integration Service 
 
 
-## Screencast Link 
+
+## Screencast Links 
 
