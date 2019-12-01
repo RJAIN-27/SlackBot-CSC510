@@ -16,10 +16,10 @@ The deployment folder contains two Ansible playbooks
    - This playbook contains the setup and necessary installations for python, pip, git, nodejs, forever, npm, and other python packages required to run the code.
    - It also clones the git repository and runs the forever bot.
    
-![](https://github.ncsu.edu/csc510-fall2019/CSC510-23/blob/master/first.png)
 2. [requirement.yaml](https://github.ncsu.edu/csc510-fall2019/CSC510-23/blob/master/Deployment/requirements.yaml).<br/>
    - This playbook contains the python packages required to run the code.
    
+![](https://github.ncsu.edu/csc510-fall2019/CSC510-23/blob/master/first.png)
 ![](https://github.ncsu.edu/csc510-fall2019/CSC510-23/blob/master/requirements.png)
 
 ### Steps to run deployment 
