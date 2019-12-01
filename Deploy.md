@@ -27,6 +27,10 @@ Command: ansible-playbook setup.yaml -e file=requirements.yaml -v
 ![](https://github.ncsu.edu/csc510-fall2019/CSC510-23/blob/master/first.png)
 ![](https://github.ncsu.edu/csc510-fall2019/CSC510-23/blob/master/requirements.png)
 
+### Screencast
+Please open the below link for screencast of deployment:
+https://drive.google.com/file/d/162TAlAXFxoo7XPyIg8MafF_8jQ_yRy9E/view
+
 ## Acceptance Tests 
 
 TA User Account Credentials:
@@ -283,6 +287,10 @@ Continuous Integration is done using Jenkins which is hosted in the port 8080. S
 ![](https://github.ncsu.edu/csc510-fall2019/CSC510-23/blob/master/Jenkins2.png)
 ![](https://github.ncsu.edu/csc510-fall2019/CSC510-23/blob/master/Jenkins3.png)
 ![](https://github.ncsu.edu/csc510-fall2019/CSC510-23/blob/master/Jenkins4.png)
+
+### Screencast of CI
+Please open the below link for the Screencast of CI
+https://drive.google.com/file/d/1DrB6eK2YXsfTy1NQoulkFueT4MGmKMyd/view
 
 
 
