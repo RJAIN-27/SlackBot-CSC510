@@ -271,6 +271,8 @@ Description of code for Use case 3
   
 ## Continuous Integration Service 
 
+Continuous Integration is done using Jenkins which is hosted in the port 8080. Since we do not have complete user privileges for the repository, we do not have Webhooks. So, we are using Poll SCM to poll the repository every 15 minutes to check for any new commits. If any new commits are detected, then Jenkins makes a test build to check if all test cases are in compliance. 
+
 ![](https://github.ncsu.edu/csc510-fall2019/CSC510-23/blob/master/Jenkins1.png)
 ![](https://github.ncsu.edu/csc510-fall2019/CSC510-23/blob/master/Jenkins2.png)
 ![](https://github.ncsu.edu/csc510-fall2019/CSC510-23/blob/master/Jenkins3.png)
