@@ -17,6 +17,9 @@ The deployment folder contains two Ansible playbooks
    - It also clones the git repository and runs the forever bot.
 2. [requirement.yaml](https://github.ncsu.edu/csc510-fall2019/CSC510-23/blob/master/Deployment/requirements.yaml).<br/>
    - This playbook contains the python packages required to run the code.
+### Steps to deploy 
+- In the inventory file we will have to give the public IP address of the AWS instance along with the other parameters and save the inventory file <br/>
+Command: vim etc/ansible/hosts
 
 ## Acceptance Tests 
 
