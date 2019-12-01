@@ -33,7 +33,12 @@ Command: ansible-playbook setup.yaml -e file=requirements.yaml -v
 TA User Account Credentials:
 
 Pre-requisite Steps:
-1. Login to https://rajshreegroup.slack.com/ with valid crendentials
+1. Login into the Slack channel with valid crendentials:
+   - Channel Link -  https://app.slack.com/client/TPDPYLR63/CPDPYM023
+   - Workspace - rajshreegroup.slack.com
+   - Email-Id - librabot.testuser@gmail.com
+   - User-Name - test_user
+   - Password - Travel@123
 2. Click on Librarybot channel
 
 ### UseCase1: Model Suggestion
