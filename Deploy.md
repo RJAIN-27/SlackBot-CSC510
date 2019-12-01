@@ -1,6 +1,6 @@
 # Deployment 
 The goal of this milestone is to demonstrate a fully deployed version of our Library Bot- L.I.B.R.A.
-This slack bot is present in the slack team https://rajshreegroup.slack.com/. The **Librarybot** channel can be used for testing. 
+This slack bot is present in the slack workspace https://rajshreegroup.slack.com/ in the **Librarybot** channel. 
 We have deployed the bot in the AWS environment using Ansible.
 
 ### Requirements 
