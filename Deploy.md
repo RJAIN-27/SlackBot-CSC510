@@ -68,7 +68,7 @@ Bot should give one or more model suggestions with a text file describing the pr
 
 **TestCase3:**
 1. Test User selects a dataset [Wine.csv](https://drive.google.com/open?id=1DAMCOHTMpKuizsAS_SXApEmMgOhXJQ7x) to upload using the attachments button in the Librarybot channel.
-2. Test User enters "I want to know the best model for this dataset." in the message field.
+2. Test User types "I want to know the best model for this dataset." in the message field and presses 'Enter'
 3. Test User clicks upload button.
 4. Bot responds with a message "Please provide the target column"
 5. Test User enters the target column "dummy" which is not present in the dataset.
