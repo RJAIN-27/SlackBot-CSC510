@@ -13,10 +13,15 @@ We have used the open source configuration management tool, Ansible, to provide 
 The deployment scripts in Ansible are located in the folder [Deployment](https://github.ncsu.edu/csc510-fall2019/CSC510-23/tree/master/Deployment) in the repository. 
 The deployment folder contains two Ansible playbooks
 1. [setup.yaml](https://github.ncsu.edu/csc510-fall2019/CSC510-23/blob/master/Deployment/setup.yaml)
-   - This playbook contains the setup and necessary installations for python, pip, git, nodejs, forever, npm, and other python packages required to run the code. 
+   - This playbook contains the setup and necessary installations for python, pip, git, nodejs, forever, npm, and other python packages required to run the code.
    - It also clones the git repository and runs the forever bot.
+   
+![](https://github.ncsu.edu/csc510-fall2019/CSC510-23/blob/master/first.png)
 2. [requirement.yaml](https://github.ncsu.edu/csc510-fall2019/CSC510-23/blob/master/Deployment/requirements.yaml).<br/>
    - This playbook contains the python packages required to run the code.
+   
+![](https://github.ncsu.edu/csc510-fall2019/CSC510-23/blob/master/requirements.png)
+
 ### Steps to run deployment 
 - In the inventory file we will have to give the public IP address of the AWS instance along with the other parameters and save the inventory file <br/>
 Command: vim etc/ansible/hosts
