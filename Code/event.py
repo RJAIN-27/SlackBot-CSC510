@@ -50,7 +50,7 @@ class Event:
                 self.bot.slack_client.api_call("chat.postMessage", channel=event['channel'], text="I am sorry can you please give me a csv file\n", as_user=True)
 
     def rep(self, response, user, command, channel, flag):
-        print response
+        #print response
         if type(response) is str:   
                 if(".txt" in response):
                     f1=open(response, "r")
@@ -82,7 +82,7 @@ class Event:
         elif type(response) is list and len(response)!=0:  
             if (type(response[0]) is str and response[0]=="onlylibrary" or response[0]=="onlyfunction" ):
                 response.pop()
-                print response
+                #print response
                 
                 self.bot.slack_client.api_call("chat.postMessage", channel=channel, text="I am sorry, coudn't fetch the information. My team is working on making me better everyday by adding new functions and libraries in my database!", as_user=True)
             elif (type(response[0]) is dict):
