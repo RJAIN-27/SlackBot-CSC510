@@ -3,6 +3,10 @@ The goal of this milestone is to demonstrate a fully deployed version of our Lib
 This slack bot is present in the slack team https://rajshreegroup.slack.com/. The **Librarybot** channel can be used for testing. 
 We have deployed the bot in the AWS environment using Ansible.
 
+### Requirements 
+1. A linux/UNIX/MAC machine.  
+2. Python and Ansible should be confugured in the system. 
+
 ## Deployment Scripts 
 We have used the open source configuration management tool, Ansible, to provide and configure a remote environment for our Library Bot. 
 
