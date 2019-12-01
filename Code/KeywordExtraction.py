@@ -162,11 +162,11 @@ def keywordlist1(keywords,sheet1, sheet2, sheet3):
                 justfunname.append(m)
     for lib in justlibname:
         l=d[lib]
-        print l
+    #    print l
         for fun in justfunname:
             if fun in l:
                 ans.append(fun)
-    print ans
+   # print ans
     for g in listdict1:
         for m,n in g.items():
             if m in ans:
