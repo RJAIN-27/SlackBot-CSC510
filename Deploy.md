@@ -4,8 +4,7 @@ This slack bot is present in the slack workspace https://rajshreegroup.slack.com
 We have deployed the bot in the AWS environment using Ansible.
 
 ### Requirements 
-1. A linux/UNIX/MAC machine.  
-2. Python and Ansible should be confugured in the system. 
+On the local machine, for deployment, we will require A linux/UNIX/MAC machine, an Ubuntu Server and Python 2.7 and Ansible confugured in the system. 
 
 ## Deployment Scripts 
 We have used the open source configuration management tool, Ansible, to provide and configure a remote environment for our Library Bot. 
