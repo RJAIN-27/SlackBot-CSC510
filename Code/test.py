@@ -5,6 +5,7 @@ import commonFunctions as cf
 import pandas as pd
 import analysis
 import KeywordExtraction as ke
+from command import Command
 
 
 with open("/home/CSC510-23/Code/data.json") as json_file:
