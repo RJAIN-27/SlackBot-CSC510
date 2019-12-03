@@ -13,3 +13,5 @@ Milestone -2 Bot ([Bot.md](https://github.ncsu.edu/csc510-fall2019/CSC510-23/blo
 Milestone -3 Process ([Process.md](https://github.ncsu.edu/csc510-fall2019/CSC510-23/blob/master/Process.md))
 
 Milestone -4 Deployment ([Deploy.md](https://github.ncsu.edu/csc510-fall2019/CSC510-23/blob/master/Deploy.md))
+
+Milestone -5 Report ([Report.md](https://github.ncsu.edu/csc510-fall2019/CSC510-23/blob/master/Report.md))
