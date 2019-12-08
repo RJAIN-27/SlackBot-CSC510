@@ -36,6 +36,16 @@ The user requests the bot for information about a particular library in machine 
 If the user wants to know about a specific function in the library, then the user can provide the name of the function in the library. The bot then fetches this information as well and returns it to the user if this exists
 
 ****Screenshots****
+## Process Reflection 
+For the development of the project we followed the Agile Methodology. We began with the design phase and proceeded with the bot development and the final deployment, with continuous integration using Jenkins. 
+### Design Phase
+In this phase, we abstracted the concept of our project and designed the architecture and the use cases of the project. The storyboard and the wireframes we designed in this phase helped us understand the flow of the system that we were about to develop. This phase helped create a systematic starting point for the rest of the phases in our project development. 
+#### How this phase was helpful
+This phase helped us in understanding the constraints and requirements of the project. Coming to a common consensus regarding the requirements at the initial stage helped us in the later stages since it we did not have to make major changes to our architecture during the development. 
+#### Challenges in this phase and how we overcame it
+Understanding the requirements was initially challenging since each of the team members had different interpretations. But over a few meetings of brainstorming we finally came to a common understanding and documented it and proceeded with the development. 
+
+
 
 
 ## Presentation
