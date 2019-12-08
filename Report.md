@@ -22,11 +22,13 @@ The description of these features in action is as given below.
 The user requests the bot to suggest a good model for the data set and then provides the bot with the dataset as well as the target column of the dataset. 
 The bot then performs preprocessing and model selection by applying models like Linear Support Vector Classifier, K-Nearest Neighbour Classifier, Decision Tree Classifier, Naive Bayes Classifier, Adaboost Classifier, and Random Forest Classifier, on the dataset. 
 Depending on the accuracy metrics of the model on the dataset, the bot returns the result of the model selection in a text file back to the user. 
+
 ****Screenshots**** 
 
 ### Feature 2: Analysis of the data set
 The user requests the bot to analyse the user’s dataset and provides the bot with the dataset as well as the target column. 
-The bot then performs descriptive analytics on the dataset and provides the result of this analysis, namely, summary statistics, correlation results, hypothesis testing for normality of the dataset and value counts, in a text file back to the user.  
+The bot then performs descriptive analytics on the dataset and provides the result of this analysis, namely, summary statistics, correlation results, hypothesis testing for normality of the dataset and value counts, in a text file back to the user. 
+
 ****Screenshots****
 
 ### Feature 3: Knowing the libraries/functions in machine learning offered by Python
