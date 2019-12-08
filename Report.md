@@ -60,7 +60,9 @@ We faced challenges in identifying the common functions and modularizing the cod
 
 ### Deployment phase 
 This being the final stage of development of our project, we deployed the fully developed version of our project. In this phase we handled the edge cases in our use cases and refactored our code for better readability and we deployed this final version of our project on the AWS environment using Ansible. In this phase we also implemented continuous integration by using Jenkins. 
-
+#### How this phase was helpful
+The continuous integration service in this phase that we implemented using Jenkins helped us regularly test and review the quality of our code. With the failure and success reports, we were able to enhance the quality of our code. 
+With deploying our project on time, in real time, we essentially deliver the software on time to the market.
 
 
 
