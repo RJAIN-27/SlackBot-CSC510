@@ -66,6 +66,11 @@ With deploying our project on time, in real time, we essentially deliver the sof
 #### Challenges in this phase and how we overcame it
 Our initial challenge with deploying our software was the absence of webhooks. Since we did not have complete user privileges to our repository, we did not have webhooks for deployment. After experimenting with deployment options, we decided to use Poll SCM instead, to continuously poll the repository for new commits, every 15 minutes. 
 
+### Limitations
+1.	Our bot currently performs model suggests and exploratory data analysis for numerical and nominal data only. 
+2.	It also focuses only on machine learning libraries and functions available in Python. 
+3.	The bot cannot follow up on operations previously performed. 
+
 
 ## Presentation
 
