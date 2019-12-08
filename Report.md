@@ -56,9 +56,10 @@ In this phase, we implemented our use cases in two sprints by following the SCRU
 #### How this phase was helpful
 Following the SCRUM-BAN methodology for this milestone was very helpful since it gave us a systematic approach to implementing our use cases. The graphical interface in the form of the project boards helped us coordinate the tasks among the team members and follow up regularly. It made the process of tracking progress, hassle-free. It helped us raise red-flags whenever a certain task was not in the desired bucket/column which would have led to delay in providing necessary deliverables.
 #### Challenges in this phase and how we overcame it
-We faced challenges in identifying the common functions and modularizing the code for reusability. We later listed down the functions in each use case in order to organize the modularity of our codes clearly. In the future, we would list down the functions systematically in the initial stages of implementation in order to avoid confusion in the later stages.  
+We faced challenges in identifying the common functions and modularizing the code for reusability. We later listed down the functions in each use case in order to organize the modularity of our codes clearly. In the future, we would list down the functions systematically in the initial stages of implementation in order to avoid confusion in the later stages.
 
-
+### Deployment phase 
+This being the final stage of development of our project, we deployed the fully developed version of our project. In this phase we handled the edge cases in our use cases and refactored our code for better readability and we deployed this final version of our project on the AWS environment using Ansible. In this phase we also implemented continuous integration by using Jenkins. 
 
 
 
