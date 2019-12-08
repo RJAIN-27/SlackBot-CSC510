@@ -63,7 +63,8 @@ This being the final stage of development of our project, we deployed the fully 
 #### How this phase was helpful
 The continuous integration service in this phase that we implemented using Jenkins helped us regularly test and review the quality of our code. With the failure and success reports, we were able to enhance the quality of our code. 
 With deploying our project on time, in real time, we essentially deliver the software on time to the market.
-
+#### Challenges in this phase and how we overcame it
+Our initial challenge with deploying our software was the absence of webhooks. Since we did not have complete user privileges to our repository, we did not have webhooks for deployment. After experimenting with deployment options, we decided to use Poll SCM instead, to continuously poll the repository for new commits, every 15 minutes. 
 
 
 ## Presentation
