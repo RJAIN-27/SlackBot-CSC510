@@ -44,6 +44,12 @@ In this phase, we abstracted the concept of our project and designed the archite
 This phase helped us in understanding the constraints and requirements of the project. Coming to a common consensus regarding the requirements at the initial stage helped us in the later stages since it we did not have to make major changes to our architecture during the development. 
 #### Challenges in this phase and how we overcame it
 Understanding the requirements was initially challenging since each of the team members had different interpretations. But over a few meetings of brainstorming we finally came to a common understanding and documented it and proceeded with the development. 
+### Bot phase
+In this phase we began developing our bot. We integrated the bot platform of the bot and developed the interaction component of our bot. During this phase, we tested the integration of the components in our project with each other and with the slack environment. We developed the mocking infrastructure and tested the interaction with the bot platform and the working of our use cases using integration testing performed through Selenium in Java. 
+#### How this phase was helpful
+Implementing integration testing was useful because we were able to test different modules at the same time and understand how they behaved when connected in a group. By mocking these services, we were able to test expectations about code behavior for different variants of service implementation without actually using all of them, thereby also reducing the time taken for unit tests to run. 
+#### Challenges in this phase and how we overcame it
+The challenge we faced here was in automating testing using selenium as there were cases when the login ID and passwords were incorrectly populated and IDs of few elements in the web page weren't present. So we initially tried different frameworks but we eventually cracked the logic of accessing elements in webpage by digging further into inspecting the elements, and thereby able to use Selenium in Java to complete the automation in integration testing.
 
 
 
