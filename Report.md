@@ -40,6 +40,8 @@ If the user wants to know about a specific function in the library, then the use
 For the development of the project we followed the Agile Methodology. We began with the design phase and proceeded with the bot development and the final deployment, with continuous integration using Jenkins. 
 ### Design Phase
 In this phase, we abstracted the concept of our project and designed the architecture and the use cases of the project. The storyboard and the wireframes we designed in this phase helped us understand the flow of the system that we were about to develop. This phase helped create a systematic starting point for the rest of the phases in our project development. 
+![](https://github.ncsu.edu/csc510-fall2019/CSC510-23/blob/master/resources/images/design.png)
+![](https://github.ncsu.edu/csc510-fall2019/CSC510-23/blob/master/resources/images/design1.png)
 #### How this phase was helpful
 This phase helped us in understanding the constraints and requirements of the project. Coming to a common consensus regarding the requirements at the initial stage helped us in the later stages since it we did not have to make major changes to our architecture during the development. 
 #### Challenges in this phase and how we overcame it
