@@ -34,7 +34,7 @@ The bot then performs descriptive analytics on the dataset and provides the resu
 ### Feature 3: Knowing the libraries/functions in machine learning offered by Python
 The user requests the bot for information about a particular library in machine learning and the bot fetches this information from a database and returns it to the user. 
 If the user wants to know about a specific function in the library, then the user can provide the name of the function in the library. The bot then fetches this information as well and returns it to the user if this exists
-![](https://github.ncsu.edu/csc510-fall2019/CSC510-23/blob/master/resources/images/usecase3.jpg)
+![](https://github.ncsu.edu/csc510-fall2019/CSC510-23/blob/master/resources/images/feature3.jpg)
 
 ## Process Reflection 
 For the development of the project we followed the Agile Methodology. We began with the design phase and proceeded with the bot development and the final deployment, with continuous integration using Jenkins. 
