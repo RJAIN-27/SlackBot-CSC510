@@ -69,12 +69,12 @@ We faced challenges in identifying the common functions and modularizing the cod
 This being the final stage of development of our project, we deployed the fully developed version of our project. In this phase we handled the edge cases in our use cases and refactored our code for better readability and we deployed this final version of our project on the AWS environment using Ansible. In this phase we also implemented continuous integration by using Jenkins.
 ![](https://github.ncsu.edu/csc510-fall2019/CSC510-23/blob/master/resources/images/deployment.png)
 
-#### The screenshot for Ansible working is as given below:
+#### The screenshot for Ansible working is given below:
 
 ![](https://github.ncsu.edu/csc510-fall2019/CSC510-23/blob/master/first.png)
 ![](https://github.ncsu.edu/csc510-fall2019/CSC510-23/blob/master/requirements.png)
 
-#### The screenshot for Jenkins working is as given below:
+#### The screenshot for Jenkins working is given below:
 
 ![](https://github.ncsu.edu/csc510-fall2019/CSC510-23/blob/master/Jenkins4.png)
 
