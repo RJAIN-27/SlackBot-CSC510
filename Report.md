@@ -3,17 +3,17 @@
 ## State of affairs addressed by our bot:
 With the explosion of Machine Learning applications in every field, it has become important for every organization to use and understand these applications and APIs, effectively.
 
-There are many such APIs and the popular ones are those offered by Python. But understanding the usage of these APIs, and in general the process of Machine Learning is still unclear to many which makes it complex for users who are not experts. 
+There are many such APIs and the popular ones are those offered by Python. But understanding the usage of these APIs, and in general the process of Machine Learning is still unclear to many which makes it complex for users who are not subject experts. 
 
-The information available online regarding the usage of such APIs and libraries is vast and diverse. It is tedious to scout around a multitude of these sources and nail down on a satisfying answer and proceed with the implementation. Therefore, having a solution that answers questions regarding these libraries and the implementation on datasets, posed by users of these APIs, in a concise and satisfying manner, all under the same roof, especially when the users are unclear about what has to be done with a dataset, is certainly beneficial. This is what our bot aims at achieving. 
+The information available online regarding the usage of such APIs and libraries is vast and diverse. It is tedious to scout around a multitude of these sources and nail down on a satisfying answer and proceed with the implementation. Therefore, having a solution that answers questions regarding these libraries and the implementation of ML techniques on datasets, in a concise and satisfying manner, all under the same roof, especially when the users are unclear about what has to be done with a dataset, is certainly beneficial. This is what our bot aims at achieving. 
 
-Our bot, L.I.B.R.A. (Library-Intensive Bot for Recommendation Assistance) helps the users in understanding the ML APIs of Python in a concise and systematic manner, by responding to the user’s requests. The bot is also primarily developed to aid the users in understanding the dataset, as well as what model has to be applied on the users' dataset, by applying a series of elegant machine learning techniques internally on the dataset. This way the users get the solution to their questions all under one roof.
+Our bot, L.I.B.R.A. (Library-Intensive Bot for Recommendation Assistance) helps users in understanding the ML libraries and functions of Python in a concise and systematic manner, by responding to the user’s requests. The bot is also primarily developed to aid the users in understanding the dataset, as well as what model has to be applied on the users' dataset, by applying a series of elegant machine learning techniques internally on the dataset. This way the users get the solution to their questions all under one roof.
 
 ## Primary Features of the bot
 Our bot hosts three primary features. They are as given below. 
 
-1. It helps the users understand what model fits best for the users’ dataset, by applying model selection techniques in machine learning. 
-2. It helps the users understand the details of their dataset by performing exploratory data analysis.
+1. It helps the users understand what model fits best for the users’ dataset, by applying a series of preprocessing and model selection techniques in machine learning, on the given dataset.
+2. It helps the users understand the details of their dataset, by performing exploratory data analysis.
 3. It also helps the users understand the libraries and functions in machine learning offered by Python, by providing a description of these libraries/functions as requested by the user. 
 
 The description of these features in action is as given below. 
@@ -26,7 +26,7 @@ Depending on the accuracy metrics of the model on the dataset, the bot returns t
 ![](https://github.ncsu.edu/csc510-fall2019/CSC510-23/blob/master/resources/images/uc1_2.png)
 
 ### Feature 2: Analysis of the data set
-The user requests the bot to analyse the user’s dataset and provides the bot with the dataset as well as the target column. 
+The user requests the bot to analyze the user’s dataset and provides the bot with the dataset as well as the target column. 
 The bot then performs descriptive analytics on the dataset and provides the result of this analysis, namely, summary statistics, correlation results, hypothesis testing for normality of the dataset and value counts, in a text file back to the user. 
 ![](https://github.ncsu.edu/csc510-fall2019/CSC510-23/blob/master/resources/images/uc1_8.png)
 ![](https://github.ncsu.edu/csc510-fall2019/CSC510-23/blob/master/resources/images/uc1_9.png)
@@ -37,7 +37,7 @@ If the user wants to know about a specific function in the library, then the use
 ![](https://github.ncsu.edu/csc510-fall2019/CSC510-23/blob/master/resources/images/feature3.jpg)
 
 ## Process Reflection 
-For the development of the project we followed the Agile Methodology. We began with the design phase and proceeded with the bot development and the final deployment, with continuous integration using Jenkins. 
+For the development of the project we followed the Agile Methodology. We began with the design phase and proceeded with the bot development and the final deployment, with implementation of continuous integration using Jenkins. 
 ### Design Phase
 In this phase, we abstracted the concept of our project and designed the architecture and the use cases of the project. The storyboard and the wireframes we designed in this phase helped us understand the flow of the system that we were about to develop. This phase helped create a systematic starting point for the rest of the phases in our project development. 
 ![](https://github.ncsu.edu/csc510-fall2019/CSC510-23/blob/master/resources/images/design.png)
