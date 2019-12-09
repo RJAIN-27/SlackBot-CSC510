@@ -74,9 +74,10 @@ Our initial challenge with deploying our software was the absence of webhooks. S
 3.	The bot cannot follow up on operations previously performed. 
 
 ### Future Work
-1.	The implementation of model suggestion and exploratory data analysis can be extended to apply to other types of datasets such as image content, time-stamped data, spatio-temporal data and so on.
-2.	With the bot currently fetching information for libraries and functions from an existing database, this use case can be extended to directly pulling this information from the web, to make the information-retrieval more robust. 
-3.	The interaction between the user and the bot can also be refined to enable smoother transfer of request and response, to avoid clunky transactions. 
+1.	Support many other types of classifiers and neural networks to train the model with the dataset.
+2.  The implementation of model suggestion and exploratory data analysis can be extended to apply to other types of datasets such as image content, time-stamped data, spatio-temporal data and so on.
+3.	With the bot currently fetching information for libraries and functions from an existing database, this use case can be extended to directly pulling this information from the web, to make the information-retrieval more robust. 
+4.	The interaction between the user and the bot can also be refined to enable smoother transfer of request and response, to avoid clunky transactions. 
 
 
 ## Presentation
