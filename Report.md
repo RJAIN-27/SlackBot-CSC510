@@ -1,3 +1,4 @@
+# L.I.B.R.A (Library-Intensive Bot for Recommendation Assistance)
 # Report 
 
 ## State of affairs addressed by our bot:
