@@ -59,7 +59,7 @@ Implementing integration testing was useful because we were able to test differe
 The challenge we faced here was in automating testing using selenium as there were cases when the login ID and passwords were incorrectly populated and IDs of few elements in the web page weren't present. So we initially tried different frameworks but we eventually cracked the logic of accessing elements in webpage by digging further into inspecting the elements, and thereby able to use Selenium in Java to complete the automation in integration testing.
 
 ### Process phase 
-In this phase, we implemented our use cases in two sprints by following the SCRUM-BAN process.
+In this phase, we implemented our use cases in two sprints by following the SCRUM-BAN process and tested the performance of the bot via coverage testing. 
 ![](https://github.ncsu.edu/csc510-fall2019/CSC510-23/blob/master/resources/images/process.png)
 #### How this phase was helpful
 Following the SCRUM-BAN methodology for this milestone was very helpful since it gave us a systematic approach to implementing our use cases. The graphical interface in the form of the project boards helped us coordinate the tasks among the team members and follow up regularly. It made the process of tracking progress, hassle-free. It helped us raise red-flags whenever a certain task was not in the desired bucket/column which would have led to delay in providing necessary deliverables.
